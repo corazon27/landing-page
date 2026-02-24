@@ -20,7 +20,7 @@
 
                 <div class="md:w-1/2" data-aos="fade-left">
                     <div
-                        class="aspect-square bg-slate-50 rounded-[40px] flex items-center justify-center p-12 relative">
+                        class="aspect-square bg-slate-50 rounded-[40px] flex items-center justify-center p-12 relative mt-3">
                         <div class="text-center">
                             <div class="text-6xl mb-4">💬</div>
                             <p class="text-slate-500 font-medium italic">"Tanya-tanya dulu itu gratis, lho!"</p>
