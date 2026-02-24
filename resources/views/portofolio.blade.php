@@ -116,7 +116,7 @@
                     Kami tidak hanya membuatkan sistem, kami membangun solusi yang pas buat budget dan cara kerja Anda.
                     Yuk, diskusiin dulu apa yang mau kita permudah!
                 </p>
-                <a href="https://wa.me/6285865405330?text=Halo%2C%20saya%20lihat%20portofolio%20Abadi%20Tekno%20dan%20suka%20banget%20hasilnya.%20Bisa%20buatkan%20solusi%20yang%20pas%20untuk%20usaha%20saya%3F"
+                <a href="https://wa.me/6285865405330?text=Halo%2C%20saya%20lihat%20portofolio%20Cakra%20Inovasi%20Digital%20dan%20suka%20banget%20hasilnya.%20Bisa%20buatkan%20solusi%20yang%20pas%20untuk%20usaha%20saya%3F"
                     class="inline-block bg-blue-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-blue-700 transition">
                     Ngobrol Seru di WhatsApp
                 </a>
@@ -129,7 +129,8 @@
             <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Apa Kata Mereka?</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-right">
-                    <p class="text-slate-600 italic mb-6">"Abadi Tekno benar-benar membantu digitalisasi bisnis saya.
+                    <p class="text-slate-600 italic mb-6">"Cakra Inovasi Digital benar-benar membantu digitalisasi
+                        bisnis saya.
                         Sistem kasir yang mereka buat sangat mudah digunakan dan akurat."</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-slate-200 rounded-full mr-4"></div>

@@ -13,11 +13,12 @@
                     </h1>
                     <p class="text-lg text-slate-600 mb-8 leading-relaxed">
                         Capek urus catatan manual yang sering selisih? Mau punya toko online tapi bingung mulainya?
-                        Tenang, <strong>Abadi Tekno</strong> hadir buat nemenin UMKM go-digital dengan cara yang simpel
+                        Tenang, <strong>Cakra Inovasi Digital</strong> hadir buat nemenin UMKM go-digital dengan cara
+                        yang simpel
                         dan harga bersahabat.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Abadi%20Tekno%2C%20saya%20baru%20lihat%20websitenya%20dan%20mau%20tanya-tanya%20dulu%20soal%20solusi%20buat%20bisnis%20saya.%20Boleh%20bantu%20jelasin%20cara%20mulainya%3F"
+                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20baru%20lihat%20websitenya%20dan%20mau%20tanya-tanya%20dulu%20soal%20solusi%20buat%20bisnis%20saya.%20Boleh%20bantu%20jelasin%20cara%20mulainya%3F"
                             target="_blank"
                             class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
                             Tanya-Tanya Dulu (Gratis)
@@ -178,7 +179,7 @@
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div data-aos="fade-right">
                     <h2 class="text-3xl lg:text-4xl font-bold mb-6">Mengapa Memilih <br><span
-                            class="text-blue-400">Abadi Teknologi Gemilang?</span></h2>
+                            class="text-blue-400">Cakra Inovasi Digital?</span></h2>
                     <p class="text-slate-400 text-lg mb-8 leading-relaxed">Kami membangun solusi yang membantu bisnis
                         Anda tumbuh lebih cepat dan efisien.</p>
                 </div>
@@ -260,7 +261,8 @@
                     <div class="text-4xl text-blue-200 absolute top-4 right-6">"</div>
                     <p class="text-slate-700 italic leading-relaxed mb-6">
                         "Awalnya saya gaptek banget, takut mau pakai sistem kasir karena mikirnya bakal ribet. Tapi tim
-                        Abadi Tekno sabar banget ngajarin pelan-pelan sampai saya bisa. Sekarang stok barang di toko
+                        Cakra Inovasi Digital sabar banget ngajarin pelan-pelan sampai saya bisa. Sekarang stok barang
+                        di toko
                         jadi rapi dan nggak perlu pusing rekap manual lagi."
                     </p>
                     <div class="flex items-center gap-4">
@@ -301,7 +303,7 @@
                 class="bg-blue-600 rounded-[2rem] p-12 lg:p-20 text-center relative overflow-hidden shadow-2xl">
                 <div class="relative z-10 text-white">
                     <h2 class="text-3xl lg:text-5xl font-bold mb-6">Siap Mengembangkan Bisnis Anda Secara Digital?</h2>
-                    <a href="https://wa.me/6285865405330?text=Halo%20Abadi%20Tekno%2C%20saya%20baru%20lihat%20websitenya%20dan%20mau%20tanya-tanya%20dulu%20soal%20solusi%20buat%20bisnis%20saya.%20Boleh%20bantu%20jelasin%20cara%20mulainya%3F"
+                    <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20baru%20lihat%20websitenya%20dan%20mau%20tanya-tanya%20dulu%20soal%20solusi%20buat%20bisnis%20saya.%20Boleh%20bantu%20jelasin%20cara%20mulainya%3F"
                         class="inline-block px-10 py-4 bg-white text-blue-600 font-bold rounded-xl shadow-lg">Hubungi
                         Kami Sekarang</a>
                 </div>

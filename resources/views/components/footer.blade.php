@@ -2,7 +2,7 @@
     <div class="max-w-6xl mx-auto px-10">
         <div class="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-                <div class="text-2xl font-bold mb-4">Abadi<span class="text-blue-400">Tekno</span></div>
+                <div class="text-2xl font-bold mb-4">Cakra<span class="text-blue-400"> Inovasi Digital</span></div>
                 <p class="text-slate-400 text-sm leading-relaxed">
                     Solusi teknologi andal untuk transformasi digital bisnis Anda.
                 </p>
@@ -85,7 +85,7 @@
 
         <div
             class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-xs gap-4">
-            <p>© 2026 Abadi Tekno. Seluruh hak cipta dilindungi.</p>
+            <p>© 2026 Cakra Inovasi Digital. Seluruh hak cipta dilindungi.</p>
         </div>
     </div>
 </footer>

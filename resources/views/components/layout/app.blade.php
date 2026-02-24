@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>CV Abadi Teknologi Gemilang</title>
+    <title>CV Cakra Inovasi Digital</title>
     @vite('resources/css/app.css')
 </head>
 
@@ -18,7 +18,7 @@
 
     </main>
 
-    <a href="https://wa.me/6285865405330?text=Halo%20tim%20Abadi%20Tekno%2C%20saya%20butuh%20bantuan%20nih%20buat%20tanya-tanya%20soal%20sistem%20digital.%20Lagi%20online%20kah%3F"
+    <a href="https://wa.me/6285865405330?text=Halo%20tim%20Cakra%20Inovasi%20Digital,%20saya%20butuh%20bantuan%20nih%20buat%20tanya-tanya%20soal%20sistem%20digital.%20Lagi%20online%20kah%3F"
         id="whatsapp-floating" target="_blank" rel="noopener noreferrer"
         class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl transition-all duration-500 translate-y-20 opacity-0 pointer-events-none hover:scale-110 flex items-center justify-center">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">

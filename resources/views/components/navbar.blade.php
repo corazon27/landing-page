@@ -1,7 +1,7 @@
 <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div class="text-xl font-bold tracking-tight text-slate-900">
-            Abadi<span class="text-blue-600">Tekno</span>
+            Cakra <span class="text-blue-600">Inovasi Digital</span>
         </div>
 
         <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
@@ -22,7 +22,7 @@
                         class="{{ request()->routeIs('faq') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Tanya
                         Jawab</a></li>
             </ul>
-            <a href="https://wa.me/6282242453204?text=Halo%20Abadi%20Tekno%2C%20saya%20tertarik%20untuk%20tanya-tanya%20tentang%20solusi%20digital%20untuk%20bisnis%20saya.%20Boleh%20diskusi%20sebentar%3F"
+            <a href="https://wa.me/6282242453204?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20tertarik%20untuk%20tanya-tanya%20tentang%20solusi%20digital%20untuk%20bisnis%20saya.%20Boleh%20diskusi%20sebentar%3F"
                 target="_blank"
                 class="bg-[#1a202c] text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition ml-4">
                 Hubungi Kami

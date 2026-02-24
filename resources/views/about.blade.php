@@ -11,7 +11,8 @@
                         Kami Adalah Teman <span class="text-blue-600">Tumbuh</span> Bisnis Anda.
                     </h1>
                     <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                        Abadi Tekno lahir karena kami melihat banyak teman-teman pemilik usaha yang kesulitan mengelola
+                        Cakra Inovasi Digital lahir karena kami melihat banyak teman-teman pemilik usaha yang kesulitan
+                        mengelola
                         bisnisnya secara manual. Kami hadir bukan untuk membuat hal yang rumit, tapi untuk
                         menyederhanakan cara kerja Anda lewat teknologi.
                     </p>
@@ -24,7 +25,7 @@
                 <div class="relative" data-aos="fade-left">
                     <div class="aspect-square bg-blue-100 rounded-[40px] overflow-hidden mt-3">
                         <div class="w-full h-full flex items-center justify-center text-blue-300 font-bold">Foto Tim
-                            Abadi Tekno</div>
+                            Cakra Inovasi Digital</div>
                     </div>
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-xl border border-slate-100">
                         <p class="text-3xl font-bold text-blue-600">50+</p>
@@ -84,7 +85,8 @@
             <h1 class="text-4xl md:text-5xl font-bold mt-6 mb-6 leading-tight">Teknologi Gak Harus Ribet, <br>Apalagi
                 Mahal.</h1>
             <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
-                Di <strong>Abadi Tekno</strong>, kami percaya setiap usaha kecil berhak punya sistem yang keren. Kami
+                Di <strong>Cakra Inovasi Digital</strong>, kami percaya setiap usaha kecil berhak punya sistem yang
+                keren. Kami
                 hadir bukan sebagai vendor yang kaku, tapi sebagai teman diskusi untuk bantu digitalisasi bisnis Anda
                 dengan cara yang paling simpel.
             </p>
