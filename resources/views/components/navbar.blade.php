@@ -1,7 +1,10 @@
 <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div class="text-xl font-bold tracking-tight text-slate-900">
-            Cakra <span class="text-blue-600">Inovasi Digital</span>
+        <div class="flex items-center gap-3 text-xl font-bold tracking-tight text-slate-900">
+            <img src="{{ asset('images/logo-cakra.png') }}" alt="Logo Cakra" class="h-20 w-auto">
+            <div class="text-xl font-bold tracking-tight text-slate-900">
+                Cakra <span class="text-blue-600">Inovasi Digital</span>
+            </div>
         </div>
 
         <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
