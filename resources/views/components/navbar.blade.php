@@ -12,9 +12,9 @@
                 <li><a href="/"
                         class="{{ request()->is('/') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Beranda</a>
                 </li>
-                <li><a href="/tentang"
+                <!-- <li><a href="/tentang"
                         class="{{ request()->is('tentang') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Tentang</a>
-                </li>
+                </li> -->
 
                 <li class="relative group flex items-center h-20">
                     <button
@@ -28,10 +28,10 @@
                         class="absolute top-[70px] left-0 w-64 bg-white border border-slate-100 rounded-xl shadow-xl py-2 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
                         <a href="/layanan/web-perusahaan"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
-                            Perusahaan</a>
+                            Perusahaan (Company Profile)</a>
                         <a href="/layanan/web-toko"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
-                            Toko</a>
+                            Toko (Point of Sale)</a>
                         <a href="/layanan/web-sales-motor"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
                             Sales Motor</a>
@@ -48,11 +48,21 @@
                 </li>
 
                 <li><a href="/portofolio"
-                        class="{{ request()->is('portofolio') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Portofolio</a>
+                        class="{{ request()->is('portofolio') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Program
+                        Affiliate</a>
+                </li>
+
+                <li><a href="/portofolio"
+                        class="{{ request()->is('portofolio') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Portofolio
+                        Kami</a>
                 </li>
                 <li><a href="{{ route('faq') }}"
                         class="{{ request()->routeIs('faq') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Tanya
                         Jawab</a></li>
+
+                <li><a href="/portofolio"
+                        class="{{ request()->is('portofolio') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Artikel</a>
+                </li>
             </ul>
 
             <a href="https://wa.me/6282242453204" target="_blank"

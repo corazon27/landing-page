@@ -31,6 +31,10 @@ Route::prefix('layanan')->group(function () {
     })->name('layanan.perusahaan');
     
     // Anda bisa menambah route layanan lainnya di sini nanti
+
+    Route::get('/web-toko', function () {
+        return view('layanan.web-toko');
+    })->name('layanan.toko');
 });
 
 Route::get('/portofolio', function () {
