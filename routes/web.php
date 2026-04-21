@@ -35,6 +35,10 @@ Route::prefix('layanan')->group(function () {
     Route::get('/web-toko', function () {
         return view('layanan.web-toko');
     })->name('layanan.toko');
+
+    Route::get('/web-katalog-produk', function () {
+        return view('layanan.web-katalog-produk');
+    })->name('layanan.katalog-produk');
 });
 
 Route::get('/portofolio', function () {

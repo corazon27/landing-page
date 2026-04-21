@@ -32,12 +32,9 @@
                         <a href="/layanan/web-toko"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
                             Toko (Point of Sale)</a>
-                        <a href="/layanan/web-sales-motor"
+                        <a href="/layanan/web-katalog-produk"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
-                            Sales Motor</a>
-                        <a href="/layanan/web-sales-barang"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
-                            Sales Barang</a>
+                            Katalog Produk</a>
                         <a href="/layanan/web-portal-berita"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
                             Portal Berita</a>
