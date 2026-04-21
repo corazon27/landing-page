@@ -26,6 +26,9 @@
 
                     <div
                         class="absolute top-[70px] left-0 w-64 bg-white border border-slate-100 rounded-xl shadow-xl py-2 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+                        <a href="/layanan/web-perusahaan"
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
+                            Perusahaan</a>
                         <a href="/layanan/web-toko"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
                             Toko</a>
@@ -65,13 +68,6 @@
         </div>
     </div>
 
-    <div class="md:hidden flex items-center">
-        <button id="hamburger" class="text-slate-900 focus:outline-none">
-            <i class="fa-solid fa-bars text-2xl" id="nav-icon"></i>
-        </button>
-    </div>
-    </div>
-
     <div id="mobile-menu"
         class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-6 shadow-xl overflow-y-auto max-h-[80vh]">
         <div class="flex flex-col space-y-4">
@@ -88,25 +84,14 @@
                 </button>
                 <div id="mobile-dropdown-menu"
                     class="hidden flex flex-col space-y-3 mt-3 pl-4 border-l-2 border-slate-100">
+                    <a href="/layanan/web-perusahaan" class="text-slate-500 text-sm">Web Perusahaan</a>
                     <a href="/layanan/web-toko" class="text-slate-500 text-sm">Web Toko</a>
-                    <a href="/layanan/web-sales-motor" class="text-slate-500 text-sm">Web Sales Showcase Motor</a>
-                    <a href="/layanan/web-sales-barang" class="text-slate-500 text-sm">Web Sales Showcase Barang</a>
+                    <a href="/layanan/web-sales-motor" class="text-slate-500 text-sm">Web Sales Motor</a>
+                    <a href="/layanan/web-sales-barang" class="text-slate-500 text-sm">Web Sales Barang</a>
                     <a href="/layanan/web-portal-berita" class="text-slate-500 text-sm">Web Portal Berita</a>
                     <a href="/layanan/web-fnb" class="text-slate-500 text-sm">Web F&B</a>
                 </div>
             </div>
-
-            <a href="/portofolio"
-                class="{{ request()->is('portofolio') ? 'text-blue-600 font-bold' : 'text-slate-600 font-medium' }}">Portofolio</a>
-            <a href="{{ route('faq') }}"
-                class="{{ request()->routeIs('faq') ? 'text-blue-600 font-bold' : 'text-slate-600 font-medium' }}">Tanya
-                Jawab</a>
-
-            <hr class="border-slate-100 my-2">
-            <a href="https://wa.me/6282242453204"
-                class="bg-blue-600 text-white text-center py-4 rounded-2xl font-bold shadow-lg shadow-blue-100">
-                Hubungi Kami
-            </a>
         </div>
     </div>
 </nav>

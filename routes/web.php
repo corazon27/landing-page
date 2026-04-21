@@ -25,6 +25,14 @@ Route::get('/layanan', function () {
     return view('services');
 })->name('services');
 
+Route::prefix('layanan')->group(function () {
+    Route::get('/web-perusahaan', function () {
+        return view('layanan.web-perusahaan');
+    })->name('layanan.perusahaan');
+    
+    // Anda bisa menambah route layanan lainnya di sini nanti
+});
+
 Route::get('/portofolio', function () {
     return view('portofolio');
 })->name('portofolio');
