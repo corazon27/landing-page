@@ -35,6 +35,9 @@
                         <a href="/layanan/web-katalog-produk"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
                             Katalog Produk</a>
+                        <a href="/layanan/web-rental-mobil"
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
+                            Rental Mobil</a>
                         <a href="/layanan/web-portal-berita"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
                             Portal Berita</a>
@@ -44,8 +47,8 @@
                     </div>
                 </li>
 
-                <li><a href="/portofolio"
-                        class="{{ request()->is('portofolio') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Program
+                <li><a href="/affiliate"
+                        class="{{ request()->is('affiliate') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Program
                         Affiliate</a>
                 </li>
 

@@ -39,7 +39,16 @@ Route::prefix('layanan')->group(function () {
     Route::get('/web-katalog-produk', function () {
         return view('layanan.web-katalog-produk');
     })->name('layanan.katalog-produk');
+
+    Route::get('/web-rental-mobil', function () {
+        return view('layanan.web-rental-mobil');
+    })->name('layanan.rental-mobil');
+    
 });
+
+Route::get('/affiliate', function () {
+    return view('affiliate');
+})->name('affiliate');
 
 Route::get('/portofolio', function () {
     return view('portofolio');
