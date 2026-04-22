@@ -107,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center mt-32 w-full" data-aos="fade-up">
+            <div class="flex flex-col items-center mt-18 w-full" data-aos="fade-up">
                 <a href="#daftar"
                     class="inline-flex items-center gap-3 bg-white border-2 border-blue-600 text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-200 group">
                     Mulai Sekarang & Ambil Link Kamu
