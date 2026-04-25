@@ -26,24 +26,63 @@
 
                     <div
                         class="absolute top-[70px] left-0 w-64 bg-white border border-slate-100 rounded-xl shadow-xl py-2 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
-                        <a href="/layanan/web-perusahaan"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
-                            Perusahaan (Company Profile)</a>
-                        <a href="/layanan/web-toko"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
-                            Toko (Point of Sale)</a>
-                        <a href="/layanan/web-katalog-produk"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
-                            Katalog Produk</a>
+
+                        <div class="relative group/sub">
+                            <a href="#"
+                                class="flex items-center justify-between px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 uppercase font-bold tracking-wider">
+                                <span>Bisnis</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+
+                            <div
+                                class="absolute left-full top-0 ml-1 w-64 bg-white border border-slate-100 rounded-xl shadow-xl py-2 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all duration-300">
+                                <a href="/layanan/web-perusahaan"
+                                    class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
+                                    Website Company Profile
+                                </a>
+                                <a href="/layanan/web-katalog-produk"
+                                    class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
+                                    Website Katalog Produk
+                                </a>
+                                <a href="/layanan/web-toko"
+                                    class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 last:border-0 uppercase font-bold tracking-wider">
+                                    Website Toko Online / Point of Sale
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="relative group/sub">
+                            <a href="#"
+                                class="flex items-center justify-between px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 uppercase font-bold tracking-wider">
+                                <span>Booking & Reservasi</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+
+                            <div
+                                class="absolute left-full top-0 ml-1 w-64 bg-white border border-slate-100 rounded-xl shadow-xl py-2 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all duration-300">
+                                <a href="/layanan/web-rental-mobil"
+                                    class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
+                                    Website Booking & Reservasi
+                                </a>
+                                <a href="/layanan/web-rental"
+                                    class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
+                                    Website Rental
+                                </a>
+                            </div>
+                        </div>
+
                         <a href="/layanan/web-rental-mobil"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
-                            Rental Mobil</a>
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 uppercase font-bold tracking-wider">
+                            Web Rental Mobil
+                        </a>
                         <a href="/layanan/web-portal-berita"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">Web
-                            Portal Berita</a>
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 uppercase font-bold tracking-wider">
+                            Web Portal Berita
+                        </a>
                         <a href="/layanan/web-fnb"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 last:border-0 uppercase font-bold tracking-wider">Web
-                            F&B</a>
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 last:border-0 uppercase font-bold tracking-wider">
+                            Web F&B
+                        </a>
                     </div>
                 </li>
 

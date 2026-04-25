@@ -40,9 +40,9 @@ Route::prefix('layanan')->group(function () {
         return view('layanan.web-katalog-produk');
     })->name('layanan.katalog-produk');
 
-    Route::get('/web-rental-mobil', function () {
-        return view('layanan.web-rental-mobil');
-    })->name('layanan.rental-mobil');
+    Route::get('/web-rental', function () {
+        return view('layanan.web-rental');
+    })->name('layanan.rental');
     
 });
 
