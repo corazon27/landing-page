@@ -36,9 +36,10 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        // ... guard lainnya
+        'affiliate' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'affiliates',
         ],
     ],
 
@@ -60,15 +61,11 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        // ... provider lainnya
+        'affiliates' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Affiliate::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*

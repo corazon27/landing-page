@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo-cakra.png') }}" class="h-16 w-auto">
     <title>Daftar Affiliate - Cakra Inovasi</title>
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.min.js"></script>
@@ -145,15 +146,6 @@
                             <p x-show="confirm_password.length > 0 && password !== confirm_password"
                                 class="text-[11px] text-red-500 font-bold mt-2 uppercase italic" x-cloak>Password tidak
                                 cocok!</p>
-                        </div>
-
-                        <div class="flex items-start gap-3 py-2">
-                            <input type="checkbox" id="terms" name="terms" required
-                                class="mt-1 h-4 w-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer">
-                            <label for="terms" class="text-sm text-slate-500 leading-relaxed cursor-pointer">
-                                Saya setuju dengan <a href="#" class="text-blue-600 font-semibold underline">Syarat &
-                                    Ketentuan</a>.
-                            </label>
                         </div>
 
                         @if ($errors->any())

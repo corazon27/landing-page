@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Affiliate\RegisterController;
+use App\Http\Controllers\Affiliate\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,9 +64,18 @@ Route::get('/tanya-jawab', function () {
 Route::get('/register', function () {
     return view('affiliate.register'); // Titik (.) menandakan masuk ke dalam folder
 })->name('affiliate.register');
-Route::get('/login', function () { return view('auth.login'); })->name('login');
+Route::post('/register', [RegisterController::class, 'store'])->name('affiliate.register.store');
 
 // Dashboard Affiliate
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () { return view('affiliate.dashboard'); })->name('dashboard');
+});
+
+Route::get('/login', function() { return view('affiliate.login'); })->name('login');
+// Proses Login
+Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+
+// Halaman Dashboard (Sederhana dulu untuk tes)
+Route::middleware('auth:affiliate')->get('/affiliate/dashboard', function () {
+    return "Selamat datang di Dashboard, " . Auth::guard('affiliate')->user()->name;
 });
