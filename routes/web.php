@@ -57,3 +57,14 @@ Route::get('/portofolio', function () {
 Route::get('/tanya-jawab', function () {
     return view('faq');
 })->name('faq');
+
+// Auth
+Route::get('/register', function () {
+    return view('affiliate.register'); // Titik (.) menandakan masuk ke dalam folder
+})->name('affiliate.register');
+Route::get('/login', function () { return view('auth.login'); })->name('login');
+
+// Dashboard Affiliate
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () { return view('affiliate.dashboard'); })->name('dashboard');
+});

@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="flex flex-wrap gap-4">
-                        <a href="#daftar"
+                        <a href="{{ route('affiliate.register') }}"
                             class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
                             Daftar Sekarang (Gratis)
                         </a>
@@ -108,7 +108,7 @@
             </div>
 
             <div class="flex flex-col items-center mt-18 w-full" data-aos="fade-up">
-                <a href="#daftar"
+                <a href="{{ route('affiliate.register') }}"
                     class="inline-flex items-center gap-3 bg-white border-2 border-blue-600 text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-200 group">
                     Mulai Sekarang & Ambil Link Kamu
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -273,7 +273,7 @@
                         Jangan tunggu nanti, setiap bisnis butuh website. Kalau kamu tidak merekomendasikan sekarang,
                         orang lain yang akan ambil peluang ini duluan.
                     </p>
-                    <a href="LINK_PENDAFTARAN_AFFILIATE_ATAU_WA"
+                    <a href="{{ route('affiliate.register') }}"
                         class="inline-block px-12 py-5 bg-yellow-400 text-slate-900 font-extrabold text-lg rounded-2xl shadow-xl hover:bg-yellow-300 hover:scale-105 transition-all transform duration-300">
                         DAFTAR AFFILIATE SEKARANG (GRATIS)
                     </a>
