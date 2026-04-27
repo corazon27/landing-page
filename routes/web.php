@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BlogController;
+
 // rute admin
 use App\Http\Controllers\Admin\LoginController as AdminLogin;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
@@ -91,10 +93,16 @@ Route::middleware(['auth:admin'])->prefix('management-center')->group(function (
     Route::get('/artikel', [AdminArticle::class, 'index'])->name('admin.articles.index');
     Route::get('/artikel/buat', [AdminArticle::class, 'create'])->name('admin.articles.create');
     Route::post('/artikel/simpan', [AdminArticle::class, 'store'])->name('admin.articles.store');
-    
-    // PERBAIKAN DI SINI: Gunakan AdminArticle dan sederhanakan path-nya
     Route::post('/artikel/upload', [AdminArticle::class, 'uploadEditorImage'])->name('admin.articles.upload');
+    Route::get('/artikel/{id}/edit', [AdminArticle::class, 'edit'])->name('admin.articles.edit');
+    Route::put('/artikel/{id}/update', [AdminArticle::class, 'update'])->name('admin.articles.update');
 
     // Rute Logout
     Route::post('/logout', [AdminLogin::class, 'logout'])->name('admin.logout');
 });
+
+// Halaman Daftar Artikel
+Route::get('/artikel', [BlogController::class, 'index'])->name('artikel.index');
+
+// Halaman Detail Artikel
+Route::get('/artikel/{slug}', [BlogController::class, 'show'])->name('artikel.show');

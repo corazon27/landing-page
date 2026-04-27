@@ -1,7 +1,7 @@
 @extends('components.layout.admin')
 
-@section('title', 'Tulis Artikel Baru')
-@section('header', 'Buat Konten Pancingan SEO')
+@section('title', 'Edit Artikel')
+@section('header', 'Edit Konten Artikel')
 
 @section('content')
 <div class="max-w-4xl mx-auto">
@@ -14,29 +14,33 @@
     </div>
 
     <div class="bg-white rounded-[2.5rem] shadow-sm border border-slate-100 p-10">
-        <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.articles.update', $article->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="space-y-8">
+            @method('PUT')
 
-                {{-- Input Judul --}}
+            <div class="space-y-8">
+                {{-- Judul Artikel --}}
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-2">Judul Artikel</label>
                     <input type="text" name="title" required placeholder="Contoh: 5 Tips Memulai Bisnis Affiliate"
+                        value="{{ old('title', $article->title) }}"
                         class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none transition">
                 </div>
 
-                {{-- Input Thumbnail dengan Preview --}}
+                {{-- Gambar Utama (Thumbnail) --}}
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-2">Gambar Utama (Thumbnail)</label>
                     <div
                         class="flex flex-col items-center justify-center w-full p-6 bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl transition hover:border-blue-400">
 
-                        <div id="image-preview-container" class="hidden mb-4">
-                            <img id="image-preview" src="#" alt="Preview"
-                                class="max-h-64 rounded-xl shadow-md border-4 border-white text-center">
+                        {{-- Logika Preview: Jika sudah ada thumbnail, langsung tampilkan --}}
+                        <div id="image-preview-container" class="{{ $article->thumbnail ? '' : 'hidden' }} mb-4">
+                            <img id="image-preview"
+                                src="{{ $article->thumbnail ? asset('storage/' . $article->thumbnail) : '#' }}"
+                                alt="Preview" class="max-h-64 rounded-xl shadow-md border-4 border-white">
                         </div>
 
-                        <div id="upload-placeholder" class="text-center">
+                        <div id="upload-placeholder" class="text-center {{ $article->thumbnail ? 'hidden' : '' }}">
                             <i class="fas fa-cloud-upload-alt text-4xl text-slate-300 mb-2"></i>
                             <p class="text-sm text-slate-500">Klik untuk unggah atau drag gambar ke sini</p>
                         </div>
@@ -44,50 +48,63 @@
                         <input type="file" name="thumbnail" id="thumbnail-input" accept="image/*"
                             class="mt-4 text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
                     </div>
+                    <p class="text-xs text-slate-400 mt-2 text-center italic">Kosongkan jika tidak ingin mengubah gambar
+                        utama.</p>
                 </div>
 
-                {{-- Editor Konten --}}
+                {{-- Isi Artikel --}}
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-2">Isi Artikel</label>
                     <div class="prose max-w-none">
-                        <textarea id="editor" name="content">{{ old('content') }}</textarea>
+                        <textarea id="editor" name="content">{{ old('content', $article->content) }}</textarea>
                     </div>
                 </div>
 
-                {{-- Pengaturan Status & Jadwal --}}
+                {{-- Status & Jadwal Terbit --}}
                 <div class="flex flex-col md:flex-row items-end justify-between pt-8 border-t border-slate-100 gap-6">
                     <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
 
+                        {{-- Dropdown Status --}}
                         <div class="flex flex-col gap-2">
                             <label class="text-sm font-bold text-slate-700">Status:</label>
                             <select name="status" id="status-select"
                                 class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:ring-2 focus:ring-blue-500 transition">
-                                <option value="draft">Simpan Draft</option>
-                                <option value="published">Terbitkan / Jadwalkan</option>
+                                <option value="draft" {{ $article->status == 'draft' ? 'selected' : '' }}>Simpan Draft
+                                </option>
+                                <option value="published" {{ $article->status == 'published' ? 'selected' : '' }}>
+                                    Terbitkan / Jadwalkan</option>
                             </select>
                         </div>
 
+                        {{-- Input Tanggal --}}
                         <div class="flex flex-col gap-2" id="schedule-container">
                             <label class="text-sm font-bold text-slate-700">Tanggal Terbit:</label>
-                            <input type="datetime-local" name="published_at" value="{{ now()->format('Y-m-d\TH:i') }}"
+                            <input type="datetime-local" name="published_at"
+                                value="{{ $article->published_at ? $article->published_at->format('Y-m-d\TH:i') : now()->format('Y-m-d\TH:i') }}"
                                 class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:ring-2 focus:ring-blue-500 transition text-slate-600">
                         </div>
                     </div>
 
-                    <button type="submit"
-                        class="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-blue-200 transition-all hover:-translate-y-1">
-                        Simpan Artikel
-                    </button>
+                    <div class="flex gap-3 w-full md:w-auto">
+                        <a href="{{ route('admin.articles.index') }}"
+                            class="text-center flex-1 md:flex-none bg-slate-100 text-slate-600 px-6 py-4 rounded-2xl font-bold hover:bg-slate-200 transition">
+                            Batal
+                        </a>
+                        <button type="submit"
+                            class="flex-1 md:flex-none bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-blue-200 transition-all hover:-translate-y-1">
+                            Simpan Perubahan
+                        </button>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
 </div>
 
-{{-- Styling Khusus CKEditor --}}
+{{-- CSS Khusus --}}
 <style>
 .ck-editor__editable {
-    min-height: 400px;
+    min-height: 450px;
     border-radius: 0 0 1.5rem 1.5rem !important;
     background-color: #f8fafc !important;
 }
@@ -99,8 +116,6 @@
 }
 
 #schedule-container {
-    opacity: 0.5;
-    pointer-events: none;
     transition: all 0.3s ease;
 }
 </style>
@@ -111,21 +126,29 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    // 1. Logika Tampilan Jadwal berdasarkan Status
     const statusSelect = document.getElementById('status-select');
     const scheduleContainer = document.getElementById('schedule-container');
 
-    statusSelect.addEventListener('change', function() {
-        if (this.value === 'published') {
+    // Fungsi untuk mengatur tampilan container jadwal
+    function toggleSchedule(status) {
+        if (status === 'published') {
             scheduleContainer.style.opacity = '1';
             scheduleContainer.style.pointerEvents = 'auto';
         } else {
             scheduleContainer.style.opacity = '0.5';
             scheduleContainer.style.pointerEvents = 'none';
         }
+    }
+
+    // Jalankan saat pertama kali halaman dimuat (untuk mencocokkan data DB)
+    toggleSchedule(statusSelect.value);
+
+    // Jalankan saat dropdown diubah
+    statusSelect.addEventListener('change', function() {
+        toggleSchedule(this.value);
     });
 
-    // 2. Logika Preview Gambar Thumbnail
+    // Logika Preview Gambar
     const thumbnailInput = document.getElementById('thumbnail-input');
     const imagePreview = document.getElementById('image-preview');
     const previewContainer = document.getElementById('image-preview-container');
@@ -140,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 3. Inisialisasi CKEditor
+    // Inisialisasi CKEditor
     ClassicEditor
         .create(document.querySelector('#editor'), {
             ckfinder: {
@@ -151,9 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'blockQuote', 'insertTable', 'imageUpload', 'undo', 'redo'
             ]
         })
-        .catch(error => {
-            console.error(error);
-        });
+        .catch(error => console.error(error));
 });
 </script>
 @endpush

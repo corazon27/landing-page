@@ -99,8 +99,11 @@
                         class="{{ request()->routeIs('faq') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Tanya
                         Jawab</a></li>
 
-                <li><a href="/portofolio"
-                        class="{{ request()->is('portofolio') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Artikel</a>
+                <li>
+                    <a href="{{ route('artikel.index') }}"
+                        class="{{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">
+                        Artikel
+                    </a>
                 </li>
             </ul>
 
@@ -141,6 +144,10 @@
                     <a href="/layanan/web-fnb" class="text-slate-500 text-sm">Web F&B</a>
                 </div>
             </div>
+            <a href="{{ route('artikel.index') }}"
+                class="{{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-slate-600 font-medium' }}">
+                Artikel
+            </a>
         </div>
     </div>
 </nav>

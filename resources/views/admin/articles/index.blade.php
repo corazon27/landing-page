@@ -65,7 +65,8 @@
                     <i class="fas fa-eye mr-1 opacity-50"></i> {{ number_format($article->views) }}
                 </td>
                 <td class="px-6 py-4 text-right space-x-1">
-                    <a href="#" class="inline-block text-blue-600 hover:bg-blue-50 p-2.5 rounded-xl transition">
+                    <a href="{{ route('admin.articles.edit', $article->id) }}"
+                        class="inline-block text-blue-600 hover:bg-blue-50 p-2.5 rounded-xl transition">
                         <i class="fas fa-edit"></i>
                     </a>
                     <button class="text-red-600 hover:bg-red-50 p-2.5 rounded-xl transition">

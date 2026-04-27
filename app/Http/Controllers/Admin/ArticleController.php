@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
-    //
     public function index()
     {
-        $articles = \App\Models\Article::latest()->get();
+        // Menggunakan latest() agar artikel terbaru (berdasarkan created_at) muncul di atas
+        $articles = Article::latest()->get();
         return view('admin.articles.index', compact('articles'));
     }
 
@@ -24,45 +24,81 @@ class ArticleController extends Controller
 
     public function store(Request $request)
     {
-        // 1. Validasi Input
         $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'thumbnail' => 'image|mimes:jpeg,png,jpg|max:2048',
             'status' => 'required|in:draft,published',
+            'published_at' => 'required|date', 
+            'thumbnail' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        // 2. Olah Gambar Thumbnail (Jika ada)
         $thumbnailPath = null;
         if ($request->hasFile('thumbnail')) {
             $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
         }
 
-        // 3. Simpan ke Database
         Article::create([
             'title' => $request->title,
-            'slug' => Str::slug($request->title), // Otomatis buat URL dari judul
+            'slug' => Str::slug($request->title),
             'content' => $request->content,
             'thumbnail' => $thumbnailPath,
             'status' => $request->status,
+            'published_at' => $request->published_at, 
             'views' => 0,
         ]);
 
-        // 4. Kembali ke daftar dengan pesan sukses
         return redirect()->route('admin.articles.index')->with('success', 'Artikel berhasil diterbitkan!');
     }
 
+    public function edit($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('admin.articles.edit', compact('article'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $article = Article::findOrFail($id);
+
+        // 1. Validasi Input (Tambahkan published_at)
+        $request->validate([
+            'title' => 'required|max:255',
+            'status' => 'required|in:draft,published',
+            'published_at' => 'required|date', // Tambahkan ini
+            'content' => 'required',
+            'thumbnail' => 'image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        // 2. Update data teks & status
+        $article->title = $request->title;
+        $article->content = $request->content;
+        $article->status = $request->status;
+        $article->published_at = $request->published_at; // Baris krusial untuk jadwal
+        $article->slug = Str::slug($request->title);
+
+        // 3. Logika ganti thumbnail
+        if ($request->hasFile('thumbnail')) {
+            if ($article->thumbnail) {
+                Storage::disk('public')->delete($article->thumbnail);
+            }
+            $path = $request->file('thumbnail')->store('thumbnails', 'public');
+            $article->thumbnail = $path;
+        }
+
+        $article->save();
+
+        return redirect()->route('admin.articles.index')->with('success', 'Artikel berhasil diperbarui!');
+    }
+
+    // Fungsi upload gambar CKEditor tetap sama
     public function uploadEditorImage(Request $request)
     {
         if ($request->hasFile('upload')) {
             try {
                 $file = $request->file('upload');
                 $filename = time() . '_' . $file->getClientOriginalName();
-                
-                // Simpan file
                 $path = $file->storeAs('articles', $filename, 'public');
 
-                // WAJIB: Gunakan format JSON ini agar CKEditor mengenalinya
                 return response()->json([
                     'uploaded' => 1,
                     'fileName' => $filename,
@@ -76,5 +112,4 @@ class ArticleController extends Controller
             }
         }
     }
-    
 }
