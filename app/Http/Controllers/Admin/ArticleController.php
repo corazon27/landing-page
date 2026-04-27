@@ -10,10 +10,23 @@ use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Menggunakan latest() agar artikel terbaru (berdasarkan created_at) muncul di atas
-        $articles = Article::latest()->get();
+        $query = Article::query();
+
+        // Fitur Search Server-side
+        if ($request->has('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                ->orWhere('content', 'like', "%{$search}%");
+            });
+        }
+
+        // Gunakan paginate() bukan get(). 
+        // Ini krusial agar server hanya mengambil 10 baris data saja.
+        $articles = $query->latest()->paginate(10)->withQueryString();
+
         return view('admin.articles.index', compact('articles'));
     }
 
@@ -111,5 +124,19 @@ class ArticleController extends Controller
                 ]);
             }
         }
+    }
+
+    public function destroy($id)
+    {
+        $article = Article::findOrFail($id);
+
+        // Hapus file fisik agar tidak memenuhi hosting
+        if ($article->thumbnail && Storage::disk('public')->exists($article->thumbnail)) {
+            Storage::disk('public')->delete($article->thumbnail);
+        }
+
+        $article->delete();
+
+        return redirect()->route('admin.articles.index')->with('success', 'Artikel berhasil dihapus!');
     }
 }

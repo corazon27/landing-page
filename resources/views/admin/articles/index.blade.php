@@ -24,6 +24,12 @@
 </div>
 @endif
 
+<form action="{{ route('admin.articles.index') }}" method="GET" class="mb-4">
+    <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari artikel..."
+        class="border px-4 py-2 rounded-lg">
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Cari</button>
+</form>
+
 <div class="bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden">
     <table class="w-full text-left border-collapse">
         <thead class="bg-slate-50 border-b border-slate-200">
@@ -64,14 +70,22 @@
                 <td class="px-6 py-4 text-center text-slate-500 text-sm">
                     <i class="fas fa-eye mr-1 opacity-50"></i> {{ number_format($article->views) }}
                 </td>
-                <td class="px-6 py-4 text-right space-x-1">
+                <td class="px-6 py-4 text-right flex justify-end gap-2">
+                    {{-- Tombol Edit --}}
                     <a href="{{ route('admin.articles.edit', $article->id) }}"
-                        class="inline-block text-blue-600 hover:bg-blue-50 p-2.5 rounded-xl transition">
+                        class="text-blue-600 hover:bg-blue-50 p-2.5 rounded-xl transition">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <button class="text-red-600 hover:bg-red-50 p-2.5 rounded-xl transition">
-                        <i class="fas fa-trash"></i>
-                    </button>
+
+                    {{-- Tombol Delete --}}
+                    <form action="{{ route('admin.articles.destroy', $article->id) }}" method="POST"
+                        onsubmit="return confirm('Yakin ingin menghapus artikel ini?')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-red-600 hover:bg-red-50 p-2.5 rounded-xl transition">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
                 </td>
             </tr>
             @empty
@@ -85,5 +99,8 @@
             @endforelse
         </tbody>
     </table>
+    <div class="mt-4">
+        {{ $articles->links() }}
+    </div>
 </div>
 @endsection

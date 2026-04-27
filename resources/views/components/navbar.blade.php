@@ -100,8 +100,8 @@
                         Jawab</a></li>
 
                 <li>
-                    <a href="{{ route('artikel.index') }}"
-                        class="{{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">
+                    <a href="{{ route('front.artikel.index') }}"
+                        class="{{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-slate-600 font-medium' }} hover:text-blue-600 transition">
                         Artikel
                     </a>
                 </li>
@@ -144,8 +144,8 @@
                     <a href="/layanan/web-fnb" class="text-slate-500 text-sm">Web F&B</a>
                 </div>
             </div>
-            <a href="{{ route('artikel.index') }}"
-                class="{{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-slate-600 font-medium' }}">
+            <a href="{{ route('front.artikel.index') }}"
+                class="{{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-slate-600 font-medium' }} hover:text-blue-600 transition">
                 Artikel
             </a>
         </div>

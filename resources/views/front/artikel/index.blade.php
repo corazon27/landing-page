@@ -1,87 +1,262 @@
 <x-layout.app>
-    {{-- Hero Section Artikel --}}
-    <section class="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl" data-aos="fade-up">
-                <span
-                    class="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-bold tracking-wider uppercase">
-                    Wawasan & Berita
-                </span>
-                <h1 class="text-5xl md:text-6xl font-black text-slate-900 mt-6 leading-tight">
-                    Update Terbaru dari <span class="text-blue-600">Cakra Blog</span>
-                </h1>
-                <p class="text-lg text-slate-600 mt-6 leading-relaxed">
-                    Temukan tips bisnis, tutorial web development, dan berita terbaru seputar teknologi untuk
-                    mengakselerasi bisnis UMKM Anda.
-                </p>
+
+    <section class="pt-18 pb-20 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
+
+        <div class="bg-slate-50 border-b border-slate-100 py-12 mb-12">
+
+            <div class="max-w-7xl mx-auto px-4 text-center">
+
+                <h1 class="text-4xl font-extrabold text-slate-800 mb-4">Blog & Edukasi</h1>
+
+                <p class="text-slate-500 max-w-2xl mx-auto">Temukan tips bisnis, tutorial web, dan berita terbaru
+                    seputar
+
+                    dunia digital untuk membantu UMKM Anda naik kelas.</p>
+
             </div>
+
         </div>
     </section>
 
-    {{-- Daftar Artikel Grid --}}
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            @if($articles->count() > 0)
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                @foreach($articles as $article)
-                <article
-                    class="group bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-100 transition-all duration-500 overflow-hidden flex flex-col"
-                    data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
-                    {{-- Thumbnail --}}
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="{{ $article->title }}"
-                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl text-xs font-bold text-slate-800 shadow-sm">
-                                {{ $article->published_at->format('d M Y') }}
-                            </span>
+
+    <div class="max-w-7xl mx-auto px-4 pb-20">
+
+        <div class="flex flex-col lg:flex-row gap-12">
+
+
+
+            <div class="hidden lg:block lg:w-16">
+
+                <div class="sticky top-28 flex flex-col gap-4 items-center">
+
+                    <p class="text-[10px] font-bold text-slate-400 uppercase vertical-text mb-4">Share</p>
+
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white border border-slate-200 text-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition shadow-sm">
+
+                        <i class="fab fa-facebook-f"></i>
+
+                    </a>
+
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white border border-slate-200 text-slate-600 hover:bg-pink-600 hover:text-white hover:border-pink-600 transition shadow-sm">
+
+                        <i class="fab fa-instagram"></i>
+
+                    </a>
+
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white border border-slate-200 text-slate-600 hover:bg-green-500 hover:text-white hover:border-green-500 transition shadow-sm">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="flex-1">
+
+                <div class="flex flex-col gap-10">
+
+                    @forelse($articles as $article)
+
+                    <article class="flex flex-col md:flex-row gap-8 group">
+
+                        <div class="md:w-72 h-52 flex-shrink-0 overflow-hidden rounded-[2rem] shadow-md">
+
+                            <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="{{ $article->title }}"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
                         </div>
+
+
+
+                        <div class="flex flex-col justify-center">
+
+                            <div class="flex items-center gap-3 mb-3">
+
+                                <span
+                                    class="bg-blue-100 text-blue-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Update
+
+                                    Bisnis</span>
+
+                                <span class="text-slate-400 text-xs">
+
+                                    <i class="far fa-calendar-alt mr-1"></i>
+
+                                    {{ $article->published_at->format('d M, Y') }}
+
+                                </span>
+
+                            </div>
+
+
+
+                            <h2 class="text-2xl font-bold text-slate-800 mb-4 group-hover:text-blue-600 transition">
+
+                                <a href="{{ route('front.artikel.show', $article->slug) }}">{{ $article->title }}</a>
+
+                            </h2>
+
+
+
+                            <p class="text-slate-500 leading-relaxed mb-4 line-clamp-2">
+
+                                {{ Str::limit(strip_tags($article->content), 160) }}
+
+                            </p>
+
+
+
+                            <div class="flex items-center gap-4">
+
+                                <div class="flex items-center gap-2">
+
+                                    <div
+                                        class="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center text-[10px]">
+
+                                        <i class="fas fa-user text-slate-400"></i>
+
+                                    </div>
+
+                                    <span class="text-xs font-medium text-slate-600">Admin Cakra</span>
+
+                                </div>
+
+                                <span class="text-xs text-slate-400"><i class="far fa-eye mr-1"></i>
+
+                                    {{ number_format($article->views) }} Baca</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    @empty
+
+                    <div class="text-center py-20 bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200">
+
+                        <p class="text-slate-400">Belum ada artikel yang ditemukan.</p>
+
                     </div>
 
-                    {{-- Konten Card --}}
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Artikel</span>
-                            <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-                            <span class="text-xs text-slate-500"><i class="far fa-eye mr-1"></i> {{ $article->views }}
-                                Views</span>
-                        </div>
+                    @endforelse
 
-                        <h3
-                            class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
-                            <a href="{{ route('artikel.show', $article->slug) }}">
-                                {{ $article->title }}
-                            </a>
-                        </h3>
+                </div>
 
-                        <div class="text-slate-600 text-sm line-clamp-3 mb-6 flex-grow">
-                            {!! Str::limit(strip_tags($article->content), 120) !!}
-                        </div>
 
-                        <div class="pt-6 border-t border-slate-50">
-                            <a href="{{ route('artikel.show', $article->slug) }}"
-                                class="flex items-center gap-2 text-blue-600 font-bold group/btn">
-                                Baca Selengkapnya
-                                <i class="fas fa-arrow-right transition-transform group-hover/btn:translate-x-2"></i>
-                            </a>
-                        </div>
+
+                <div class="mt-16">
+
+                    {{ $articles->links() }}
+
+                </div>
+
+            </div>
+
+
+
+            <div class="lg:w-80 space-y-10">
+
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+
+                    <h3 class="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
+
+                        <span class="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+
+                        Cari Artikel
+
+                    </h3>
+
+                    <form action="{{ route('front.artikel.index') }}" method="GET" class="relative">
+
+                        <input type="text" name="search" value="{{ request('search') }}"
+                            class="w-full bg-slate-50 border-none rounded-2xl py-3 px-5 focus:ring-2 focus:ring-blue-500"
+                            placeholder="Ketik sesuatu...">
+
+                        <button type="submit" class="absolute right-4 top-3.5 text-slate-400">
+
+                            <i class="fas fa-search cursor-pointer group-hover:text-blue-600"></i>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+
+                    <h3 class="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
+
+                        <span class="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+
+                        Terpopuler
+
+                    </h3>
+
+                    <div class="flex flex-col gap-6">
+
+                        @foreach($popularArticles as $pop)
+
+                        <a href="{{ route('front.artikel.show', $pop->slug) }}" class="flex gap-4 group">
+
+                            <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
+
+                                <img src="{{ asset('storage/' . $pop->thumbnail) }}" class="w-full h-full object-cover">
+
+                            </div>
+
+                            <div class="flex flex-col justify-center">
+
+                                <h4
+                                    class="text-sm font-bold text-slate-700 group-hover:text-blue-600 leading-snug line-clamp-2 transition">
+
+                                    {{ $pop->title }}
+
+                                </h4>
+
+                                <span
+                                    class="text-[10px] text-slate-400 mt-1 uppercase">{{ $pop->published_at->format('M d') }}</span>
+
+                            </div>
+
+                        </a>
+
+                        @endforeach
+
                     </div>
-                </article>
-                @endforeach
+
+                </div>
+
             </div>
 
-            {{-- Pagination --}}
-            <div class="mt-20 flex justify-center">
-                {{ $articles->links() }}
-            </div>
-            @else
-            <div class="text-center py-20 bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200">
-                <img src="{{ asset('images/empty-state.png') }}" class="w-48 mx-auto mb-6 opacity-50" alt="Kosong">
-                <h3 class="text-xl font-bold text-slate-800">Belum ada artikel</h3>
-                <p class="text-slate-500 mt-2">Nantikan update menarik dari kami segera!</p>
-            </div>
-            @endif
+
+
         </div>
-    </section>
+
+    </div>
+
+
+
+    {{-- CSS Khusus untuk Teks Vertikal di Sidebar Kiri --}}
+
+    <style>
+    .vertical-text {
+
+        writing-mode: vertical-rl;
+
+        text-orientation: mixed;
+
+        transform: rotate(180deg);
+
+    }
+    </style>
+
 </x-layout.app>

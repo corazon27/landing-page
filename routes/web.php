@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\frontArtikelController;
 
 // rute admin
 use App\Http\Controllers\Admin\LoginController as AdminLogin;
@@ -89,20 +89,22 @@ Route::post('/kendali-pusat', [AdminLogin::class, 'login']);
 Route::middleware(['auth:admin'])->prefix('management-center')->group(function () {
     Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
     
-    // Rute Manajemen Artikel - Gunakan AdminArticle sesuai alias di atas
-    Route::get('/artikel', [AdminArticle::class, 'index'])->name('admin.articles.index');
-    Route::get('/artikel/buat', [AdminArticle::class, 'create'])->name('admin.articles.create');
-    Route::post('/artikel/simpan', [AdminArticle::class, 'store'])->name('admin.articles.store');
+    // Rute Khusus untuk Upload Image CKEditor (karena tidak ada di resource standar)
     Route::post('/artikel/upload', [AdminArticle::class, 'uploadEditorImage'])->name('admin.articles.upload');
-    Route::get('/artikel/{id}/edit', [AdminArticle::class, 'edit'])->name('admin.articles.edit');
-    Route::put('/artikel/{id}/update', [AdminArticle::class, 'update'])->name('admin.articles.update');
+    
+    Route::resource('articles', AdminArticle::class)->names([
+        'index'   => 'admin.articles.index',
+        'create'  => 'admin.articles.create',
+        'store'   => 'admin.articles.store',
+        'edit'    => 'admin.articles.edit',
+        'update'  => 'admin.articles.update',
+        'destroy' => 'admin.articles.destroy',
+    ])->parameters([
+        'articles' => 'id' // Agar tetap menggunakan {id} sesuai controller Anda
+    ]);
 
-    // Rute Logout
     Route::post('/logout', [AdminLogin::class, 'logout'])->name('admin.logout');
 });
 
-// Halaman Daftar Artikel
-Route::get('/artikel', [BlogController::class, 'index'])->name('artikel.index');
-
-// Halaman Detail Artikel
-Route::get('/artikel/{slug}', [BlogController::class, 'show'])->name('artikel.show');
+Route::get('/artikel', [frontArtikelController::class, 'index'])->name('front.artikel.index');
+Route::get('/artikel/{slug}', [frontArtikelController::class, 'show'])->name('front.artikel.show');
