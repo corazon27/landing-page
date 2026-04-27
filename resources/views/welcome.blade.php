@@ -23,7 +23,7 @@
                             class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
                             Tanya-Tanya Dulu (Gratis)
                         </a>
-                        <a href="/layanan"
+                        <a href="#layanan"
                             class="bg-white border-2 border-slate-200 text-slate-600 px-8 py-4 rounded-2xl font-bold hover:bg-slate-50 transition">
                             Lihat Cara Kami Membantu
                         </a>
@@ -48,71 +48,64 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-slate-900 mb-4">Cara Kami Bantu Bisnis Anda Naik Kelas</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                    Gak perlu pusing urusan IT. Kami sediakan solusi simpel yang langsung terasa manfaatnya buat usaha
-                    harian Anda.
+    <section id="layanan" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-10 text-center mb-16" data-aos="fade-up">
+            <span class="text-blue-600 font-bold bg-blue-50 px-4 py-2 rounded-full text-xs uppercase">Solusi Buat
+                Anda</span>
+            <h1 class="text-4xl font-extrabold mt-6 mb-4">Layanan Kami (Gak Pake Ribet)</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto">Kami bantu urus teknologinya, Anda tinggal fokus kembangin
+                usahanya. Semuanya simpel dan transparan.</p>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-10 grid md:grid-cols-3 gap-8">
+            <div class="p-10 rounded-3xl bg-blue-50/50 border border-blue-100 hover:shadow-lg transition group"
+                data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform inline-block">🌐</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Bikin Toko Online & Profil Bisnis</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    Mau bisnis Anda muncul di Google? Kami buatkan website yang cantik, gampang dibuka dari HP, dan
+                    bantu Anda dapetin lebih banyak pelanggan.
                 </p>
+                <ul class="text-xs text-slate-500 space-y-2">
+                    <li class="flex items-center"><span class="text-blue-600 mr-2">✓</span> Gratis Konsultasi</li>
+                    <li class="flex items-center"><span class="text-blue-600 mr-2">✓</span> Sudah Termasuk Nama
+                        Domain</li>
+                </ul>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-10 rounded-3xl bg-emerald-50/50 border border-emerald-100 hover:shadow-lg transition group"
+                data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform inline-block">🛠️</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Aplikasi Khusus Buat Bisnis Anda</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    Punya cara kerja yang unik? Kami buatkan sistem yang mengikuti kemauan Anda, bukan Anda yang
+                    dipaksa ikut sistem yang kaku.
+                </p>
+                <ul class="text-xs text-slate-500 space-y-2">
+                    <li class="flex items-center"><span class="text-emerald-600 mr-2">✓</span> Sesuai Budget UMKM
+                    </li>
+                    <li class="flex items-center"><span class="text-emerald-600 mr-2">✓</span> Ditemenin Sampai Tim
+                        Bisa Pakai</li>
+                </ul>
+            </div>
 
-                <div class="p-10 rounded-[32px] border border-slate-100 bg-blue-50/30 hover:shadow-xl hover:shadow-blue-100 transition duration-300 group"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition duration-300">
-                        <span class="text-3xl">🌐</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Bikin Toko Online & Profil Bisnis</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Bikin bisnis Anda gampang dicari di Google dan terlihat profesional saat dibuka dari HP
-                        pelanggan. Gak perlu ribet atur server sendiri.
-                    </p>
-                    <span
-                        class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100 px-3 py-1 rounded-full">Cocok
-                        buat: UMKM & Jasa</span>
-                </div>
-
-                <div class="p-10 rounded-[32px] border border-slate-100 bg-emerald-50/30 hover:shadow-xl hover:shadow-emerald-100 transition duration-300 group"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition duration-300">
-                        <span class="text-3xl">🛠️</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Aplikasi Khusus Atur Bisnis</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Punya cara kerja unik? Kami buatkan sistem yang bantu urus pesanan atau jadwal tim Anda tanpa
-                        perlu catat di kertas lagi.
-                    </p>
-                    <span
-                        class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">Cocok
-                        buat: Operasional Tim</span>
-                </div>
-
-                <div class="p-10 rounded-[32px] border border-slate-100 bg-orange-50/30 hover:shadow-xl hover:shadow-orange-100 transition duration-300 group"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition duration-300">
-                        <span class="text-3xl">📑</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Kasir Digital (Anti Pusing Stok)</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Catat penjualan dan cek sisa barang secara otomatis. Gak perlu lagi capek rekap manual pakai
-                        buku setiap malam.
-                    </p>
-                    <span
-                        class="text-[10px] font-bold uppercase tracking-wider text-orange-600 bg-orange-100 px-3 py-1 rounded-full">Cocok
-                        buat: Toko & Retail</span>
-                </div>
-
+            <div class="p-10 rounded-3xl bg-orange-50/50 border border-orange-100 hover:shadow-lg transition group"
+                data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform inline-block">📑</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Kasir Digital (Anti Pusing Stok)</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    Capek catat manual? Pakai sistem kasir kami untuk pantau stok barang dan laporan penjualan
+                    harian dari mana saja, kapan saja.
+                </p>
+                <ul class="text-xs text-slate-500 space-y-2">
+                    <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Laporan Otomatis</li>
+                    <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Pantau Lewat HP</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-24 bg-slate-50">
+    <section id="portfolio" class="py-24 bg-white-50">
         <div class="max-w-6xl mx-auto px-10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                 <div class="md:w-2/3" data-aos="fade-right">
