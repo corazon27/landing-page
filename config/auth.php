@@ -64,7 +64,7 @@ return [
         // ... provider lainnya
         'affiliates' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Affiliate::class,
+            'model' => App\Models\AffiliateUser::class,
         ],
     ],
 

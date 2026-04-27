@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Affiliate\RegisterController;
 use App\Http\Controllers\Affiliate\LoginController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +81,27 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::middleware('auth:affiliate')->get('/affiliate/dashboard', function () {
     return "Selamat datang di Dashboard, " . Auth::guard('affiliate')->user()->name;
 });
+
+Route::get('/email/verify', function () {
+    return view('affiliate.verify-email'); 
+})->middleware('auth:affiliate')->name('verification.notice');
+
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect('/affiliate/dashboard')->with('success', 'Email berhasil diverifikasi!');
+})->middleware(['auth:affiliate', 'signed'])->name('verification.verify');
+
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('message', 'Link verifikasi baru telah dikirim!');
+})->middleware(['auth:affiliate', 'throttle:6,1'])->name('verification.send');
+
+Route::middleware(['auth:affiliate', 'verified'])->group(function () {
+    Route::get('/affiliate/dashboard', function () {
+        return view('affiliate.dashboard');
+    });
+});
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

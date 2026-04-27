@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Affiliate;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\AffiliateUser;
 
 class LoginController extends Controller
 {
@@ -33,8 +34,10 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::guard('affiliate')->logout();
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect('/login');
     }
 }

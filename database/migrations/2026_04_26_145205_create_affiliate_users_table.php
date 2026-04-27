@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('affiliates', function (Blueprint $table) {
+        Schema::create('affiliate_users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable(); // Tambahkan ini di sini
             $table->string('whatsapp');
             $table->string('password');
             $table->timestamps();
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('affiliates');
+        Schema::dropIfExists('affiliate_users');
     }
 };
