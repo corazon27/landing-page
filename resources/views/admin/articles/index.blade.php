@@ -15,11 +15,20 @@
     </a>
 </div>
 
+{{-- Alert Success di luar kontainer tabel agar tidak terpotong --}}
+@if(session('success'))
+<div
+    class="bg-emerald-100 border border-emerald-200 text-emerald-700 px-6 py-4 rounded-2xl mb-6 flex items-center gap-3">
+    <i class="fas fa-check-circle"></i>
+    <span class="font-bold">{{ session('success') }}</span>
+</div>
+@endif
+
 <div class="bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden">
-    <table class="w-full text-left">
+    <table class="w-full text-left border-collapse">
         <thead class="bg-slate-50 border-b border-slate-200">
             <tr>
-                <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Judul Artikel</th>
+                <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Artikel</th>
                 <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-center">Status</th>
                 <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-center">Views</th>
                 <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-right">Aksi</th>
@@ -29,8 +38,22 @@
             @forelse($articles as $article)
             <tr class="hover:bg-slate-50 transition">
                 <td class="px-6 py-4">
-                    <p class="font-semibold text-slate-800">{{ $article->title }}</p>
-                    <p class="text-xs text-slate-400">/{{ $article->slug }}</p>
+                    <div class="flex items-center gap-4">
+                        @if($article->thumbnail)
+                        <img src="{{ asset('storage/' . $article->thumbnail) }}"
+                            class="w-14 h-14 object-cover rounded-xl shadow-sm border border-slate-100 flex-shrink-0">
+                        @else
+                        <div
+                            class="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 flex-shrink-0">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        @endif
+
+                        <div>
+                            <p class="font-semibold text-slate-800 line-clamp-1">{{ $article->title }}</p>
+                            <p class="text-xs text-slate-400">/{{ $article->slug }}</p>
+                        </div>
+                    </div>
                 </td>
                 <td class="px-6 py-4 text-center">
                     <span
@@ -39,20 +62,23 @@
                     </span>
                 </td>
                 <td class="px-6 py-4 text-center text-slate-500 text-sm">
-                    <i class="fas fa-eye mr-1"></i> {{ $article->views }}
+                    <i class="fas fa-eye mr-1 opacity-50"></i> {{ number_format($article->views) }}
                 </td>
-                <td class="px-6 py-4 text-right space-x-2">
-                    <button class="text-blue-600 hover:bg-blue-50 p-2 rounded-lg transition"><i
-                            class="fas fa-edit"></i></button>
-                    <button class="text-red-600 hover:bg-red-50 p-2 rounded-lg transition"><i
-                            class="fas fa-trash"></i></button>
+                <td class="px-6 py-4 text-right space-x-1">
+                    <a href="#" class="inline-block text-blue-600 hover:bg-blue-50 p-2.5 rounded-xl transition">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <button class="text-red-600 hover:bg-red-50 p-2.5 rounded-xl transition">
+                        <i class="fas fa-trash"></i>
+                    </button>
                 </td>
             </tr>
             @empty
             <tr>
-                <td colspan="4" class="px-6 py-12 text-center text-slate-400">
-                    <i class="fas fa-newspaper text-4xl mb-3 block opacity-20"></i>
-                    Belum ada artikel. Mulai buat "pancingan" konten sekarang!
+                <td colspan="4" class="px-6 py-16 text-center text-slate-400">
+                    <i class="fas fa-newspaper text-5xl mb-4 block opacity-10"></i>
+                    <p class="font-medium text-slate-500">Belum ada artikel yang dibuat.</p>
+                    <p class="text-sm">Klik tombol "Tulis Artikel Baru" untuk mulai membuat konten.</p>
                 </td>
             </tr>
             @endforelse

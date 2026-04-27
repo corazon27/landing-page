@@ -82,14 +82,19 @@ Route::post('/kendali-pusat', [AdminLogin::class, 'login']);
 
 // routes/web.php
 
+// routes/web.php
+
 Route::middleware(['auth:admin'])->prefix('management-center')->group(function () {
     Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
     
-    // Rute Manajemen Artikel
+    // Rute Manajemen Artikel - Gunakan AdminArticle sesuai alias di atas
     Route::get('/artikel', [AdminArticle::class, 'index'])->name('admin.articles.index');
     Route::get('/artikel/buat', [AdminArticle::class, 'create'])->name('admin.articles.create');
     Route::post('/artikel/simpan', [AdminArticle::class, 'store'])->name('admin.articles.store');
+    
+    // PERBAIKAN DI SINI: Gunakan AdminArticle dan sederhanakan path-nya
+    Route::post('/artikel/upload', [AdminArticle::class, 'uploadEditorImage'])->name('admin.articles.upload');
 
-    // TAMBAHKAN RUTE LOGOUT DI SINI
+    // Rute Logout
     Route::post('/logout', [AdminLogin::class, 'logout'])->name('admin.logout');
 });

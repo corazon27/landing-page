@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('thumbnail')->nullable();
-            $table->longText('content');
+            
+            // UBAH DARI text() MENJADI longText()
+            $table->longText('content'); 
+            
             $table->enum('status', ['draft', 'published'])->default('draft');
             $table->integer('views')->default(0);
             $table->timestamps();
