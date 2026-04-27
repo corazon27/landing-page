@@ -41,6 +41,11 @@ return [
             'driver' => 'session',
             'provider' => 'affiliates',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'users', // Nama provider di sini...
+        ],
     ],
 
     /*
@@ -61,7 +66,10 @@ return [
     */
 
     'providers' => [
-        // ... provider lainnya
+        'users' => [ // ...HARUS SAMA dengan kunci di sini
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
         'affiliates' => [
             'driver' => 'eloquent',
             'model' => App\Models\AffiliateUser::class,

@@ -1,10 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+// rute admin
+use App\Http\Controllers\Admin\LoginController as AdminLogin;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
+use App\Http\Controllers\Admin\ArticleController as AdminArticle;
+
+// rute affiliate
 use App\Http\Controllers\Affiliate\RegisterController;
 use App\Http\Controllers\Affiliate\LoginController;
-use App\Http\Controllers\Affiliate\SettingsController;
 use App\Http\Controllers\Affiliate\DashboardController;
+use App\Http\Controllers\Affiliate\SettingsController;
+
+
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
@@ -26,10 +35,10 @@ Route::get('/tanya-jawab', function () { return view('faq'); })->name('faq');
 
 // --- AFFILIATE AUTH (GUEST ONLY) ---
 Route::middleware('guest:affiliate')->group(function () {
-    Route::get('/register', function () { return view('affiliate.register'); })->name('affiliate.register');
-    Route::post('/register', [RegisterController::class, 'store'])->name('affiliate.register.store');
-    Route::get('/login', function() { return view('affiliate.login'); })->name('login');
-    Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+    Route::get('/affiliate/register', function () { return view('affiliate.register'); })->name('affiliate.register');
+    Route::post('/affiliate/register', [RegisterController::class, 'store'])->name('affiliate.register.store');
+    Route::get('/affiliate/login', function() { return view('affiliate.login'); })->name('affiliate.login');
+    Route::post('/affiliate/login', [LoginController::class, 'login'])->name('affiliate.login.post');
 });
 
 // --- 1. EMAIL VERIFICATION ROUTES ---
@@ -65,4 +74,22 @@ Route::prefix('affiliate')->name('affiliate.')->group(function () {
 
     // Alias logout agar route('affiliate.logout') juga bekerja jika kamu menggunakannya di sidebar
     Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:affiliate')->name('logout');
+});
+
+// Rute Admin (Kendali Pusat)
+Route::get('/kendali-pusat', [AdminLogin::class, 'showLoginForm'])->name('admin.login');
+Route::post('/kendali-pusat', [AdminLogin::class, 'login']);
+
+// routes/web.php
+
+Route::middleware(['auth:admin'])->prefix('management-center')->group(function () {
+    Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
+    
+    // Rute Manajemen Artikel
+    Route::get('/artikel', [AdminArticle::class, 'index'])->name('admin.articles.index');
+    Route::get('/artikel/buat', [AdminArticle::class, 'create'])->name('admin.articles.create');
+    Route::post('/artikel/simpan', [AdminArticle::class, 'store'])->name('admin.articles.store');
+
+    // TAMBAHKAN RUTE LOGOUT DI SINI
+    Route::post('/logout', [AdminLogin::class, 'logout'])->name('admin.logout');
 });

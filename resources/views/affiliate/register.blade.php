@@ -165,7 +165,7 @@
                         </button>
 
                         <p class="text-center text-slate-500 text-sm mt-4">
-                            Sudah punya akun? <a href="/login"
+                            Sudah punya akun? <a href="/affiliate/login"
                                 class="text-blue-600 font-bold hover:underline transition">Log In di sini</a>
                         </p>
                     </form>

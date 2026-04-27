@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo-cakra.png') }}" class="h-16 w-auto">
     <title>Login Affiliate - Cakra Inovasi</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -33,7 +34,7 @@
                         <p class="text-slate-500">Masuk untuk mengelola link affiliate kamu.</p>
                     </div>
 
-                    <form action="{{ route('login.post') }}" method="POST" class="space-y-6">
+                    <form action="{{ route('affiliate.login.post') }}" method="POST" class="space-y-6">
                         @csrf
                         <div>
                             <label class="block text-sm font-bold text-slate-700 mb-2">Email</label>
