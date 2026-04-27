@@ -16,8 +16,13 @@ class AffiliateUser extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'name',
         'email',
-        'whatsapp',
         'password',
+        'whatsapp',
+        'profile_photo',
+        // Tambahkan baris di bawah ini jika belum ada
+        'bank_name',
+        'account_number',
+        'account_holder_name',
     ];
 
     protected $hidden = [

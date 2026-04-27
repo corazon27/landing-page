@@ -56,7 +56,7 @@
                         </div>
 
                         <button type="submit"
-                            class="w-full bg-blue-600 text-white py-5 rounded-2xl font-extrabold text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-200 active:scale-[0.98]">
+                            class="w-full bg-blue-600 text-white py-5 rounded-2xl font-extrabold text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-200 active:scale-[0.98] cursor-pointer group">
                             Masuk Ke Dashboard
                         </button>
 

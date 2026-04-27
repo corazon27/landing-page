@@ -18,7 +18,7 @@
 
                 <li class="relative group flex items-center h-20">
                     <button
-                        class="flex items-center gap-1 {{ request()->is('layanan*') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition font-medium outline-none">
+                        class="flex items-center gap-1 {{ request()->is('layanan*') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition font-medium outline-none cursor-pointer group">
                         Layanan
                         <i
                             class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>

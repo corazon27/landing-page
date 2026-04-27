@@ -159,7 +159,7 @@
                         @endif
 
                         <button type="submit"
-                            class="w-full bg-blue-600 text-white py-5 rounded-2xl font-extrabold text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+                            class="w-full bg-blue-600 text-white py-5 rounded-2xl font-extrabold text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer group"
                             :disabled="password !== confirm_password || password.length < 8">
                             Gabung Sekarang (Gratis)
                         </button>
