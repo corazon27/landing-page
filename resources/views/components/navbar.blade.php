@@ -27,7 +27,7 @@
                     <div
                         class="absolute top-[70px] left-0 w-64 bg-white border border-slate-100 rounded-xl shadow-xl py-2 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
 
-                        <div class="relative group/sub">
+                        <!-- <div class="relative group/sub">
                             <a href="#"
                                 class="flex items-center justify-between px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 uppercase font-bold tracking-wider">
                                 <span>Bisnis</span>
@@ -49,9 +49,9 @@
                                     Website Toko Online / Point of Sale
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="relative group/sub">
+                        <!-- <div class="relative group/sub">
                             <a href="#"
                                 class="flex items-center justify-between px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 uppercase font-bold tracking-wider">
                                 <span>Booking & Reservasi</span>
@@ -69,16 +69,33 @@
                                     Website Rental
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <a href="/layanan/web-rental-mobil"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 uppercase font-bold tracking-wider">
-                            Web Rental Mobil
+                        <a href="/layanan/web-perusahaan"
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
+                            Website Company Profile
                         </a>
-                        <a href="/layanan/web-portal-berita"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 uppercase font-bold tracking-wider">
-                            Web Portal Berita
+
+                        <a href="/layanan/web-katalog-produk"
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
+                            Website Katalog Produk
                         </a>
+
+                        <a href="/layanan/web-toko"
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 last:border-0 uppercase font-bold tracking-wider">
+                            Website Toko Online / Point of Sale
+                        </a>
+
+                        <a href="/layanan/web-rental"
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
+                            Website Rental
+                        </a>
+
+                        <a href="/layanan/web-ecommerce"
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
+                            Website E-commerce
+                        </a>
+
                         <a href="/layanan/web-fnb"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 last:border-0 uppercase font-bold tracking-wider">
                             Web F&B

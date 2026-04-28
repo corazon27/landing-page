@@ -24,10 +24,27 @@
 </div>
 @endif
 
-<form action="{{ route('admin.articles.index') }}" method="GET" class="mb-4">
-    <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari artikel..."
-        class="border px-4 py-2 rounded-lg">
-    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Cari</button>
+<form action="{{ route('admin.articles.index') }}" method="GET" class="mb-6 flex items-center gap-3">
+    <div class="relative flex-1 md:flex-none">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+
+        <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari judul atau isi..."
+            class="w-full md:w-80 pl-11 pr-10 py-3 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none transition shadow-sm">
+
+        {{-- Tombol Reset (X) --}}
+        @if(request('search'))
+        <a href="{{ route('admin.articles.index') }}"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-red-500 transition"
+            title="Bersihkan Pencarian">
+            <i class="fas fa-times-circle text-lg"></i>
+        </a>
+        @endif
+    </div>
+
+    <button type="submit"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-bold shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5">
+        Cari
+    </button>
 </form>
 
 <div class="bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden">

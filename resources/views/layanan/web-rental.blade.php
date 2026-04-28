@@ -414,4 +414,48 @@
             </div>
         </div>
     </section>
+
+    <section class="py-20 bg-blue-600 rounded-t-[3rem] text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Siap Membangun Kantor Digital Anda?</h2>
+            <p class="text-blue-100 mb-10 text-lg">Jadwalkan konsultasi gratis (Minta Meeting) untuk mendiskusikan
+                kebutuhan spesifik bisnis Anda.</p>
+
+            <div class="bg-white p-8 rounded-3xl shadow-2xl text-slate-900 text-left">
+                <form id="meetingForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="col-span-1">
+                        <label class="block text-sm font-bold mb-2">Nama Perusahaan</label>
+                        <input type="text" id="company"
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none"
+                            placeholder="Contoh: PT. Maju Jaya" required>
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block text-sm font-bold mb-2">Nomor WhatsApp PIC</label>
+                        <input type="tel" id="phone"
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none"
+                            placeholder="0812xxxx" required>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-sm font-bold mb-2">Rencana Tanggal Meeting</label>
+                        <input type="date" id="meetingDate"
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none text-slate-500"
+                            required>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-sm font-bold mb-2">Deskripsi Kebutuhan (Opsional)</label>
+                        <textarea id="needs" rows="3"
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none"
+                            placeholder="Ceritakan singkat kebutuhan website Anda..."></textarea>
+                    </div>
+                    <div class="col-span-2">
+                        <button type="submit"
+                            class="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-emerald-200 flex items-center justify-center gap-2 cursor-pointer group">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Kirim Permintaan Meeting
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 </x-layout.app>

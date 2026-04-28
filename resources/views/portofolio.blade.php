@@ -1,5 +1,29 @@
 <x-layout.app>
-    <section class="py-20 bg-white">
+
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-10 text-center">
+
+            {{-- Navigasi Breadcrumbs di atas --}}
+            <nav class="flex justify-center mb-6" aria-label="Breadcrumb" data-aos="fade-down">
+                <ol
+                    class="inline-flex items-center bg-white/80 backdrop-blur-sm px-6 py-2.5 rounded-full border border-slate-200/60 shadow-sm">
+                    <li class="inline-flex items-center">
+                        <a href="/"
+                            class="text-xs font-semibold text-slate-500 hover:text-blue-600 transition flex items-center">
+                            <i class="fas fa-home mr-2.5"></i> Beranda
+                        </a>
+                    </li>
+
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            {{-- Menggunakan mx-4 yang konsisten --}}
+                            <i class="fas fa-chevron-right text-[9px] text-slate-300 mx-4"></i>
+                            <span class="text-xs font-bold text-blue-600 tracking-wide">Portofolio Kami</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
         <div class="max-w-6xl mx-auto px-10 text-center">
             <span class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
                 Bukti Kerja Nyata

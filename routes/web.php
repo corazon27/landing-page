@@ -29,6 +29,7 @@ Route::prefix('layanan')->name('layanan.')->group(function () {
     Route::get('/web-toko', function () { return view('layanan.web-toko'); })->name('toko');
     Route::get('/web-katalog-produk', function () { return view('layanan.web-katalog-produk'); })->name('katalog-produk');
     Route::get('/web-rental', function () { return view('layanan.web-rental'); })->name('rental');
+    Route::get('/web-ecommerce', function () { return view('layanan.web-ecommerce'); })->name('ecommerce');
 });
 
 Route::get('/affiliate', function () { return view('affiliate'); })->name('affiliate');
@@ -107,4 +108,4 @@ Route::middleware(['auth:admin'])->prefix('management-center')->group(function (
 });
 
 Route::get('/artikel', [frontArtikelController::class, 'index'])->name('front.artikel.index');
-Route::get('/artikel/{slug}', [frontArtikelController::class, 'show'])->name('front.artikel.show');
+Route::get('/artikel/{slug}', [frontArtikelController::class, 'show'])->name('front.artikel.detail');

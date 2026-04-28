@@ -3,12 +3,12 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
-                    Pamerkan Produk <span class="text-blue-600">Lebih Berkelas</span> <br class="hidden md:block">
-                    Tanpa Harus Kirim Foto Satu-Satu
+                    Bangun Toko Online <span class="text-blue-600">Profesional</span> <br class="hidden md:block">
+                    Lepas Ketergantungan dari Marketplace
                 </h2>
                 <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                    Ubah cara jualan manual Anda menjadi otomatis. Biarkan katalog digital kami yang bekerja menjelaskan
-                    produk Anda kepada pelanggan 24 jam nonstop.
+                    Ubah bisnis Anda menjadi brand yang kuat dengan sistem otomatis. Kelola pesanan, pembayaran, hingga
+                    pengiriman dalam satu pintu yang bekerja 24 jam nonstop.
                 </p>
             </div>
 
@@ -18,22 +18,23 @@
                     class="md:col-span-2 bg-gradient-to-br from-blue-600 to-blue-800 p-10 rounded-[2.5rem] shadow-xl shadow-blue-200 relative overflow-hidden group">
                     <div
                         class="absolute top-0 right-0 bg-amber-400 text-amber-950 text-[12px] px-4 py-1.5 rounded-bl-2xl font-bold uppercase tracking-wider z-20 shadow-sm">
-                        Solusi Hemat Waktu
+                        Otomatisasi Penuh
                     </div>
                     <div class="relative z-10">
                         <div
                             class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8">
-                            <i class="fa-solid fa-images text-white text-3xl"></i>
+                            <i class="fa-solid fa-credit-card text-white text-3xl"></i>
                         </div>
-                        <h3 class="text-3xl font-extrabold text-white mb-4">Tampilan Produk Mewah & Rapi</h3>
+                        <h3 class="text-3xl font-extrabold text-white mb-4">Pembayaran & Ongkir Otomatis</h3>
                         <p class="text-blue-100 text-lg leading-relaxed max-w-xl">
-                            Semua produk ditampilkan dengan foto jernih dan deskripsi lengkap. Pelanggan bisa melihat
-                            koleksi Anda kapan saja tanpa Anda perlu repot mengirim foto satu-persatu lagi.
+                            Terintegrasi dengan Payment Gateway (QRIS, VA, E-Wallet) dan kurir nasional. Pelanggan
+                            bayar, sistem verifikasi otomatis, dan ongkir terhitung real-time. Tidak ada lagi cek mutasi
+                            manual.
                         </p>
                     </div>
                     <div
                         class="absolute -right-10 -bottom-10 opacity-10 group-hover:scale-110 transition-transform duration-700">
-                        <i class="fa-solid fa-layer-group text-[15rem] text-white"></i>
+                        <i class="fa-solid fa-truck-fast text-[15rem] text-white"></i>
                     </div>
                 </div>
 
@@ -43,26 +44,26 @@
                         class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
                         <i class="fa-brands fa-whatsapp text-blue-600 text-2xl group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Order Langsung ke WhatsApp</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">CRM & WhatsApp Chat</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Setiap produk dilengkapi tombol chat otomatis. Memudahkan pembeli untuk langsung bertanya atau
-                        memesan, sehingga proses transaksi jadi jauh lebih cepat.
+                        Data pelanggan tersimpan rapi untuk remarketing. Integrasi tombol chat memudahkan konsultasi
+                        sebelum beli, meningkatkan konversi hingga 2x lipat.
                     </p>
                 </div>
 
                 <div class="bg-slate-900 p-8 rounded-3xl shadow-xl relative overflow-hidden group">
                     <div class="relative z-10">
                         <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-fire text-white text-2xl"></i>
+                            <i class="fa-solid fa-tags text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Soroti Produk Terlaris</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">Sistem Promo & Voucher</h3>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            Tampilkan produk *Best Seller* atau rekomendasi Anda di halaman utama. Bantu pelanggan
-                            menemukan produk terbaik Anda dan tingkatkan peluang penjualan.
+                            Buat kupon diskon, flash sale, atau bundling produk dengan mudah. Strategi marketing yang
+                            biasanya hanya ada di marketplace, kini ada di web Anda sendiri.
                         </p>
                     </div>
                     <div class="absolute right-4 top-4 text-blue-500/20 text-6xl">
-                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-percent"></i>
                     </div>
                 </div>
 
@@ -70,12 +71,12 @@
                     class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
                     <div
                         class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-solid fa-magnifying-glass text-blue-600 text-2xl group-hover:text-white"></i>
+                        <i class="fa-solid fa-layer-group text-blue-600 text-2xl group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Pencarian & Kategori Mudah</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Katalog Produk Terstruktur</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Produk tersusun rapi berdasarkan kategori. Pelanggan bisa menemukan barang yang mereka cari
-                        hanya dalam hitungan detik tanpa rasa bingung.
+                        Kelola ribuan produk dengan kategori dan variasi (warna, ukuran) yang rapi. Memudahkan pembeli
+                        menemukan produk impian tanpa rasa bingung.
                     </p>
                 </div>
 
@@ -83,25 +84,12 @@
                     class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
                     <div
                         class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-solid fa-file-invoice text-blue-600 text-2xl group-hover:text-white"></i>
+                        <i class="fa-solid fa-chart-line text-blue-600 text-2xl group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Form Permintaan Harga</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Laporan Bisnis Real-Time</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Sediakan cara bagi pelanggan untuk meminta penawaran atau konsultasi. Fitur ini membantu Anda
-                        mendapatkan data calon pembeli (leads) dengan lebih serius.
-                    </p>
-                </div>
-
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-                    <div
-                        class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-solid fa-map-location-dot text-blue-600 text-2xl group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Lokasi & Kontak Jelas</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Tingkatkan kepercayaan dengan alamat kantor dan integrasi peta yang jelas. Pelanggan tidak akan
-                        ragu karena bisnis Anda terverifikasi secara nyata.
+                        Pantau omzet, statistik pengunjung, dan produk terlaris lewat dashboard. Ambil keputusan bisnis
+                        berdasarkan data akurat, bukan asumsi.
                     </p>
                 </div>
 
@@ -111,10 +99,10 @@
                         class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
                         <i class="fa-solid fa-star-half-stroke text-blue-600 text-2xl group-hover:text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Bukti Kepuasan Pembeli</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Review & Rating Produk</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Tampilkan ulasan jujur dan foto asli dari pelanggan sebelumnya. Cara termudah untuk meyakinkan
-                        calon pembeli baru agar tidak ragu bertransaksi di toko Anda.
+                        Tingkatkan kepercayaan (Trust) calon pembeli dengan menampilkan testimoni dan rating asli dari
+                        pelanggan Anda di halaman produk.
                     </p>
                 </div>
 
@@ -122,14 +110,13 @@
                     class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group text-center md:text-left md:flex md:items-center md:gap-6 md:col-span-3">
                     <div
                         class="w-14 h-14 bg-green-100 rounded-full flex-shrink-0 flex items-center justify-center mb-4 md:mb-0 mx-auto md:mx-0">
-                        <i class="fa-solid fa-gauge-high text-green-600 text-2xl"></i>
+                        <i class="fa-solid fa-boxes-stacked text-green-600 text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold text-slate-900">Kelola Produk Sendiri dengan Mudah</h3>
+                        <h3 class="text-xl font-bold text-slate-900">Manajemen Stok & Inventaris Otomatis</h3>
                         <p class="text-slate-600 text-sm mt-1">
-                            Dapatkan Dashboard Admin yang sangat simpel. Anda bisa menambah, mengedit, atau menghapus
-                            produk kapan saja tanpa perlu bantuan tim teknis. Anda memegang kendali penuh atas toko
-                            Anda.
+                            Sistem akan otomatis memperbarui stok setiap kali ada penjualan. Anda juga bisa mengatur
+                            notifikasi "Stok Hampir Habis" agar operasional pengadaan barang tidak pernah terlambat.
                         </p>
                     </div>
                 </div>
@@ -138,14 +125,13 @@
                     class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group text-center md:text-left md:flex md:items-center md:gap-6 md:col-span-3">
                     <div
                         class="w-14 h-14 bg-blue-100 rounded-full flex-shrink-0 flex items-center justify-center mb-4 md:mb-0 mx-auto md:mx-0">
-                        <i class="fa-solid fa-clock-rotate-left text-blue-600 text-2xl"></i>
+                        <i class="fa-solid fa-mobile-screen-button text-blue-600 text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold text-slate-900">Hemat Waktu Anda Hingga 80%</h3>
+                        <h3 class="text-xl font-bold text-slate-900">Optimal di Semua Perangkat (Mobile Friendly)</h3>
                         <p class="text-slate-600 text-sm mt-1">
-                            Biarkan website Anda menjadi asisten pribadi yang bekerja 24 jam. Anda tidak perlu lagi
-                            menjawab pertanyaan yang sama berulang kali atau mengirim foto manual satu-persatu setiap
-                            hari.
+                            Lebih dari 80% pembeli menggunakan HP. Website Anda didesain untuk memberikan pengalaman
+                            belanja yang sangat cepat dan nyaman di smartphone layaknya menggunakan aplikasi native.
                         </p>
                     </div>
                 </div>
@@ -158,10 +144,10 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-                    Pilih Paket <span class="text-blue-600">Katalog Digital</span> Anda
+                    Miliki <span class="text-blue-600">Aset Digital</span> Anda
                 </h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">Tingkatkan kelas bisnis Anda dengan tampilan katalog produk
-                    yang profesional, rapi, dan mudah diakses pelanggan.</p>
+                <p class="text-slate-600 max-w-2xl mx-auto">Investasikan biaya iklan Anda ke toko sendiri. Bangun
+                    database pelanggan yang bisa Anda hubungi kapan saja tanpa potongan admin besar.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
@@ -169,37 +155,37 @@
                 <div
                     class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col hover:shadow-md transition-all group">
                     <div class="mb-8">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Katalog Starter</h3>
-                        <p class="text-slate-500 text-sm mb-6">Cocok untuk UMKM yang ingin mulai merapikan tampilan
-                            produk secara online.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">E-Commerce Basic</h3>
+                        <p class="text-slate-500 text-sm mb-6">Cocok untuk toko baru yang ingin sistem order otomatis.
+                        </p>
                         <div class="flex items-baseline gap-1">
-                            <span class="text-4xl font-extrabold text-slate-900">Rp 999rb</span>
+                            <span class="text-4xl font-extrabold text-slate-900">Rp 2,5jt</span>
                         </div>
-                        <p class="text-xs text-slate-400 mt-2 line-through">Harga Normal: Rp 2jt</p>
+                        <p class="text-xs text-slate-400 mt-2">Biaya Setup Awal</p>
                     </div>
 
                     <ul class="space-y-4 mb-10 flex-grow">
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Kapasitas Hingga 20 Produk</span>
+                            <span>Kapasitas 100 Produk</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Tombol Pesan via WhatsApp</span>
+                            <span>Checkout via WhatsApp</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Desain Responsif (HP/Tablet)</span>
+                            <span>Laporan Penjualan Dasar</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Gratis Hosting & Domain .biz.id</span>
+                            <span>Domain .com & Hosting 1 Thn</span>
                         </li>
                     </ul>
 
                     <a href="#"
                         class="block w-full py-4 px-6 text-center rounded-2xl border-2 border-blue-600 text-blue-600 font-bold hover:bg-blue-50 transition-colors">
-                        Pilih Paket Starter
+                        Pilih Paket Basic
                     </a>
                 </div>
 
@@ -207,82 +193,80 @@
                     class="bg-white p-8 rounded-3xl border-2 border-blue-600 shadow-xl flex flex-col relative transform lg:-translate-y-4">
                     <div
                         class="absolute top-0 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-950 text-[10px] px-4 py-1.5 rounded-b-xl font-bold uppercase tracking-wider shadow-sm">
-                        Investasi Terbaik
+                        Paling Populer
                     </div>
 
                     <div class="mb-8 mt-4">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Katalog Pro Business</h3>
-                        <p class="text-slate-500 text-sm mb-6">Solusi lengkap dengan dashboard admin untuk kelola produk
-                            sendiri.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">E-Commerce Professional</h3>
+                        <p class="text-slate-500 text-sm mb-6">Otomatisasi penuh untuk scale-up bisnis lebih cepat.</p>
                         <div class="flex items-baseline gap-1">
-                            <span class="text-4xl font-extrabold text-slate-900">Rp 1,9jt</span>
+                            <span class="text-4xl font-extrabold text-slate-900">Rp 4,9jt</span>
                         </div>
-                        <p class="text-xs text-slate-400 mt-2 line-through">Harga Normal: Rp 4jt</p>
+                        <p class="text-xs text-slate-400 mt-2">Fitur Terlengkap</p>
                     </div>
 
                     <ul class="space-y-4 mb-10 flex-grow">
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Produk Tidak Terbatas (Unlimited)</span>
+                            <span>Produk Unlimited</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span><strong>Dashboard Admin (Tambah/Edit Sendiri)</strong></span>
+                            <span><strong>Payment Gateway & Ongkir Otomatis</strong></span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Fitur Pencarian & Kategori</span>
+                            <span>Sistem Voucher & Kupon Diskon</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Fitur Produk Best Seller/Unggulan</span>
+                            <span>Manajemen Stok & Database Member</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Domain .com & SSL Keamanan</span>
+                            <span>Analytics & Facebook Pixel Ready</span>
                         </li>
                     </ul>
 
                     <a href="#"
                         class="block w-full py-4 px-6 text-center rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all">
-                        Pesan Paket Pro
+                        Ambil Penawaran Ini
                     </a>
                 </div>
 
                 <div
                     class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col hover:shadow-md transition-all">
                     <div class="mb-8">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Custom Showcase</h3>
-                        <p class="text-slate-500 text-sm mb-6">Desain eksklusif dan fitur khusus sesuai identitas brand
-                            Anda.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise / B2B</h3>
+                        <p class="text-slate-500 text-sm mb-6">Sistem custom untuk kebutuhan bisnis skala besar.</p>
                         <div class="flex items-baseline gap-1">
-                            <span class="text-2xl font-extrabold text-slate-900 italic">Hubungi Kami</span>
+                            <span class="text-2xl font-extrabold text-slate-900 italic">Custom Quote</span>
                         </div>
-                        <p class="text-xs text-slate-400 mt-2 italic">Custom fitur & layout</p>
+                        <p class="text-xs text-slate-400 mt-2">Skalabilitas Tanpa Batas</p>
                     </div>
 
                     <ul class="space-y-4 mb-10 flex-grow">
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Desain Custom (Bukan Template)</span>
+                            <span>Integrasi API Pihak Ketiga</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Fitur Form Penawaran Harga</span>
+                            <span>Fitur Multi-Warehouse (Banyak Gudang)</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Integrasi Google Maps & Galeri Foto</span>
+                            <span>Sistem Reseller / Affiliate</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600">
                             <i class="fa-solid fa-circle-check text-blue-600 mt-1"></i>
-                            <span>Support Maintenance Eksklusif</span>
+                            <span>Dedicated Server & Support</span>
                         </li>
                     </ul>
 
                     <a href="#"
                         class="block w-full py-4 px-6 text-center rounded-2xl border-2 border-slate-900 text-slate-900 font-bold hover:bg-slate-900 hover:text-white transition-all">
-                        Minta Penawaran
+                        Hubungi Tim Ahli
                     </a>
                 </div>
 
@@ -294,10 +278,10 @@
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-                    Pertanyaan Seputar <span class="text-blue-600">Katalog Digital</span>
+                    Tanya Jawab <span class="text-blue-600">E-Commerce</span>
                 </h2>
-                <p class="text-slate-600">Semua yang perlu Anda ketahui tentang proses digitalisasi produk bisnis Anda
-                    bersama kami.</p>
+                <p class="text-slate-600">Informasi teknis untuk membantu Anda memutuskan sistem terbaik bagi bisnis.
+                </p>
             </div>
 
             <div class="space-y-4">
@@ -307,31 +291,15 @@
                     <button @click="selected !== 1 ? selected = 1 : selected = null"
                         class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
                         <span class="font-bold text-slate-900" :class="selected === 1 ? 'text-blue-600' : ''">
-                            Bagaimana tahapan pengerjaan website katalog saya?
+                            Apakah saya harus bayar komisi per transaksi ke Anda?
                         </span>
                         <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
                             :class="selected === 1 ? 'rotate-180' : ''"></i>
                     </button>
                     <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === 1" x-collapse>
-                        Kami bekerja melalui 4 tahap efisien:
-                        <ul class="mt-3 space-y-2">
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-1 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Kirim data produk & foto melalui WhatsApp/Email.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-2 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Proses desain layout katalog & input data awal.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-3 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Review hasil sementara & revisi minor jika diperlukan.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-4 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Go-Live (Penyerahan akses dashboard & video panduan).
-                            </li>
-                        </ul>
+                        <strong>Sama sekali tidak.</strong> Berbeda dengan marketplace, 100% keuntungan adalah milik
+                        Anda. Anda hanya membayar biaya berlangganan domain/hosting tahunan dan biaya administrasi kecil
+                        jika menggunakan payment gateway pihak ketiga (seperti Midtrans/Xendit).
                     </div>
                 </div>
 
@@ -340,17 +308,15 @@
                     <button @click="selected !== 2 ? selected = 2 : selected = null"
                         class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
                         <span class="font-bold text-slate-900" :class="selected === 2 ? 'text-blue-600' : ''">
-                            Apakah saya bisa menambah produk sendiri di kemudian hari?
+                            Bagaimana dengan keamanan data pelanggan saya?
                         </span>
                         <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
                             :class="selected === 2 ? 'rotate-180' : ''"></i>
                     </button>
                     <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 2" x-collapse>
-                        <p class="leading-relaxed">
-                            <strong>Tentu saja!</strong> Khusus untuk paket Pro, kami memberikan akses ke Dashboard
-                            Admin yang intuitif. Anda bisa menambah, mengedit harga, atau menghapus produk kapan pun
-                            melalui HP atau Laptop tanpa perlu bantuan kami lagi.
-                        </p>
+                        Setiap website yang kami bangun dilengkapi dengan sertifikat SSL (Encryption) dan sistem
+                        keamanan database berlapis. Data pelanggan Anda adalah aset berharga Anda, dan kami
+                        memastikannya aman di server yang andal.
                     </div>
                 </div>
 
@@ -359,17 +325,15 @@
                     <button @click="selected !== 3 ? selected = 3 : selected = null"
                         class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
                         <span class="font-bold text-slate-900" :class="selected === 3 ? 'text-blue-600' : ''">
-                            Apakah ada biaya langganan setiap bulannya?
+                            Apakah website sudah otomatis menghitung ongkos kirim?
                         </span>
                         <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
                             :class="selected === 3 ? 'rotate-180' : ''"></i>
                     </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 3" x-collapse>
-                        <p>
-                            Tidak ada biaya bulanan. Harga paket sudah termasuk <strong>Domain & Hosting aktif selama 1
-                                tahun</strong>. Anda hanya perlu melakukan perpanjangan domain & hosting setiap tahun
-                            sekali untuk memastikan website tetap online.
-                        </p>
+                    <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === 3" x-collapse>
+                        <strong>Ya, sudah terintegrasi.</strong> Sistem kami mendukung perhitungan otomatis dari
+                        ekspedisi populer di Indonesia seperti JNE, J&T, Sicepat, hingga POS Indonesia. Pelanggan Anda
+                        cukup memasukkan alamat, dan ongkir akan muncul secara otomatis saat checkout.
                     </div>
                 </div>
 
@@ -378,20 +342,15 @@
                     <button @click="selected !== 4 ? selected = 4 : selected = null"
                         class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
                         <span class="font-bold text-slate-900" :class="selected === 4 ? 'text-blue-600' : ''">
-                            Bagaimana pelanggan memesan produk melalui katalog?
+                            Apakah saya bisa mengelola stok dan produk sendiri?
                         </span>
                         <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
                             :class="selected === 4 ? 'rotate-180' : ''"></i>
                     </button>
                     <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 4" x-collapse>
-                        <div class="p-4 bg-blue-50 rounded-xl flex gap-4">
-                            <i class="fa-brands fa-whatsapp text-2xl text-green-500"></i>
-                            <p class="leading-relaxed text-xs">
-                                Kami menyematkan tombol <strong>"Pesan via WhatsApp"</strong> di setiap detail produk.
-                                Saat diklik, pelanggan akan langsung terhubung ke nomor Anda dengan format pesan
-                                otomatis yang berisi nama produk & link gambar produk tersebut.
-                            </p>
-                        </div>
+                        Tentu saja. Kami menyediakan <strong>Dashboard Admin</strong> yang sangat mudah digunakan
+                        (user-friendly). Anda bisa menambah produk, mengubah harga, mengatur stok, hingga melihat
+                        laporan penjualan tanpa perlu keahlian coding sama sekali.
                     </div>
                 </div>
 
@@ -400,23 +359,50 @@
                     <button @click="selected !== 5 ? selected = 5 : selected = null"
                         class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
                         <span class="font-bold text-slate-900" :class="selected === 5 ? 'text-blue-600' : ''">
-                            Bagaimana jika website saya mengalami kendala teknis?
+                            Metode pembayaran apa saja yang tersedia?
                         </span>
                         <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
                             :class="selected === 5 ? 'rotate-180' : ''"></i>
                     </button>
                     <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 5" x-collapse>
-                        <p class="mb-3 font-medium">Kami memberikan jaminan kenyamanan pasca-pengerjaan:</p>
-                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-blue-600"></i>
-                                Garansi perbaikan Bug.</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-headset text-blue-600"></i>
-                                Konsultasi Gratis via WA.</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-server text-blue-600"></i>
-                                Monitoring Server 24/7.</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-rotate text-blue-600"></i> Backup
-                                data mingguan.</li>
-                        </ul>
+                        Kami mendukung berbagai metode mulai dari <strong>Transfer Bank Manual</strong> hingga
+                        <strong>Otomatis (Payment Gateway)</strong>. Melalui Payment Gateway, toko Anda bisa menerima
+                        pembayaran via QRIS, E-Wallet (GoPay, OVO, Dana), Virtual Account, hingga kartu kredit secara
+                        real-time.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
+                    :class="selected === 6 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
+                    <button @click="selected !== 6 ? selected = 6 : selected = null"
+                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
+                        <span class="font-bold text-slate-900" :class="selected === 6 ? 'text-blue-600' : ''">
+                            Apakah tampilan website bagus jika dibuka di HP?
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
+                            :class="selected === 6 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 6" x-collapse>
+                        <strong>Sangat responsif.</strong> Lebih dari 80% pembeli online menggunakan smartphone, maka
+                        dari itu kami mengutamakan desain <em>mobile-first</em>. Website Anda akan tetap rapi, cepat,
+                        dan mudah diakses dari perangkat apa pun.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
+                    :class="selected === 7 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
+                    <button @click="selected !== 7 ? selected = 7 : selected = null"
+                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
+                        <span class="font-bold text-slate-900" :class="selected === 7 ? 'text-blue-600' : ''">
+                            Apakah website saya akan muncul di Google?
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
+                            :class="selected === 7 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 7" x-collapse>
+                        Kami membangun website dengan struktur yang <strong>SEO-Friendly</strong>. Ini memudahkan mesin
+                        pencari seperti Google untuk mengindeks produk Anda, sehingga memperbesar peluang toko Anda
+                        ditemukan oleh calon pembeli secara organik.
                     </div>
                 </div>
 
@@ -426,7 +412,7 @@
 
     <section class="py-20 bg-blue-600 rounded-t-[3rem] text-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Siap Membangun Katalog Produk Digital Anda?</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Siap Membangun Kantor Digital Anda?</h2>
             <p class="text-blue-100 mb-10 text-lg">Jadwalkan konsultasi gratis (Minta Meeting) untuk mendiskusikan
                 kebutuhan spesifik bisnis Anda.</p>
 
@@ -458,7 +444,7 @@
                     </div>
                     <div class="col-span-2">
                         <button type="submit"
-                            class="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-emerald-200 flex items-center justify-center gap-2">
+                            class="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-emerald-200 flex items-center justify-center gap-2 cursor-pointer group">
                             <i class="fa-brands fa-whatsapp text-xl"></i>
                             Kirim Permintaan Meeting
                         </button>
@@ -467,8 +453,4 @@
             </div>
         </div>
     </section>
-
-
-
-
 </x-layout.app>

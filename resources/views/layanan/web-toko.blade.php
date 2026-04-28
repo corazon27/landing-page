@@ -1,166 +1,304 @@
 <x-layout.app>
-    <section class="py-24 bg-white-50">
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <div class="text-left space-y-6">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold uppercase tracking-wider">
+                        Sistem POS & Inventaris
+                    </span>
+
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Kelola Toko Jadi <span class="text-blue-600">Lebih Ringan</span> &
+                        Otomatis
+                    </h2>
+
+                    <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
+                        Tinggalkan cara manual yang melelahkan. Saatnya punya sistem yang bekerja untuk Anda, memantau
+                        stok
+                        hingga laporan laba secara otomatis 24 jam nonstop.
+                    </p>
+
+                    <div class="pt-4">
+                        <a href="#"
+                            class="inline-block px-8 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition-colors shadow-lg shadow-blue-100">
+                            Coba Gratis 14 Hari
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex items-center justify-center py-20">
+                    <div class="relative">
+                        <div class="absolute -inset-10 bg-blue-100 rounded-full animate-pulse opacity-50"></div>
+                        <i class="fa-solid fa-laptop-code text-[120px] text-blue-600 relative"></i>
+                        <i
+                            class="fa-solid fa-chart-line absolute -top-8 -right-8 text-4xl text-emerald-500 bg-white p-3 rounded-2xl shadow-xl"></i>
+                        <i
+                            class="fa-solid fa-box-open absolute -bottom-8 -left-8 text-4xl text-orange-400 bg-white p-3 rounded-2xl shadow-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
-                    Kelola Toko Jadi <span class="text-blue-600">Lebih Ringan</span> & <br class="hidden md:block">
-                    Otomatis dengan Sistem POS Modern
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                    Kenapa Harus Pindah ke Sistem Digital?
                 </h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                    Tinggalkan cara manual yang melelahkan. Saatnya punya sistem yang bekerja untuk Anda, memantau stok
-                    hingga laporan laba secara otomatis 24 jam nonstop.
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    Lihat perbedaan signifikan antara mengelola toko secara konvensional dibandingkan dengan menggunakan
+                    sistem POS modern.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
 
                 <div
-                    class="md:col-span-2 bg-gradient-to-br from-blue-600 to-blue-800 p-10 rounded-[2.5rem] shadow-xl shadow-blue-200 relative overflow-hidden group">
+                    class="bg-white p-8 rounded-3xl border border-red-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
                     <div
-                        class="absolute top-0 right-0 bg-amber-400 text-amber-950 text-[12px] px-4 py-1.5 rounded-bl-2xl font-bold uppercase tracking-wider z-20 shadow-sm">
-                        Fitur Unggulan
+                        class="absolute -right-4 -top-4 opacity-5 group-hover:rotate-12 transition-transform duration-500">
+                        <i class="fa-solid fa-book text-9xl text-red-600"></i>
                     </div>
+
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-xmark text-red-500 text-xl"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 mb-6">Cara Manual</h3>
+
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-dot text-[8px] mt-2 text-red-300"></i>
+                                <p class="text-slate-600 text-sm"><strong>Catat buku melelahkan:</strong> Menghabiskan
+                                    waktu berjam-jam setiap hari hanya untuk rekapitulasi data.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-dot text-[8px] mt-2 text-red-300"></i>
+                                <p class="text-slate-600 text-sm"><strong>Sering salah hitung:</strong> Risiko kesalahan
+                                    manusia (human error) sangat tinggi dalam perhitungan laba.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-dot text-[8px] mt-2 text-red-300"></i>
+                                <p class="text-slate-600 text-sm"><strong>Stok berantakan:</strong> Sulit memantau
+                                    ketersediaan barang secara akurat di berbagai tempat.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-dot text-[8px] mt-2 text-red-300"></i>
+                                <p class="text-slate-600 text-sm font-medium text-red-500 italic">Perlu banyak waktu dan
+                                    karyawan hanya untuk kelola produk.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-blue-600 p-8 rounded-3xl border border-blue-500 shadow-xl shadow-blue-100 relative overflow-hidden group">
+                    <div
+                        class="absolute -right-4 -top-4 opacity-10 group-hover:rotate-12 transition-transform duration-500">
+                        <i class="fa-solid fa-rocket text-9xl text-white"></i>
+                    </div>
+
                     <div class="relative z-10">
                         <div
-                            class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8">
-                            <i class="fa-solid fa-boxes-stacked text-white text-3xl"></i>
+                            class="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center mb-6 border border-blue-400">
+                            <i class="fa-solid fa-check text-white text-xl"></i>
                         </div>
-                        <h3 class="text-3xl font-extrabold text-white mb-4">Kelola Stok Otomatis</h3>
-                        <p class="text-blue-100 text-lg leading-relaxed max-w-xl">
-                            Kelola produk, harga, dan stok dalam satu dashboard. Tidak perlu lagi catat manual di buku,
-                            stok selalu terupdate otomatis setiap ada penjualan.
-                        </p>
-                    </div>
-                    <div
-                        class="absolute -right-10 -bottom-10 opacity-10 group-hover:scale-110 transition-transform duration-700">
-                        <i class="fa-solid fa-box-open text-[15rem] text-white"></i>
+
+                        <h3 class="text-xl font-bold text-white mb-6">Pakai Sistem Modern</h3>
+
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-blue-200 mt-1 text-sm"></i>
+                                <p class="text-blue-50 text-sm"><strong>Semua tercatat rapi:</strong> Data transaksi
+                                    tersimpan otomatis dan terorganisir dengan sempurna.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-blue-200 mt-1 text-sm"></i>
+                                <p class="text-blue-50 text-sm"><strong>Laporan real-time:</strong> Pantau performa
+                                    penjualan dan profit detik ini juga tanpa menunggu rekap.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-blue-200 mt-1 text-sm"></i>
+                                <p class="text-blue-50 text-sm"><strong>Bisa dipantau dari HP:</strong> Kontrol bisnis
+                                    Anda kapan saja dan dari mana saja secara remote.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-blue-200 mt-1 text-sm"></i>
+                                <p class="text-blue-50 text-sm font-bold">Sinkronisasi stok otomatis di semua channel
+                                    penjualan sekaligus.</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-                    <div
-                        class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-solid fa-cash-register text-blue-600 text-2xl group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Kasir Digital Modern</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Transaksi langsung dari HP, tablet, atau komputer. Proses jual beli jadi lebih cepat dan
-                        profesional layaknya minimarket modern.
-                    </p>
-                </div>
+            </div>
+        </div>
+    </section>
 
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-                    <div
-                        class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-solid fa-credit-card text-blue-600 text-2xl group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Terima Segala Pembayaran</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Mendukung transfer bank, e-wallet (QRIS), hingga bayar di tempat. Berikan kemudahan bagi
-                        pelanggan untuk membayar sesuai keinginan mereka.
-                    </p>
-                </div>
+    <section class="py-24 bg-white-50" x-data="{ activeFeature: 1 }">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">
+                    Solusi Digital <span class="text-blue-600">All-in-One</span>
+                </h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    Tinggalkan cara manual. Kelola toko online dan kasir fisik Anda dalam satu sistem yang otomatis dan
+                    terintegrasi.
+                </p>
+            </div>
 
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-xl relative overflow-hidden group">
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-store text-white text-2xl"></i>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-6 sticky top-24">
+                    <div
+                        class="bg-white p-4 rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
+                        <div class="bg-slate-100 rounded-2xl p-4 aspect-square flex flex-col gap-4">
+                            <div class="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm">
+                                <div class="flex gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                </div>
+                                <div class="h-2 w-24 bg-blue-100 rounded"></div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-6 flex-1 flex flex-col justify-end gap-4">
+                                <div class="flex items-end gap-2 h-32">
+                                    <div class="w-full bg-blue-100 rounded-t-lg" style="height: 40%"></div>
+                                    <div class="w-full bg-blue-200 rounded-t-lg" style="height: 60%"></div>
+                                    <div class="w-full bg-blue-600 rounded-t-lg shadow-lg shadow-blue-100"
+                                        style="height: 90%"></div>
+                                    <div class="w-full bg-blue-300 rounded-t-lg" style="height: 50%"></div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="h-4 w-1/2 bg-slate-100 rounded"></div>
+                                    <div
+                                        class="h-8 w-full bg-blue-50 rounded-lg border border-blue-100 flex items-center px-3">
+                                        <span class="text-[10px] font-bold text-blue-600">TOTAL OMZET: TERPANTAU!</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Toko Online Buka 24 Jam</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Website tetap menerima pesanan meskipun toko fisik Anda tutup. Anda tetap menghasilkan uang
-                            bahkan saat sedang beristirahat.
-                        </p>
-                    </div>
-                    <div class="absolute right-4 top-4 text-blue-500/20 text-6xl">
-                        <i class="fa-solid fa-moon"></i>
+
+                        <div
+                            class="absolute top-12 right-8 bg-green-500 text-white p-3 rounded-xl shadow-lg flex items-center gap-2 animate-bounce">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span class="text-xs font-bold">Stok Sinkron!</span>
+                        </div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-                    <div
-                        class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-solid fa-truck-fast text-blue-600 text-2xl group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Hitung Ongkir Otomatis</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Terintegrasi dengan berbagai ekspedisi. Biaya kirim muncul secara real-time, tidak perlu lagi
-                        cek ongkir manual satu-persatu.
-                    </p>
-                </div>
+                <div class="lg:col-span-6 space-y-3">
 
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-                    <div
-                        class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-solid fa-chart-pie text-blue-600 text-2xl group-hover:text-white"></i>
+                    <div @click="activeFeature = activeFeature === 1 ? null : 1"
+                        class="p-5 rounded-2xl cursor-pointer transition-all duration-300 border"
+                        :class="activeFeature === 1 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
+                        <h4 class="font-bold flex items-center justify-between">
+                            <span class="flex items-center gap-3">
+                                <i class="fa-solid fa-cash-register"
+                                    :class="activeFeature === 1 ? 'text-white' : 'text-blue-600'"></i>
+                                Sistem Kasir (POS) Digital
+                            </span>
+                            <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
+                                :class="activeFeature === 1 ? 'rotate-90' : ''"></i>
+                        </h4>
+                        <div x-show="activeFeature === 1" x-collapse>
+                            <p class="text-sm mt-3 opacity-90 leading-relaxed">
+                                Transaksi langsung dari HP, tablet, atau komputer.
+                                <strong>Manfaat:</strong> Proses jual beli lebih cepat & profesional seperti minimarket
+                                modern.
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Laporan Omzet Real-Time</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Pantau keuntungan dan produk terlaris kapan saja. Anda tahu persis kondisi kesehatan bisnis Anda
-                        tanpa harus menghitung ulang.
-                    </p>
-                </div>
 
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-                    <div
-                        class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-solid fa-ticket text-blue-600 text-2xl group-hover:text-white"></i>
+                    <div @click="activeFeature = activeFeature === 2 ? null : 2"
+                        class="p-5 rounded-2xl cursor-pointer transition-all duration-300 border"
+                        :class="activeFeature === 2 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
+                        <h4 class="font-bold flex items-center justify-between">
+                            <span class="flex items-center gap-3">
+                                <i class="fa-solid fa-boxes-stacked"
+                                    :class="activeFeature === 2 ? 'text-white' : 'text-blue-600'"></i>
+                                Stok Otomatis (Omnichannel)
+                            </span>
+                            <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
+                                :class="activeFeature === 2 ? 'rotate-90' : ''"></i>
+                        </h4>
+                        <div x-show="activeFeature === 2" x-collapse>
+                            <p class="text-sm mt-3 opacity-90 leading-relaxed">
+                                Kelola produk dan stok dalam satu dashboard pusat.
+                                <strong>Manfaat:</strong> Stok terupdate otomatis di web maupun toko fisik secara
+                                bersamaan.
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Fitur Diskon & Voucher</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Buat promo menarik dalam sekejap untuk meningkatkan penjualan. Sangat efektif untuk menarik
-                        pembeli baru dan pelanggan setia.
-                    </p>
-                </div>
 
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-                    <div
-                        class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-brands fa-whatsapp text-blue-600 text-2xl group-hover:text-white"></i>
+                    <div @click="activeFeature = activeFeature === 3 ? null : 3"
+                        class="p-5 rounded-2xl cursor-pointer transition-all duration-300 border"
+                        :class="activeFeature === 3 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
+                        <h4 class="font-bold flex items-center justify-between">
+                            <span class="flex items-center gap-3">
+                                <i class="fa-solid fa-credit-card"
+                                    :class="activeFeature === 3 ? 'text-white' : 'text-blue-600'"></i>
+                                Pembayaran Online & QRIS
+                            </span>
+                            <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
+                                :class="activeFeature === 3 ? 'rotate-90' : ''"></i>
+                        </h4>
+                        <div x-show="activeFeature === 3" x-collapse>
+                            <p class="text-sm mt-3 opacity-90 leading-relaxed">
+                                Terima pembayaran via Transfer, E-Wallet, hingga QRIS.
+                                <strong>Manfaat:</strong> Memudahkan pelanggan membayar dan verifikasi uang masuk
+                                otomatis.
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Notif Order via WhatsApp</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Orderan masuk langsung ke WhatsApp Anda. Closing jadi lebih cepat dan tidak ada pesanan yang
-                        terlewat berkat notifikasi instan.
-                    </p>
-                </div>
 
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group text-center md:text-left md:flex md:items-center md:gap-6 md:col-span-3">
-                    <div
-                        class="w-14 h-14 bg-green-100 rounded-full flex-shrink-0 flex items-center justify-center mb-4 md:mb-0 mx-auto md:mx-0">
-                        <i class="fa-solid fa-gauge-high text-green-600 text-2xl"></i>
+                    <div @click="activeFeature = activeFeature === 4 ? null : 4"
+                        class="p-5 rounded-2xl cursor-pointer transition-all duration-300 border"
+                        :class="activeFeature === 4 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
+                        <h4 class="font-bold flex items-center justify-between">
+                            <span class="flex items-center gap-3">
+                                <i class="fa-solid fa-chart-pie"
+                                    :class="activeFeature === 4 ? 'text-white' : 'text-blue-600'"></i>
+                                Laporan Penjualan Real-Time
+                            </span>
+                            <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
+                                :class="activeFeature === 4 ? 'rotate-90' : ''"></i>
+                        </h4>
+                        <div x-show="activeFeature === 4" x-collapse>
+                            <p class="text-sm mt-3 opacity-90 leading-relaxed">
+                                Pantau omzet dan keuntungan langsung dari HP.
+                                <strong>Manfaat:</strong> Mengetahui kondisi kesehatan bisnis kapan saja tanpa nunggu
+                                laporan manual.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-slate-900">Dashboard Super Simpel untuk Pemula</h3>
-                        <p class="text-slate-600 text-sm mt-1">
-                            Didesain agar mudah digunakan bahkan oleh orang awam sekalipun. Anda bisa mengelola seluruh
-                            operasional toko hanya lewat HP dengan tampilan yang sangat sederhana.
-                        </p>
-                    </div>
-                </div>
 
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group text-center md:text-left md:flex md:items-center md:gap-6 md:col-span-3">
-                    <div
-                        class="w-14 h-14 bg-blue-100 rounded-full flex-shrink-0 flex items-center justify-center mb-4 md:mb-0 mx-auto md:mx-0">
-                        <i class="fa-solid fa-shield-halved text-blue-600 text-2xl"></i>
+                    <div @click="activeFeature = activeFeature === 5 ? null : 5"
+                        class="p-5 rounded-2xl cursor-pointer transition-all duration-300 border"
+                        :class="activeFeature === 5 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
+                        <h4 class="font-bold flex items-center justify-between">
+                            <span class="flex items-center gap-3">
+                                <i class="fa-brands fa-whatsapp"
+                                    :class="activeFeature === 5 ? 'text-white' : 'text-blue-600'"></i>
+                                Integrasi WhatsApp Otomatis
+                            </span>
+                            <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
+                                :class="activeFeature === 5 ? 'rotate-90' : ''"></i>
+                        </h4>
+                        <div x-show="activeFeature === 5" x-collapse>
+                            <p class="text-sm mt-3 opacity-90 leading-relaxed">
+                                Pesanan website langsung masuk ke WhatsApp admin.
+                                <strong>Manfaat:</strong> Closing lebih cepat karena bisa langsung chat pembeli tanpa
+                                pindah aplikasi.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-slate-900">Keamanan Data Cloud: Data Anda Aman 100%</h3>
-                        <p class="text-slate-600 text-sm mt-1">
-                            Berbasis website berarti data Anda tersimpan aman di server profesional. Tidak perlu takut
-                            data hilang jika laptop/tablet kasir di toko rusak atau hilang.
-                        </p>
-                    </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </section>
@@ -297,7 +435,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white" x-data="{ selected: null }">
+    <section class="py-24 bg-white-100" x-data="{ selected: null }">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Pertanyaan Seputar <span
@@ -600,7 +738,7 @@
                     </div>
                     <div class="col-span-2">
                         <button type="submit"
-                            class="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-orange-200 flex items-center justify-center gap-2">
+                            class="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-emerald-200 flex items-center justify-center gap-2 cursor-pointer group">
                             <i class="fa-brands fa-whatsapp text-xl"></i>
                             Kirim Permintaan Meeting
                         </button>

@@ -25,7 +25,8 @@
                     <img src="{{ asset('images/logo-cakra.png') }}" class="h-8 w-auto">
                     <span class="font-bold text-lg tracking-tight">Cakra<span class="text-blue-600">Dash</span></span>
                 </div>
-                <button @click="sidebarOpen = !sidebarOpen" class="text-slate-400 hover:text-blue-600">
+                <button @click="sidebarOpen = !sidebarOpen"
+                    class="text-slate-400 hover:text-blue-600 cursor-pointer group">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>

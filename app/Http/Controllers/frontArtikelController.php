@@ -45,6 +45,6 @@ class frontArtikelController extends Controller
         // Tambahkan view count secara sederhana
         $article->increment('views');
 
-        return view('front.artikel.show', compact('article'));
+        return view('front.artikel.detail', compact('article'));
     }
 }

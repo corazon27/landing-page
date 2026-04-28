@@ -86,7 +86,7 @@
         </div>
 
         <button @click="open = !open"
-            class="w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 active:scale-95"
+            class="w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 active:scale-95 cursor-pointer group"
             :class="open ? 'bg-[#25D366]' : 'bg-[#25D366]'">
 
             <div class="relative w-8 h-8 flex items-center justify-center">
@@ -127,6 +127,15 @@
 
         window.open(`https://wa.me/${myNumber}?text=${message}`, '_blank');
     });
+    </script>
+
+    {{-- Script Sederhana untuk Salin Link --}}
+    <script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Tautan berhasil disalin!');
+        });
+    }
     </script>
 </body>
 
