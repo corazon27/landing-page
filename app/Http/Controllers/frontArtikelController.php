@@ -10,10 +10,8 @@ class frontArtikelController extends Controller
 {
     public function index(Request $request)
     {
-        // Mulai query dengan filter status wajib
-        $query = Article::where('status', 'published');
-
-        // Logika Pencarian yang aman (Wrapped in a function)
+        $query = Article::where('status', 'published')
+                        ->where('published_at', '<=', now());
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function ($q) use ($search) {
@@ -22,16 +20,18 @@ class frontArtikelController extends Controller
             });
         }
 
-        // Ambil data
-        $articles = $query->latest()->paginate(6)->withQueryString();
+        $articles = $query->latest('published_at')->paginate(6)->withQueryString();
+        
         
         $popularArticles = Article::where('status', 'published')
+                            ->where('published_at', '<=', now())
                             ->orderBy('views', 'desc')
                             ->take(5)
                             ->get();
                             
         $latestArticles = Article::where('status', 'published')
-                            ->latest()
+                            ->where('published_at', '<=', now())
+                            ->latest('published_at')
                             ->take(5)
                             ->get();
 

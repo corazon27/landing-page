@@ -38,26 +38,29 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|max:255',
+            'title' => 'required|max:255|unique:articles,title',
             'content' => 'required',
             'status' => 'required|in:draft,published',
-            'published_at' => 'required|date', 
+            'published_at' => 'required|date',
             'thumbnail' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $thumbnailPath = null;
-        if ($request->hasFile('thumbnail')) {
-            $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
-        }
+        $thumbnailPath = $request->hasFile('thumbnail') 
+            ? $request->file('thumbnail')->store('thumbnails', 'public') 
+            : null;
+
+        $slug = Str::slug($request->title);
+        $count = Article::where('slug', 'LIKE', "{$slug}%")->count();
+        $finalSlug = $count ? "{$slug}-" . ($count + 1) : $slug;
 
         Article::create([
             'title' => $request->title,
-            'slug' => Str::slug($request->title),
+            'slug' => $finalSlug,
             'content' => $request->content,
             'thumbnail' => $thumbnailPath,
             'status' => $request->status,
-            'published_at' => $request->published_at, 
             'views' => 0,
+            'published_at' => $request->published_at ?? now(),
         ]);
 
         return redirect()->route('admin.articles.index')->with('success', 'Artikel berhasil diterbitkan!');
@@ -73,27 +76,43 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
 
-        // 1. Validasi Input (Tambahkan published_at)
+        // 1. Validasi Input
+        // 'unique:articles,title,' . $id berguna agar Laravel mengizinkan judul yang sama 
+        // HANYA jika itu milik artikel ini sendiri (saat tidak ganti judul).
         $request->validate([
-            'title' => 'required|max:255',
+            'title' => 'required|max:255|unique:articles,title,' . $id,
             'status' => 'required|in:draft,published',
-            'published_at' => 'required|date', // Tambahkan ini
+            'published_at' => 'required|date',
             'content' => 'required',
             'thumbnail' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        // 2. Update data teks & status
+        // 2. Logika Update Slug (Hanya jika judul berubah)
+        if ($article->title !== $request->title) {
+            $slug = Str::slug($request->title);
+            
+            // Cari apakah ada slug serupa milik ARTIKEL LAIN
+            $count = Article::where('slug', 'LIKE', "{$slug}%")
+                            ->where('id', '!=', $id)
+                            ->count();
+            
+            $article->slug = $count ? "{$slug}-" . ($count + 1) : $slug;
+        }
+
+        // 3. Update Data Teks
         $article->title = $request->title;
         $article->content = $request->content;
         $article->status = $request->status;
-        $article->published_at = $request->published_at; // Baris krusial untuk jadwal
-        $article->slug = Str::slug($request->title);
+        $article->published_at = $request->published_at;
 
-        // 3. Logika ganti thumbnail
+        // 4. Logika Ganti Thumbnail
         if ($request->hasFile('thumbnail')) {
-            if ($article->thumbnail) {
+            // Hapus thumbnail lama dari folder storage agar tidak menumpuk sampah
+            if ($article->thumbnail && Storage::disk('public')->exists($article->thumbnail)) {
                 Storage::disk('public')->delete($article->thumbnail);
             }
+            
+            // Simpan thumbnail baru
             $path = $request->file('thumbnail')->store('thumbnails', 'public');
             $article->thumbnail = $path;
         }
