@@ -71,6 +71,11 @@
                             </div>
                         </div> -->
 
+                        <a href="/layanan/web-ecommerce"
+                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
+                            Website E-commerce
+                        </a>
+
                         <a href="/layanan/web-perusahaan"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
                             Website Company Profile
@@ -89,11 +94,6 @@
                         <a href="/layanan/web-rental"
                             class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
                             Website Rental
-                        </a>
-
-                        <a href="/layanan/web-ecommerce"
-                            class="block px-4 py-3 text-xs text-slate-600 hover:bg-blue-50 hover:text-blue-600 border-b border-slate-50 last:border-0 uppercase font-bold tracking-wider">
-                            Website E-commerce
                         </a>
 
                         <a href="/layanan/web-fnb"
@@ -124,7 +124,7 @@
                 </li>
             </ul>
 
-            <a href="https://wa.me/6282242453204" target="_blank"
+            <a href="/hubungi-kami"
                 class="bg-[#1a202c] text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition ml-4">
                 Hubungi Kami
             </a>

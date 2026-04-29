@@ -1,6 +1,29 @@
 <x-layout.app>
-    <section class="py-24 bg-white">
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-6xl mx-auto px-10 text-center">
+
+                {{-- Navigasi Breadcrumbs di atas --}}
+                <nav class="flex justify-center mb-6" aria-label="Breadcrumb" data-aos="fade-down">
+                    <ol
+                        class="inline-flex items-center bg-white/80 backdrop-blur-sm px-6 py-2.5 rounded-full border border-slate-200/60 shadow-sm">
+                        <li class="inline-flex items-center">
+                            <a href="/"
+                                class="text-xs font-semibold text-slate-500 hover:text-blue-600 transition flex items-center">
+                                <i class="fas fa-home mr-2.5"></i> Beranda
+                            </a>
+                        </li>
+
+                        <li aria-current="page">
+                            <div class="flex items-center">
+                                {{-- Menggunakan mx-4 yang konsisten --}}
+                                <i class="fas fa-chevron-right text-[9px] text-slate-300 mx-4"></i>
+                                <span class="text-xs font-bold text-blue-600 tracking-wide">Toko</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                 <div class="text-left space-y-6">
@@ -23,19 +46,54 @@
                     <div class="pt-4">
                         <a href="#"
                             class="inline-block px-8 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition-colors shadow-lg shadow-blue-100">
-                            Coba Gratis 14 Hari
+                            Coba Gratis 3 Hari
                         </a>
                     </div>
                 </div>
 
-                <div class="relative z-10 flex items-center justify-center py-20">
+                <div class="relative z-10 flex items-center justify-center py-32 overflow-visible">
                     <div class="relative">
-                        <div class="absolute -inset-10 bg-blue-100 rounded-full animate-pulse opacity-50"></div>
-                        <i class="fa-solid fa-laptop-code text-[120px] text-blue-600 relative"></i>
-                        <i
-                            class="fa-solid fa-chart-line absolute -top-8 -right-8 text-4xl text-emerald-500 bg-white p-3 rounded-2xl shadow-xl"></i>
-                        <i
-                            class="fa-solid fa-box-open absolute -bottom-8 -left-8 text-4xl text-orange-400 bg-white p-3 rounded-2xl shadow-xl"></i>
+                        <div
+                            class="absolute -inset-20 bg-gradient-to-tr from-blue-100 to-indigo-50 rounded-full blur-3xl opacity-60 animate-pulse">
+                        </div>
+                        <div
+                            class="absolute -inset-10 border-2 border-dashed border-blue-100 rounded-full animate-[spin_20s_linear_infinite] opacity-50">
+                        </div>
+
+                        <div class="relative group">
+                            <div
+                                class="absolute inset-0 bg-blue-600 blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                            </div>
+                            <i
+                                class="fa-solid fa-laptop-code text-[140px] bg-gradient-to-br from-blue-600 to-indigo-700 bg-clip-text text-transparent relative drop-shadow-2xl"></i>
+                        </div>
+
+                        <div class="absolute -top-12 -right-12 animate-[bounce_4s_ease-in-out_infinite]">
+                            <div
+                                class="bg-white/80 backdrop-blur-md border border-white p-4 rounded-3xl shadow-[0_20px_50px_rgba(16,185,129,0.2)] group hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-chart-line text-4xl text-emerald-500"></i>
+                                <span class="absolute -top-2 -right-2 flex h-4 w-4">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span
+                                        class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-10 -left-12 animate-[bounce_5s_ease-in-out_infinite_1s]">
+                            <div
+                                class="bg-white/80 backdrop-blur-md border border-white p-4 rounded-3xl shadow-[0_20px_50px_rgba(249,115,22,0.2)] group hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-box-open text-4xl text-orange-500"></i>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute top-1/2 -right-20 animate-[bounce_6s_ease-in-out_infinite_0.5s] hidden md:block">
+                            <div class="bg-white/80 backdrop-blur-md border border-white p-3 rounded-2xl shadow-xl">
+                                <i class="fa-solid fa-shield-halved text-2xl text-blue-400"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

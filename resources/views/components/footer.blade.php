@@ -15,6 +15,7 @@
                     <li><a href="/layanan" class="hover:text-white transition">Layanan</a></li>
                     <li><a href="/portofolio" class="hover:text-white transition">Portofolio</a></li>
                     <li><a href="/tanya-jawab" class="hover:text-white transition">Tanya Jawab</a></li>
+                    <li><a href="/hubungi-kami" class="hover:text-white transition">Hubungi Kami</a></li>
                 </ul>
             </div>
 

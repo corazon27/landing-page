@@ -12,6 +12,20 @@
     <link rel="icon" type="image/png" href="{{ asset('images/logo-cakra.png') }}" class="h-16 w-auto">
 
     @vite('resources/css/app.css')
+    <style>
+    /* Tambahan custom animation jika Tailwind belum dikonfigurasi untuk bounce halus */
+    @keyframes bounce-slow {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+    </style>
 </head>
 
 <body class="bg-white text-slate-900 antialiased">

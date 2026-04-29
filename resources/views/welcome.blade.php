@@ -290,6 +290,219 @@
         </div>
     </section>
 
+    <section class="py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span
+                    class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Modern & Stabil
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-6 mb-4 text-slate-900">
+                    Teknologi Terkini Untuk Bisnis Anda
+                </h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">
+                    Kami menggunakan kombinasi teknologi terbaik untuk memastikan sistem Anda cepat, aman, dan mudah
+                    dikembangkan di masa depan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8" data-aos="fade-up"
+                data-aos-delay="200">
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="Laravel">
+                    <span
+                        class="text-xs font-bold text-slate-400 group-hover:text-red-600 transition-colors">LARAVEL</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="Tailwind">
+                    <span
+                        class="text-xs font-bold text-slate-400 group-hover:text-cyan-500 transition-colors">TAILWIND</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="Laravel">
+                    <span
+                        class="text-xs font-bold text-slate-400 group-hover:text-red-600 transition-colors">LARAVEL</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="CodeIgniter">
+                    <span
+                        class="text-xs font-bold text-slate-400 group-hover:text-orange-600 transition-colors">CODEIGNITER</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="React">
+                    <span class="text-xs font-bold text-slate-400 group-hover:text-cyan-400 transition-colors">REACT
+                        JS</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="NodeJS">
+                    <span class="text-xs font-bold text-slate-400 group-hover:text-green-600 transition-colors">NODE
+                        JS</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="MySQL">
+                    <span
+                        class="text-xs font-bold text-slate-400 group-hover:text-blue-600 transition-colors">MYSQL</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="Tailwind">
+                    <span
+                        class="text-xs font-bold text-slate-400 group-hover:text-cyan-500 transition-colors">TAILWIND</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="MySQL">
+                    <span
+                        class="text-xs font-bold text-slate-400 group-hover:text-blue-600 transition-colors">MYSQL</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="JS">
+                    <span class="text-xs font-bold text-slate-400 group-hover:text-yellow-500 transition-colors">JS
+                        MODERN</span>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-[32px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                        class="w-12 h-12 mb-4 grayscale group-hover:grayscale-0 transition-all" alt="PHP">
+                    <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition-colors">PHP
+                        8+</span>
+                </div>
+            </div>
+
+            <div class="mt-16 p-8 bg-blue-600 rounded-[32px] text-white flex flex-col md:flex-row items-center justify-between gap-6"
+                data-aos="zoom-in">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">🚀</div>
+                    <div>
+                        <h4 class="font-bold">Selalu Up-to-Date</h4>
+                        <p class="text-blue-100 text-sm">Kami menjamin sistem Anda menggunakan versi teknologi terbaru.
+                        </p>
+                    </div>
+                </div>
+                <a href="#portfolio"
+                    class="bg-white text-blue-600 px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-50 transition">
+                    Lihat Hasil Kerja Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white-50">
+        <div class="max-w-4xl mx-auto px-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-slate-900">Pertanyaan Yang Sering Ditanyakan</h2>
+                <p class="text-slate-500 mt-2">Masih ragu? Tenang, ini beberapa jawaban buat pertanyaan yang sering
+                    mampir.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden" data-aos="fade-up">
+                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-bold text-slate-900">Bagaimana tahapan pengerjaan website di Cakra Inovasi
+                            Digital?</span>
+                        <span class="text-blue-600 text-xl">+</span>
+                    </button>
+                    <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                        Tahapan kami mulai dari konsultasi kebutuhan, perencanaan desain (UI/UX), proses development
+                        (coding), testing untuk memastikan tidak ada bug, hingga serah terima dan pelatihan penggunaan
+                        admin panel.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-bold text-slate-900">Apa saja yang saya dapatkan?</span>
+                        <span class="text-blue-600 text-xl">+</span>
+                    </button>
+                    <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                        Anda akan mendapatkan website yang responsif (bagus di HP & Laptop), domain (.com/.id), hosting
+                        berkualitas, email profesional, integrasi WhatsApp, hingga halaman admin (CMS) untuk update
+                        konten sendiri.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-bold text-slate-900">Proses pembayarannya bagaimana?</span>
+                        <span class="text-blue-600 text-xl">+</span>
+                    </button>
+                    <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                        Sangat fleksibel! Biasanya dimulai dengan DP (Down Payment) sebesar 50% sebagai tanda jadi, dan
+                        pelunasan dilakukan setelah website selesai diproduksi dan siap dipublikasikan.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-bold text-slate-900">Layanan after sales yang didapatkan apa saja?</span>
+                        <span class="text-blue-600 text-xl">+</span>
+                    </button>
+                    <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                        Kami memberikan garansi perbaikan jika ada error, bantuan konsultasi teknis, serta panduan cara
+                        mengelola website Anda agar tetap optimal. Kami tidak akan lepas tangan setelah proyek selesai.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-bold text-slate-900">Berapa kali revisi yang bisa dilakukan oleh Klien?</span>
+                        <span class="text-blue-600 text-xl">+</span>
+                    </button>
+                    <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                        Kami memberikan kesempatan revisi hingga 3 kali pada tahap desain dan pengembangan untuk
+                        memastikan hasil akhir benar-benar sesuai dengan visi bisnis Anda.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="500">
+                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-bold text-slate-900">Apakah bisa update konten sendiri setelah website
+                            jadi?</span>
+                        <span class="text-blue-600 text-xl">+</span>
+                    </button>
+                    <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed">
+                        Tentu saja! Kami akan menyediakan Dashboard Admin yang user-friendly (mudah digunakan bahkan
+                        untuk orang awam), sehingga Anda bisa menambah berita, galeri, atau mengubah harga layanan kapan
+                        saja.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-6">
             <div data-aos="zoom-in" data-aos-duration="1000"

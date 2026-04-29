@@ -177,10 +177,50 @@ document.addEventListener('DOMContentLoaded', function() {
             ckfinder: {
                 uploadUrl: "{{ route('admin.articles.upload', ['_token' => csrf_token()]) }}"
             },
+            // Tambahkan konfigurasi image di bawah ini
+            image: {
+                toolbar: [
+                    'imageStyle:inline',
+                    'imageStyle:block',
+                    'imageStyle:side',
+                    '|',
+                    'toggleImageCaption',
+                    'imageTextAlternative'
+                ],
+                // Ini adalah kunci agar handle resize muncul
+                resizeUnit: '%',
+                resizeOptions: [{
+                        name: 'resizeImage:original',
+                        value: null,
+                        label: 'Original'
+                    },
+                    {
+                        name: 'resizeImage:25',
+                        value: '25',
+                        label: '25%'
+                    },
+                    {
+                        name: 'resizeImage:50',
+                        value: '50',
+                        label: '50%'
+                    },
+                    {
+                        name: 'resizeImage:75',
+                        value: '75',
+                        label: '75%'
+                    }
+                ]
+            },
             toolbar: [
                 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList',
                 'blockQuote', 'insertTable', 'imageUpload', 'undo', 'redo'
             ]
+        })
+        .then(editor => {
+            console.log('Editor was initialized');
+        })
+        .catch(error => {
+            console.error(error);
         });
 });
 </script>

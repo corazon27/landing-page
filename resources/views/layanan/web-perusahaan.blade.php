@@ -1,6 +1,29 @@
 <x-layout.app>
-    <section class="py-24 bg-white">
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-6xl mx-auto px-10 text-center">
+
+                {{-- Navigasi Breadcrumbs di atas --}}
+                <nav class="flex justify-center mb-6" aria-label="Breadcrumb" data-aos="fade-down">
+                    <ol
+                        class="inline-flex items-center bg-white/80 backdrop-blur-sm px-6 py-2.5 rounded-full border border-slate-200/60 shadow-sm">
+                        <li class="inline-flex items-center">
+                            <a href="/"
+                                class="text-xs font-semibold text-slate-500 hover:text-blue-600 transition flex items-center">
+                                <i class="fas fa-home mr-2.5"></i> Beranda
+                            </a>
+                        </li>
+
+                        <li aria-current="page">
+                            <div class="flex items-center">
+                                {{-- Menggunakan mx-4 yang konsisten --}}
+                                <i class="fas fa-chevron-right text-[9px] text-slate-300 mx-4"></i>
+                                <span class="text-xs font-bold text-blue-600 tracking-wide">Company Profile</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 <div class="text-left space-y-8">
@@ -183,11 +206,11 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-extrabold text-slate-900 mb-4">
-                    Fitur Unggulan <span class="text-blue-600">Website Profesional</span>
+                    Fitur Unggulan <span class="text-blue-600">Website Katalog Digital</span>
                 </h2>
                 <p class="text-slate-600 max-w-2xl mx-auto">
-                    Tinggalkan cara lama yang melelahkan. Bangun kredibilitas bisnis Anda dan datangkan pelanggan baru
-                    secara otomatis 24 jam nonstop.
+                    Tinggalkan cara jualan manual yang melelahkan. Bangun kredibilitas bisnis Anda dan biarkan website
+                    bekerja mendatangkan pembeli secara otomatis.
                 </p>
             </div>
 
@@ -207,36 +230,38 @@
 
                             <div class="bg-white rounded-xl p-6 flex-1 flex flex-col justify-between gap-4">
                                 <div class="space-y-3">
+                                    <div
+                                        class="h-40 w-full bg-slate-50 rounded-xl border border-dashed border-slate-200 flex items-center justify-center">
+                                        <i class="fa-solid fa- image text-slate-200 text-4xl"></i>
+                                    </div>
                                     <div class="h-6 w-3/4 bg-slate-100 rounded"></div>
                                     <div class="h-4 w-full bg-slate-50 rounded"></div>
-                                    <div class="h-4 w-2/3 bg-slate-50 rounded"></div>
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-3">
                                     <div
-                                        class="h-20 bg-blue-50 rounded-lg border border-blue-100 flex flex-col items-center justify-center gap-2">
-                                        <i class="fa-solid fa-users text-blue-600 text-xl"></i>
-                                        <div class="h-1.5 w-12 bg-blue-200 rounded"></div>
+                                        class="h-16 bg-blue-50 rounded-lg border border-blue-100 flex flex-col items-center justify-center gap-1">
+                                        <i class="fa-solid fa-eye text-blue-600 text-lg"></i>
+                                        <div class="h-1 w-10 bg-blue-200 rounded"></div>
                                     </div>
                                     <div
-                                        class="h-20 bg-emerald-50 rounded-lg border border-emerald-100 flex flex-col items-center justify-center gap-2">
-                                        <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i>
-                                        <div class="h-1.5 w-12 bg-emerald-200 rounded"></div>
+                                        class="h-16 bg-emerald-50 rounded-lg border border-emerald-100 flex flex-col items-center justify-center gap-1">
+                                        <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                                        <div class="h-1 w-10 bg-emerald-200 rounded"></div>
                                     </div>
                                 </div>
 
                                 <div class="h-10 w-full bg-blue-600 rounded-lg flex items-center justify-center">
-                                    <span
-                                        class="text-[10px] font-bold text-white tracking-widest uppercase">Kredibilitas
-                                        Meningkat!</span>
+                                    <span class="text-[10px] font-bold text-white tracking-widest uppercase">Order
+                                        Otomatis Aktif!</span>
                                 </div>
                             </div>
                         </div>
 
                         <div
                             class="absolute top-12 right-8 bg-blue-500 text-white p-3 rounded-xl shadow-lg flex items-center gap-2 animate-bounce">
-                            <i class="fa-solid fa-shield-halved"></i>
-                            <span class="text-xs font-bold">Terpercaya 24/7</span>
+                            <i class="fa-solid fa-bolt"></i>
+                            <span class="text-xs font-bold">Respon Cepat</span>
                         </div>
                     </div>
                 </div>
@@ -248,18 +273,18 @@
                         :class="activeFeature === 1 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
                         <h4 class="font-bold flex items-center justify-between">
                             <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-display"
+                                <i class="fa-solid fa-images"
                                     :class="activeFeature === 1 ? 'text-white' : 'text-blue-600'"></i>
-                                Tampilan Profesional & Branding
+                                Tampilan Produk Mewah & Rapi
                             </span>
                             <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
                                 :class="activeFeature === 1 ? 'rotate-90' : ''"></i>
                         </h4>
                         <div x-show="activeFeature === 1" x-collapse>
                             <p class="text-sm mt-3 opacity-90 leading-relaxed">
-                                Desain website modern yang mencerminkan identitas unik bisnis Anda.
-                                <br><strong>Manfaat:</strong> Calon pelanggan langsung percaya dan yakin sejak detik
-                                pertama melihat profil bisnis Anda.
+                                Produk Anda ditampilkan dengan galeri foto jernih dan deskripsi yang tertata rapi.
+                                <br><strong>Manfaat:</strong> Pelanggan bisa melihat koleksi lengkap tanpa Anda harus
+                                repot mengirim foto satu-persatu di chat.
                             </p>
                         </div>
                     </div>
@@ -269,18 +294,18 @@
                         :class="activeFeature === 2 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
                         <h4 class="font-bold flex items-center justify-between">
                             <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-mobile-screen-button"
+                                <i class="fa-brands fa-whatsapp"
                                     :class="activeFeature === 2 ? 'text-white' : 'text-blue-600'"></i>
-                                100% Mobile Friendly
+                                Order Langsung ke WhatsApp
                             </span>
                             <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
                                 :class="activeFeature === 2 ? 'rotate-90' : ''"></i>
                         </h4>
                         <div x-show="activeFeature === 2" x-collapse>
                             <p class="text-sm mt-3 opacity-90 leading-relaxed">
-                                Website tampil sempurna dan mudah dibaca melalui HP, tablet, maupun desktop.
-                                <br><strong>Manfaat:</strong> Pelanggan bisa mengakses informasi bisnis Anda kapan saja
-                                dan di mana saja dengan nyaman.
+                                Setiap produk dilengkapi tombol beli yang langsung terhubung ke WhatsApp bisnis Anda.
+                                <br><strong>Manfaat:</strong> Memudahkan transaksi dan mempercepat proses closing
+                                penjualan hanya dalam satu klik.
                             </p>
                         </div>
                     </div>
@@ -290,18 +315,18 @@
                         :class="activeFeature === 3 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
                         <h4 class="font-bold flex items-center justify-between">
                             <span class="flex items-center gap-3">
-                                <i class="fa-brands fa-whatsapp"
+                                <i class="fa-solid fa-gauge-high"
                                     :class="activeFeature === 3 ? 'text-white' : 'text-blue-600'"></i>
-                                Tombol WhatsApp Instan
+                                Kelola Produk Sendiri (Dashboard)
                             </span>
                             <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
                                 :class="activeFeature === 3 ? 'rotate-90' : ''"></i>
                         </h4>
                         <div x-show="activeFeature === 3" x-collapse>
                             <p class="text-sm mt-3 opacity-90 leading-relaxed">
-                                Pengunjung bisa langsung menghubungi admin melalui WhatsApp hanya dalam satu klik.
-                                <br><strong>Manfaat:</strong> Mempercepat proses tanya-jawab dan meningkatkan peluang
-                                terjadinya closing penjualan.
+                                Akses admin untuk menambah, mengedit, atau menghapus produk dengan sangat mudah.
+                                <br><strong>Manfaat:</strong> Anda memegang kendali penuh atas stok dan harga tanpa
+                                perlu ketergantungan pada tim IT.
                             </p>
                         </div>
                     </div>
@@ -311,19 +336,18 @@
                         :class="activeFeature === 4 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
                         <h4 class="font-bold flex items-center justify-between">
                             <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-magnifying-glass"
+                                <i class="fa-solid fa-map-location-dot"
                                     :class="activeFeature === 4 ? 'text-white' : 'text-blue-600'"></i>
-                                SEO Friendly (Mudah Cari di Google)
+                                Alamat & Kontak Terverifikasi
                             </span>
                             <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
                                 :class="activeFeature === 4 ? 'rotate-90' : ''"></i>
                         </h4>
                         <div x-show="activeFeature === 4" x-collapse>
                             <p class="text-sm mt-3 opacity-90 leading-relaxed">
-                                Optimasi khusus agar website Anda muncul di hasil pencarian Google saat orang mencari
-                                produk/jasa terkait.
-                                <br><strong>Manfaat:</strong> Mendatangkan calon pembeli baru secara otomatis tanpa
-                                harus terus-menerus bayar iklan.
+                                Integrasi Google Maps dan info kontak resmi di halaman website.
+                                <br><strong>Manfaat:</strong> Meningkatkan rasa aman pelanggan karena mengetahui bisnis
+                                Anda memiliki lokasi fisik dan identitas yang nyata.
                             </p>
                         </div>
                     </div>
@@ -333,19 +357,18 @@
                         :class="activeFeature === 5 ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
                         <h4 class="font-bold flex items-center justify-between">
                             <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-images"
+                                <i class="fa-solid fa-star-half-stroke"
                                     :class="activeFeature === 5 ? 'text-white' : 'text-blue-600'"></i>
-                                Portfolio & Testimoni
+                                Bukti Kepuasan (Testimoni)
                             </span>
                             <i class="fa-solid fa-chevron-right text-[10px] transition-transform"
                                 :class="activeFeature === 5 ? 'rotate-90' : ''"></i>
                         </h4>
                         <div x-show="activeFeature === 5" x-collapse>
                             <p class="text-sm mt-3 opacity-90 leading-relaxed">
-                                Halaman khusus untuk memamerkan hasil kerja proyek sebelumnya dan ulasan kepuasan
-                                pelanggan.
-                                <br><strong>Manfaat:</strong> Bukti nyata hasil kerja membuat calon pelanggan baru tidak
-                                ragu untuk segera bertransaksi.
+                                Tampilkan ulasan asli dari pelanggan untuk membangun *social proof*.
+                                <br><strong>Manfaat:</strong> Menghilangkan keraguan calon pembeli baru agar mereka
+                                lebih percaya diri bertransaksi di toko Anda.
                             </p>
                         </div>
                     </div>

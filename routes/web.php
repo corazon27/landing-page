@@ -23,6 +23,7 @@ use Illuminate\Http\Request;
 Route::get('/', function () { return view('welcome'); })->name('home');
 Route::get('/tentang', function () { return view('about'); })->name('about');
 Route::get('/layanan', function () { return view('services'); })->name('services');
+Route::get('/hubungi-kami', function () { return view('kontak'); })->name('kontak');
 
 Route::prefix('layanan')->name('layanan.')->group(function () {
     Route::get('/web-perusahaan', function () { return view('layanan.web-perusahaan'); })->name('perusahaan');
