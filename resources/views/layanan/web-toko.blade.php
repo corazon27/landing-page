@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="relative z-10 flex items-center justify-center py-32 overflow-visible">
+                <div class="relative z-10 flex items-center justify-center py-32 overflow-visible animate-bounce-slow">
                     <div class="relative">
                         <div
                             class="absolute -inset-20 bg-gradient-to-tr from-blue-100 to-indigo-50 rounded-full blur-3xl opacity-60 animate-pulse">
@@ -504,259 +504,39 @@
 
             <div class="space-y-4">
 
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 1 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 1 ? selected = 1 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 1 ? 'text-blue-600' : ''">Bagaimana
-                            tahapan pengerjaan proyek di sini?</span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 1 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === 1" x-collapse>
-                        Kami bekerja melalui 5 tahap profesional:
-                        <ul class="mt-3 space-y-2">
-                            <li class="flex items-center gap-2"><i
-                                    class="fa-solid fa-1 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Konsultasi kebutuhan & deal kontrak.</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="fa-solid fa-2 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Pembuatan konsep desain visual.</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="fa-solid fa-3 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Proses
-                                coding sistem (POS/Online Store).</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="fa-solid fa-4 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Testing
-                                sistem & revisi.</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="fa-solid fa-5 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Go-Live
-                                & Pelatihan admin/kasir.</li>
-                        </ul>
-                    </div>
-                </div>
+                <section class="py-24 bg-white-100" x-data="faqSection()">
+                    <div class="max-w-3xl mx-auto px-6">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                                Pertanyaan Seputar <span class="text-blue-600">Jasa Kami</span>
+                            </h2>
+                            <p class="text-slate-600">Semua yang perlu Anda ketahui tentang proses kerja sama dan hasil
+                                akhir proyek Anda.</p>
+                        </div>
 
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 2 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 2 ? selected = 2 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 2 ? 'text-blue-600' : ''">Apa saja
-                            yang saya dapatkan di akhir pengerjaan?</span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 2 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 2" x-collapse>
-                        <p class="mb-3 font-medium">Anda akan menerima paket siap operasional:</p>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i>
-                                <span>Akses penuh Dashboard Admin & Kasir.</span>
-                            </li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i>
-                                <span>Domain (.com/.id) & Cloud Hosting aktif 1 tahun.</span>
-                            </li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i>
-                                <span>Sertifikat keamanan SSL (HTTPS).</span>
-                            </li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i>
-                                <span>Video panduan operasional sistem.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="space-y-4">
+                            <template x-for="faq in faqs" :key="faq.id">
+                                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
+                                    :class="selected === faq.id ? 'border-blue-300 ring-1 ring-blue-100' : ''">
 
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 3 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 3 ? selected = 3 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 3 ? 'text-blue-600' : ''">Bagaimana
-                            sistem pembayarannya?</span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 3 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 3" x-collapse>
-                        <p class="mb-4 text-slate-700">Kami menggunakan sistem <strong>3 Termin</strong> untuk
-                            kenyamanan bersama:</p>
-                        <div class="space-y-4 pl-4 border-l-2 border-slate-100">
-                            <div>
-                                <span class="font-bold block text-slate-900">1. Termin Awal (DP)</span>
-                                <span class="text-xs">Dilakukan saat deal proyek dan penandatanganan kontrak.</span>
-                            </div>
-                            <div>
-                                <span class="font-bold block text-slate-900">2. Termin Progres</span>
-                                <span class="text-xs">Dilakukan setelah desain disetujui dan masuk tahap coding.</span>
-                            </div>
-                            <div>
-                                <span class="font-bold block text-slate-900">3. Termin Pelunasan</span>
-                                <span class="text-xs">Dilakukan setelah website selesai dan siap dipublish.</span>
-                            </div>
+                                    <button @click="selected !== faq.id ? selected = faq.id : selected = null"
+                                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
+                                        <span class="font-bold text-slate-900"
+                                            :class="selected === faq.id ? 'text-blue-600' : ''"
+                                            x-text="faq.question"></span>
+                                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
+                                            :class="selected === faq.id ? 'rotate-180' : ''"></i>
+                                    </button>
+
+                                    <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed"
+                                        x-show="selected === faq.id" x-collapse>
+                                        <div x-html="faq.answer"></div>
+                                    </div>
+                                </div>
+                            </template>
                         </div>
                     </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 4 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 4 ? selected = 4 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 4 ? 'text-blue-600' : ''">Layanan
-                            after sales apa saja yang saya dapatkan?</span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 4 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 4" x-collapse>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <div class="p-3 bg-slate-50 rounded-xl flex gap-3">
-                                <i class="fa-solid fa-shield-check text-blue-600"></i>
-                                <span>Garansi perbaikan bug/error sistem.</span>
-                            </div>
-                            <div class="p-3 bg-slate-50 rounded-xl flex gap-3">
-                                <i class="fa-solid fa-headset text-blue-600"></i>
-                                <span>Konsultasi teknis gratis.</span>
-                            </div>
-                            <div class="p-3 bg-slate-50 rounded-xl flex gap-3">
-                                <i class="fa-solid fa-server text-blue-600"></i>
-                                <span>Pemantauan server & backup rutin.</span>
-                            </div>
-                            <div class="p-3 bg-slate-50 rounded-xl flex gap-3">
-                                <i class="fa-solid fa-circle-play text-blue-600"></i>
-                                <span>Update panduan jika ada fitur baru.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 5 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 5 ? selected = 5 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 5 ? 'text-blue-600' : ''">Berapa
-                            kali revisi yang dapat dilakukan?</span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 5 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 5" x-collapse>
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-palette text-blue-600 mt-1"></i>
-                                <span><strong>Tahap Desain:</strong> Revisi minor sepuasnya hingga konsep visual
-                                    disetujui.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-code text-blue-600 mt-1"></i>
-                                <span><strong>Tahap Coding:</strong> Revisi berlaku untuk kesalahan fungsi atau konten,
-                                    bukan merombak struktur desain yang sudah disepakati di awal.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 6 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 6 ? selected = 6 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 6 ? 'text-blue-600' : ''">
-                            Apakah sistem ini bisa digunakan di HP atau Tablet?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 6 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === 6" x-collapse>
-                        <p><strong>Sangat bisa!</strong> Sistem POS kami berbasis web (Cloud-based) yang responsif,
-                            sehingga:</p>
-                        <ul class="mt-3 space-y-2">
-                            <li class="flex items-center gap-2"><i
-                                    class="fa-solid fa-check text-blue-600 text-[10px]"></i> Bisa diakses via
-                                Android/iOS (HP & Tablet).</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="fa-solid fa-check text-blue-600 text-[10px]"></i> Bisa digunakan di Laptop
-                                atau PC Kasir.</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="fa-solid fa-check text-blue-600 text-[10px]"></i> Mendukung printer thermal
-                                bluetooth maupun USB.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 7 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 7 ? selected = 7 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 7 ? 'text-blue-600' : ''">
-                            Bagaimana sistem pembayaran QRIS di toko saya nantinya?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 7 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 7" x-collapse>
-                        <p class="mb-3">Kami membantu mengintegrasikan sistem dengan **Payment Gateway** resmi.
-                            Kelebihannya:</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-qrcode text-blue-600 mt-1"></i>
-                                <span><strong>QRIS Dinamis:</strong> Kode QR muncul otomatis di layar kasir sesuai
-                                    jumlah belanjaan.</span>
-                            </li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-bell text-blue-600 mt-1"></i>
-                                <span><strong>Notifikasi Real-time:</strong> Begitu pelanggan bayar, status transaksi
-                                    langsung berubah jadi "Lunas".</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 8 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 8 ? selected = 8 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 8 ? 'text-blue-600' : ''">
-                            Apakah data penjualan dan stok saya aman?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 8 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 8" x-collapse>
-                        <p class="mb-4">Keamanan data Anda adalah prioritas utama kami:</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="flex gap-3 p-3 bg-slate-50 rounded-xl">
-                                <i class="fa-solid fa-cloud-shield text-blue-600 mt-1"></i>
-                                <span><strong>Daily Backup:</strong> Data dicadangkan otomatis setiap hari agar tidak
-                                    hilang.</span>
-                            </div>
-                            <div class="flex gap-3 p-3 bg-slate-50 rounded-xl">
-                                <i class="fa-solid fa-lock text-blue-600 mt-1"></i>
-                                <span><strong>Enkripsi SSL:</strong> Jalur komunikasi data toko Anda dilindungi enkripsi
-                                    tingkat tinggi.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 9 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 9 ? selected = 9 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 4 ? 'text-blue-600' : ''">
-                            Bagaimana jika saya atau karyawan kesulitan menggunakannya?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 9 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 9" x-collapse>
-                        <div class="flex flex-col md:flex-row gap-6 items-center">
-                            <div class="flex-grow">
-                                <p class="mb-4 leading-relaxed">
-                                    Kami tidak hanya memberikan aplikasi, tapi juga memastikan Anda bisa memakainya:
-                                </p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-video text-blue-500"></i>
-                                        Video Tutorial penggunaan sistem lengkap.</li>
-                                    <li class="flex items-center gap-2"><i
-                                            class="fa-solid fa-headset text-blue-500"></i> Konsultasi teknis gratis jika
-                                        ada kendala.</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-book text-blue-500"></i>
-                                        Buku panduan (PDF) untuk admin & kasir.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </section>
 
             </div>
         </div>
@@ -806,5 +586,131 @@
         </div>
     </section>
 
+    @push('scripts')
+    <script>
+    const meetingForm = document.getElementById('meetingForm');
+    if (meetingForm) {
+        meetingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const company = document.getElementById('company').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('meetingDate').value;
+            const needs = document.getElementById('needs').value || "Tidak ada deskripsi";
+            const myNumber = "6285865405330";
+
+            const message = `Halo Admin, saya ingin *Minta Meeting*:%0A%0A` +
+                `*Nama Perusahaan:* ${company}%0A` +
+                `*No. WhatsApp PIC:* ${phone}%0A` +
+                `*Rencana Tanggal:* ${date}%0A` +
+                `*Deskripsi Kebutuhan:* ${needs}`;
+
+            window.open(`https://wa.me/${myNumber}?text=${message}`, '_blank');
+        });
+    }
+
+    // Script copy bisa ditaruh sini juga atau di resources/js/app.js
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => alert('Tautan berhasil disalin!'));
+    }
+    </script>
+    @endpush
+
+    @push('scripts')
+    <script>
+    function faqSection() {
+        return {
+            selected: null,
+            faqs: [{
+                    id: 1,
+                    question: "Bagaimana tahapan pengerjaan proyek di sini?",
+                    answer: `Kami bekerja melalui 5 tahap profesional:
+                            <ul class="mt-3 space-y-2">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-1 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Konsultasi kebutuhan & deal kontrak.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-2 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Pembuatan konsep desain visual.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-3 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Proses coding sistem (POS/Online Store).</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-4 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Testing sistem & revisi.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-5 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Go-Live & Pelatihan admin/kasir.</li>
+                            </ul>`
+                },
+                {
+                    id: 2,
+                    question: "Apa saja yang saya dapatkan di akhir pengerjaan?",
+                    answer: `<p class="mb-3 font-medium">Anda akan menerima paket siap operasional:</p>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i> <span>Akses penuh Dashboard Admin & Kasir.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i> <span>Domain (.com/.id) & Cloud Hosting aktif 1 tahun.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i> <span>Sertifikat keamanan SSL (HTTPS).</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i> <span>Video panduan operasional sistem.</span></li>
+                            </ul>`
+                },
+                {
+                    id: 3,
+                    question: "Bagaimana sistem pembayarannya?",
+                    answer: `<p class="mb-4 text-slate-700">Kami menggunakan sistem <strong>3 Termin</strong> untuk kenyamanan bersama:</p>
+                            <div class="space-y-4 pl-4 border-l-2 border-slate-100">
+                                <div><span class="font-bold block text-slate-900">1. Termin Awal (DP)</span><span class="text-xs">Dilakukan saat deal proyek dan penandatanganan kontrak.</span></div>
+                                <div><span class="font-bold block text-slate-900">2. Termin Progres</span><span class="text-xs">Dilakukan setelah desain disetujui dan masuk tahap coding.</span></div>
+                                <div><span class="font-bold block text-slate-900">3. Termin Pelunasan</span><span class="text-xs">Dilakukan setelah website selesai dan siap dipublish.</span></div>
+                            </div>`
+                },
+                {
+                    id: 4,
+                    question: "Layanan after sales apa saja yang saya dapatkan?",
+                    answer: `<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-shield-check text-blue-600"></i> <span>Garansi bug/error sistem.</span></div>
+                                <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-headset text-blue-600"></i> <span>Konsultasi teknis gratis.</span></div>
+                                <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-server text-blue-600"></i> <span>Pemantauan server & backup.</span></div>
+                                <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-circle-play text-blue-600"></i> <span>Update panduan fitur baru.</span></div>
+                            </div>`
+                },
+                {
+                    id: 5,
+                    question: "Berapa kali revisi yang dapat dilakukan?",
+                    answer: `<ul class="space-y-3">
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-palette text-blue-600 mt-1"></i> <span><strong>Tahap Desain:</strong> Revisi minor sepuasnya hingga deal.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-code text-blue-600 mt-1"></i> <span><strong>Tahap Coding:</strong> Revisi fungsi/konten (bukan rombak struktur).</span></li>
+                            </ul>`
+                },
+                {
+                    id: 6,
+                    question: "Apakah sistem ini bisa digunakan di HP atau Tablet?",
+                    answer: `<p><strong>Sangat bisa!</strong> Sistem berbasis web responsif:</p>
+                            <ul class="mt-3 space-y-2">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 text-[10px]"></i> Akses via Android/iOS.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 text-[10px]"></i> Support Laptop/PC Kasir.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 text-[10px]"></i> Support Printer Thermal Bluetooth/USB.</li>
+                            </ul>`
+                },
+                {
+                    id: 7,
+                    question: "Bagaimana sistem pembayaran QRIS di toko saya?",
+                    answer: `<p class="mb-3">Integrasi via Payment Gateway resmi:</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-qrcode text-blue-600 mt-1"></i> <span><strong>QRIS Dinamis:</strong> Kode muncul otomatis sesuai nominal.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-bell text-blue-600 mt-1"></i> <span><strong>Notifikasi Real-time:</strong> Status otomatis berubah jadi "Lunas".</span></li>
+                            </ul>`
+                },
+                {
+                    id: 8,
+                    question: "Apakah data penjualan dan stok saya aman?",
+                    answer: `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex gap-3 p-3 bg-slate-50 rounded-xl"><i class="fa-solid fa-cloud-shield text-blue-600 mt-1"></i> <span><strong>Daily Backup:</strong> Cadangan harian otomatis.</span></div>
+                                <div class="flex gap-3 p-3 bg-slate-50 rounded-xl"><i class="fa-solid fa-lock text-blue-600 mt-1"></i> <span><strong>Enkripsi SSL:</strong> Jalur data terlindungi.</span></div>
+                            </div>`
+                },
+                {
+                    id: 9,
+                    question: "Bagaimana jika saya atau karyawan kesulitan menggunakannya?",
+                    answer: `<ul class="space-y-2">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-video text-blue-500"></i> Video Tutorial lengkap.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-headset text-blue-500"></i> Konsultasi teknis gratis.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-book text-blue-500"></i> Buku panduan (PDF).</li>
+                            </ul>`
+                }
+            ]
+        }
+    }
+    </script>
+    @endpush
 
 </x-layout.app>

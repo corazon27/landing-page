@@ -516,4 +516,43 @@
             </div>
         </div>
     </section>
+
+    @push('scripts')
+    @php
+    $faqs = [
+    [
+    'question' => 'Bagaimana tahapan pengerjaan website di Cakra Inovasi Digital?',
+    'answer' => 'Tahapan kami mulai dari konsultasi kebutuhan, perencanaan desain (UI/UX), proses development (coding),
+    testing untuk memastikan tidak ada bug, hingga serah terima dan pelatihan penggunaan admin panel.'
+    ],
+    [
+    'question' => 'Apa saja yang saya dapatkan?',
+    'answer' => 'Anda akan mendapatkan website yang responsif (bagus di HP & Laptop), domain (.com/.id), hosting
+    berkualitas, email profesional, integrasi WhatsApp, hingga halaman admin (CMS) untuk update konten sendiri.'
+    ],
+    [
+    'question' => 'Proses pembayarannya bagaimana?',
+    'answer' => 'Sangat fleksibel! Biasanya dimulai dengan DP (Down Payment) sebesar 50% sebagai tanda jadi, dan
+    pelunasan dilakukan setelah website selesai diproduksi dan siap dipublikasikan.'
+    ],
+    [
+    'question' => 'Layanan after sales yang didapatkan apa saja?',
+    'answer' => 'Kami memberikan garansi perbaikan jika ada error, bantuan konsultasi teknis, serta panduan cara
+    mengelola website Anda agar tetap optimal. Kami tidak akan lepas tangan setelah proyek selesai.'
+    ],
+    [
+    'question' => 'Berapa kali revisi yang bisa dilakukan oleh Klien?',
+    'answer' => 'Kami memberikan kesempatan revisi hingga 3 kali pada tahap desain dan pengembangan untuk memastikan
+    hasil akhir benar-benar sesuai dengan visi bisnis Anda.'
+    ],
+    [
+    'question' => 'Apakah bisa update konten sendiri setelah website jadi?',
+    'answer' => 'Tentu saja! Kami akan menyediakan Dashboard Admin yang user-friendly (mudah digunakan bahkan untuk
+    orang awam), sehingga Anda bisa menambah berita, galeri, atau mengubah harga layanan kapan saja.'
+    ],
+    ];
+    @endphp
+
+    <x-faq-schema :faqs="$faqs" />
+    @endpush
 </x-layout.app>

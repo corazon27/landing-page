@@ -691,7 +691,34 @@
         </div>
     </section>
 
+    @push('scripts')
+    <script>
+    const meetingForm = document.getElementById('meetingForm');
+    if (meetingForm) {
+        meetingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const company = document.getElementById('company').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('meetingDate').value;
+            const needs = document.getElementById('needs').value || "Tidak ada deskripsi";
+            const myNumber = "6285865405330";
 
+            const message = `Halo Admin, saya ingin *Minta Meeting*:%0A%0A` +
+                `*Nama Perusahaan:* ${company}%0A` +
+                `*No. WhatsApp PIC:* ${phone}%0A` +
+                `*Rencana Tanggal:* ${date}%0A` +
+                `*Deskripsi Kebutuhan:* ${needs}`;
+
+            window.open(`https://wa.me/${myNumber}?text=${message}`, '_blank');
+        });
+    }
+
+    // Script copy bisa ditaruh sini juga atau di resources/js/app.js
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => alert('Tautan berhasil disalin!'));
+    }
+    </script>
+    @endpush
 
 
 </x-layout.app>

@@ -112,15 +112,15 @@
                         class="{{ request()->is('portofolio') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Portofolio
                         Kami</a>
                 </li>
-                <li><a href="{{ route('faq') }}"
+                <!-- <li><a href="{{ route('faq') }}"
                         class="{{ request()->routeIs('faq') ? 'text-blue-600 font-bold' : 'text-slate-600' }} hover:text-blue-600 transition">Tanya
                         Jawab</a></li>
 
-                <li>
-                    <a href="{{ route('front.artikel.index') }}"
-                        class="{{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-slate-600 font-medium' }} hover:text-blue-600 transition">
-                        Artikel
-                    </a>
+                <li> -->
+                <a href="{{ route('front.artikel.index') }}"
+                    class="{{ request()->is('artikel*') ? 'text-blue-600 font-bold' : 'text-slate-600 font-medium' }} hover:text-blue-600 transition">
+                    Artikel
+                </a>
                 </li>
             </ul>
 
