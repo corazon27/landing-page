@@ -522,138 +522,35 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white" x-data="{ selected: null }">
+    <section class="py-24 bg-white-100" x-data="faqSection()">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-                    Tanya Jawab <span class="text-blue-600">E-Commerce</span>
+                    Pertanyaan Seputar <span class="text-blue-600">Jasa Kami</span>
                 </h2>
-                <p class="text-slate-600">Informasi teknis untuk membantu Anda memutuskan sistem terbaik bagi bisnis.
-                </p>
+                <p class="text-slate-600">Semua yang perlu Anda ketahui tentang proses kerja sama dan hasil
+                    akhir proyek Anda.</p>
             </div>
 
             <div class="space-y-4">
+                <template x-for="faq in faqs" :key="faq.id">
+                    <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
+                        :class="selected === faq.id ? 'border-blue-300 ring-1 ring-blue-100' : ''">
 
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 1 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 1 ? selected = 1 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 1 ? 'text-blue-600' : ''">
-                            Apakah saya harus bayar komisi per transaksi ke Anda?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 1 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === 1" x-collapse>
-                        <strong>Sama sekali tidak.</strong> Berbeda dengan marketplace, 100% keuntungan adalah milik
-                        Anda. Anda hanya membayar biaya berlangganan domain/hosting tahunan dan biaya administrasi kecil
-                        jika menggunakan payment gateway pihak ketiga (seperti Midtrans/Xendit).
+                        <button @click="selected !== faq.id ? selected = faq.id : selected = null"
+                            class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
+                            <span class="font-bold text-slate-900" :class="selected === faq.id ? 'text-blue-600' : ''"
+                                x-text="faq.question"></span>
+                            <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
+                                :class="selected === faq.id ? 'rotate-180' : ''"></i>
+                        </button>
+
+                        <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === faq.id"
+                            x-collapse>
+                            <div x-html="faq.answer"></div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 2 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 2 ? selected = 2 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 2 ? 'text-blue-600' : ''">
-                            Bagaimana dengan keamanan data pelanggan saya?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 2 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 2" x-collapse>
-                        Setiap website yang kami bangun dilengkapi dengan sertifikat SSL (Encryption) dan sistem
-                        keamanan database berlapis. Data pelanggan Anda adalah aset berharga Anda, dan kami
-                        memastikannya aman di server yang andal.
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 3 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 3 ? selected = 3 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 3 ? 'text-blue-600' : ''">
-                            Apakah website sudah otomatis menghitung ongkos kirim?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 3 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === 3" x-collapse>
-                        <strong>Ya, sudah terintegrasi.</strong> Sistem kami mendukung perhitungan otomatis dari
-                        ekspedisi populer di Indonesia seperti JNE, J&T, Sicepat, hingga POS Indonesia. Pelanggan Anda
-                        cukup memasukkan alamat, dan ongkir akan muncul secara otomatis saat checkout.
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 4 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 4 ? selected = 4 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 4 ? 'text-blue-600' : ''">
-                            Apakah saya bisa mengelola stok dan produk sendiri?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 4 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 4" x-collapse>
-                        Tentu saja. Kami menyediakan <strong>Dashboard Admin</strong> yang sangat mudah digunakan
-                        (user-friendly). Anda bisa menambah produk, mengubah harga, mengatur stok, hingga melihat
-                        laporan penjualan tanpa perlu keahlian coding sama sekali.
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 5 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 5 ? selected = 5 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 5 ? 'text-blue-600' : ''">
-                            Metode pembayaran apa saja yang tersedia?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 5 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 5" x-collapse>
-                        Kami mendukung berbagai metode mulai dari <strong>Transfer Bank Manual</strong> hingga
-                        <strong>Otomatis (Payment Gateway)</strong>. Melalui Payment Gateway, toko Anda bisa menerima
-                        pembayaran via QRIS, E-Wallet (GoPay, OVO, Dana), Virtual Account, hingga kartu kredit secara
-                        real-time.
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 6 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 6 ? selected = 6 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 6 ? 'text-blue-600' : ''">
-                            Apakah tampilan website bagus jika dibuka di HP?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 6 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 6" x-collapse>
-                        <strong>Sangat responsif.</strong> Lebih dari 80% pembeli online menggunakan smartphone, maka
-                        dari itu kami mengutamakan desain <em>mobile-first</em>. Website Anda akan tetap rapi, cepat,
-                        dan mudah diakses dari perangkat apa pun.
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 7 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 7 ? selected = 7 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 7 ? 'text-blue-600' : ''">
-                            Apakah website saya akan muncul di Google?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 7 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 7" x-collapse>
-                        Kami membangun website dengan struktur yang <strong>SEO-Friendly</strong>. Ini memudahkan mesin
-                        pencari seperti Google untuk mengindeks produk Anda, sehingga memperbesar peluang toko Anda
-                        ditemukan oleh calon pembeli secara organik.
-                    </div>
-                </div>
-
+                </template>
             </div>
         </div>
     </section>
@@ -727,6 +624,73 @@
     // Script copy bisa ditaruh sini juga atau di resources/js/app.js
     function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(() => alert('Tautan berhasil disalin!'));
+    }
+    </script>
+    @endpush
+
+    @push('scripts')
+    <script>
+    function faqSection() {
+        return {
+            selected: null,
+            faqs: [{
+                    id: 1,
+                    question: "Apakah biaya kirim bisa otomatis muncul di website?",
+                    answer: `<p class="mb-3">Ya, kami mengintegrasikan website Anda dengan API ekspedisi (seperti RajaOngkir):</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-truck-fast text-blue-600"></i> Cek ongkir otomatis (JNE, TIKI, POS, dll).</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-blue-600"></i> Perhitungan berdasarkan berat produk & kecamatan.</li>
+                        </ul>`
+                },
+                {
+                    id: 2,
+                    question: "Metode pembayaran apa saja yang tersedia?",
+                    answer: `<p class="mb-3">Kami mendukung berbagai metode pembayaran melalui integrasi Payment Gateway:</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="p-2 bg-slate-50 rounded-lg text-xs">🏦 Transfer Bank (VA)</div>
+                            <div class="p-2 bg-slate-50 rounded-lg text-xs">📱 E-Wallet (OVO, Dana, dll)</div>
+                            <div class="p-2 bg-slate-50 rounded-lg text-xs">💳 Kartu Kredit/Debit</div>
+                            <div class="p-2 bg-slate-50 rounded-lg text-xs">🏧 Retail (Alfamart/Indomaret)</div>
+                        </div>`
+                },
+                {
+                    id: 3,
+                    question: "Bagaimana saya tahu jika ada pesanan baru masuk?",
+                    answer: `<p>Sistem akan mengirimkan <strong>notifikasi real-time</strong> melalui Email atau integrasi WhatsApp (optional) langsung ke nomor Anda setiap kali pelanggan menyelesaikan pembayaran.</p>`
+                },
+                {
+                    id: 4,
+                    question: "Apakah saya bisa mengelola stok dan produk sendiri?",
+                    answer: `<p>Tentu. Anda akan mendapatkan akses ke <strong>Dashboard Admin</strong> khusus untuk mengelola katalog, foto produk, harga, diskon, hingga memantau stok barang tanpa perlu bantuan developer.</p>`
+                },
+                {
+                    id: 5,
+                    question: "Apakah data pelanggan dan transaksi aman?",
+                    answer: `<ul class="space-y-3">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-shield-halved text-blue-600 mt-1"></i> <span><strong>SSL Certified:</strong> Enkripsi data pelanggan standar internasional.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-user-lock text-blue-600 mt-1"></i> <span><strong>Data Privacy:</strong> Informasi pembeli terlindungi dan tidak dibagikan ke pihak luar.</span></li>
+                        </ul>`
+                },
+                {
+                    id: 6,
+                    question: "Dapatkah saya membuat kupon promo atau diskon?",
+                    answer: `<p>Ya, tersedia fitur manajemen promo di mana Anda bisa membuat kode kupon khusus, diskon persentase, hingga promo gratis ongkir dengan syarat tertentu.</p>`
+                },
+                {
+                    id: 7,
+                    question: "Apakah tersedia laporan penjualan otomatis?",
+                    answer: `<div class="flex items-center gap-4 bg-blue-50 p-4 rounded-xl">
+                            <i class="fa-solid fa-chart-line text-2xl text-blue-600"></i>
+                            <p>Anda bisa mengunduh laporan penjualan harian, mingguan, hingga bulanan dalam format Excel atau melihat grafik performa toko langsung di dashboard.</p>
+                        </div>`
+                },
+                {
+                    id: 8,
+                    question: "Bagaimana tampilan produk saya di mata pengguna HP?",
+                    answer: `<p>Website e-commerce Anda dioptimalkan untuk <strong>Mobile-First Design</strong>. Proses dari pilih barang hingga checkout dibuat sangat mudah dan nyaman meskipun diakses menggunakan layar smartphone kecil.</p>`
+                }
+            ]
+        }
     }
     </script>
     @endpush

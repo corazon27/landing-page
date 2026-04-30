@@ -437,7 +437,7 @@
                         Paling Banyak Dipilih</div>
 
                     <div class="mb-8 mt-4">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Paket Professional</h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Paket Profesional</h3>
                         <p class="text-slate-500 text-sm mb-6">Solusi lengkap untuk perusahaan yang ingin tampil dominan
                             di Google.</p>
                         <div class="flex items-baseline gap-1">
@@ -518,7 +518,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white" x-data="{ selected: null }">
+    <!-- <section class="py-24 bg-white" x-data="{ selected: null }">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Pertanyaan Seputar <span
@@ -763,6 +763,39 @@
 
             </div>
         </div>
+    </section> -->
+
+    <section class="py-24 bg-white-100" x-data="faqSection()">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                    Pertanyaan Seputar <span class="text-blue-600">Jasa Kami</span>
+                </h2>
+                <p class="text-slate-600">Semua yang perlu Anda ketahui tentang proses kerja sama dan hasil
+                    akhir proyek Anda.</p>
+            </div>
+
+            <div class="space-y-4">
+                <template x-for="faq in faqs" :key="faq.id">
+                    <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
+                        :class="selected === faq.id ? 'border-blue-300 ring-1 ring-blue-100' : ''">
+
+                        <button @click="selected !== faq.id ? selected = faq.id : selected = null"
+                            class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
+                            <span class="font-bold text-slate-900" :class="selected === faq.id ? 'text-blue-600' : ''"
+                                x-text="faq.question"></span>
+                            <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
+                                :class="selected === faq.id ? 'rotate-180' : ''"></i>
+                        </button>
+
+                        <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === faq.id"
+                            x-collapse>
+                            <div x-html="faq.answer"></div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
     </section>
 
     <section class="py-20 bg-blue-600 rounded-t-[3rem] text-white">
@@ -834,6 +867,91 @@
     // Script copy bisa ditaruh sini juga atau di resources/js/app.js
     function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(() => alert('Tautan berhasil disalin!'));
+    }
+    </script>
+    @endpush
+
+    @push('scripts')
+    <script>
+    function faqSection() {
+        return {
+            selected: null,
+            faqs: [{
+                    id: 1,
+                    question: "Apa saja syarat yang harus saya siapkan untuk membuat website?",
+                    answer: `<p class="mb-2">Cukup siapkan data dasar berikut untuk kami olah:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-blue-600"></i> Profil perusahaan & Logo.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-blue-600"></i> Deskripsi layanan atau produk.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-blue-600"></i> Kontak (Alamat, WhatsApp, Email).</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-blue-600"></i> Nama domain yang diinginkan.</li>
+                        </ul>`
+                },
+                {
+                    id: 2,
+                    question: "Berapa lama waktu pengerjaannya sampai website online?",
+                    answer: `<div class="flex items-center gap-4 bg-blue-50 p-4 rounded-xl">
+                            <i class="fa-solid fa-clock-rotate-left text-2xl text-blue-600"></i>
+                            <p>Estimasi pengerjaan adalah <strong>7 sampai 14 hari kerja</strong>, tergantung pada kecepatan pengiriman data dan kompleksitas revisi.</p>
+                        </div>`
+                },
+                {
+                    id: 3,
+                    question: "Apakah harga sudah termasuk biaya Domain dan Hosting?",
+                    answer: `<p><strong>Ya, sudah termasuk.</strong> Semua paket sudah mencakup Domain (.com/.id) dan Cloud Hosting untuk 1 tahun pertama. Anda tidak perlu pusing memikirkan biaya teknis di awal.</p>`
+                },
+                {
+                    id: 4,
+                    question: "Bagaimana jika saya ingin mengubah konten atau foto sendiri nanti?",
+                    answer: `<p class="mb-3">Kami membangun website menggunakan Dashboard Admin yang mudah digunakan. Anda akan mendapatkan:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-blue-600"></i> Akun akses login Admin resmi.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-file-video text-blue-600"></i> Video panduan update konten secara mandiri.</li>
+                        </ul>`
+                },
+                {
+                    id: 5,
+                    question: "Apakah websitenya nyaman saat dibuka di HP (Mobile Friendly)?",
+                    answer: `<p>Tentu saja. Website Anda menggunakan desain <strong>Fully Responsive</strong>. Tampilan akan otomatis menyesuaikan secara sempurna baik dibuka di Smartphone, Tablet, maupun Desktop.</p>`
+                },
+                {
+                    id: 6,
+                    question: "Apakah website saya bisa muncul di halaman pertama Google (SEO)?",
+                    answer: `<p class="mb-3">Kami menerapkan standar SEO On-Page dasar pada setiap proyek:</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="p-2 border border-slate-100 rounded-lg text-xs">🚀 High Speed Loading</div>
+                            <div class="p-2 border border-slate-100 rounded-lg text-xs">🔗 Clean URL Structure</div>
+                            <div class="p-2 border border-slate-100 rounded-lg text-xs">📱 Mobile Optimized</div>
+                            <div class="p-2 border border-slate-100 rounded-lg text-xs">📑 Meta Tags Ready</div>
+                        </div>`
+                },
+                {
+                    id: 7,
+                    question: "Bagaimana jika terjadi error atau website tidak bisa diakses?",
+                    answer: `<p>Kami memberikan <strong>Garansi Maintenance</strong>. Jika terjadi kendala teknis atau bug, tim kami akan membantu memperbaikinya tanpa biaya tambahan selama masa hosting masih aktif.</p>`
+                },
+                {
+                    id: 8,
+                    question: "Apakah saya bisa menambah fitur baru di kemudian hari?",
+                    answer: `<p>Bisa. Karena kami menggunakan framework <strong>Laravel</strong>, website Anda bersifat sangat fleksibel (scalable). Anda bisa menambah fitur seperti sistem booking, katalog produk, atau blog kapan saja.</p>`
+                },
+                {
+                    id: 9,
+                    question: "Berapa biaya perpanjangan di tahun kedua?",
+                    answer: `<p>Biaya perpanjangan hanya mencakup Domain dan Hosting. Harganya sangat transparan, mulai dari <strong>Rp 500.000-an per tahun</strong> (tergantung paket kapasitas hosting yang dipilih).</p>`
+                },
+                {
+                    id: 10,
+                    question: "Mengapa harus memilih jasa pembuatan website kami?",
+                    answer: `<p class="mb-3">Kami menawarkan tiga keunggulan utama:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-gem text-blue-600 mt-1"></i> <span><strong>Desain Eksklusif:</strong> Bukan sekadar asal pakai template pasaran.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-lock text-blue-600 mt-1"></i> <span><strong>Keamanan Tinggi:</strong> Dibangun dengan proteksi standar industri.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-comments text-blue-600 mt-1"></i> <span><strong>Konsultasi Gratis:</strong> Kami siap menjadi partner diskusi bisnis Anda.</span></li>
+                        </ul>`
+                }
+            ]
+        }
     }
     </script>
     @endpush

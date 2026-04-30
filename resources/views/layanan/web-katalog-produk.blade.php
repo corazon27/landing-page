@@ -513,136 +513,35 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white" x-data="{ selected: null }">
+    <section class="py-24 bg-white-100" x-data="faqSection()">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-                    Pertanyaan Seputar <span class="text-blue-600">Katalog Digital</span>
+                    Pertanyaan Seputar <span class="text-blue-600">Jasa Kami</span>
                 </h2>
-                <p class="text-slate-600">Semua yang perlu Anda ketahui tentang proses digitalisasi produk bisnis Anda
-                    bersama kami.</p>
+                <p class="text-slate-600">Semua yang perlu Anda ketahui tentang proses kerja sama dan hasil
+                    akhir proyek Anda.</p>
             </div>
 
             <div class="space-y-4">
+                <template x-for="faq in faqs" :key="faq.id">
+                    <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
+                        :class="selected === faq.id ? 'border-blue-300 ring-1 ring-blue-100' : ''">
 
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 1 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 1 ? selected = 1 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 1 ? 'text-blue-600' : ''">
-                            Bagaimana tahapan pengerjaan website katalog saya?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 1 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === 1" x-collapse>
-                        Kami bekerja melalui 4 tahap efisien:
-                        <ul class="mt-3 space-y-2">
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-1 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Kirim data produk & foto melalui WhatsApp/Email.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-2 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Proses desain layout katalog & input data awal.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-3 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Review hasil sementara & revisi minor jika diperlukan.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-4 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i>
-                                Go-Live (Penyerahan akses dashboard & video panduan).
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                        <button @click="selected !== faq.id ? selected = faq.id : selected = null"
+                            class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
+                            <span class="font-bold text-slate-900" :class="selected === faq.id ? 'text-blue-600' : ''"
+                                x-text="faq.question"></span>
+                            <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
+                                :class="selected === faq.id ? 'rotate-180' : ''"></i>
+                        </button>
 
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 2 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 2 ? selected = 2 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 2 ? 'text-blue-600' : ''">
-                            Apakah saya bisa menambah produk sendiri di kemudian hari?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 2 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 2" x-collapse>
-                        <p class="leading-relaxed">
-                            <strong>Tentu saja!</strong> Khusus untuk paket Pro, kami memberikan akses ke Dashboard
-                            Admin yang intuitif. Anda bisa menambah, mengedit harga, atau menghapus produk kapan pun
-                            melalui HP atau Laptop tanpa perlu bantuan kami lagi.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 3 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 3 ? selected = 3 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 3 ? 'text-blue-600' : ''">
-                            Apakah ada biaya langganan setiap bulannya?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 3 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 3" x-collapse>
-                        <p>
-                            Tidak ada biaya bulanan. Harga paket sudah termasuk <strong>Domain & Hosting aktif selama 1
-                                tahun</strong>. Anda hanya perlu melakukan perpanjangan domain & hosting setiap tahun
-                            sekali untuk memastikan website tetap online.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 4 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 4 ? selected = 4 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 4 ? 'text-blue-600' : ''">
-                            Bagaimana pelanggan memesan produk melalui katalog?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 4 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 4" x-collapse>
-                        <div class="p-4 bg-blue-50 rounded-xl flex gap-4">
-                            <i class="fa-brands fa-whatsapp text-2xl text-green-500"></i>
-                            <p class="leading-relaxed text-xs">
-                                Kami menyematkan tombol <strong>"Pesan via WhatsApp"</strong> di setiap detail produk.
-                                Saat diklik, pelanggan akan langsung terhubung ke nomor Anda dengan format pesan
-                                otomatis yang berisi nama produk & link gambar produk tersebut.
-                            </p>
+                        <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === faq.id"
+                            x-collapse>
+                            <div x-html="faq.answer"></div>
                         </div>
                     </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                    :class="selected === 5 ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-                    <button @click="selected !== 5 ? selected = 5 : selected = null"
-                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                        <span class="font-bold text-slate-900" :class="selected === 5 ? 'text-blue-600' : ''">
-                            Bagaimana jika website saya mengalami kendala teknis?
-                        </span>
-                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                            :class="selected === 5 ? 'rotate-180' : ''"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-sm text-slate-600" x-show="selected === 5" x-collapse>
-                        <p class="mb-3 font-medium">Kami memberikan jaminan kenyamanan pasca-pengerjaan:</p>
-                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-blue-600"></i>
-                                Garansi perbaikan Bug.</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-headset text-blue-600"></i>
-                                Konsultasi Gratis via WA.</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-server text-blue-600"></i>
-                                Monitoring Server 24/7.</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-rotate text-blue-600"></i> Backup
-                                data mingguan.</li>
-                        </ul>
-                    </div>
-                </div>
-
+                </template>
             </div>
         </div>
     </section>
@@ -720,5 +619,66 @@
     </script>
     @endpush
 
+    @push('scripts')
+    <script>
+    function faqSection() {
+        return {
+            selected: null,
+            faqs: [{
+                    id: 1,
+                    question: "Apa perbedaan website katalog dengan e-commerce?",
+                    answer: `<p>Website katalog berfokus pada <strong>showcase produk</strong> secara profesional tanpa fitur keranjang belanja. Sangat cocok bagi Anda yang ingin mengarahkan transaksi melalui negosiasi langsung via WhatsApp atau kunjungan ke toko fisik.</p>`
+                },
+                {
+                    id: 2,
+                    question: "Apakah pembeli bisa langsung chat WhatsApp dari halaman produk?",
+                    answer: `<div class="flex items-center gap-4 bg-green-50 p-4 rounded-xl border border-green-100">
+                            <i class="fa-brands fa-whatsapp text-2xl text-green-600"></i>
+                            <p>Tentu. Kami menyediakan tombol <strong>"Tanya via WhatsApp"</strong> yang otomatis menyertakan nama produk dan link gambar saat diklik oleh calon pembeli.</p>
+                        </div>`
+                },
+                {
+                    id: 3,
+                    question: "Bagaimana jika saya ingin mengelompokkan produk berdasarkan kategori?",
+                    answer: `<p class="mb-3">Sistem kami mendukung fitur kategori dan sub-kategori tak terbatas:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-layer-group text-blue-600"></i> Pengelompokkan berdasarkan merk atau jenis.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-filter text-blue-600"></i> Fitur filter untuk memudahkan pencarian pembeli.</li>
+                        </ul>`
+                },
+                {
+                    id: 4,
+                    question: "Apakah saya bisa menambah dan mengubah foto produk sendiri?",
+                    answer: `<p>Ya, Anda akan mendapatkan akses ke <strong>Dashboard Admin</strong> yang simpel. Anda bisa mengunggah foto, mengubah deskripsi, atau menghapus produk yang sudah tidak tersedia kapan saja.</p>`
+                },
+                {
+                    id: 5,
+                    question: "Apakah website tetap cepat jika saya upload ratusan foto produk?",
+                    answer: `<p class="mb-3">Kami menggunakan teknik optimasi khusus untuk website katalog:</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-yellow-500"></i> <strong>Lazy Loading:</strong> Foto hanya dimuat saat di-scroll.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-compress text-blue-500"></i> <strong>Auto-Compression:</strong> Ukuran foto dikecilkan otomatis tanpa merusak kualitas.</li>
+                        </ul>`
+                },
+                {
+                    id: 6,
+                    question: "Bisa tidak saya menampilkan produk tanpa harga?",
+                    answer: `<p>Sangat bisa. Anda memiliki kendali penuh untuk menampilkan harga, menyembunyikannya, atau menggantinya dengan tulisan <em>"Hubungi Kami untuk Harga"</em>.</p>`
+                },
+                {
+                    id: 7,
+                    question: "Apakah produk di katalog saya bisa muncul di pencarian Google?",
+                    answer: `<p>Kami menerapkan <strong>Schema Markup Produk</strong> agar Google dapat mengenali setiap item di katalog Anda. Ini membantu produk Anda muncul lebih baik di hasil pencarian Google Image.</p>`
+                },
+                {
+                    id: 8,
+                    question: "Bagaimana jika saya ingin mengubah katalog menjadi e-commerce nantinya?",
+                    answer: `<p>Karena dikembangkan dengan framework modern, website katalog Anda bersifat <strong>Upgrade-Ready</strong>. Fitur pembayaran dan keranjang belanja bisa ditambahkan di kemudian hari tanpa harus membuat website dari awal.</p>`
+                }
+            ]
+        }
+    }
+    </script>
+    @endpush
 
 </x-layout.app>

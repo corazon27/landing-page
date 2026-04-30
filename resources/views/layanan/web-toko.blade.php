@@ -493,51 +493,35 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white-100" x-data="{ selected: null }">
+    <section class="py-24 bg-white-100" x-data="faqSection()">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Pertanyaan Seputar <span
-                        class="text-blue-600">Jasa Kami</span></h2>
-                <p class="text-slate-600">Semua yang perlu Anda ketahui tentang proses kerja sama dan hasil akhir proyek
-                    Anda.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                    Pertanyaan Seputar <span class="text-blue-600">Jasa Kami</span>
+                </h2>
+                <p class="text-slate-600">Semua yang perlu Anda ketahui tentang proses kerja sama dan hasil
+                    akhir proyek Anda.</p>
             </div>
 
             <div class="space-y-4">
+                <template x-for="faq in faqs" :key="faq.id">
+                    <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
+                        :class="selected === faq.id ? 'border-blue-300 ring-1 ring-blue-100' : ''">
 
-                <section class="py-24 bg-white-100" x-data="faqSection()">
-                    <div class="max-w-3xl mx-auto px-6">
-                        <div class="text-center mb-12">
-                            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-                                Pertanyaan Seputar <span class="text-blue-600">Jasa Kami</span>
-                            </h2>
-                            <p class="text-slate-600">Semua yang perlu Anda ketahui tentang proses kerja sama dan hasil
-                                akhir proyek Anda.</p>
-                        </div>
+                        <button @click="selected !== faq.id ? selected = faq.id : selected = null"
+                            class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
+                            <span class="font-bold text-slate-900" :class="selected === faq.id ? 'text-blue-600' : ''"
+                                x-text="faq.question"></span>
+                            <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
+                                :class="selected === faq.id ? 'rotate-180' : ''"></i>
+                        </button>
 
-                        <div class="space-y-4">
-                            <template x-for="faq in faqs" :key="faq.id">
-                                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                                    :class="selected === faq.id ? 'border-blue-300 ring-1 ring-blue-100' : ''">
-
-                                    <button @click="selected !== faq.id ? selected = faq.id : selected = null"
-                                        class="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors group">
-                                        <span class="font-bold text-slate-900"
-                                            :class="selected === faq.id ? 'text-blue-600' : ''"
-                                            x-text="faq.question"></span>
-                                        <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300"
-                                            :class="selected === faq.id ? 'rotate-180' : ''"></i>
-                                    </button>
-
-                                    <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed"
-                                        x-show="selected === faq.id" x-collapse>
-                                        <div x-html="faq.answer"></div>
-                                    </div>
-                                </div>
-                            </template>
+                        <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="selected === faq.id"
+                            x-collapse>
+                            <div x-html="faq.answer"></div>
                         </div>
                     </div>
-                </section>
-
+                </template>
             </div>
         </div>
     </section>
@@ -622,90 +606,60 @@
             selected: null,
             faqs: [{
                     id: 1,
-                    question: "Bagaimana tahapan pengerjaan proyek di sini?",
-                    answer: `Kami bekerja melalui 5 tahap profesional:
-                            <ul class="mt-3 space-y-2">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-1 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Konsultasi kebutuhan & deal kontrak.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-2 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Pembuatan konsep desain visual.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-3 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Proses coding sistem (POS/Online Store).</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-4 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Testing sistem & revisi.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-5 text-[10px] bg-blue-100 text-blue-600 p-1 rounded"></i> Go-Live & Pelatihan admin/kasir.</li>
-                            </ul>`
+                    question: "Bagaimana sistem pembayaran QRIS di toko saya?",
+                    answer: `<p class="mb-3">Integrasi via Payment Gateway resmi memungkinkan operasional yang lebih cepat:</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-qrcode text-blue-600 mt-1"></i> <span><strong>QRIS Dinamis:</strong> Kode QR akan muncul otomatis di layar kasir sesuai nominal belanja pelanggan.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-bell text-blue-600 mt-1"></i> <span><strong>Notifikasi Real-time:</strong> Status transaksi otomatis berubah jadi "Lunas" tanpa perlu cek mutasi manual.</span></li>
+                        </ul>`
                 },
                 {
                     id: 2,
-                    question: "Apa saja yang saya dapatkan di akhir pengerjaan?",
-                    answer: `<p class="mb-3 font-medium">Anda akan menerima paket siap operasional:</p>
-                            <ul class="space-y-2">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i> <span>Akses penuh Dashboard Admin & Kasir.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i> <span>Domain (.com/.id) & Cloud Hosting aktif 1 tahun.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i> <span>Sertifikat keamanan SSL (HTTPS).</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1"></i> <span>Video panduan operasional sistem.</span></li>
-                            </ul>`
+                    question: "Apakah data penjualan dan stok saya aman?",
+                    answer: `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex gap-3 p-3 bg-slate-50 rounded-xl"><i class="fa-solid fa-cloud-shield text-blue-600 mt-1"></i> <span><strong>Daily Backup:</strong> Seluruh data transaksi dicadangkan secara harian otomatis.</span></div>
+                            <div class="flex gap-3 p-3 bg-slate-50 rounded-xl"><i class="fa-solid fa-lock text-blue-600 mt-1"></i> <span><strong>Enkripsi SSL:</strong> Jalur data antara toko dan server terlindungi sepenuhnya.</span></div>
+                        </div>`
                 },
                 {
                     id: 3,
-                    question: "Bagaimana sistem pembayarannya?",
-                    answer: `<p class="mb-4 text-slate-700">Kami menggunakan sistem <strong>3 Termin</strong> untuk kenyamanan bersama:</p>
-                            <div class="space-y-4 pl-4 border-l-2 border-slate-100">
-                                <div><span class="font-bold block text-slate-900">1. Termin Awal (DP)</span><span class="text-xs">Dilakukan saat deal proyek dan penandatanganan kontrak.</span></div>
-                                <div><span class="font-bold block text-slate-900">2. Termin Progres</span><span class="text-xs">Dilakukan setelah desain disetujui dan masuk tahap coding.</span></div>
-                                <div><span class="font-bold block text-slate-900">3. Termin Pelunasan</span><span class="text-xs">Dilakukan setelah website selesai dan siap dipublish.</span></div>
-                            </div>`
+                    question: "Bagaimana jika saya atau karyawan kesulitan menggunakannya?",
+                    answer: `<p class="mb-3">Kami memastikan tim Anda mahir menggunakan sistem melalui:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-video text-blue-500"></i> Video Tutorial penggunaan fitur kasir & admin.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-headset text-blue-500"></i> Layanan konsultasi teknis jika ada kendala.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-book text-blue-500"></i> Buku panduan operasional digital (PDF).</li>
+                        </ul>`
                 },
                 {
                     id: 4,
-                    question: "Layanan after sales apa saja yang saya dapatkan?",
-                    answer: `<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-shield-check text-blue-600"></i> <span>Garansi bug/error sistem.</span></div>
-                                <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-headset text-blue-600"></i> <span>Konsultasi teknis gratis.</span></div>
-                                <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-server text-blue-600"></i> <span>Pemantauan server & backup.</span></div>
-                                <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-circle-play text-blue-600"></i> <span>Update panduan fitur baru.</span></div>
-                            </div>`
+                    question: "Apakah sistem ini bisa digunakan di HP atau Tablet?",
+                    answer: `<p><strong>Sangat bisa.</strong> Website POS ini dibangun dengan desain responsif yang mendukung berbagai perangkat seperti Android, iOS, tablet, hingga PC kasir khusus.</p>`
                 },
                 {
                     id: 5,
-                    question: "Berapa kali revisi yang dapat dilakukan?",
-                    answer: `<ul class="space-y-3">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-palette text-blue-600 mt-1"></i> <span><strong>Tahap Desain:</strong> Revisi minor sepuasnya hingga deal.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-code text-blue-600 mt-1"></i> <span><strong>Tahap Coding:</strong> Revisi fungsi/konten (bukan rombak struktur).</span></li>
-                            </ul>`
+                    question: "Dapatkah sistem mengelola banyak cabang (Multi-outlet)?",
+                    answer: `<p>Ya, sistem didesain untuk skalabilitas. Anda dapat memantau stok dan laporan keuangan dari berbagai cabang hanya dalam satu dashboard admin yang terpusat.</p>`
                 },
                 {
                     id: 6,
-                    question: "Apakah sistem ini bisa digunakan di HP atau Tablet?",
-                    answer: `<p><strong>Sangat bisa!</strong> Sistem berbasis web responsif:</p>
-                            <ul class="mt-3 space-y-2">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 text-[10px]"></i> Akses via Android/iOS.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 text-[10px]"></i> Support Laptop/PC Kasir.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 text-[10px]"></i> Support Printer Thermal Bluetooth/USB.</li>
-                            </ul>`
+                    question: "Apakah stok barang otomatis berkurang saat ada penjualan?",
+                    answer: `<p>Benar. Setiap transaksi penjualan akan memotong stok secara <strong>real-time</strong>, dan sistem akan memberi peringatan jika stok sudah mencapai batas minimum.</p>`
                 },
                 {
                     id: 7,
-                    question: "Bagaimana sistem pembayaran QRIS di toko saya?",
-                    answer: `<p class="mb-3">Integrasi via Payment Gateway resmi:</p>
-                            <ul class="space-y-3">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-qrcode text-blue-600 mt-1"></i> <span><strong>QRIS Dinamis:</strong> Kode muncul otomatis sesuai nominal.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-bell text-blue-600 mt-1"></i> <span><strong>Notifikasi Real-time:</strong> Status otomatis berubah jadi "Lunas".</span></li>
-                            </ul>`
+                    question: "Apakah saya bisa menarik laporan keuangan bulanan?",
+                    answer: `<p>Tentu. Sistem menyediakan fitur laporan otomatis yang mencakup penjualan harian, laba rugi, hingga analisis produk yang paling laris untuk membantu keputusan bisnis Anda.</p>`
                 },
                 {
                     id: 8,
-                    question: "Apakah data penjualan dan stok saya aman?",
-                    answer: `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="flex gap-3 p-3 bg-slate-50 rounded-xl"><i class="fa-solid fa-cloud-shield text-blue-600 mt-1"></i> <span><strong>Daily Backup:</strong> Cadangan harian otomatis.</span></div>
-                                <div class="flex gap-3 p-3 bg-slate-50 rounded-xl"><i class="fa-solid fa-lock text-blue-600 mt-1"></i> <span><strong>Enkripsi SSL:</strong> Jalur data terlindungi.</span></div>
-                            </div>`
+                    question: "Bisa hubungkan dengan alat kasir yang sudah saya punya?",
+                    answer: `<p>Sistem kami mendukung perangkat keras standar industri seperti <em>barcode scanner</em>, <em>cash drawer</em>, dan printer struk thermal (Bluetooth/USB).</p>`
                 },
                 {
                     id: 9,
-                    question: "Bagaimana jika saya atau karyawan kesulitan menggunakannya?",
-                    answer: `<ul class="space-y-2">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-video text-blue-500"></i> Video Tutorial lengkap.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-headset text-blue-500"></i> Konsultasi teknis gratis.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-book text-blue-500"></i> Buku panduan (PDF).</li>
-                            </ul>`
+                    question: "Berapa lama waktu pengerjaannya?",
+                    answer: `<p>Untuk sistem POS dengan fitur standar hingga integrasi API, waktu pengerjaan berkisar antara <strong>14 sampai 21 hari kerja</strong>.</p>`
                 }
             ]
         }
