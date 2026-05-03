@@ -31,6 +31,14 @@
                     class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.articles.*') ? 'bg-blue-600 text-white' : '' }}">
                     <i class="fas fa-newspaper"></i> Kelola Artikel
                 </a>
+                <a href="{{ route('admin.comments.index') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.articles.*') ? 'bg-blue-600 text-white' : '' }}">
+                    <i class="fas fa-newspaper"></i> Kelola Komentar
+                </a>
+                <a href="{{ route('admin.cashflow.index') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.cashflow.*') ? 'bg-blue-600 text-white' : '' }}">
+                    <i class="fas fa-coins"></i> Kelola Arus Kas
+                </a>
                 <div class="pt-4 pb-2 px-4 text-xs font-bold uppercase text-slate-500 tracking-wider">Sistem Affiliasi
                 </div>
                 <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl opacity-50 cursor-not-allowed">
@@ -67,6 +75,8 @@
         </main>
     </div>
     @stack('scripts')
+
+
 </body>
 
 </html>

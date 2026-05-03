@@ -8,12 +8,16 @@ use App\Http\Controllers\frontArtikelController;
 use App\Http\Controllers\Admin\LoginController as AdminLogin;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Admin\ArticleController as AdminArticle;
+use App\Http\Controllers\Admin\CashFlowController as AdminCashFlow;
 
 // rute affiliate
 use App\Http\Controllers\Affiliate\RegisterController;
 use App\Http\Controllers\Affiliate\LoginController;
 use App\Http\Controllers\Affiliate\DashboardController;
 use App\Http\Controllers\Affiliate\SettingsController;
+
+// rute komentar
+use App\Http\Controllers\CommentController;
 
 
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -84,13 +88,14 @@ Route::prefix('affiliate')->name('affiliate.')->group(function () {
 Route::get('/kendali-pusat', [AdminLogin::class, 'showLoginForm'])->name('admin.login');
 Route::post('/kendali-pusat', [AdminLogin::class, 'login']);
 
-// routes/web.php
-
-// routes/web.php
-
 Route::middleware(['auth:admin'])->prefix('management-center')->group(function () {
     Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
-    
+    Route::resource('cashflow', AdminCashFlow::class)->names([
+        'index' => 'admin.cashflow.index',
+        'create' => 'admin.cashflow.create',
+        'store' => 'admin.cashflow.store'
+    ]);
+
     // Rute Khusus untuk Upload Image CKEditor (karena tidak ada di resource standar)
     Route::post('/artikel/upload', [AdminArticle::class, 'uploadEditorImage'])->name('admin.articles.upload');
     
@@ -105,8 +110,14 @@ Route::middleware(['auth:admin'])->prefix('management-center')->group(function (
         'articles' => 'id' // Agar tetap menggunakan {id} sesuai controller Anda
     ]);
 
+    Route::get('/comments', [CommentController::class, 'index'])->name('admin.comments.index');
+    Route::patch('/comments/{id}/approve', [CommentController::class, 'approve'])->name('admin.comments.approve');
+    Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('admin.comments.destroy');
+
     Route::post('/logout', [AdminLogin::class, 'logout'])->name('admin.logout');
 });
 
 Route::get('/artikel', [frontArtikelController::class, 'index'])->name('front.artikel.index');
 Route::get('/artikel/{slug}', [frontArtikelController::class, 'show'])->name('front.artikel.detail');
+
+Route::post('/articles/{id}/comments', [CommentController::class, 'store'])->name('comments.store');

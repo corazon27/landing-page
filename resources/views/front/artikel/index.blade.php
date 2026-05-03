@@ -82,7 +82,7 @@
 
                     {{-- Tombol Salin Link Otomatis --}}
                     <button onclick="copyToClipboard('{{ request()->fullUrl() }}')"
-                        class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white border border-slate-100 text-slate-400 hover:bg-slate-800 hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm"
+                        class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white border border-slate-100 text-slate-400 hover:bg-slate-800 hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm cursor-pointer"
                         title="Copy Link">
                         <i class="fas fa-link"></i>
                     </button>

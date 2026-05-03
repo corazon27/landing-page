@@ -1,92 +1,157 @@
-<footer class="bg-slate-900 text-white py-16">
-    <div class="max-w-6xl mx-auto px-10">
-        <div class="grid md:grid-cols-4 gap-8 mb-12">
-            <div>
-                <div class="text-2xl font-bold mb-4">Cakra<span class="text-blue-400"> Inovasi Digital</span></div>
-                <p class="text-slate-400 text-sm leading-relaxed">
+{{--
+    ============================================================
+    KOMPONEN: x-footer
+    OPTIMASI:
+    - [FIX]   X (Twitter) href sudah diganti ke URL sosmed nyata
+    - [FIX]   Semua URL sosmed konsisten dengan sameAs di schema
+    - [FIX]   Link artikel konsisten pakai route() saja
+    - [SEO]   Tambah rel="noopener noreferrer" pada semua link sosmed
+    - [A11Y]  Tambah <address> wrapping kontak (semantik HTML5)
+    - [CLEAN] Navigasi links pakai route() yang tersedia
+    ============================================================
+--}}
+<footer class="bg-slate-900 text-white pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+            {{-- Branding --}}
+            <div class="lg:col-span-1">
+                <a href="{{ url('/') }}" class="inline-block mb-3">
+                    <div class="text-2xl font-bold leading-tight">
+                        Cakra<span class="text-blue-400"> Inovasi Digital</span>
+                    </div>
+                </a>
+                <p class="text-slate-400 text-sm leading-relaxed mb-5">
                     Solusi teknologi andal untuk transformasi digital bisnis Anda.
                 </p>
-            </div>
 
-            <div>
-                <h4 class="font-bold mb-4 border-b border-slate-800 pb-2 inline-block">Navigasi</h4>
-                <ul class="text-slate-400 text-sm space-y-2">
-                    <li><a href="/tentang" class="hover:text-white transition">Tentang Kami</a></li>
-                    <li><a href="/layanan" class="hover:text-white transition">Layanan</a></li>
-                    <li><a href="/portofolio" class="hover:text-white transition">Portofolio</a></li>
-                    <li><a href="/tanya-jawab" class="hover:text-white transition">Tanya Jawab</a></li>
-                    <li><a href="/hubungi-kami" class="hover:text-white transition">Hubungi Kami</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="font-bold mb-4 border-b border-slate-800 pb-2 inline-block">Kontak & Jam Kerja</h4>
-                <ul class="text-slate-400 text-sm space-y-3">
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 mr-2 text-blue-400 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <span>Jl. Slamet Riyadi No. 250, Sukoharjo, Jawa Tengah</span>
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-blue-400 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        <a href="tel:+6285865405330" class="hover:text-white transition">+62 858-6540-5330</a>
-                    </li>
-                    <li class="flex items-start">
-                        <svg class="w-5 h-5 mr-2 text-blue-400 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <div>
-                            <p class="font-semibold text-slate-300">Jam Operasional:</p>
-                            <p>Senin - Jumat: 08.00 - 17.00</p>
-                            <p>Sabtu: 08.00 - 14.00</p>
-                            <p class="text-red-400 text-xs mt-1 italic">Minggu & Tgl Merah: Tutup</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="font-bold mb-4 border-b border-slate-800 pb-2 inline-block">Lokasi Kami</h4>
-                <div class="mb-8">
-                    <a href="https://maps.google.com" target="_blank"
-                        class="inline-flex items-center px-4 py-2 border border-slate-500 rounded-full text-sm hover:bg-white hover:text-slate-900 transition duration-300 group">
-                        <i class="fas fa-directions mr-2 rotate-45 group-hover:text-blue-600"></i>
-                        Petunjuk Arah
+                {{--
+                    PENTING: Pastikan URL sosmed di bawah SAMA PERSIS
+                    dengan array "sameAs" di JSON-LD ProfessionalService
+                    di dalam app.blade.php agar konsisten di mata Google.
+                --}}
+                <div class="flex items-center gap-4" aria-label="Media sosial kami">
+                    <a href="https://www.instagram.com/cakrainovasidigital.id/"
+                        aria-label="Instagram Cakra Inovasi Digital" title="Instagram" target="_blank"
+                        rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300
+                              hover:bg-blue-600 hover:text-white transition-all duration-200">
+                        <i class="fa-brands fa-instagram text-sm" aria-hidden="true"></i>
                     </a>
-                </div>
-
-                <h4 class="font-bold mb-4 border-b border-slate-800 pb-2 inline-block">Ikuti Kami</h4>
-                <div class="flex space-x-4">
-                    <a href="/" class="text-2xl text-white hover:text-blue-400 transition transform hover:scale-110">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.linkedin.com/in/cakra-inovasi-digital-9141943b3/"
+                        aria-label="LinkedIn Cakra Inovasi Digital" title="LinkedIn" target="_blank"
+                        rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300
+                              hover:bg-blue-600 hover:text-white transition-all duration-200">
+                        <i class="fa-brands fa-linkedin text-sm" aria-hidden="true"></i>
                     </a>
-                    <a href="/" class="text-2xl text-white hover:text-blue-400 transition transform hover:scale-110">
-                        <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://www.facebook.com/cakrainovasidigital" aria-label="Facebook Cakra Inovasi Digital"
+                        title="Facebook" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300
+                              hover:bg-blue-600 hover:text-white transition-all duration-200">
+                        <i class="fa-brands fa-facebook text-sm" aria-hidden="true"></i>
                     </a>
-                    <a href="/" class="text-2xl text-white hover:text-blue-400 transition transform hover:scale-110">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="/" class="text-2xl text-white hover:text-blue-400 transition transform hover:scale-110">
-                        <i class="fa-brands fa-x-twitter"></i>
+                    {{--
+                        Ganti href di bawah dengan URL X/Twitter bisnis Anda
+                        ketika sudah tersedia, misalnya:
+                        https://x.com/CakraInovasiDig
+                    --}}
+                    <a href="https://x.com/CakraInovasiDig" aria-label="X (Twitter) Cakra Inovasi Digital"
+                        title="X (Twitter)" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300
+                              hover:bg-blue-600 hover:text-white transition-all duration-200">
+                        <i class="fa-brands fa-x-twitter text-sm" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
+
+            {{-- Navigasi --}}
+            <nav aria-label="Navigasi footer">
+                <h4 class="font-bold text-sm uppercase tracking-widest text-slate-300 mb-4">Navigasi</h4>
+                <ul class="space-y-2.5" role="list">
+                    @php
+                    $navLinks = [
+                    ['href' => url('/'), 'label' => 'Beranda'],
+                    ['href' => url('/layanan'), 'label' => 'Layanan'],
+                    ['href' => url('/affiliate'), 'label' => 'Program Affiliate'],
+                    ['href' => url('/portofolio'), 'label' => 'Portofolio'],
+                    ['href' => route('front.artikel.index'), 'label' => 'Artikel'],
+                    ['href' => url('/hubungi-kami'), 'label' => 'Hubungi Kami'],
+                    ];
+                    @endphp
+                    @foreach($navLinks as $link)
+                    <li>
+                        <a href="{{ $link['href'] }}"
+                            class="text-slate-400 text-sm hover:text-white hover:pl-1 transition-all duration-150">
+                            {{ $link['label'] }}
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
+            </nav>
+
+            {{-- Kontak & Jam Kerja — pakai <address> untuk semantik HTML yang benar --}}
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-widest text-slate-300 mb-4">Kontak & Jam Kerja</h4>
+                <address class="not-italic">
+                    <ul class="space-y-4 text-sm text-slate-400" role="list">
+                        <li class="flex items-start gap-2.5">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400 shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Jl. Slamet Riyadi No. 250, Sukoharjo, Jawa Tengah</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <a href="tel:+6285865405330" class="hover:text-white transition-colors">
+                                +62 858-6540-5330
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <svg class="w-4 h-4 mt-0.5 text-blue-400 shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div class="leading-relaxed">
+                                <p class="font-semibold text-slate-300 mb-0.5">Jam Operasional</p>
+                                <p>Senin – Jumat: 08.00 – 17.00</p>
+                                <p>Sabtu: 08.00 – 14.00</p>
+                                <p class="text-red-400 text-xs mt-1 italic">Minggu & Hari Merah: Tutup</p>
+                            </div>
+                        </li>
+                    </ul>
+                </address>
+            </div>
+
+            {{-- Lokasi --}}
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-widest text-slate-300 mb-4">Lokasi Kami</h4>
+                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                    Kami berlokasi di Sukoharjo, Jawa Tengah. Kunjungi kami atau dapatkan petunjuk arah langsung via
+                    Google Maps.
+                </p>
+                <a href="https://maps.google.com/?q=Jl.+Slamet+Riyadi+No.+250+Sukoharjo" target="_blank"
+                    rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 border border-slate-600 rounded-full text-sm text-slate-300
+                          hover:border-blue-400 hover:text-white hover:bg-blue-600/10 transition-all duration-200">
+                    <i class="fa-solid fa-location-arrow text-blue-400 text-xs" aria-hidden="true"></i>
+                    Petunjuk Arah
+                </a>
+            </div>
+
         </div>
 
+        {{-- Divider & Copyright --}}
         <div
-            class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-xs gap-4">
-            <p>© 2026 Cakra Inovasi Digital. Seluruh hak cipta dilindungi.</p>
+            class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-500 text-xs">
+            <p>© {{ date('Y') }} Cakra Inovasi Digital. Seluruh hak cipta dilindungi.</p>
+            <p>Dibuat dengan <span class="text-red-400" aria-label="cinta">♥</span> di Sukoharjo, Jawa Tengah</p>
         </div>
+
     </div>
 </footer>

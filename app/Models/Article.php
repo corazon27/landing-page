@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Comment;
 
 class Article extends Model
 {
@@ -27,4 +28,9 @@ class Article extends Model
     protected $attributes = [
         'views' => 0,
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->where('is_approved', true)->latest();
+    }
 }

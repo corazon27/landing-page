@@ -38,13 +38,31 @@ class frontArtikelController extends Controller
         return view('front.artikel.index', compact('articles', 'popularArticles', 'latestArticles'));
     }
 
-    public function show($slug)
+   public function show($slug)
     {
         $article = Article::where('slug', $slug)->firstOrFail();
+
         
-        // Tambahkan view count secara sederhana
+        $popularArticles = Article::where('status', 'published')
+                            ->where('published_at', '<=', now())
+                            ->orderBy('views', 'desc')
+                            ->take(3)
+                            ->get();
+        
+        // Previous Post
+        $previous = Article::where('id', '<', $article->id)->orderBy('id', 'desc')->first();
+
+        // Next Post
+        $next = Article::where('id', '>', $article->id)->orderBy('id', 'asc')->first();
+
+        // Related Posts: Ambil 3 artikel secara acak, kecuali artikel ini
+        $related_posts = Article::where('id', '!=', $article->id)
+                                ->inRandomOrder()
+                                ->limit(3)
+                                ->get();
+
         $article->increment('views');
 
-        return view('front.artikel.detail', compact('article'));
+        return view('front.artikel.detail', compact('article', 'previous', 'next', 'related_posts', 'popularArticles'));
     }
 }
