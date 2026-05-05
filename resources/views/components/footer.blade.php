@@ -1,21 +1,8 @@
-{{--
-    ============================================================
-    KOMPONEN: x-footer
-    OPTIMASI:
-    - [FIX]   X (Twitter) href sudah diganti ke URL sosmed nyata
-    - [FIX]   Semua URL sosmed konsisten dengan sameAs di schema
-    - [FIX]   Link artikel konsisten pakai route() saja
-    - [SEO]   Tambah rel="noopener noreferrer" pada semua link sosmed
-    - [A11Y]  Tambah <address> wrapping kontak (semantik HTML5)
-    - [CLEAN] Navigasi links pakai route() yang tersedia
-    ============================================================
---}}
 <footer class="bg-slate-900 text-white pt-16 pb-8">
     <div class="max-w-6xl mx-auto px-6 lg:px-10">
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
-            {{-- Branding --}}
             <div class="lg:col-span-1">
                 <a href="{{ url('/') }}" class="inline-block mb-3">
                     <div class="text-2xl font-bold leading-tight">
@@ -26,43 +13,32 @@
                     Solusi teknologi andal untuk transformasi digital bisnis Anda.
                 </p>
 
-                {{--
-                    PENTING: Pastikan URL sosmed di bawah SAMA PERSIS
-                    dengan array "sameAs" di JSON-LD ProfessionalService
-                    di dalam app.blade.php agar konsisten di mata Google.
-                --}}
                 <div class="flex items-center gap-4" aria-label="Media sosial kami">
                     <a href="https://www.instagram.com/cakrainovasidigital.id/"
                         aria-label="Instagram Cakra Inovasi Digital" title="Instagram" target="_blank"
-                        rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300
-                              hover:bg-blue-600 hover:text-white transition-all duration-200">
+                        rel="noopener noreferrer"
+                        class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-200">
                         <i class="fa-brands fa-instagram text-sm" aria-hidden="true"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/cakra-inovasi-digital-9141943b3/"
                         aria-label="LinkedIn Cakra Inovasi Digital" title="LinkedIn" target="_blank"
-                        rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300
-                              hover:bg-blue-600 hover:text-white transition-all duration-200">
+                        rel="noopener noreferrer"
+                        class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-200">
                         <i class="fa-brands fa-linkedin text-sm" aria-hidden="true"></i>
                     </a>
                     <a href="https://www.facebook.com/cakrainovasidigital" aria-label="Facebook Cakra Inovasi Digital"
-                        title="Facebook" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300
-                              hover:bg-blue-600 hover:text-white transition-all duration-200">
+                        title="Facebook" target="_blank" rel="noopener noreferrer"
+                        class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-200">
                         <i class="fa-brands fa-facebook text-sm" aria-hidden="true"></i>
                     </a>
-                    {{--
-                        Ganti href di bawah dengan URL X/Twitter bisnis Anda
-                        ketika sudah tersedia, misalnya:
-                        https://x.com/CakraInovasiDig
-                    --}}
                     <a href="https://x.com/CakraInovasiDig" aria-label="X (Twitter) Cakra Inovasi Digital"
-                        title="X (Twitter)" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300
-                              hover:bg-blue-600 hover:text-white transition-all duration-200">
+                        title="X (Twitter)" target="_blank" rel="noopener noreferrer"
+                        class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-200">
                         <i class="fa-brands fa-x-twitter text-sm" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
 
-            {{-- Navigasi --}}
             <nav aria-label="Navigasi footer">
                 <h4 class="font-bold text-sm uppercase tracking-widest text-slate-300 mb-4">Navigasi</h4>
                 <ul class="space-y-2.5" role="list">
@@ -87,7 +63,6 @@
                 </ul>
             </nav>
 
-            {{-- Kontak & Jam Kerja — pakai <address> untuk semantik HTML yang benar --}}
             <div>
                 <h4 class="font-bold text-sm uppercase tracking-widest text-slate-300 mb-4">Kontak & Jam Kerja</h4>
                 <address class="not-italic">
@@ -100,7 +75,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            <span>Jl. Slamet Riyadi No. 250, Sukoharjo, Jawa Tengah</span>
+                            <span>Jl. Slamet Riyadi No. 250, Magelang, Jawa Tengah</span>
                         </li>
                         <li class="flex items-center gap-2.5">
                             <svg class="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor"
@@ -129,16 +104,15 @@
                 </address>
             </div>
 
-            {{-- Lokasi --}}
             <div>
                 <h4 class="font-bold text-sm uppercase tracking-widest text-slate-300 mb-4">Lokasi Kami</h4>
                 <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                    Kami berlokasi di Sukoharjo, Jawa Tengah. Kunjungi kami atau dapatkan petunjuk arah langsung via
+                    Kami berlokasi di Magelang, Jawa Tengah. Kunjungi kami atau dapatkan petunjuk arah langsung via
                     Google Maps.
                 </p>
-                <a href="https://maps.google.com/?q=Jl.+Slamet+Riyadi+No.+250+Sukoharjo" target="_blank"
-                    rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 border border-slate-600 rounded-full text-sm text-slate-300
-                          hover:border-blue-400 hover:text-white hover:bg-blue-600/10 transition-all duration-200">
+                <a href="https://maps.google.com/?q=Jl.+Slamet+Riyadi+No.+250+Magelang" target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-4 py-2 border border-slate-600 rounded-full text-sm text-slate-300 hover:border-blue-400 hover:text-white hover:bg-blue-600/10 transition-all duration-200">
                     <i class="fa-solid fa-location-arrow text-blue-400 text-xs" aria-hidden="true"></i>
                     Petunjuk Arah
                 </a>
@@ -146,11 +120,10 @@
 
         </div>
 
-        {{-- Divider & Copyright --}}
         <div
             class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-500 text-xs">
             <p>© {{ date('Y') }} Cakra Inovasi Digital. Seluruh hak cipta dilindungi.</p>
-            <p>Dibuat dengan <span class="text-red-400" aria-label="cinta">♥</span> di Sukoharjo, Jawa Tengah</p>
+            <p>Dibuat dengan <span class="text-red-400" aria-label="cinta">♥</span> di Magelang, Jawa Tengah</p>
         </div>
 
     </div>

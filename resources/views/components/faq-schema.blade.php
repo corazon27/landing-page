@@ -1,36 +1,15 @@
-{{--
-    ============================================================
-    KOMPONEN: x-faq-schema
-    FUNGSI  : Inject JSON-LD FAQPage schema untuk SEO Google
-
-    CARA PAKAI di halaman:
-        @php
-            $faqsData = [
-                ['question' => '...', 'answer' => '...'],
-            ];
-        @endphp
-        @push('schema')
-            <x-faq-schema :faqs="$faqsData" />
-        @endpush
-
-    CATATAN : 'answer' boleh mengandung HTML — akan di-strip_tags
-              untuk schema Google, tapi tetap ditampilkan rich di UI.
-    ============================================================
---}}
 @props(['faqs' => []])
 
 @if(!empty($faqs))
 @php
-$schemaItems = collect($faqs)->map(function ($faq) {
-return [
+$schemaItems = collect($faqs)->map(fn($faq) => [
 '@type' => 'Question',
 'name' => $faq['question'],
 'acceptedAnswer' => [
 '@type' => 'Answer',
 'text' => strip_tags($faq['answer']),
 ],
-];
-})->values()->all();
+])->values()->all();
 
 $faqSchema = [
 '@context' => 'https://schema.org',
