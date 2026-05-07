@@ -1,239 +1,116 @@
 <x-layout.app>
 
     @php
-    $title = 'Harga & Perbandingan Paket Website Toko Online & E-Commerce | Cakra Inovasi Digital';
-    $metaDescription = 'Bandingkan harga dan fitur lengkap paket website toko online & e-commerce Cakra Inovasi Digital
-    — Starter, Professional, hingga Enterprise. Transparan, tanpa biaya tersembunyi. Cocok untuk UMKM Indonesia.';
-    $metaKeywords = 'harga website toko online, paket ecommerce Indonesia, perbandingan fitur toko online, jasa website
-    ecommerce UMKM, biaya buat toko online, harga web ecommerce 2025';
+    $title = 'Harga & Perbandingan Paket Website Katalog Produk | Cakra Inovasi Digital';
+    $metaDescription = 'Bandingkan harga dan fitur lengkap paket website katalog produk digital Cakra Inovasi Digital —
+    Starter, Professional, hingga Enterprise. Transparan, tanpa biaya tersembunyi.';
+    $metaKeywords = 'harga website katalog produk, paket katalog digital, perbandingan fitur katalog online, jasa
+    website katalog UMKM, brosur digital, katalog produk WhatsApp';
     $ogType = 'website';
-    $canonicalUrl = url('/fitur/web-ecommerce');
+    $canonicalUrl = url('/fitur/web-katalog-produk');
     @endphp
 
     @php
-    // Memasukkan format HTML cantik ke dalam PHP array $faqsData agar rapi
     $faqsData = [
-    [
-    'question' => 'Apakah saya bisa upgrade paket di kemudian hari?',
-    'answer' => '<p class="mb-3">Tenu. Bisnis Anda bisa berkembang kapan saja, dan sistem kami siap mendukungnya:</p>
-    <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-xl border border-orange-100">
-        <i class="fa-solid fa-arrow-up-right-dots text-orange-500 mt-0.5 shrink-0 text-xs" aria-hidden="true"></i>
-        <p class="text-xs text-slate-600">Anda bisa upgrade ke paket lebih tinggi kapan saja. Tim kami akan membantu
-            proses penyesuaian fitur dan biaya tambahan secara transparan tanpa biaya tersembunyi.</p>
-    </div>'
-    ],
-    [
-    'question' => 'Apakah domain dan hosting sudah termasuk di semua paket?',
-    'answer' => '<div class="flex items-start gap-4 bg-orange-50 p-4 rounded-xl">
-        <i class="fa-solid fa-server text-2xl text-orange-500 mt-1 shrink-0" aria-hidden="true"></i>
-        <div>
-            <p class="mb-2 text-xs font-bold text-slate-700">Sudah All-in 1 Tahun:</p>
-            <ul class="space-y-1">
-                <li class="flex items-center gap-2 text-xs"><i class="fa-solid fa-check text-orange-500 text-[10px]"
-                        aria-hidden="true"></i> Domain .com sudah termasuk</li>
-                <li class="flex items-center gap-2 text-xs"><i class="fa-solid fa-check text-orange-500 text-[10px]"
-                        aria-hidden="true"></i> Cloud Hosting kualitas tinggi 1 tahun</li>
-            </ul>
-            <p class="text-[10px] text-slate-400 mt-2 italic">*Tahun berikutnya cukup membayar biaya perpanjangan sesuai
-                tarif provider.</p>
-        </div>
-    </div>'
-    ],
-    [
-    'question' => 'Apakah Payment Gateway sudah aktif langsung setelah website jadi?',
-    'answer' => '<p class="mb-3">Payment Gateway tersedia di semua paket untuk mendukung pembayaran otomatis:</p>
-    <div class="space-y-2">
-        <div class="flex items-center gap-3 p-2.5 bg-slate-50 rounded-xl text-xs">
-            <i class="fa-solid fa-shield-check text-emerald-500 text-[10px]" aria-hidden="true"></i>
-            <span>Proses aktivasi membutuhkan verifikasi akun merchant (± 3–7 hari kerja).</span>
-        </div>
-        <div class="flex items-center gap-3 p-2.5 bg-slate-50 rounded-xl text-xs">
-            <i class="fa-solid fa-credit-card text-blue-500 text-[10px]" aria-hidden="true"></i>
-            <span>Mendukung Midtrans, Xendit, atau provider lainnya.</span>
-        </div>
-    </div>
-    <p class="text-xs text-slate-500 mt-3 italic">Biaya transaksi per pesanan dikenakan langsung oleh provider payment
-        gateway terkait.</p>'
-    ],
-    [
-    'question' => 'Bisakah saya mengelola produk sendiri tanpa bantuan developer?',
-    'answer' => '<p class="mb-3"><strong>Sangat Bisa.</strong> Dashboard Admin dirancang user-friendly — dari HP
-        sekalipun Anda bisa:</p>
-    <div class="grid grid-cols-2 gap-2">
-        <div class="p-2 bg-slate-50 rounded-lg text-[11px] flex items-center gap-2"><span>📦</span> Kelola Stok & Produk
-        </div>
-        <div class="p-2 bg-slate-50 rounded-lg text-[11px] flex items-center gap-2"><span>🖼️</span> Upload Foto Produk
-        </div>
-        <div class="p-2 bg-slate-50 rounded-lg text-[11px] flex items-center gap-2"><span>🏷️</span> Atur Harga & Promo
-        </div>
-        <div class="p-2 bg-slate-50 rounded-lg text-[11px] flex items-center gap-2"><span>📑</span> Kelola Pesanan Masuk
-        </div>
-    </div>'
-    ],
-    [
-    'question' => 'Bagaimana sistem notifikasi pesanan bekerja?',
-    'answer' => '<div class="space-y-2">
-        <div class="flex items-center gap-3 p-3 bg-emerald-50 rounded-xl text-xs">
-            <i class="fa-brands fa-whatsapp text-emerald-500" aria-hidden="true"></i>
-            <span><strong>Admin:</strong> Notifikasi real-time saat ada pesanan masuk.</span>
-        </div>
-        <div class="flex items-center gap-3 p-3 bg-orange-50 rounded-xl text-xs border border-orange-100">
-            <i class="fa-solid fa-envelope text-orange-500" aria-hidden="true"></i>
-            <span><strong>Pelanggan:</strong> Konfirmasi pesanan & update status otomatis.</span>
-        </div>
-        <p class="text-xs text-slate-500 italic">Alur komunikasi otomatis tanpa perlu input manual satu per satu.</p>
-    </div>'
-    ],
-    [
-    'question' => 'Apakah ada biaya tambahan jika saya mau menambah produk melebihi batas paket?',
-    'answer' => '<div class="p-4 bg-orange-50 rounded-xl border border-orange-100">
-        <p class="text-xs text-slate-600 leading-relaxed">
-            Anda bisa upgrade ke paket yang lebih tinggi atau kami diskusikan penambahan kapasitas secara
-            <strong>custom</strong>. Hubungi tim kami untuk konsultasi — <span
-                class="text-orange-600 font-bold">Gratis</span> biaya konsultasi untuk mencari solusi terbaik bagi Anda.
-        </p>
-    </div>'
-    ],
-    [
-    'question' => 'Bagaimana jika ada bug atau error setelah website live?',
-    'answer' => '<div class="flex items-start gap-4 bg-slate-50 p-4 rounded-xl">
-        <i class="fa-solid fa-bug-slash text-2xl text-slate-400 mt-1 shrink-0" aria-hidden="true"></i>
-        <div>
-            <p class="text-xs text-slate-600">Semua paket mendapatkan <strong>Garansi Perbaikan Bug</strong> setelah
-                serah terima tanpa biaya tambahan. Kami berkomitmen memastikan toko online Anda berjalan sempurna tanpa
-                gangguan teknis.</p>
-        </div>
-    </div>'
-    ],
-    [
-    'question' => 'Apakah bisa cicil pembayarannya?',
-    'answer' => '<p class="mb-3">Ya, kami menyediakan skema pembayaran yang fleksibel dalam 3 termin:</p>
-    <div class="space-y-2">
-        <div class="flex items-center gap-3 p-2.5 bg-slate-50 rounded-xl text-xs"><i
-                class="fa-solid fa-1 text-orange-500 text-[10px]" aria-hidden="true"></i><span><strong>Termin
-                    1:</strong> Down Payment (DP) saat tanda tangan kesepakatan.</span></div>
-        <div class="flex items-center gap-3 p-2.5 bg-slate-50 rounded-xl text-xs"><i
-                class="fa-solid fa-2 text-orange-500 text-[10px]" aria-hidden="true"></i><span><strong>Termin
-                    2:</strong> Setelah desain disetujui & masuk tahap development.</span></div>
-        <div class="flex items-center gap-3 p-2.5 bg-slate-50 rounded-xl text-xs"><i
-                class="fa-solid fa-3 text-orange-500 text-[10px]" aria-hidden="true"></i><span><strong>Termin
-                    3:</strong> Pelunasan saat website siap ditayangkan (Live).</span></div>
-    </div>
-    <p class="text-xs text-slate-400 mt-3 italic">Transparan, tanpa biaya bunga atau tambahan biaya cicilan.</p>'
-    ],
+    ['question' => 'Apakah saya bisa upgrade paket di kemudian hari?', 'answer' => 'Tentu. Anda bisa upgrade ke paket
+    lebih tinggi kapan saja. Tim kami membantu proses penyesuaian fitur dan biaya tambahan secara transparan.'],
+    ['question' => 'Apakah domain dan hosting sudah termasuk di semua paket?', 'answer' => 'Ya, domain .com dan hosting
+    1 tahun sudah termasuk di semua paket. Tahun berikutnya dikenakan biaya perpanjangan sesuai tarif provider.'],
+    ['question' => 'Apakah fitur download PDF katalog langsung aktif setelah website jadi?', 'answer' => 'Fitur download
+    PDF tersedia di paket Professional ke atas dan langsung aktif setelah serah terima. Katalog PDF akan selalu sinkron
+    otomatis setiap kali Anda mengupdate produk di admin.'],
+    ['question' => 'Bisakah saya mengelola produk sendiri tanpa bantuan developer?', 'answer' => 'Ya. Dashboard Admin
+    dirancang user-friendly sehingga Anda bisa tambah produk, upload foto, ubah harga, dan atur kategori tanpa bantuan
+    teknis apapun.'],
+    ['question' => 'Bagaimana cara pelanggan menghubungi saya dari website katalog?', 'answer' => 'Setiap halaman produk
+    dilengkapi tombol WhatsApp yang secara otomatis mengirimkan pesan berisi nama produk yang diminati ke nomor Anda.
+    Tidak ada langkah tambahan — dari lihat produk ke chat hanya satu klik.'],
+    ['question' => 'Apakah ada biaya tambahan jika saya mau menambah produk melebihi batas paket?', 'answer' => 'Anda
+    bisa upgrade ke paket yang lebih tinggi atau kami bisa diskusikan penambahan kapasitas secara custom. Hubungi tim
+    kami untuk konsultasi lebih lanjut.'],
+    ['question' => 'Bagaimana jika ada bug atau error setelah website live?', 'answer' => 'Semua paket mendapatkan
+    garansi perbaikan bug setelah serah terima tanpa biaya tambahan.'],
+    ['question' => 'Apakah bisa cicil pembayarannya?', 'answer' => 'Bisa. Kami menggunakan sistem 3 termin: DP saat
+    deal, termin progres setelah desain disetujui, dan pelunasan saat website siap live.'],
     ];
 
     $cols = [
     [
     'label' => 'Starter',
-    'sub' => 'Rp 5.000.000',
+    'sub' => 'Rp 1.800.000',
     'note' => 'Biaya setup awal',
     'badge' => null,
-    'btn' => 'border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white',
-    'wa' => 'Paket%20E-Commerce%20Starter',
+    'btn' => 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+    'wa' => 'Paket%20Katalog%20Starter',
     ],
     [
     'label' => 'Professional',
-    'sub' => 'Rp 12.000.000',
+    'sub' => 'Rp 3.500.000',
     'note' => 'Biaya setup awal',
     'badge' => 'Paling Populer',
     'badge_bg' => 'bg-amber-400 text-amber-950',
-    'btn' => 'bg-orange-500 hover:bg-orange-600 text-white',
-    'wa' => 'Paket%20E-Commerce%20Professional',
+    'btn' => 'bg-blue-600 hover:bg-blue-700 text-white',
+    'wa' => 'Paket%20Katalog%20Professional',
     ],
     [
     'label' => 'Enterprise',
-    'sub' => 'Mulai Rp 25.000.000',
+    'sub' => 'Mulai Rp 6.000.000',
     'note' => 'Harga sesuai kebutuhan',
     'badge' => null,
     'btn' => 'bg-slate-800 hover:bg-slate-900 text-white',
-    'wa' => 'Paket%20E-Commerce%20Enterprise',
+    'wa' => 'Paket%20Katalog%20Enterprise',
     ],
     ];
 
     $groups = [
     'Produk & Katalog' => [
-    ['label' => 'Kapasitas Produk', 'values' => ['100 Produk', 'Unlimited', 'Unlimited']],
+    ['label' => 'Kapasitas Produk', 'values' => ['50 Produk', '300 Produk', 'Unlimited']],
     ['label' => 'Kategori & Subkategori', 'values' => [true, true, true]],
-    ['label' => 'Tag & Label Produk', 'values' => [false, true, true]],
-    ['label' => 'Halaman Detail Produk Lengkap', 'values' => [true, true, true]],
+    ['label' => 'Tag Produk', 'values' => [false, true, true]],
+    ['label' => 'Halaman Detail per Produk', 'values' => [true, true, true]],
     ['label' => 'Galeri Foto Multi-gambar per Produk', 'values' => [true, true, true]],
-    ['label' => 'Variasi Produk (Ukuran, Warna, dll)', 'values' => [true, true, true]],
-    ['label' => 'Pencarian & Filter Produk', 'values' => [true, true, true]],
-    ['label' => 'Produk Digital (Unduhan Otomatis)', 'values' => [false, true, true]],
+    ['label' => 'Filter & Pencarian Multi-parameter', 'values' => [false, true, true]],
     ['label' => 'Watermark Otomatis pada Foto Produk', 'values' => [false, true, true]],
     ],
-    'Checkout & Pembayaran' => [
-    ['label' => 'Keranjang Belanja & Checkout', 'values' => [true, true, true]],
-    ['label' => 'Payment Gateway (Transfer, E-Wallet)', 'values' => [true, true, true]],
-    ['label' => 'Pembayaran QRIS', 'values' => [true, true, true]],
-    ['label' => 'Kartu Kredit & Cicilan', 'values' => [false, true, true]],
-    ['label' => 'Pembayaran COD (Bayar di Tempat)', 'values' => [false, true, true]],
-    ['label' => 'Checkout Guest (tanpa daftar)', 'values' => [true, true, true]],
-    ['label' => 'Wishlist & Simpan untuk Nanti', 'values' => [false, true, true]],
+    'Inquiry & Konversi' => [
+    ['label' => 'Tombol WhatsApp per Produk', 'values' => [true, true, true]],
+    ['label' => 'Pesan WA Otomatis (nama produk)', 'values' => [true, true, true]],
+    ['label' => 'Form Request Penawaran Harga', 'values' => [false, true, true]],
+    ['label' => 'Portal Pelanggan (Login & Favorit)', 'values' => [false, false, true]],
+    ['label' => 'Sistem Harga per Segmen Pelanggan', 'values' => [false, false, true]],
     ],
-    'Promo & Konversi' => [
-    ['label' => 'Diskon Produk (% & Nominal)', 'values' => [false, true, true]],
-    ['label' => 'Voucher & Kode Promo Unik', 'values' => [false, true, true]],
-    ['label' => 'Flash Sale + Countdown Timer', 'values' => [false, true, true]],
-    ['label' => 'Promo Buy X Get Y', 'values' => [false, true, true]],
-    ['label' => 'Bundling Produk', 'values' => [false, false, true]],
-    ['label' => 'Program Loyalitas & Poin Reward', 'values' => [false, false, true]],
-    ['label' => 'Pengingat Keranjang Terbengkalai', 'values' => [false, true, true]],
+    'Dokumen & Unduhan' => [
+    ['label' => 'Download Brosur PDF Otomatis', 'values' => [false, true, true]],
+    ['label' => 'PDF Sinkron dengan Data Admin', 'values' => [false, true, true]],
+    ['label' => 'Ekspor Data Produk ke Excel', 'values' => [false, false, true]],
     ],
-    'Pesanan & Pengiriman' => [
-    ['label' => 'Manajemen Pesanan & Status', 'values' => [true, true, true]],
-    ['label' => 'Notifikasi Pesanan Otomatis (WA/Email)', 'values' => [true, true, true]],
-    ['label' => 'Tracking Pesanan Real-Time', 'values' => [true, true, true]],
-    ['label' => 'Integrasi Ongkos Kirim (JNE, J&T, dll)', 'values' => [true, true, true]],
-    ['label' => 'Cetak Label Pengiriman', 'values' => [false, true, true]],
-    ['label' => 'Manajemen Retur & Refund', 'values' => [false, true, true]],
+    'Manajemen & Operasional' => [
+    ['label' => 'Dashboard Admin Mandiri', 'values' => [true, true, true]],
+    ['label' => 'Tambah / Edit / Hapus Produk Mandiri', 'values' => [true, true, true]],
+    ['label' => 'Manajemen Kategori & Subkategori', 'values' => [true, true, true]],
+    ['label' => 'Panel Super-Admin Multi-role', 'values' => [false, false, true]],
+    ['label' => 'Integrasi ERP / Sistem Internal', 'values' => [false, false, true]],
+    ['label' => 'Integrasi Marketplace (Tokopedia/Shopee)','values' => [false, false, true]],
     ],
-    'Stok & Inventaris' => [
-    ['label' => 'Manajemen Stok Otomatis', 'values' => [true, true, true]],
-    ['label' => 'Alert Stok Menipis', 'values' => [true, true, true]],
-    ['label' => 'Produk Sold Out Otomatis', 'values' => [true, true, true]],
-    ['label' => 'Ekspor Data Stok ke Excel', 'values' => [false, true, true]],
-    ['label' => 'Integrasi ERP / Sistem Gudang', 'values' => [false, false, true]],
-    ['label' => 'Sinkronisasi Stok Multi-Channel', 'values' => [false, false, true]],
-    ],
-    'Pelanggan & Akun' => [
-    ['label' => 'Registrasi & Login Pelanggan', 'values' => [true, true, true]],
-    ['label' => 'Riwayat Pesanan Pelanggan', 'values' => [true, true, true]],
-    ['label' => 'Manajemen Alamat Pengiriman', 'values' => [true, true, true]],
-    ['label' => 'Review & Rating Produk', 'values' => [false, true, true]],
-    ['label' => 'Database Pelanggan', 'values' => [false, true, true]],
-    ['label' => 'Segmentasi Pelanggan', 'values' => [false, false, true]],
-    ['label' => 'Multi-Seller / Multi-Vendor', 'values' => [false, false, true]],
-    ],
-    'Analitik & Laporan' => [
-    ['label' => 'Laporan Penjualan Dasar', 'values' => [true, true, true]],
-    ['label' => 'Laporan Produk Terlaris', 'values' => [false, true, true]],
+    'Analitik & Statistik' => [
+    ['label' => 'Statistik Pengunjung Dasar', 'values' => [false, true, true]],
     ['label' => 'Integrasi Google Analytics', 'values' => [false, true, true]],
     ['label' => 'Google Search Console', 'values' => [false, true, true]],
-    ['label' => 'Laporan Omset & Konversi', 'values' => [false, true, true]],
-    ['label' => 'Ekspor Laporan ke Excel', 'values' => [false, true, true]],
-    ['label' => 'Laporan Custom & Dashboard Lanjutan', 'values' => [false, false, true]],
+    ['label' => 'Laporan Produk Paling Banyak Dilihat', 'values' => [false, true, true]],
+    ['label' => 'Laporan Custom & Ekspor Data', 'values' => [false, false, true]],
     ],
     'Konten & SEO' => [
     ['label' => 'Halaman Blog / Artikel', 'values' => [false, true, true]],
     ['label' => 'Optimasi SEO On-page Dasar', 'values' => [true, true, true]],
     ['label' => 'SEO On-page Lengkap per Produk', 'values' => [false, true, true]],
     ['label' => 'Schema Markup Product (Google)', 'values' => [false, true, true]],
-    ['label' => 'Sitemap XML Otomatis', 'values' => [true, true, true]],
     ['label' => 'Multiple Bahasa (Indonesia + Inggris)', 'values' => [false, false, true]],
-    ],
-    'Integrasi & Marketplace' => [
-    ['label' => 'Integrasi WhatsApp Business', 'values' => [true, true, true]],
-    ['label' => 'Integrasi Google Shopping', 'values' => [false, true, true]],
-    ['label' => 'Sinkronisasi Tokopedia & Shopee', 'values' => [false, false, true]],
-    ['label' => 'Integrasi API Pihak Ketiga (ERP, CRM)', 'values' => [false, false, true]],
-    ['label' => 'Integrasi Marketplace Lainnya', 'values' => [false, false, true]],
     ],
     'Teknis & Support' => [
     ['label' => 'Domain .com & Hosting 1 Tahun', 'values' => [true, true, true]],
     ['label' => 'SSL Certificate (HTTPS)', 'values' => [true, true, true]],
     ['label' => 'Desain Responsif Mobile-First', 'values' => [true, true, true]],
+    ['label' => 'Custom Domain & Subdomain', 'values' => [false, false, true]],
     ['label' => 'Dedicated Server & SLA 99,9%', 'values' => [false, false, true]],
     ['label' => 'Backup Data', 'values' => ['Mingguan', 'Harian', 'Real-time']],
     ['label' => 'Garansi Bug Purna Jual', 'values' => ['Lifetime', 'Lifetime', 'Lifetime']],
@@ -248,71 +125,66 @@
     [
     'badge' => null,
     'ring' => 'border border-slate-200',
-    'title' => 'E-Commerce Starter',
-    'tagline' => 'Untuk UMKM & brand lokal yang baru go-online',
-    'price' => 'Rp 5.000.000',
+    'title' => 'Katalog Starter',
+    'tagline' => 'Untuk UMKM yang baru go-digital',
+    'price' => 'Rp 1.800.000',
     'price_color' => 'text-slate-900',
     'note' => 'Biaya setup awal',
     'perks' => [
-    'Hingga 100 produk',
-    'Kategori, subkategori & variasi produk',
-    'Keranjang belanja & checkout lengkap',
-    'Payment Gateway (Transfer Bank & E-Wallet)',
-    'Manajemen pesanan & notifikasi otomatis',
-    'Manajemen stok otomatis + alert menipis',
-    'Tracking pesanan real-time',
-    'Integrasi ongkos kirim (JNE, J&T, dll)',
+    'Kapasitas hingga 50 produk',
+    'Kategori & filter produk',
+    'Halaman detail per produk',
+    'Tombol WhatsApp per produk',
+    'Pencarian produk (search bar)',
     'Dashboard admin mandiri',
     'Desain responsif Mobile-First',
     'Domain .com & Hosting 1 tahun',
     'SSL & SEO on-page dasar',
     'Garansi bug',
     ],
-    'btn' => 'border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white',
-    'wa' => 'Paket%20E-Commerce%20Starter',
+    'btn' => 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+    'wa' => 'Paket%20Katalog%20Starter',
     ],
     [
     'badge' => 'Paling Populer',
     'badge_bg' => 'bg-amber-400 text-amber-950',
-    'ring' => 'border-2 border-orange-500 shadow-2xl shadow-orange-100',
-    'title' => 'E-Commerce Professional',
-    'tagline' => 'Paling populer untuk bisnis retail aktif',
-    'price' => 'Rp 12.000.000',
-    'price_color' => 'text-orange-500',
-    'note' => 'Fitur terlengkap untuk toko online aktif',
+    'ring' => 'border-2 border-blue-600 shadow-2xl shadow-blue-100',
+    'title' => 'Katalog Professional',
+    'tagline' => 'Paling populer untuk bisnis aktif',
+    'price' => 'Rp 3.500.000',
+    'price_color' => 'text-blue-600',
+    'note' => 'Fitur terlengkap untuk bisnis aktif',
     'perks' => [
-    'Produk tidak terbatas (unlimited)',
-    'Variasi produk, tag, & label',
-    'Kartu Kredit, Cicilan & QRIS',
-    'Promo, diskon, voucher & flash sale',
-    'Wishlist, review & rating produk',
-    'Manajemen retur & refund',
-    'Laporan omset, konversi & ekspor Excel',
-    'Google Analytics & Google Shopping',
+    'Kapasitas hingga 300 produk',
+    'Kategori, subkategori & tag',
+    'Filter & pencarian multi-parameter',
+    'Tombol WA & form penawaran harga',
+    'Download brosur PDF otomatis',
+    'Watermark otomatis pada foto produk',
+    'Statistik pengunjung & Google Analytics',
     'SEO lengkap & schema markup produk',
     'Halaman blog / artikel',
-    'Pengingat keranjang terbengkalai',
     'Backup harian & garansi bug',
     ],
-    'btn' => 'bg-orange-500 hover:bg-orange-600 text-white shadow-lg shadow-orange-200',
-    'wa' => 'Paket%20E-Commerce%20Professional',
+    'btn' => 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-200',
+    'wa' => 'Paket%20Katalog%20Professional',
     ],
     [
-    'badge' => 'Mulai Rp 25jt',
+    'badge' => 'Mulai Rp 6jt',
     'badge_bg' => 'bg-slate-700 text-white',
     'ring' => 'border border-slate-200',
-    'title' => 'Enterprise / Marketplace',
-    'tagline' => 'Platform multi-vendor & marketplace skala besar',
+    'title' => 'Enterprise / B2B',
+    'tagline' => 'Platform berskala besar, fitur kustom',
     'price' => 'Custom',
     'price_color' => 'text-slate-900',
     'note' => 'Harga sesuai kebutuhan',
     'perks' => [
     'Semua fitur Professional',
-    'Multi-seller / multi-vendor marketplace',
-    'Program loyalitas & poin reward',
-    'Sinkronisasi Tokopedia & Shopee',
-    'Integrasi ERP / sistem gudang',
-    'Segmentasi pelanggan & bundling produk',
+    'Produk & kategori unlimited',
+    'Multiple bahasa (Indonesia + Inggris)',
+    'Portal pelanggan (login & favorit)',
+    'Sistem harga per segmen pelanggan',
+    'Integrasi marketplace & ERP',
     'Laporan custom & ekspor data',
     'Dedicated server & SLA 99,9%',
     'Dedicated Project Manager',
@@ -320,7 +192,7 @@
     'Garansi bug',
     ],
     'btn' => 'border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white',
-    'wa' => 'Paket%20E-Commerce%20Enterprise',
+    'wa' => 'Paket%20Katalog%20Enterprise',
     ],
     ];
     @endphp
@@ -331,10 +203,10 @@
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "@id": "{{ url('/fitur/web-ecommerce') }}/#webpage",
-        "name": "Harga & Perbandingan Paket Website Toko Online & E-Commerce — Cakra Inovasi Digital",
-        "description": "Perbandingan lengkap harga dan fitur paket website toko online dan e-commerce untuk UMKM Indonesia.",
-        "url": "{{ url('/fitur/web-ecommerce') }}",
+        "@id": "{{ url('/fitur/web-katalog-produk') }}/#webpage",
+        "name": "Harga & Perbandingan Paket Website Katalog Produk — Cakra Inovasi Digital",
+        "description": "Perbandingan lengkap harga dan fitur paket website katalog produk digital untuk UMKM Indonesia.",
+        "url": "{{ url('/fitur/web-katalog-produk') }}",
         "isPartOf": {
             "@id": "{{ url('/') }}/#website"
         }
@@ -344,27 +216,27 @@
 
 
     {{-- ================================================================
-         SECTION 1: HERO
-    ================================================================ --}}
+     SECTION 1: HERO
+================================================================ --}}
     <section class="pt-36 pb-14 bg-white">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
             <x-breadcrumb :items="[
-                ['name' => 'Layanan',                    'url' => url('/layanan')],
-                ['name' => 'Website Toko Online',        'url' => url('/layanan/web-ecommerce')],
-            ]" current="Fitur & Harga" />
+            ['name' => 'Layanan',                 'url' => url('/layanan')],
+            ['name' => 'Website Katalog Produk',  'url' => url('/layanan/web-katalog-produk')],
+        ]" current="Fitur & Harga" />
 
             <div class="text-center mt-8 mb-4 max-w-3xl mx-auto" data-aos="fade-up">
                 <span
-                    class="inline-block px-4 py-1.5 rounded-full bg-orange-50 text-orange-600 text-xs font-semibold uppercase tracking-wider mb-5">
+                    class="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-5">
                     Transparan, Tanpa Biaya Tersembunyi
                 </span>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
-                    Bandingkan Paket & <span class="text-orange-500">Fitur Toko Online</span>
+                    Bandingkan Paket & <span class="text-blue-600">Fitur Katalog Produk</span>
                 </h1>
                 <p class="text-slate-500 text-sm md:text-base leading-relaxed">
                     Pilih paket yang paling sesuai dengan skala bisnis Anda. Semua paket sudah termasuk domain, hosting,
-                    SSL, payment gateway, dan garansi support purna jual.
+                    SSL, dan garansi support purna jual.
                 </p>
             </div>
 
@@ -373,13 +245,13 @@
 
 
     {{-- ================================================================
-         SECTION 2: TABEL PERBANDINGAN FITUR LENGKAP
-    ================================================================ --}}
+     SECTION 2: TABEL PERBANDINGAN FITUR LENGKAP
+================================================================ --}}
     <section class="pb-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
             <p class="flex items-center justify-center gap-2 text-center text-slate-400 text-xs mb-4 md:hidden">
-                <i class="fa-solid fa-hand-pointer text-orange-400" aria-hidden="true"></i>
+                <i class="fa-solid fa-hand-pointer text-blue-400" aria-hidden="true"></i>
                 Geser ke samping untuk melihat semua paket
             </p>
 
@@ -404,7 +276,7 @@
                                 <span
                                     class="block text-sm font-bold text-slate-900 {{ !empty($col['badge']) ? 'mt-5' : '' }}">{{ $col['label'] }}</span>
                                 <span
-                                    class="block text-[11px] text-orange-500 font-semibold mt-0.5">{{ $col['sub'] }}</span>
+                                    class="block text-[11px] text-blue-600 font-semibold mt-0.5">{{ $col['sub'] }}</span>
                                 <span class="block text-[10px] text-slate-400 mt-0.5">{{ $col['note'] }}</span>
                             </th>
                             @endforeach
@@ -416,10 +288,10 @@
 
                         @foreach($groups as $groupName => $rows)
 
-                        <tr class="bg-orange-50/40">
-                            <td colspan="4" class="py-3 px-5 sticky left-0 bg-orange-50/40">
+                        <tr class="bg-blue-50/40">
+                            <td colspan="4" class="py-3 px-5 sticky left-0 bg-blue-50/40">
                                 <span
-                                    class="text-[11px] font-bold text-orange-600 uppercase tracking-widest">{{ $groupName }}</span>
+                                    class="text-[11px] font-bold text-blue-600 uppercase tracking-widest">{{ $groupName }}</span>
                             </td>
                         </tr>
 
@@ -438,7 +310,7 @@
                                     aria-label="Tidak tersedia"></i>
                                 @else
                                 <span
-                                    class="inline-block text-[11px] font-semibold text-orange-700 bg-orange-50 px-2.5 py-1 rounded-full whitespace-nowrap">{{ $val }}</span>
+                                    class="inline-block text-[11px] font-semibold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full whitespace-nowrap">{{ $val }}</span>
                                 @endif
                             </td>
                             @endforeach
@@ -452,8 +324,7 @@
                     <tfoot>
                         <tr class="border-t-2 border-slate-100 bg-slate-50/50">
                             <td class="py-7 px-5 sticky left-0 bg-slate-50/50 text-xs text-slate-400 italic">
-                                *Harga belum termasuk biaya domain & hosting perpanjangan, serta langganan payment
-                                gateway
+                                *Harga belum termasuk biaya domain & hosting perpanjangan tahun berikutnya
                             </td>
                             @foreach($cols as $col)
                             <td class="py-7 px-5 text-center">
@@ -475,8 +346,8 @@
 
 
     {{-- ================================================================
-         SECTION 3: PRICING CARDS — ringkasan mobile-friendly
-    ================================================================ --}}
+     SECTION 3: PRICING CARDS — ringkasan mobile-friendly
+================================================================ --}}
     <section class="py-20 bg-slate-50">
         <div class="max-w-5xl mx-auto px-5 md:px-6">
 
@@ -513,7 +384,7 @@
                         <ul class="space-y-2.5 flex-grow mb-6">
                             @foreach($c['perks'] as $perk)
                             <li class="flex items-start gap-2.5 text-sm text-slate-600">
-                                <i class="fa-solid fa-circle-check text-orange-500 text-[11px] mt-0.5 shrink-0"
+                                <i class="fa-solid fa-circle-check text-blue-600 text-[11px] mt-0.5 shrink-0"
                                     aria-hidden="true"></i>
                                 {{ $perk }}
                             </li>
@@ -533,9 +404,9 @@
 
             <div class="mt-8 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm">Belum yakin pilih paket mana? <a
-                        href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20mau%20konsultasi%20pilih%20paket%20toko%20online%20yang%20tepat."
+                        href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20mau%20konsultasi%20pilih%20paket%20katalog%20yang%20tepat."
                         target="_blank" rel="noopener noreferrer"
-                        class="text-orange-500 font-semibold hover:underline">Konsultasi gratis dulu →</a></p>
+                        class="text-blue-600 font-semibold hover:underline">Konsultasi gratis dulu →</a></p>
             </div>
 
         </div>
@@ -543,14 +414,14 @@
 
 
     {{-- ================================================================
-         SECTION 4: FAQ (DENGAN TAMPILAN PREMIUM & BRAND ORANGE KHAS E-COMMERCE)
-    ================================================================ --}}
-    <section id="faq" class="py-14 md:py-24 bg-white" x-data="faqFiturEcommerce()">
+     SECTION 4: FAQ
+================================================================ --}}
+    <section id="faq" class="py-14 md:py-24 bg-white" x-data="faqFiturKatalog()">
         <div class="max-w-3xl mx-auto px-5 md:px-6">
 
             <div class="text-center mb-10 md:mb-12" data-aos="fade-up">
                 <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3 md:mb-4">
-                    Pertanyaan Umum Seputar <span class="text-orange-500">Paket & Harga</span>
+                    Pertanyaan Umum Seputar <span class="text-blue-500">Paket & Harga</span>
                 </h2>
                 <p class="text-slate-600 text-sm md:text-base">Semua yang perlu Anda ketahui sebelum memulai proyek
                     bersama kami.</p>
@@ -560,39 +431,39 @@
                 itemtype="https://schema.org/FAQPage">
 
                 <template x-for="(faq, index) in faqs" :key="faq.id">
-                    <div class="faq-ecommerce-item group relative bg-white rounded-2xl overflow-hidden shadow-sm border transition-all duration-300"
-                        :class="selected === faq.id ? 'border-orange-300 shadow-orange-100 shadow-md' : 'border-slate-200 hover:border-slate-300 hover:shadow-md'"
+                    <div class="faq-katalog-item group relative bg-white rounded-2xl overflow-hidden shadow-sm border transition-all duration-300"
+                        :class="selected === faq.id ? 'border-blue-300 shadow-blue-100 shadow-md' : 'border-slate-200 hover:border-slate-300 hover:shadow-md'"
                         itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 
                         {{-- Garis Indikator Samping --}}
                         <div class="absolute left-0 top-0 bottom-0 w-1 rounded-l-full transition-all duration-300"
-                            :class="selected === faq.id ? 'bg-orange-500 opacity-100' : 'opacity-0'"></div>
+                            :class="selected === faq.id ? 'bg-blue-500 opacity-100' : 'opacity-0'"></div>
 
                         <button @click="toggleFaq(faq.id, $event)"
-                            class="faq-ecommerce-btn w-full flex items-center gap-3 md:gap-4 px-4 md:px-6 py-4 md:py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-inset relative overflow-hidden cursor-pointer"
-                            :aria-expanded="selected === faq.id" :aria-controls="'faq-ecommerce-answer-' + faq.id">
+                            class="faq-katalog-btn w-full flex items-center gap-3 md:gap-4 px-4 md:px-6 py-4 md:py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-inset relative overflow-hidden cursor-pointer"
+                            :aria-expanded="selected === faq.id" :aria-controls="'faq-katalog-answer-' + faq.id">
 
                             {{-- Efek Ripple Sentuhan --}}
                             <span
-                                class="faq-ecommerce-ripple absolute rounded-full bg-orange-100 opacity-0 pointer-events-none"
+                                class="faq-katalog-ripple absolute rounded-full bg-blue-100 opacity-0 pointer-events-none"
                                 style="width:10px;height:10px;transform:scale(0);transition:transform 0.5s ease,opacity 0.5s ease;"></span>
 
                             {{-- Nomor FAQ --}}
                             <span
                                 class="shrink-0 w-6 md:w-7 h-6 md:h-7 rounded-full text-[10px] md:text-[11px] font-extrabold flex items-center justify-center transition-all duration-300"
-                                :class="selected === faq.id ? 'bg-orange-500 text-white' : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200'"
+                                :class="selected === faq.id ? 'bg-blue-500 text-white' : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200'"
                                 x-text="String(index + 1).padStart(2, '0')"></span>
 
                             {{-- Pertanyaan --}}
                             <span
                                 class="flex-1 font-bold text-sm md:text-base pr-3 md:pr-4 transition-colors duration-200 leading-snug"
-                                :class="selected === faq.id ? 'text-orange-600' : 'text-slate-800'"
-                                x-text="faq.question" itemprop="name"></span>
+                                :class="selected === faq.id ? 'text-blue-600' : 'text-slate-800'" x-text="faq.question"
+                                itemprop="name"></span>
 
                             {{-- Chevron Indicator --}}
                             <span
                                 class="shrink-0 w-7 md:w-8 h-7 md:h-8 rounded-full flex items-center justify-center border transition-all duration-300"
-                                :class="selected === faq.id ? 'bg-orange-500 border-orange-500 rotate-180' : 'bg-white border-slate-200 group-hover:border-slate-300'">
+                                :class="selected === faq.id ? 'bg-blue-500 border-blue-500 rotate-180' : 'bg-white border-slate-200 group-hover:border-slate-300'">
                                 <i class="fa-solid fa-chevron-down text-[10px] md:text-[11px] transition-colors duration-200"
                                     :class="selected === faq.id ? 'text-white' : 'text-slate-400'"
                                     aria-hidden="true"></i>
@@ -600,7 +471,7 @@
                         </button>
 
                         {{-- Jawaban dengan Rendering HTML --}}
-                        <div :id="'faq-ecommerce-answer-' + faq.id" class="faq-ecommerce-answer overflow-hidden"
+                        <div :id="'faq-katalog-answer-' + faq.id" class="faq-katalog-answer overflow-hidden"
                             :style="selected === faq.id ? 'max-height: 500px; opacity: 1;' : 'max-height: 0; opacity: 0;'"
                             itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                             <div class="px-4 md:px-6 pb-4 md:pb-5 pt-0">
@@ -618,7 +489,7 @@
                 <p class="text-slate-500 text-sm mb-4">Masih ragu memilih paket yang tepat?</p>
                 <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20paket%20toko%20online%20yang%20sesuai%20bisnis%20saya."
                     target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 bg-orange-500 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-orange-600 transition text-sm shadow-lg shadow-orange-200">
+                    class="inline-flex items-center gap-2 bg-blue-500 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-blue-600 transition text-sm shadow-lg shadow-blue-200">
                     <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
                     Konsultasi Gratis via WhatsApp
                 </a>
@@ -626,13 +497,14 @@
         </div>
     </section>
 
+
     {{-- ================================================================
-         SECTION 5: CTA
-    ================================================================ --}}
-    <section class="py-20 bg-slate-50" aria-label="Ajakan untuk memulai proyek toko online">
+     SECTION 5: CTA
+================================================================ --}}
+    <section class="py-20 bg-slate-50" aria-label="Ajakan untuk memulai proyek website">
         <div class="max-w-7xl mx-auto px-6">
             <div data-aos="zoom-in" data-aos-duration="800"
-                class="bg-orange-500 rounded-[2rem] p-12 lg:p-20 text-center relative overflow-hidden shadow-2xl">
+                class="bg-blue-600 rounded-[2rem] p-12 lg:p-20 text-center relative overflow-hidden shadow-2xl">
 
                 <div class="absolute inset-0 opacity-10" aria-hidden="true">
                     <div
@@ -645,22 +517,22 @@
 
                 <div class="relative z-10 text-white">
                     <h2 class="text-3xl lg:text-5xl font-bold mb-4">
-                        Siap Punya Toko Online yang Bekerja 24 Jam Tanpa Henti?
+                        Siap Tampilkan Semua Produk dalam Satu Link Profesional?
                     </h2>
-                    <p class="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
-                        Konsultasi gratis, tanpa syarat. Ceritakan produk dan target pasar Anda — kami rancang toko
-                        online yang tepat untuk bisnis Anda.
+                    <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+                        Konsultasi gratis, tanpa syarat. Ceritakan kebutuhan bisnis Anda dan kami siapkan
+                        solusinya.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20mengenai%20pembuatan%20website%20toko%20online."
+                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20mengenai%20pembuatan%20website%20katalog%20produk."
                             target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-orange-500 font-bold rounded-xl shadow-lg hover:bg-orange-50 transition text-base">
+                            class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-blue-600 font-bold rounded-xl shadow-lg hover:bg-blue-50 transition text-base">
                             <i class="fa-brands fa-whatsapp text-emerald-500 text-lg" aria-hidden="true"></i>
                             Mulai Konsultasi Sekarang
                         </a>
-                        <a href="{{ url('/layanan/web-ecommerce') }}"
+                        <a href="{{ url('/layanan/web-katalog-produk') }}"
                             class="inline-flex items-center justify-center gap-2 px-10 py-4 border-2 border-white/40 text-white font-bold rounded-xl hover:bg-white/10 transition text-base">
-                            Kembali ke Halaman E-Commerce
+                            Kembali ke Halaman Katalog
                         </a>
                     </div>
                 </div>
@@ -669,10 +541,11 @@
         </div>
     </section>
 
+
     {{-- Script untuk logic Alpine.js dan transisi FAQ --}}
     @push('scripts')
     <script>
-    function faqFiturEcommerce() {
+    function faqFiturKatalog() {
         const rawFaqs = @json($faqsData);
         return {
             selected: null,
@@ -687,7 +560,7 @@
 
                 // Animasi Sentuh (Ripple Effect)
                 const btn = event.currentTarget;
-                const ripple = btn.querySelector('.faq-ecommerce-ripple');
+                const ripple = btn.querySelector('.faq-katalog-ripple');
                 if (ripple) {
                     const rect = btn.getBoundingClientRect();
                     const x = event.clientX - rect.left;
@@ -706,9 +579,9 @@
                 // Autoscroll ke arah FAQ item yang diklik secara mulus
                 if (!wasOpen) {
                     this.$nextTick(() => {
-                        const el = document.getElementById('faq-ecommerce-answer-' + id);
+                        const el = document.getElementById('faq-katalog-answer-' + id);
                         if (el) {
-                            const parent = el.closest('.faq-ecommerce-item');
+                            const parent = el.closest('.faq-katalog-item');
                             if (parent) {
                                 const top = parent.getBoundingClientRect().top + window.scrollY - 100;
                                 window.scrollTo({
@@ -733,11 +606,11 @@
     {{-- Styles penunjang animasi transisi accordion FAQ --}}
     @push('styles')
     <style>
-    .faq-ecommerce-answer {
+    .faq-katalog-answer {
         transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s ease;
     }
 
-    .faq-ecommerce-ripple {
+    .faq-katalog-ripple {
         position: absolute;
         border-radius: 50%;
         background: #ffedd5;
@@ -749,11 +622,11 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-        .faq-ecommerce-answer {
+        .faq-katalog-answer {
             transition: none;
         }
 
-        .faq-ecommerce-ripple {
+        .faq-katalog-ripple {
             display: none;
         }
     }

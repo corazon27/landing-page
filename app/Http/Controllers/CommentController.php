@@ -12,28 +12,42 @@ class CommentController extends Controller
      */
     public function store(Request $request, $articleId)
     {
-        // 1. Cek Honeypot (Perangkap Bot)
         if ($request->filled('honeypot')) {
             return back()->with('error', 'Aktivitas mencurigakan terdeteksi.');
         }
 
-        // 2. Validasi Input
         $validated = $request->validate([
             'name' => 'required|string|max:50',
             'email' => 'required|email|max:100',
             'comment' => 'required|string|min:5|max:1000',
+            'parent_id' => 'nullable|exists:comments,id', // Validasi parent_id jika ada
         ]);
 
-        // 3. Simpan dengan status is_approved = false (Moderasi)
-        Comment::create([
+        $comment = Comment::create([
             'article_id' => $articleId,
-            'name' => strip_tags($validated['name']),
-            'email' => $validated['email'],
-            'comment' => strip_tags($validated['comment']),
-            'is_approved' => false, 
+            'parent_id' => $request->parent_id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'comment' => strip_tags($request->comment),
+            'is_approved' => true, // Sesuaikan dengan logika moderasi Anda
         ]);
 
-        return back()->with('success', 'Komentar Anda terkirim dan sedang menunggu moderasi admin.');
+        // Jika request datang dari AJAX
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Komentar berhasil dikirim!',
+                'data' => [
+                    'name' => $comment->name,
+                    'comment' => $comment->comment,
+                    'parent_id' => $comment->parent_id,
+                    'created_at' => $comment->created_at->diffForHumans(),
+                    'initial' => strtoupper(substr($comment->name, 0, 1))
+                ]
+            ]);
+        }
+
+        return back()->with('success', 'Komentar/balasan Anda sedang menunggu moderasi admin.');
     }
 
     /**

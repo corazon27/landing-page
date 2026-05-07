@@ -58,7 +58,7 @@
             <x-breadcrumb :items="[
                 ['name' => 'Layanan',             'url' => url('/layanan')],
                 ['name' => 'Website Kasir Digital / POS', 'url' => url('/layanan/web-kasir')],
-            ]" current="Fitur Website Kasir Digital / POS" />
+            ]" current="Fitur & Harga" />
 
             <div class="text-center mt-8 mb-4" data-aos="fade-up">
                 <span
@@ -66,7 +66,7 @@
                     Transparan, Tanpa Biaya Tersembunyi
                 </span>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
-                    Bandingkan Paket & <span class="text-blue-600">Fitur</span>
+                    Bandingkan Paket & <span class="text-blue-600">Fitur Kasir Digital</span>
                 </h1>
                 <p class="text-slate-500 max-w-2xl mx-auto">
                     Pilih skema yang paling sesuai dengan kebutuhan dan skala bisnis Anda. Semua paket sudah termasuk
@@ -217,7 +217,7 @@
 
 
     {{-- PRICING CARDS (mobile-friendly ringkasan) --}}
-    <section class="pb-24 bg-slate-50">
+    <section class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
 
             <div class="text-center mb-12" data-aos="fade-up">
@@ -294,56 +294,87 @@
 
 
     {{-- FAQ --}}
-    <section class="py-24 bg-white" x-data="faqHargaSection()">
-        <div class="max-w-3xl mx-auto px-6">
+    <section id="faq" class="py-14 md:py-24 bg-white" x-data="faqFiturKasir()">
+        <div class="max-w-3xl mx-auto px-5 md:px-6">
 
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">
-                    Pertanyaan Umum Seputar <span class="text-blue-600">Harga & Langganan</span>
+            <div class="text-center mb-10 md:mb-12" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3 md:mb-4">
+                    Pertanyaan Umum Seputar <span class="text-blue-500">Paket & Harga</span>
                 </h2>
-                <p class="text-slate-500">Semua yang perlu Anda ketahui tentang sistem langganan Cakra Inovasi Digital.
-                </p>
+                <p class="text-slate-600 text-sm md:text-base">Semua yang perlu Anda ketahui sebelum memulai proyek
+                    bersama kami.</p>
             </div>
 
-            <div class="space-y-3" itemscope itemtype="https://schema.org/FAQPage">
-                <template x-for="faq in faqs" :key="faq.id">
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                        :class="active === faq.id ? 'border-blue-300 ring-1 ring-blue-100' : ''" itemscope
-                        itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <div class="space-y-2.5 md:space-y-3" data-aos="fade-up" data-aos-delay="100" itemscope
+                itemtype="https://schema.org/FAQPage">
 
-                        <button @click="active = active !== faq.id ? faq.id : null" :aria-expanded="active === faq.id"
-                            class="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors">
-                            <span class="font-bold text-slate-800 pr-4"
-                                :class="active === faq.id ? 'text-blue-600' : ''" x-text="faq.question"
+                <template x-for="(faq, index) in faqs" :key="faq.id">
+                    <div class="faq-kasir-item group relative bg-white rounded-2xl overflow-hidden shadow-sm border transition-all duration-300"
+                        :class="selected === faq.id ? 'border-blue-300 shadow-blue-100 shadow-md' : 'border-slate-200 hover:border-slate-300 hover:shadow-md'"
+                        itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+                        {{-- Garis Indikator Samping --}}
+                        <div class="absolute left-0 top-0 bottom-0 w-1 rounded-l-full transition-all duration-300"
+                            :class="selected === faq.id ? 'bg-blue-500 opacity-100' : 'opacity-0'"></div>
+
+                        <button @click="toggleFaq(faq.id, $event)"
+                            class="faq-kasir-btn w-full flex items-center gap-3 md:gap-4 px-4 md:px-6 py-4 md:py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-inset relative overflow-hidden cursor-pointer"
+                            :aria-expanded="selected === faq.id" :aria-controls="'faq-kasir-answer-' + faq.id">
+
+                            {{-- Efek Ripple Sentuhan --}}
+                            <span
+                                class="faq-kasir-ripple absolute rounded-full bg-blue-100 opacity-0 pointer-events-none"
+                                style="width:10px;height:10px;transform:scale(0);transition:transform 0.5s ease,opacity 0.5s ease;"></span>
+
+                            {{-- Nomor FAQ --}}
+                            <span
+                                class="shrink-0 w-6 md:w-7 h-6 md:h-7 rounded-full text-[10px] md:text-[11px] font-extrabold flex items-center justify-center transition-all duration-300"
+                                :class="selected === faq.id ? 'bg-blue-500 text-white' : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200'"
+                                x-text="String(index + 1).padStart(2, '0')"></span>
+
+                            {{-- Pertanyaan --}}
+                            <span
+                                class="flex-1 font-bold text-sm md:text-base pr-3 md:pr-4 transition-colors duration-200 leading-snug"
+                                :class="selected === faq.id ? 'text-blue-600' : 'text-slate-800'" x-text="faq.question"
                                 itemprop="name"></span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 shrink-0"
-                                :class="active === faq.id ? 'rotate-180 text-blue-600' : ''" aria-hidden="true"></i>
+
+                            {{-- Chevron Indicator --}}
+                            <span
+                                class="shrink-0 w-7 md:w-8 h-7 md:h-8 rounded-full flex items-center justify-center border transition-all duration-300"
+                                :class="selected === faq.id ? 'bg-blue-500 border-blue-500 rotate-180' : 'bg-white border-slate-200 group-hover:border-slate-300'">
+                                <i class="fa-solid fa-chevron-down text-[10px] md:text-[11px] transition-colors duration-200"
+                                    :class="selected === faq.id ? 'text-white' : 'text-slate-400'"
+                                    aria-hidden="true"></i>
+                            </span>
                         </button>
 
-                        <div class="px-6 pb-6 text-sm text-slate-600 leading-relaxed" x-show="active === faq.id"
-                            x-collapse itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <p x-text="faq.answer" itemprop="text"></p>
+                        {{-- Jawaban dengan Rendering HTML --}}
+                        <div :id="'faq-kasir-answer-' + faq.id" class="faq-kasir-answer overflow-hidden"
+                            :style="selected === faq.id ? 'max-height: 500px; opacity: 1;' : 'max-height: 0; opacity: 0;'"
+                            itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <div class="px-4 md:px-6 pb-4 md:pb-5 pt-0">
+                                <div class="border-t border-slate-100 mb-3 md:mb-4"></div>
+                                <div class="pl-9 md:pl-11 text-sm text-slate-600 leading-relaxed" x-html="faq.answer"
+                                    itemprop="text"></div>
+                            </div>
                         </div>
 
                     </div>
                 </template>
             </div>
 
-            <div class="mt-10 text-center" data-aos="fade-up">
+            <div class="mt-8 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-4">Masih ragu memilih paket yang tepat?</p>
-                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20pemilihan%20paket%20sistem%20kasir."
+                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20paket%20toko%20online%20yang%20sesuai%20bisnis%20saya."
                     target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 bg-blue-600 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-blue-700 transition text-sm shadow-lg shadow-blue-200">
+                    class="inline-flex items-center gap-2 bg-blue-500 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-blue-600 transition text-sm shadow-lg shadow-blue-200">
                     <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
                     Konsultasi Gratis via WhatsApp
                 </a>
             </div>
-
         </div>
     </section>
 
-
-    {{-- CTA --}}
     <section class="py-20 bg-slate-50" aria-label="Ajakan untuk memulai proyek website">
         <div class="max-w-7xl mx-auto px-6">
             <div data-aos="zoom-in" data-aos-duration="800"
@@ -360,14 +391,14 @@
 
                 <div class="relative z-10 text-white">
                     <h2 class="text-3xl lg:text-5xl font-bold mb-4">
-                        Siap Punya Website Profesional untuk Bisnis Anda?
+                        Siap Punya Website Kasir Digital Profesional untuk Bisnis Anda?
                     </h2>
                     <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                        Konsultasi pertama gratis, tanpa syarat. Ceritakan kebutuhan bisnis Anda dan kami siapkan
+                        Konsultasi gratis, tanpa syarat. Ceritakan kebutuhan bisnis Anda dan kami siapkan
                         solusinya.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20gratis%20untuk%20pembuatan%20website%20bisnis%20saya."
+                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20mengenai%20biaya%20berlangganan%20kasir%20digital."
                             target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-blue-600 font-bold rounded-xl shadow-lg hover:bg-blue-50 transition text-base">
                             <i class="fa-brands fa-whatsapp text-emerald-500 text-lg" aria-hidden="true"></i>
@@ -385,20 +416,95 @@
     </section>
 
 
+    {{-- Script untuk logic Alpine.js dan transisi FAQ --}}
     @push('scripts')
     <script>
-    function faqHargaSection() {
+    function faqFiturKasir() {
         const rawFaqs = @json($faqsData);
         return {
-            active: null,
+            selected: null,
+            // Handler standar jika Anda menggunakan section lama
+            toggle(id) {
+                this.selected = this.selected === id ? null : id;
+            },
+            // Handler lanjutan dengan Smooth Scrolling & Ripple Effect
+            toggleFaq(id, event) {
+                const wasOpen = this.selected === id;
+                this.selected = wasOpen ? null : id;
+
+                // Animasi Sentuh (Ripple Effect)
+                const btn = event.currentTarget;
+                const ripple = btn.querySelector('.faq-kasir-ripple');
+                if (ripple) {
+                    const rect = btn.getBoundingClientRect();
+                    const x = event.clientX - rect.left;
+                    const y = event.clientY - rect.top;
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    ripple.style.transform = 'scale(40)';
+                    ripple.style.opacity = '1';
+
+                    setTimeout(() => {
+                        ripple.style.transform = 'scale(0)';
+                        ripple.style.opacity = '0';
+                    }, 500);
+                }
+
+                // Autoscroll ke arah FAQ item yang diklik secara mulus
+                if (!wasOpen) {
+                    this.$nextTick(() => {
+                        const el = document.getElementById('faq-kasir-answer-' + id);
+                        if (el) {
+                            const parent = el.closest('.faq-kasir-item');
+                            if (parent) {
+                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
+                                window.scrollTo({
+                                    top,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    });
+                }
+            },
             faqs: rawFaqs.map((item, i) => ({
                 id: i + 1,
                 question: item.question,
                 answer: item.answer
-            }))
+            })),
         };
     }
     </script>
+    @endpush
+
+    {{-- Styles penunjang animasi transisi accordion FAQ --}}
+    @push('styles')
+    <style>
+    .faq-kasir-answer {
+        transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s ease;
+    }
+
+    .faq-kasir-ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: #ffedd5;
+        /* Warna riak oranye soft */
+        transform: scale(0);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .faq-kasir-answer {
+            transition: none;
+        }
+
+        .faq-kasir-ripple {
+            display: none;
+        }
+    }
+    </style>
     @endpush
 
 </x-layout.app>

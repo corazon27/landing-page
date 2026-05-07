@@ -12,6 +12,7 @@ class Comment extends Model
 
     protected $fillable = [
         'article_id', 
+        'parent_id',
         'name', 
         'email', 
         'comment', 
@@ -24,5 +25,18 @@ class Comment extends Model
     public function article()
     {
         return $this->belongsTo(Article::class);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Comment::class, 'parent_id')->where('is_approved', true);
+    }
+
+    /**
+     * Relasi balik ke induk (opsional)
+     */
+    public function parent()
+    {
+        return $this->belongsTo(Comment::class, 'parent_id');
     }
 }

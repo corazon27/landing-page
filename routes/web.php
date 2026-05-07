@@ -29,14 +29,18 @@ Route::get('/tentang', function () { return view('about'); })->name('about');
 Route::get('/layanan', function () { return view('services'); })->name('services');
 Route::get('/hubungi-kami', function () { return view('kontak'); })->name('kontak');
 Route::get('/fitur-web-kasir', function () { return view('fitur.fitur-kasir'); })->name('fitur.fitur-kasir');
+Route::get('/fitur-web-erp', function () { return view('fitur.fitur-erp'); })->name('fitur.fitur-erp');
 Route::get('/fitur-web-ecommerce', function () { return view('fitur.fitur-ecommerce'); })->name('fitur.fitur-ecommerce');
+Route::get('/fitur-web-katalog-produk', function () { return view('fitur.fitur-katalog'); })->name('fitur.fitur-katalog');
+Route::get('/fitur-company-profile', function () { return view('fitur.fitur-company-profile'); })->name('fitur.fitur-company-profile');
 
 Route::prefix('layanan')->name('layanan.')->group(function () {
-    Route::get('/web-company-profile', function () { return view('layanan.web-perusahaan'); })->name('perusahaan');
+    Route::get('/web-company-profile', function () { return view('layanan.web-company-profile'); })->name('company-profile');
     Route::get('/web-kasir', function () { return view('layanan.web-kasir'); })->name('kasir');
     Route::get('/web-katalog-produk', function () { return view('layanan.web-katalog-produk'); })->name('katalog-produk');
-    Route::get('/web-booking', function () { return view('layanan.web-rental'); })->name('rental');
+    Route::get('/web-booking', function () { return view('layanan.web-booking'); })->name('booking');
     Route::get('/web-ecommerce', function () { return view('layanan.web-ecommerce'); })->name('ecommerce');
+    Route::get('/web-erp', function () { return view('layanan.web-erp'); })->name('erp');
 });
 
 Route::get('/affiliate', function () { return view('affiliate'); })->name('affiliate');

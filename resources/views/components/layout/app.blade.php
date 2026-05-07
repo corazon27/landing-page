@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    {{-- ================================================================
+         CORE SEO META
+         Prioritas: $ogTitle/$ogDescription/$ogImage dari child view
+         (diset via @php di detail.blade.php) agar OG dinamis per halaman
+    ================================================================ --}}
+
     <title>{{ $title ?? 'Jasa Pembuatan Website Profesional | Cakra Inovasi Digital' }}</title>
     <meta name="description"
         content="{{ $metaDescription ?? 'Cakra Inovasi Digital menyediakan jasa pembuatan website profesional: e-commerce, company profile, toko online, dan lainnya. Hubungi kami sekarang.' }}">
@@ -14,26 +20,41 @@
     <meta name="robots" content="{{ $metaRobots ?? 'index, follow' }}">
     <link rel="canonical" href="{{ $canonicalUrl ?? url()->current() }}">
 
+    {{-- ================================================================
+         OPEN GRAPH — Dinamis per Halaman
+         Halaman artikel: $ogTitle, $ogDescription, $ogImage di-set via
+         @php block di detail.blade.php sebelum @section('content')
+         Halaman lain: fallback ke $title/$metaDescription/og-image.png
+    ================================================================ --}}
     <meta property="og:type" content="{{ $ogType ?? 'website' }}">
-    <meta property="og:title" content="{{ $title ?? 'Jasa Pembuatan Website Profesional | Cakra Inovasi Digital' }}">
-    <meta property="og:description"
-        content="{{ $metaDescription ?? 'Cakra Inovasi Digital menyediakan jasa pembuatan website profesional untuk bisnis Anda.' }}">
-    <meta property="og:url" content="{{ $canonicalUrl ?? url()->current() }}">
-    <meta property="og:image" content="{{ $ogImage ?? asset('images/og-image.png') }}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="{{ $title ?? 'Cakra Inovasi Digital' }}">
-    <meta property="og:locale" content="id_ID">
     <meta property="og:site_name" content="Cakra Inovasi Digital">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:url" content="{{ $canonicalUrl ?? url()->current() }}">
+    <meta property="og:title"
+        content="{{ $ogTitle ?? $title ?? 'Jasa Pembuatan Website Profesional | Cakra Inovasi Digital' }}">
+    <meta property="og:description"
+        content="{{ $ogDescription ?? $metaDescription ?? 'Cakra Inovasi Digital menyediakan jasa pembuatan website profesional untuk bisnis Anda.' }}">
+    <meta property="og:image" content="{{ $ogImage ?? asset('images/og-image.png') }}">
+    <meta property="og:image:width" content="{{ $ogImageWidth ?? '1200' }}">
+    <meta property="og:image:height" content="{{ $ogImageHeight ?? '630' }}">
+    <meta property="og:image:alt" content="{{ $ogTitle ?? $title ?? 'Cakra Inovasi Digital' }}">
 
+    {{-- ================================================================
+         TWITTER CARD — Dinamis per Halaman
+    ================================================================ --}}
     <meta name="twitter:card" content="{{ $twitterCard ?? 'summary_large_image' }}">
     <meta name="twitter:site" content="@CakraInovasiDig">
-    <meta name="twitter:title" content="{{ $title ?? 'Jasa Pembuatan Website Profesional | Cakra Inovasi Digital' }}">
+    <meta name="twitter:creator" content="@CakraInovasiDig">
+    <meta name="twitter:title"
+        content="{{ $ogTitle ?? $title ?? 'Jasa Pembuatan Website Profesional | Cakra Inovasi Digital' }}">
     <meta name="twitter:description"
-        content="{{ $metaDescription ?? 'Cakra Inovasi Digital menyediakan jasa pembuatan website profesional untuk bisnis Anda.' }}">
+        content="{{ $ogDescription ?? $metaDescription ?? 'Cakra Inovasi Digital menyediakan jasa pembuatan website profesional untuk bisnis Anda.' }}">
     <meta name="twitter:image" content="{{ $ogImage ?? asset('images/og-image.png') }}">
-    <meta name="twitter:image:alt" content="{{ $title ?? 'Cakra Inovasi Digital' }}">
+    <meta name="twitter:image:alt" content="{{ $ogTitle ?? $title ?? 'Cakra Inovasi Digital' }}">
 
+    {{-- ================================================================
+         SCHEMA.ORG — ProfessionalService (Global — semua halaman)
+    ================================================================ --}}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -102,6 +123,9 @@
     }
     </script>
 
+    {{-- ================================================================
+         SCHEMA.ORG — WebSite (Global)
+    ================================================================ --}}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -125,6 +149,9 @@
     }
     </script>
 
+    {{-- ================================================================
+         SCHEMA.ORG — BreadcrumbList (Opsional, jika $breadcrumbs dikirim)
+    ================================================================ --}}
     @if(!empty($breadcrumbs))
     @php
     $breadcrumbItems = [[
@@ -154,15 +181,23 @@
     </script>
     @endif
 
+    {{-- ================================================================
+         SCHEMA.ORG — Article / BlogPosting (hanya halaman detail artikel)
+         Di-push dari detail.blade.php via @push('schema')
+    ================================================================ --}}
     @stack('schema')
 
+    {{-- ============================================================
+         FAVICON & PRECONNECT
+    ============================================================ --}}
     <link rel="icon" type="image/png" href="{{ asset('images/logo-cakra.png') }}">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preload" as="image" href="{{ $ogImage ?? asset('images/og-image.png') }}">
 
-    <link rel="preload" as="image" href="{{ asset('images/og-image.png') }}">
-
+    {{-- ============================================================
+         CSS — Lazy load non-critical
+    ============================================================ --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
         media="print" onload="this.media='all'">
     <noscript>
@@ -180,7 +215,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    @livewireStyles
     @stack('styles')
 </head>
 
@@ -213,15 +248,38 @@
     function copyToClipboard(text) {
         navigator.clipboard.writeText(text)
             .then(function() {
-                alert('Link berhasil disalin ke clipboard!');
+                // Toast feedback — lebih elegan dari alert()
+                const toast = document.getElementById('copy-toast');
+                if (toast) {
+                    toast.classList.remove('opacity-0', 'translate-y-4');
+                    toast.classList.add('opacity-100', 'translate-y-0');
+                    setTimeout(() => {
+                        toast.classList.add('opacity-0', 'translate-y-4');
+                        toast.classList.remove('opacity-100', 'translate-y-0');
+                    }, 2500);
+                }
             })
             .catch(function(err) {
-                console.error('Gagal menyalin link: ', err);
+                console.error('Gagal menyalin link:', err);
             });
     }
     </script>
 
     @stack('scripts')
+    @livewireScripts
+
+    {{-- ============================================================
+         Toast Notifikasi Copy Link — Global, dipakai semua halaman
+    ============================================================ --}}
+    <div id="copy-toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[9999]
+                bg-slate-900 text-white text-sm font-semibold
+                px-6 py-3 rounded-2xl shadow-2xl
+                flex items-center gap-2.5
+                opacity-0 translate-y-4
+                transition-all duration-300 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        Link berhasil disalin!
+    </div>
 
 </body>
 
