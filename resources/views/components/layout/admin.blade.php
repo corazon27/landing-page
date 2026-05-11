@@ -32,7 +32,7 @@
                     <i class="fas fa-newspaper"></i> Kelola Artikel
                 </a>
                 <a href="{{ route('admin.comments.index') }}"
-                    class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.articles.*') ? 'bg-blue-600 text-white' : '' }}">
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.comments.*') ? 'bg-blue-600 text-white' : '' }}">
                     <i class="fas fa-newspaper"></i> Kelola Komentar
                 </a>
                 <a href="{{ route('admin.cashflow.index') }}"

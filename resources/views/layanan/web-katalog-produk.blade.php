@@ -204,8 +204,9 @@
     <section class="pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
-            <x-breadcrumb :items="[['name' => 'Layanan', 'url' => url('/layanan')]]" current="Website Katalog Produk" />
-
+            <div class="max-w-6xl mx-auto text-center mb-10">
+                <x-breadcrumb :items="[['name' => 'Layanan', 'url' => url('/layanan')]]" current="Katalog Produk" />
+            </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mt-5 md:mt-6">
 
                 {{-- Kolom Teks --}}
@@ -221,8 +222,10 @@
                             <span class="text-emerald-600">Semua Produk dalam Satu Link</span>
                         </h1>
                         <p class="mt-4 md:mt-5 text-base md:text-lg text-slate-600 leading-relaxed">
-                            Bayangkan punya katalog digital yang bisa dibuka pelanggan kapan saja, tampil profesional di
-                            HP manapun, dan langsung terhubung ke WhatsApp Anda dengan satu klik. Tidak perlu kirim foto
+                            Bayangkan punya katalog digital yang bisa dibuka pelanggan kapan saja, tampil
+                            profesional di
+                            HP manapun, dan langsung terhubung ke WhatsApp Anda dengan satu klik. Tidak perlu kirim
+                            foto
                             manual, tidak perlu buat PDF baru setiap harga berubah. <strong>Cakra Inovasi
                                 Digital</strong> buatkan semuanya untuk Anda.
                         </p>
@@ -272,7 +275,7 @@
                 </div>
 
                 {{-- Kolom Mockup Katalog --}}
-                <div class="hidden lg:block relative" data-aos="fade-left">
+                <div class="relative" data-aos="fade-left">
 
                     <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 via-teal-50 to-slate-100 rounded-[3rem] blur-3xl opacity-60 scale-110"
                         aria-hidden="true"></div>
@@ -350,7 +353,8 @@
                                         <p class="text-[8px] text-slate-400 mb-2">{{ $p['stok'] }}</p>
                                         <button
                                             class="w-full bg-emerald-500 text-white text-[9px] font-bold py-1.5 rounded-lg flex items-center justify-center gap-1">
-                                            <i class="fa-brands fa-whatsapp text-[9px]" aria-hidden="true"></i> Order WA
+                                            <i class="fa-brands fa-whatsapp text-[9px]" aria-hidden="true"></i>
+                                            Order WA
                                         </button>
                                     </div>
                                 </div>
@@ -368,7 +372,8 @@
                             <i class="fa-brands fa-whatsapp text-sm"></i>
                         </div>
                         <div>
-                            <p class="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Order Masuk!</p>
+                            <p class="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Order Masuk!
+                            </p>
                             <p class="text-sm font-extrabold text-slate-800">Batik Tulis Solo</p>
                         </div>
                     </div>
@@ -1022,6 +1027,8 @@
             toggleFaq(id, event) {
                 const btn = event.currentTarget;
                 const ripple = btn.querySelector('.faq-katalog-ripple');
+
+                // 1. Efek Ripple (Tetap sama)
                 if (ripple) {
                     const rect = btn.getBoundingClientRect();
                     const size = Math.max(rect.width, rect.height) * 2;
@@ -1035,24 +1042,51 @@
                     ripple.style.transform = 'scale(1)';
                     ripple.style.opacity = '0';
                 }
+
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
+
+                // 2. Logic Scroll Pintar
                 if (!wasOpen) {
-                    this.$nextTick(() => {
-                        const el = document.getElementById('faq-katalog-answer-' + id);
-                        if (el) {
-                            const parent = el.closest('.faq-katalog-item');
-                            if (parent) {
-                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({
-                                    top,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    });
+                    // Deteksi apakah user menggunakan layar smartphone (lebar < 768px)
+                    const isMobile = window.innerWidth < 768;
+
+                    if (isMobile) {
+                        // VERSI PRO MOBILE: Gunakan requestAnimationFrame untuk sinkronisasi dengan animasi browser
+                        // Kita beri sedikit jeda (delay) tapi lebih singkat agar tidak terasa lambat
+                        setTimeout(() => {
+                                this.scrollToElement(id);
+                            },
+                            290
+                        ); // 250ms adalah sweet spot: animasi penutupan sudah berjalan tapi user belum bosan menunggu
+                    } else {
+                        // VERSI DESKTOP: Gunakan $nextTick agar instan dan smooth
+                        this.$nextTick(() => {
+                            this.scrollToElement(id);
+                        });
+                    }
                 }
             },
+
+            // Fungsi pembantu agar kode lebih bersih
+            scrollToElement(id) {
+                const el = document.getElementById('faq-katalog-answer-' + id);
+                if (el) {
+                    const parent = el.closest('.faq-katalog-item');
+                    if (parent) {
+                        const offset = 110;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = parent.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
         };
     }
     </script>
@@ -1060,6 +1094,13 @@
 
     @push('styles')
     <style>
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+
     .faq-katalog-answer {
         transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s ease;
     }

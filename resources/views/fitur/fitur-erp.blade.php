@@ -1,18 +1,18 @@
 <x-layout.app>
 
     @php
-    $title = 'Harga & Perbandingan Modul Sistem ERP | Cakra Inovasi Digital';
-    $metaDescription = 'Bandingkan harga dan modul lengkap paket sistem ERP Cakra Inovasi Digital — Starter,
+    $title = 'Harga & Perbandingan Fitur Sistem ERP | Cakra Inovasi Digital';
+    $metaDescription = 'Bandingkan harga dan fitur lengkap paket sistem ERP Cakra Inovasi Digital — Starter,
     Professional, hingga Enterprise. Transparan, tanpa biaya tersembunyi.';
-    $metaKeywords = 'harga sistem ERP, paket software ERP UMKM, perbandingan modul ERP, sistem manajemen bisnis
+    $metaKeywords = 'harga sistem ERP, paket software ERP UMKM, perbandingan fitur ERP, sistem manajemen bisnis
     Indonesia, harga ERP kustom';
     $ogType = 'website';
     $canonicalUrl = url('/fitur/web-erp');
 
     $faqsData = [
     ['question' => 'Apakah saya bisa upgrade paket di kemudian hari?', 'answer' => 'Tentu. Anda bisa upgrade ke paket
-    lebih tinggi kapan saja. Tim kami membantu proses penambahan modul dan penyesuaian biaya secara transparan.'],
-    ['question' => 'Apakah modul bisa dikustomisasi di luar paket standar?', 'answer' => 'Ya. Setiap paket bisa
+    lebih tinggi kapan saja. Tim kami membantu proses penambahan fitur dan penyesuaian biaya secara transparan.'],
+    ['question' => 'Apakah fitur bisa dikustomisasi di luar paket standar?', 'answer' => 'Ya. Setiap paket bisa
     dikustomisasi sesuai kebutuhan spesifik bisnis Anda. Kami akan analisa kebutuhan dan menyesuaikan scope pengerjaan
     beserta biayanya.'],
     ['question' => 'Apakah ada biaya berlangganan bulanan?', 'answer' => 'Tidak ada biaya berlangganan. Anda membayar
@@ -20,11 +20,11 @@
     hosting tahunan.'],
     ['question' => 'Bisakah saya mengelola sistem sendiri tanpa developer?', 'answer' => 'Ya. Kami merancang dashboard
     admin yang user-friendly. Anda bisa input data, lihat laporan, dan kelola pengguna tanpa bantuan teknis. Untuk
-    penambahan modul baru, kami siap membantu.'],
+    penambahan fitur baru, kami siap membantu.'],
     ['question' => 'Bagaimana jika ada bug atau error setelah sistem live?', 'answer' => 'Semua paket mendapatkan
     garansi perbaikan bug tanpa batas waktu setelah serah terima tanpa biaya tambahan.'],
     ['question' => 'Apakah bisa cicil pembayarannya?', 'answer' => 'Bisa. Kami menggunakan sistem pembayaran termin per
-    milestone: DP saat deal, termin progres per fase modul selesai, dan pelunasan saat sistem siap live.'],
+    milestone: DP saat deal, termin progres per fase fitur selesai, dan pelunasan saat sistem siap live.'],
     ['question' => 'Berapa banyak pengguna yang bisa mengakses sistem?', 'answer' => 'Paket Starter untuk 3 akun,
     Professional untuk 10 akun, dan Enterprise tidak terbatas. Penambahan akun di luar paket bisa didiskusikan dengan
     biaya yang transparan.'],
@@ -62,15 +62,15 @@
     ];
 
     $groups = [
-    'Modul Operasional Inti' => [
-    ['label' => 'Modul Manajemen Stok & Inventaris', 'values' => [true, true, true]],
-    ['label' => 'Modul Penjualan & Invoice Otomatis', 'values' => [true, true, true]],
-    ['label' => 'Modul Pembelian & Purchase Order', 'values' => [true, true, true]],
-    ['label' => 'Modul Akuntansi & Laporan Keuangan', 'values' => [false, true, true]],
-    ['label' => 'Modul Manajemen SDM & Penggajian', 'values' => [false, true, true]],
-    ['label' => 'Modul CRM (Manajemen Pelanggan)', 'values' => [false, true, true]],
-    ['label' => 'Modul Produksi / Manufacturing', 'values' => [false, false, true]],
-    ['label' => 'Modul Multi-cabang & Multi-gudang', 'values' => [false, false, true]],
+    'Fitur Operasional Inti' => [
+    ['label' => 'Fitur Manajemen Stok & Inventaris', 'values' => [true, true, true]],
+    ['label' => 'Fitur Penjualan & Invoice Otomatis', 'values' => [true, true, true]],
+    ['label' => 'Fitur Pembelian & Purchase Order', 'values' => [true, true, true]],
+    ['label' => 'Fitur Akuntansi & Laporan Keuangan', 'values' => [false, true, true]],
+    ['label' => 'Fitur Manajemen SDM & Penggajian', 'values' => [false, true, true]],
+    ['label' => 'Fitur CRM (Manajemen Pelanggan)', 'values' => [false, true, true]],
+    ['label' => 'Fitur Produksi / Manufacturing', 'values' => [false, false, true]],
+    ['label' => 'Fitur Multi-cabang & Multi-gudang', 'values' => [false, false, true]],
     ],
     'Laporan & Analitik' => [
     ['label' => 'Laporan Penjualan & Stok Dasar', 'values' => [true, true, true]],
@@ -105,7 +105,7 @@
     ],
     'Implementasi & Support' => [
     ['label' => 'Analisis Kebutuhan Bisnis (BRD)', 'values' => [true, true, true]],
-    ['label' => 'Video Panduan per Modul', 'values' => [true, true, true]],
+    ['label' => 'Video Panduan per Fitur', 'values' => [true, true, true]],
     ['label' => 'Pelatihan Tim (per Divisi)', 'values' => [true, true, true]],
     ['label' => 'Konsultasi Teknis Gratis', 'values' => [true, true, true]],
     ['label' => 'On-site Training & Implementation', 'values' => [false, false, true]],
@@ -124,9 +124,9 @@
     'price_color' => 'text-slate-900',
     'note' => 'Biaya setup awal — cicil per milestone',
     'perks' => [
-    'Modul Stok & Inventaris',
-    'Modul Penjualan & Invoice',
-    'Modul Pembelian & PO',
+    'Fitur Stok & Inventaris',
+    'Fitur Penjualan & Invoice',
+    'Fitur Pembelian & PO',
     'Laporan penjualan & stok dasar',
     'Dashboard ringkasan bisnis',
     '3 akun pengguna',
@@ -149,10 +149,10 @@
     'price_color' => 'text-blue-600',
     'note' => 'Fitur terlengkap untuk operasional penuh',
     'perks' => [
-    'Semua modul Starter',
-    'Modul Akuntansi & Lap. Keuangan',
-    'Modul SDM & Penggajian Otomatis',
-    'Modul CRM & Pipeline Penjualan',
+    'Semua Fitur Starter',
+    'Fitur Akuntansi & Lap. Keuangan',
+    'Fitur SDM & Penggajian Otomatis',
+    'Fitur CRM & Pipeline Penjualan',
     'Dashboard BI eksekutif real-time',
     '10 akun + hak akses multi-level',
     'Log aktivitas pengguna',
@@ -173,8 +173,8 @@
     'price_color' => 'text-slate-900',
     'note' => 'Harga sesuai kebutuhan & kompleksitas',
     'perks' => [
-    'Semua modul Professional',
-    'Modul Produksi / Manufacturing',
+    'Semua fitur Professional',
+    'Fitur Produksi / Manufacturing',
     'Multi-cabang & multi-gudang',
     'Pengguna tidak terbatas',
     'Integrasi API pihak ketiga',
@@ -198,8 +198,8 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "{{ url('/fitur/web-erp') }}/#webpage",
-        "name": "Harga & Perbandingan Modul Sistem ERP — Cakra Inovasi Digital",
-        "description": "Perbandingan lengkap harga dan modul paket sistem ERP untuk bisnis dan UMKM Indonesia.",
+        "name": "Harga & Perbandingan Fitur Sistem ERP — Cakra Inovasi Digital",
+        "description": "Perbandingan lengkap harga dan fitur paket sistem ERP untuk bisnis dan UMKM Indonesia.",
         "url": "{{ url('/fitur/web-erp') }}",
         "isPartOf": {
             "@id": "{{ url('/') }}/#website"
@@ -213,18 +213,19 @@
     <section class="pt-36 pb-14 bg-white">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
-            <x-breadcrumb :items="[
+            <div class="max-w-6xl mx-auto text-center mb-10">
+                <x-breadcrumb :items="[
             ['name' => 'Layanan',                          'url' => url('/layanan')],
-            ['name' => 'Website Sistem Manajemen Bisnis',  'url' => url('/layanan/web-erp')],
-        ]" current="Modul & Harga" />
-
+            ['name' => 'Automasi Bisnis',  'url' => url('/layanan/web-erp')],
+        ]" current="Fitur & Harga" />
+            </div>
             <div class="text-center mt-8 mb-4 max-w-3xl mx-auto" data-aos="fade-up">
                 <span
                     class="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-5">
                     Transparan, Tanpa Biaya Tersembunyi
                 </span>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
-                    Bandingkan Paket & <span class="text-blue-600">Modul Sistem ERP</span>
+                    Bandingkan Paket & <span class="text-blue-600">Fitur Sistem ERP</span>
                 </h1>
                 <p class="text-slate-500 text-sm md:text-base leading-relaxed">
                     Pilih paket yang paling sesuai dengan skala bisnis Anda. Semua paket sudah termasuk domain, hosting,
@@ -246,21 +247,23 @@
             </p>
 
             <div class="overflow-x-auto rounded-3xl border border-slate-200 shadow-sm" data-aos="fade-up">
-                <table class="w-full text-left border-collapse min-w-[680px]">
+                {{-- Tambahkan table-fixed krusial untuk kestabilan layout --}}
+                <table class="w-full text-left border-collapse min-w-[680px] table-fixed">
 
                     <thead>
                         <tr class="bg-slate-50 border-b border-slate-200">
-
-                            <th class="py-6 px-5 w-[240px] lg:w-1/4 sticky left-0 bg-slate-50 z-10">
+                            {{-- Header Modul/Fitur: z-30 agar tetap di paling atas --}}
+                            <th
+                                class="py-6 px-5 w-[240px] sticky left-0 bg-slate-50 z-30 border-r border-slate-100 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Modul /
                                     Fitur</span>
                             </th>
 
                             @foreach($cols as $col)
-                            <th class="py-6 px-5 text-center relative">
+                            <th class="py-6 px-5 text-center relative w-[180px]">
                                 @if(!empty($col['badge']))
                                 <span
-                                    class="absolute top-2 left-1/2 -translate-x-1/2 {{ $col['badge_bg'] }} text-[9px] px-3 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap">
+                                    class="absolute top-2 left-1/2 -translate-x-1/2 {{ $col['badge_bg'] }} text-[9px] px-3 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap z-10">
                                     {{ $col['badge'] }}
                                 </span>
                                 @endif
@@ -271,25 +274,28 @@
                                 <span class="block text-[10px] text-slate-400 mt-0.5">{{ $col['note'] }}</span>
                             </th>
                             @endforeach
-
                         </tr>
                     </thead>
 
                     <tbody class="text-sm divide-y divide-slate-100">
-
                         @foreach($groups as $groupName => $rows)
-
-                        <tr class="bg-blue-50/40">
-                            <td colspan="4" class="py-3 px-5 sticky left-0 bg-blue-50/40">
+                        {{-- Judul Utama Grup (Group Header) --}}
+                        <tr class="bg-blue-50/60">
+                            {{-- FIX: Sticky left-0 dan bg-solid (bukan transparan) agar tidak tembus pandang --}}
+                            <td colspan="4" class="py-3 px-5 sticky left-0 z-20 bg-blue-50">
+                                {{-- FIX: Span di bawah inilah yang menahan teks agar tidak ikut bergeser --}}
                                 <span
-                                    class="text-[11px] font-bold text-blue-600 uppercase tracking-widest">{{ $groupName }}</span>
+                                    class="text-[11px] font-bold text-blue-600 uppercase tracking-widest sticky left-5 whitespace-nowrap">
+                                    {{ $groupName }}
+                                </span>
                             </td>
                         </tr>
 
                         @foreach($rows as $row)
                         <tr class="hover:bg-slate-50/50 transition-colors">
+                            {{-- Label Fitur: Sticky left z-10 dengan shadow pemisah --}}
                             <td
-                                class="py-3.5 px-5 font-medium text-slate-700 text-sm sticky left-0 bg-white hover:bg-slate-50/50 transition-colors">
+                                class="py-3.5 px-5 font-medium text-slate-700 text-sm sticky left-0 bg-white z-10 border-r border-slate-50 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                                 {{ $row['label'] }}
                             </td>
                             @foreach($row['values'] as $val)
@@ -307,21 +313,21 @@
                             @endforeach
                         </tr>
                         @endforeach
-
                         @endforeach
-
                     </tbody>
 
                     <tfoot>
                         <tr class="border-t-2 border-slate-100 bg-slate-50/50">
-                            <td class="py-7 px-5 sticky left-0 bg-slate-50/50 text-xs text-slate-400 italic">
+                            {{-- Footer kolom pertama juga harus sticky --}}
+                            <td
+                                class="py-7 px-5 sticky left-0 bg-slate-50 z-10 border-r border-slate-100 text-[10px] text-slate-400 italic shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                                 *Harga belum termasuk biaya domain, hosting perpanjangan, & server tahunan
                             </td>
                             @foreach($cols as $col)
                             <td class="py-7 px-5 text-center">
                                 <a href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20tertarik%20dengan%20{{ $col['wa'] }}"
                                     target="_blank" rel="noopener noreferrer"
-                                    class="inline-block px-5 py-2.5 {{ $col['btn'] }} rounded-xl font-bold text-xs transition-all shadow-sm">
+                                    class="inline-block px-5 py-2.5 {{ $col['btn'] }} rounded-xl font-bold text-xs transition-all shadow-sm whitespace-nowrap">
                                     Pilih Paket
                                 </a>
                             </td>
@@ -331,7 +337,6 @@
 
                 </table>
             </div>
-
         </div>
     </section>
 
@@ -538,44 +543,56 @@
             },
             // Handler lanjutan dengan Smooth Scrolling & Ripple Effect
             toggleFaq(id, event) {
+                const btn = event.currentTarget;
+                const ripple = btn.querySelector('.faq-erp-ripple');
+
+                if (ripple) {
+                    const rect = btn.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height) * 2;
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: #dbeafe;
+                        pointer-events: none;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${event.clientX - rect.left - size / 2}px;
+                        top: ${event.clientY - rect.top - size / 2}px;
+                        transform: scale(0);
+                        opacity: 1;
+                        transition: transform 0.5s ease, opacity 0.5s ease;
+                    `;
+
+                    ripple.offsetWidth;
+                    ripple.style.transform = 'scale(1)';
+                    ripple.style.opacity = '0';
+                }
+
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
 
-                // Animasi Sentuh (Ripple Effect)
-                const btn = event.currentTarget;
-                const ripple = btn.querySelector('.faq-erp-ripple');
-                if (ripple) {
-                    const rect = btn.getBoundingClientRect();
-                    const x = event.clientX - rect.left;
-                    const y = event.clientY - rect.top;
-                    ripple.style.left = `${x}px`;
-                    ripple.style.top = `${y}px`;
-                    ripple.style.transform = 'scale(40)';
-                    ripple.style.opacity = '1';
-
-                    setTimeout(() => {
-                        ripple.style.transform = 'scale(0)';
-                        ripple.style.opacity = '0';
-                    }, 500);
-                }
-
-                // Autoscroll ke arah FAQ item yang diklik secara mulus
                 if (!wasOpen) {
-                    this.$nextTick(() => {
-                        const el = document.getElementById('faq-erp-answer-' + id);
-                        if (el) {
-                            const parent = el.closest('.faq-erp-item');
-                            if (parent) {
-                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({
-                                    top,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    });
+                    const isMobile = window.innerWidth < 768;
+                    if (isMobile) {
+                        setTimeout(() => this.scrollToElement(id), 300);
+                    } else {
+                        this.$nextTick(() => this.scrollToElement(id));
+                    }
                 }
             },
+
+            scrollToElement(id) {
+                const el = document.getElementById('faq-erp-answer-' + id);
+                if (!el) return;
+                const parent = el.closest('.faq-erp-item');
+                if (!parent) return;
+                const offsetPosition = parent.getBoundingClientRect().top + window.scrollY - 110;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            },
+
             faqs: rawFaqs.map((item, i) => ({
                 id: i + 1,
                 question: item.question,

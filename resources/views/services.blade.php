@@ -5,12 +5,12 @@
 ============================================================ --}}
     @php
     $title = 'Layanan Jasa Pembuatan Website Profesional | Cakra Inovasi Digital';
-    $metaDescription= 'Cakra Inovasi Digital menyediakan 6 jenis layanan website profesional: E-commerce, Company
-    Profile, Katalog Produk, Toko Online/POS, Rental, dan Sistem Manajemen Bisnis (ERP). Harga transparan, teknologi
+    $metaDescription= 'Cakra Inovasi Digital menyediakan 4 jenis layanan website profesional: Company
+    Profile, Katalog Produk, Toko Online/POS, dan Sistem Manajemen Bisnis (ERP). Harga transparan, teknologi
     modern.';
-    $metaKeywords = 'jasa pembuatan website, website e-commerce, company profile, katalog produk, toko online, kasir
+    $metaKeywords = 'jasa pembuatan website, company profile, katalog produk, toko online, kasir
     digital, kasir
-    POS, website booking, website rental, website manajemen Bisnis (ERP), Sistem Manajemen Bisnis (ERP), Magelang, Jawa
+    POS, website manajemen Bisnis (ERP), Sistem Manajemen Bisnis (ERP), Magelang, Jawa
     Tengah';
     $ogType = 'website';
     @endphp
@@ -20,21 +20,6 @@
 ============================================================ --}}
     @php
     $layanan = [
-    [
-    'route' => 'layanan.ecommerce',
-    'icon' => '
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />',
-    'label' => 'Website E-Commerce',
-    'tagline' => 'Jual lebih banyak, 24 jam sehari',
-    'desc' => 'Toko online lengkap dengan keranjang belanja, payment gateway, manajemen produk, dan laporan penjualan
-    real-time.',
-    'fitur' => ['Payment gateway terintegrasi', 'Dashboard manajemen produk', 'Laporan penjualan otomatis',
-    'Mobile-first design'],
-    'cocok' => 'Toko retail, fashion, elektronik, FMCG',
-    'accent' => 'blue',
-    'badge' => 'Paling Populer',
-    ],
     [
     'route' => 'layanan.katalog-produk',
     'icon' => '
@@ -61,14 +46,14 @@
     'tagline' => 'Kasir pintar, stok selalu terkontrol',
     'desc' => 'Sistem kasir digital modern — catat transaksi, pantau stok real-time, cetak struk, dan lihat laporan
     keuangan harian langsung dari HP.',
-    'fitur' => ['Kasir digital multi-perangkat', 'Manajemen stok real-time', 'Laporan keuangan harian', 'Support QRIS &
+    'fitur' => ['Kasir digital multi-perangkat', 'Manajemen stok real-time', 'Laporan keuangan harian', 'Support
     printer thermal'],
     'cocok' => 'Warung, minimarket, toko retail, apotek',
     'accent' => 'orange',
     'badge' => null,
     ],
     [
-    'route' => 'layanan.perusahaan',
+    'route' => 'layanan.company-profile',
     'icon' => '
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
         d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -81,21 +66,6 @@
     dari hari pertama'],
     'cocok' => 'CV, PT, konsultan, kontraktor, agensi',
     'accent' => 'indigo',
-    'badge' => null,
-    ],
-    [
-    'route' => 'layanan.rental',
-    'icon' => '
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />',
-    'label' => 'Website Rental & Booking',
-    'tagline' => 'Reservasi online, tanpa repot telpon',
-    'desc' => 'Sistem booking online real-time dengan kalender ketersediaan, konfirmasi otomatis, dan manajemen jadwal
-    terpusat untuk bisnis rental Anda.',
-    'fitur' => ['Kalender booking real-time', 'Konfirmasi otomatis via WA', 'Manajemen jadwal terpusat', 'Laporan
-    pendapatan bulanan'],
-    'cocok' => 'Rental mobil, kamera, alat, villa, lapangan',
-    'accent' => 'violet',
     'badge' => null,
     ],
     ];

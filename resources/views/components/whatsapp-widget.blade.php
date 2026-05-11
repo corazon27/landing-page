@@ -7,7 +7,7 @@ $contacts = [
 ];
 @endphp
 
-<div x-data="{ open: false }" class="fixed bottom-8 right-8 z-[9999] flex flex-col items-end">
+<div x-data="{ open: false }" class="fixed bottom-8 right-6 z-[9999] flex flex-col items-end">
 
     <div x-show="open" x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 scale-90 translate-y-10"
@@ -46,9 +46,9 @@ $contacts = [
     </div>
 
     <button @click="open = !open" aria-label="Toggle WhatsApp Chat"
-        class="w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 active:scale-95 cursor-pointer">
+        class="w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 active:scale-95 cursor-pointer">
         <div class="relative w-8 h-8 flex items-center justify-center">
-            <i class="fab fa-whatsapp text-4xl absolute transition-all duration-500 transform"
+            <i class="fab fa-whatsapp text-3xl absolute transition-all duration-500 transform"
                 :class="open ? 'opacity-0 rotate-180 scale-50' : 'opacity-100 rotate-0 scale-100'"></i>
             <i class="fas fa-times text-3xl absolute transition-all duration-500 transform"
                 :class="open ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-180 scale-50'"></i>

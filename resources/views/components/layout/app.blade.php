@@ -13,9 +13,9 @@
 
     <title>{{ $title ?? 'Jasa Pembuatan Website Profesional | Cakra Inovasi Digital' }}</title>
     <meta name="description"
-        content="{{ $metaDescription ?? 'Cakra Inovasi Digital menyediakan jasa pembuatan website profesional: e-commerce, company profile, toko online, dan lainnya. Hubungi kami sekarang.' }}">
+        content="{{ $metaDescription ?? 'Cakra Inovasi Digital menyediakan jasa pembuatan website profesional: website automasi bisnis, kasir digital, point of sale, stok gudang, sistem manajemen bisnis, katalog, company profile, toko online, dan lainnya. Hubungi kami sekarang.' }}">
     <meta name="keywords"
-        content="{{ $metaKeywords ?? 'jasa pembuatan website, web developer, website profesional, e-commerce, company profile, Magelang, Jawa Tengah' }}">
+        content="{{ $metaKeywords ?? 'jasa pembuatan website, web developer, website profesional, website automasi bisnis, website erp, katalog produk, kasir digital, point of sale, company profile, Magelang, Jawa Tengah' }}">
     <meta name="author" content="Cakra Inovasi Digital">
     <meta name="robots" content="{{ $metaRobots ?? 'index, follow' }}">
     <link rel="canonical" href="{{ $canonicalUrl ?? url()->current() }}">
@@ -70,7 +70,7 @@
             "height": 200
         },
         "image": "{{ asset('images/og-image.png') }}",
-        "description": "Jasa pembuatan website profesional meliputi e-commerce, company profile, katalog produk, toko online, website rental, dan website sistem manajemen bisnis (ERP). Berbasis di Magelang, Jawa Tengah.",
+        "description": "Jasa pembuatan website profesional meliputi company profile, katalog produk, kasir digital, dan website sistem manajemen bisnis (ERP). Berbasis di Magelang, Jawa Tengah.",
         "telephone": "+6285865405330",
         "email": "info@cakrainovasidigital.com",
         "address": {
@@ -107,11 +107,9 @@
             "name": "Indonesia"
         },
         "serviceType": [
-            "Pembuatan Website E-commerce",
+            "Pembuatan Website Kasir Digital / Point of Sale (POS)",
             "Pembuatan Website Company Profile",
             "Pembuatan Website Katalog Produk",
-            "Pembuatan Website Toko Online",
-            "Pembuatan Website Rental",
             "Pembuatan Website Sistem Manajemen Bisnis (ERP)"
         ],
         "sameAs": [

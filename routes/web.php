@@ -31,6 +31,7 @@ Route::get('/hubungi-kami', function () { return view('kontak'); })->name('konta
 Route::get('/fitur-web-kasir', function () { return view('fitur.fitur-kasir'); })->name('fitur.fitur-kasir');
 Route::get('/fitur-web-erp', function () { return view('fitur.fitur-erp'); })->name('fitur.fitur-erp');
 Route::get('/fitur-web-ecommerce', function () { return view('fitur.fitur-ecommerce'); })->name('fitur.fitur-ecommerce');
+Route::get('/fitur-web-booking', function () { return view('fitur.fitur-booking'); })->name('fitur.fitur-booking');
 Route::get('/fitur-web-katalog-produk', function () { return view('fitur.fitur-katalog'); })->name('fitur.fitur-katalog');
 Route::get('/fitur-company-profile', function () { return view('fitur.fitur-company-profile'); })->name('fitur.fitur-company-profile');
 

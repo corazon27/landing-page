@@ -227,13 +227,11 @@
                                     ? 'border-red-300 bg-red-50 focus:ring-2 focus:ring-red-200'
                                     : 'border-slate-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100'">
                                     <option value="" disabled selected>Pilih jenis layanan...</option>
-                                    <option value="Website E-Commerce">Website E-Commerce</option>
+                                    <option value="Website ERP">Website Automasi Bisnis</option>
                                     <option value="Website Company Profile">Website Company Profile</option>
                                     <option value="Website Katalog Produk">Website Katalog Produk</option>
                                     <option value="Website Toko Online / POS">Website Toko Online / POS (Kasir Digital)
                                     </option>
-                                    <option value="Website Rental & Booking">Website Rental & Booking</option>
-                                    <option value="Website F&B">Website F&B / Menu Digital</option>
                                     <option value="Konsultasi Umum">Konsultasi Umum (belum tahu mau pilih yang mana)
                                     </option>
                                 </select>

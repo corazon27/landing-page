@@ -55,10 +55,12 @@
     <section class="pt-36 pb-16 bg-white">
         <div class="max-w-7xl mx-auto px-6">
 
-            <x-breadcrumb :items="[
+            <div class="max-w-6xl mx-auto text-center mb-10">
+                <x-breadcrumb :items="[
                 ['name' => 'Layanan',             'url' => url('/layanan')],
-                ['name' => 'Website Kasir Digital / POS', 'url' => url('/layanan/web-kasir')],
+                ['name' => 'Kasir Digital', 'url' => url('/layanan/web-kasir')],
             ]" current="Fitur & Harga" />
+            </div>
 
             <div class="text-center mt-8 mb-4" data-aos="fade-up">
                 <span
@@ -89,12 +91,14 @@
             </p>
 
             <div class="overflow-x-auto rounded-3xl border border-slate-200 shadow-sm" data-aos="fade-up">
-                <table class="w-full text-left border-collapse min-w-[640px]">
+                {{-- Tambahkan table-fixed dan min-width yang konsisten --}}
+                <table class="w-full text-left border-collapse min-w-[750px] table-fixed">
 
                     <thead>
                         <tr class="bg-slate-50 border-b border-slate-200">
-
-                            <th class="py-6 px-5 w-[220px] lg:w-1/4 sticky left-0 bg-slate-50 z-10">
+                            {{-- Fitur Header: Sticky dengan z-index tinggi --}}
+                            <th
+                                class="py-6 px-5 w-[220px] sticky left-0 bg-slate-50 z-30 border-r border-slate-100 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Fitur</span>
                             </th>
 
@@ -114,23 +118,22 @@
                             @endphp
 
                             @foreach($cols as $col)
-                            <th class="py-6 px-4 text-center relative">
+                            <th class="py-6 px-4 text-center relative w-[160px]">
                                 @if(!empty($col['badge']))
                                 <span
-                                    class="absolute top-2 left-1/2 -translate-x-1/2 {{ $col['badge_bg'] }} text-white text-[9px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap">
+                                    class="absolute top-2 left-1/2 -translate-x-1/2 {{ $col['badge_bg'] }} text-white text-[9px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap z-10">
                                     {{ $col['badge'] }}
                                 </span>
                                 @endif
-                                <span class="block text-sm font-bold text-slate-900 mt-5">{{ $col['label'] }}</span>
+                                <span
+                                    class="block text-sm font-bold text-slate-900 {{ !empty($col['badge']) ? 'mt-5' : '' }}">{{ $col['label'] }}</span>
                                 <span class="block text-[11px] text-slate-400 mt-0.5">{{ $col['sub'] }}</span>
                             </th>
                             @endforeach
-
                         </tr>
                     </thead>
 
                     <tbody class="text-sm divide-y divide-slate-100">
-
                         @php
                         $groups = [
                         'Manajemen Operasional' => [
@@ -140,7 +143,7 @@
                         ['label' => 'Multi-Kasir (Beberapa Meja)', 'values' => [false, false, true, true]],
                         ],
                         'Fitur Keuangan' => [
-                        ['label' => 'Integrasi QRIS Dinamis', 'values' => [false, true, true, true]],
+                        ['label' => 'Sistem Pembayaran Fleksibel', 'values' => [false, true, true, true]],
                         ['label' => 'Laporan Laba Rugi Real-time', 'values' => [false, false, true, true]],
                         ['label' => 'Ekspor Laporan Excel', 'values' => [false, false, true, true]],
                         ['label' => 'Notifikasi Stok Minimum', 'values' => [true, true, true, true]],
@@ -155,18 +158,22 @@
                         @endphp
 
                         @foreach($groups as $groupName => $rows)
-
-                        <tr class="bg-blue-50/40">
-                            <td colspan="5" class="py-3 px-5 sticky left-0 bg-blue-50/40">
+                        {{-- Perbaikan Group Header: Gunakan bg solid agar konten tidak tembus saat scroll --}}
+                        <tr class="bg-blue-50">
+                            <td colspan="5" class="py-3 px-5 sticky left-0 z-20 bg-[#f1f5f9]">
+                                {{-- bg-slate-100 solid --}}
                                 <span
-                                    class="text-[11px] font-bold text-blue-600 uppercase tracking-widest">{{ $groupName }}</span>
+                                    class="text-[11px] font-bold text-blue-600 uppercase tracking-widest sticky left-5">
+                                    {{ $groupName }}
+                                </span>
                             </td>
                         </tr>
 
                         @foreach($rows as $row)
-                        <tr class="hover:bg-slate-50/60 transition-colors">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            {{-- Label Fitur: Sticky kiri dengan bg putih solid --}}
                             <td
-                                class="py-4 px-5 font-medium text-slate-700 sticky left-0 bg-white hover:bg-slate-50/60 transition-colors">
+                                class="py-4 px-5 font-medium text-slate-700 sticky left-0 bg-white z-10 border-r border-slate-50 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                                 {{ $row['label'] }}
                             </td>
                             @foreach($row['values'] as $val)
@@ -178,30 +185,31 @@
                                     aria-label="Tidak tersedia"></i>
                                 @elseif($val === 'all')
                                 <span
-                                    class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                                    <i class="fa-solid fa-shield-check text-xs" aria-hidden="true"></i> Semua Paket
+                                    class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full whitespace-nowrap">
+                                    <i class="fa-solid fa-shield-check text-xs"></i> Semua Paket
                                 </span>
                                 @else
                                 <span
-                                    class="text-[11px] font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">{{ $val }}</span>
+                                    class="inline-block text-[11px] font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full whitespace-nowrap">{{ $val }}</span>
                                 @endif
                             </td>
                             @endforeach
                         </tr>
                         @endforeach
-
                         @endforeach
-
                     </tbody>
 
                     <tfoot>
                         <tr class="border-t-2 border-slate-100 bg-slate-50/50">
-                            <td class="py-7 px-5 sticky left-0 bg-slate-50/50"></td>
+                            {{-- Footer kolom pertama juga harus sticky --}}
+                            <td
+                                class="py-7 px-5 sticky left-0 bg-slate-50 z-10 border-r border-slate-100 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+                            </td>
                             @foreach($cols as $col)
                             <td class="py-7 px-4 text-center">
                                 <a href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20tertarik%20dengan%20paket%20{{ $col['wa'] }}"
                                     target="_blank" rel="noopener noreferrer"
-                                    class="inline-block px-5 py-2.5 {{ $col['btn'] }} rounded-xl font-bold text-xs transition-all shadow-sm">
+                                    class="inline-block px-5 py-2.5 {{ $col['btn'] }} rounded-xl font-bold text-xs transition-all shadow-sm whitespace-nowrap">
                                     Pilih Paket
                                 </a>
                             </td>
@@ -211,7 +219,6 @@
 
                 </table>
             </div>
-
         </div>
     </section>
 
@@ -235,7 +242,7 @@
             'bg-emerald-500 hover:bg-emerald-600 text-white', 'wa' => 'Skema%20Per%20Transaksi'],
             ['badge' => null, 'ring' => 'border border-slate-200', 'title' => 'Versi HP', 'price' => 'Rp 125.000',
             'unit' => '/ bulan / outlet', 'price_color' => 'text-slate-900', 'perks' => ['Semua Fitur Operasional',
-            'Integrasi QRIS Dinamis', 'Video Tutorial', 'Konsultasi Teknis'], 'btn' => 'border-2 border-slate-800
+            'Sistem Pembayaran Fleksibel', 'Video Tutorial', 'Konsultasi Teknis'], 'btn' => 'border-2 border-slate-800
             text-slate-800 hover:bg-slate-800 hover:text-white', 'wa' => 'Versi%20HP'],
             ['badge' => 'Paling Laris', 'badge_bg' => 'bg-emerald-500', 'ring' => 'border-2 border-emerald-300', 'title'
             => 'Versi Tablet', 'price' => 'Rp 250.000', 'unit' => '/ bulan / outlet', 'price_color' =>
@@ -429,44 +436,56 @@
             },
             // Handler lanjutan dengan Smooth Scrolling & Ripple Effect
             toggleFaq(id, event) {
+                const btn = event.currentTarget;
+                const ripple = btn.querySelector('.faq-kasir-ripple');
+
+                if (ripple) {
+                    const rect = btn.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height) * 2;
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: #dbeafe;
+                        pointer-events: none;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${event.clientX - rect.left - size / 2}px;
+                        top: ${event.clientY - rect.top - size / 2}px;
+                        transform: scale(0);
+                        opacity: 1;
+                        transition: transform 0.5s ease, opacity 0.5s ease;
+                    `;
+
+                    ripple.offsetWidth;
+                    ripple.style.transform = 'scale(1)';
+                    ripple.style.opacity = '0';
+                }
+
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
 
-                // Animasi Sentuh (Ripple Effect)
-                const btn = event.currentTarget;
-                const ripple = btn.querySelector('.faq-kasir-ripple');
-                if (ripple) {
-                    const rect = btn.getBoundingClientRect();
-                    const x = event.clientX - rect.left;
-                    const y = event.clientY - rect.top;
-                    ripple.style.left = `${x}px`;
-                    ripple.style.top = `${y}px`;
-                    ripple.style.transform = 'scale(40)';
-                    ripple.style.opacity = '1';
-
-                    setTimeout(() => {
-                        ripple.style.transform = 'scale(0)';
-                        ripple.style.opacity = '0';
-                    }, 500);
-                }
-
-                // Autoscroll ke arah FAQ item yang diklik secara mulus
                 if (!wasOpen) {
-                    this.$nextTick(() => {
-                        const el = document.getElementById('faq-kasir-answer-' + id);
-                        if (el) {
-                            const parent = el.closest('.faq-kasir-item');
-                            if (parent) {
-                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({
-                                    top,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    });
+                    const isMobile = window.innerWidth < 768;
+                    if (isMobile) {
+                        setTimeout(() => this.scrollToElement(id), 300);
+                    } else {
+                        this.$nextTick(() => this.scrollToElement(id));
+                    }
                 }
             },
+
+            scrollToElement(id) {
+                const el = document.getElementById('faq-kasir-answer-' + id);
+                if (!el) return;
+                const parent = el.closest('.faq-kasir-item');
+                if (!parent) return;
+                const offsetPosition = parent.getBoundingClientRect().top + window.scrollY - 110;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            },
+
             faqs: rawFaqs.map((item, i) => ({
                 id: i + 1,
                 question: item.question,

@@ -187,9 +187,9 @@
     <section class="pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
-            <x-breadcrumb :items="[['name' => 'Layanan', 'url' => url('/layanan')]]"
-                current="Website Sistem Manajemen Bisnis (ERP)" />
-
+            <div class="max-w-6xl mx-auto text-center mb-10">
+                <x-breadcrumb :items="[['name' => 'Layanan', 'url' => url('/layanan')]]" current="Automasi Bisnis" />
+            </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mt-5 md:mt-6">
 
                 {{-- Kolom Teks --}}
@@ -960,6 +960,8 @@
             toggleFaq(id, event) {
                 const btn = event.currentTarget;
                 const ripple = btn.querySelector('.faq-erp-ripple');
+
+                // 1. Efek Ripple (Tetap sama)
                 if (ripple) {
                     const rect = btn.getBoundingClientRect();
                     const size = Math.max(rect.width, rect.height) * 2;
@@ -973,24 +975,51 @@
                     ripple.style.transform = 'scale(1)';
                     ripple.style.opacity = '0';
                 }
+
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
+
+                // 2. Logic Scroll Pintar
                 if (!wasOpen) {
-                    this.$nextTick(() => {
-                        const el = document.getElementById('faq-erp-answer-' + id);
-                        if (el) {
-                            const parent = el.closest('.faq-erp-item');
-                            if (parent) {
-                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({
-                                    top,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    });
+                    // Deteksi apakah user menggunakan layar smartphone (lebar < 768px)
+                    const isMobile = window.innerWidth < 768;
+
+                    if (isMobile) {
+                        // VERSI PRO MOBILE: Gunakan requestAnimationFrame untuk sinkronisasi dengan animasi browser
+                        // Kita beri sedikit jeda (delay) tapi lebih singkat agar tidak terasa lambat
+                        setTimeout(() => {
+                                this.scrollToElement(id);
+                            },
+                            290
+                        ); // 250ms adalah sweet spot: animasi penutupan sudah berjalan tapi user belum bosan menunggu
+                    } else {
+                        // VERSI DESKTOP: Gunakan $nextTick agar instan dan smooth
+                        this.$nextTick(() => {
+                            this.scrollToElement(id);
+                        });
+                    }
                 }
             },
+
+            // Fungsi pembantu agar kode lebih bersih
+            scrollToElement(id) {
+                const el = document.getElementById('faq-erp-answer-' + id);
+                if (el) {
+                    const parent = el.closest('.faq-erp-item');
+                    if (parent) {
+                        const offset = 110;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = parent.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
         };
     }
     </script>
@@ -998,6 +1027,13 @@
 
     @push('styles')
     <style>
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+
     .faq-erp-answer {
         transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s ease;
     }

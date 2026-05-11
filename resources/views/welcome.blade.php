@@ -46,8 +46,6 @@
 
     {{-- ================================================================
          SECTION 1: HERO
-         Mobile: kolom teks full-width, stats grid 2x2 tetap tapi lebih
-         kompak, tombol stack vertikal di layar kecil.
     ================================================================ --}}
     <section class="pt-28 md:pt-36 pb-16 md:pb-20 bg-white overflow-hidden">
         <div class="max-w-6xl mx-auto px-5 lg:px-10">
@@ -71,7 +69,7 @@
                         transparan, dan harga bersahabat.
                     </p>
 
-                    {{-- CTA Hero: hanya 1 tombol + 1 link sekunder --}}
+                    {{-- CTA Hero --}}
                     <div class="flex flex-col sm:flex-row gap-3">
                         <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20gratis%20soal%20pembuatan%20website%20untuk%20bisnis%20saya."
                             target="_blank" rel="noopener noreferrer"
@@ -96,10 +94,6 @@
                 </div>
 
                 {{-- Kolom Stats --}}
-                {{--
-                    Mobile: muncul di bawah teks, padding dikurangi,
-                    teks angka sedikit lebih kecil agar muat di layar 375px.
-                --}}
                 <div class="w-full md:w-1/2" data-aos="fade-left">
                     <div
                         class="bg-gradient-to-br from-blue-50 to-slate-100 rounded-[32px] md:rounded-[40px] flex items-center justify-center p-6 md:p-10">
@@ -107,17 +101,17 @@
                             <div class="grid grid-cols-2 gap-3 md:gap-4 mb-5">
                                 <div
                                     class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 text-left">
-                                    <p class="text-2xl md:text-3xl font-extrabold text-blue-600">50+</p>
+                                    <p class="text-2xl md:text-3xl font-extrabold text-blue-600">30+</p>
                                     <p class="text-xs text-slate-500 mt-1">Proyek Selesai</p>
                                 </div>
                                 <div
                                     class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 text-left">
-                                    <p class="text-2xl md:text-3xl font-extrabold text-emerald-600">98%</p>
+                                    <p class="text-2xl md:text-3xl font-extrabold text-emerald-600">99%</p>
                                     <p class="text-xs text-slate-500 mt-1">Klien Puas</p>
                                 </div>
                                 <div
                                     class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 text-left">
-                                    <p class="text-2xl md:text-3xl font-extrabold text-orange-500">3+</p>
+                                    <p class="text-2xl md:text-3xl font-extrabold text-orange-500">2+</p>
                                     <p class="text-xs text-slate-500 mt-1">Tahun Pengalaman</p>
                                 </div>
                                 <div
@@ -139,7 +133,6 @@
 
     {{-- ================================================================
          SECTION 2: LAYANAN
-         Mobile: kartu full-width 1 kolom, emoji tidak terlalu besar.
     ================================================================ --}}
     <section id="layanan" class="py-16 md:py-20 bg-slate-50">
         <div class="max-w-6xl mx-auto px-5 lg:px-10">
@@ -165,8 +158,8 @@
                     data-aos="fade-up" data-aos-delay="100">
                     <div class="text-3xl md:text-4xl mb-4 group-hover:scale-110 transition-transform inline-block"
                         aria-hidden="true">🌐</div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">Website Toko Online & Company Profile
-                    </h3>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">Website Toko Online &amp; Company
+                        Profile</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
                         Tampil profesional di Google dengan website yang cantik, mobile-friendly, dan membantu Anda
                         mendapatkan lebih banyak pelanggan baru.
@@ -175,7 +168,7 @@
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"
                                 aria-hidden="true"></i> Konsultasi gratis tanpa syarat</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"
-                                aria-hidden="true"></i> Sudah termasuk domain & hosting</li>
+                                aria-hidden="true"></i> Sudah termasuk domain &amp; hosting</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"
                                 aria-hidden="true"></i> SEO-ready dari hari pertama</li>
                     </ul>
@@ -186,7 +179,8 @@
                     data-aos="fade-up" data-aos-delay="200">
                     <div class="text-3xl md:text-4xl mb-4 group-hover:scale-110 transition-transform inline-block"
                         aria-hidden="true">🛠️</div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">Sistem & Aplikasi Khusus Bisnis</h3>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">Sistem &amp; Aplikasi Khusus Bisnis
+                    </h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
                         Punya alur kerja unik? Kami bangun sistem yang mengikuti cara kerja bisnis Anda, bukan
                         sebaliknya.
@@ -206,7 +200,7 @@
                     data-aos="fade-up" data-aos-delay="300">
                     <div class="text-3xl md:text-4xl mb-4 group-hover:scale-110 transition-transform inline-block"
                         aria-hidden="true">📑</div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">Kasir Digital & Manajemen Stok</h3>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">Kasir Digital &amp; Manajemen Stok</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
                         Tinggalkan catatan manual yang rawan selisih. Pantau stok dan laporan penjualan harian dari HP
                         kapan saja.
@@ -217,7 +211,7 @@
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-600"
                                 aria-hidden="true"></i> Pantau stok lewat HP</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-600"
-                                aria-hidden="true"></i> Support QRIS & printer thermal</li>
+                                aria-hidden="true"></i> Support printer thermal</li>
                     </ul>
                 </article>
 
@@ -237,99 +231,141 @@
 
     {{-- ================================================================
          SECTION 3: PROSES KERJA
-         Mobile: stepper vertikal (sudah ada).
-         PERUBAHAN: CTA bawah diubah dari tombol besar → link teks
-         biasa dengan ikon. Alasan: terlalu dekat dengan Hero (3 scroll),
-         pengunjung belum cukup "dipanaskan" untuk tombol besar kedua.
-         CTA asli tetap ada di section FAQ dan CTA Akhir.
     ================================================================ --}}
     <section id="proses-kerja" class="py-16 md:py-24 bg-white overflow-hidden">
+
         <div class="max-w-6xl mx-auto px-5 lg:px-10">
 
+
+
             {{-- Header --}}
+
             <div class="text-center mb-14 md:mb-20" data-aos="fade-up">
+
                 <span
                     class="inline-block bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+
                     Transparan dari Awal
+
                 </span>
+
                 <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
+
                     Bagaimana Kami Bekerja?
+
                 </h2>
+
                 <p class="text-slate-500 max-w-xl mx-auto text-sm md:text-base">
+
                     Tidak ada yang disembunyikan. Dari konsultasi pertama hingga website live, setiap langkah kami
+
                     lakukan bersama Anda.
+
                 </p>
+
             </div>
+
+
+
+            @php
+
+            $steps = [
+            [
+            'icon' => 'fa-comments', 'color' => 'blue', 'title' => 'Konsultasi',
+            'sub' => 'Gratis & Tanpa Syarat',
+            'detail' => 'Ceritakan kebutuhan bisnis Anda. Kami analisis dan susun solusi digital yang paling efektif
+            bersama Anda.'
+            ],
+            [
+            'icon' => 'fa-code', 'color' => 'emerald', 'title' => 'Coding Sistem',
+            'sub' => 'Teknologi Modern',
+            'detail' => 'Proses pengembangan dimulai. Kami membangun fitur website Anda dengan standar kode yang bersih
+            dan aman.'
+            ],
+            [
+            'icon' => 'fa-magnifying-glass-chart','color' => 'orange', 'title' => 'Testing & Revisi',
+            'sub' => 'Teliti Sebelum Live',
+            'detail' => 'Pengujian menyeluruh di berbagai perangkat untuk memastikan website bebas bug dan sesuai
+            keinginan Anda.'
+            ],
+            [
+            'icon' => 'fa-chalkboard-teacher', 'color' => 'indigo', 'title' => 'Training',
+            'sub' => 'Mahir Kelola Sistem',
+            'detail' => 'Kami berikan pelatihan intensif agar tim Anda mandiri mengoperasikan dashboard dan mengelola
+            konten tanpa kendala.'
+            ],
+            [
+            'icon' => 'fa-rocket', 'color' => 'violet', 'title' => 'Go-Live',
+            'sub' => 'Website Resmi Rilis',
+            'detail' => 'Website Anda resmi mengudara! Siap melayani pelanggan dan memperkuat kredibilitas bisnis Anda
+            di dunia digital.'
+            ],
+            [
+            'icon' => 'fa-headset', 'color' => 'sky', 'title' => 'Support',
+            'sub' => 'Pendampingan Teknis',
+            'detail' => 'Bebas khawatir bug atau error. Tim Cakra standby membantu kendala teknis maupun konsultasi
+            penggunaan kapan pun dibutuhkan.'
+            ],
+            ];
+
+            $colorMap = [
+            'blue' => ['ring' => 'ring-blue-200', 'bg' => 'bg-blue-100', 'icon' => 'text-blue-600', 'badge' =>
+            'bg-blue-600', 'hover' => 'group-hover:bg-blue-600', 'hoverbg' => 'group-hover:bg-blue-50'],
+            'emerald' => ['ring' => 'ring-emerald-200', 'bg' => 'bg-emerald-100', 'icon' => 'text-emerald-600', 'badge'
+            => 'bg-emerald-600', 'hover' => 'group-hover:bg-emerald-600', 'hoverbg' => 'group-hover:bg-emerald-50'],
+            'orange' => ['ring' => 'ring-orange-200', 'bg' => 'bg-orange-100', 'icon' => 'text-orange-600', 'badge' =>
+            'bg-orange-600', 'hover' => 'group-hover:bg-orange-600', 'hoverbg' => 'group-hover:bg-orange-50'],
+            'violet' => ['ring' => 'ring-violet-200', 'bg' => 'bg-violet-100', 'icon' => 'text-violet-600', 'badge' =>
+            'bg-violet-600', 'hover' => 'group-hover:bg-violet-600', 'hoverbg' => 'group-hover:bg-violet-50'],
+            'indigo' => ['ring' => 'ring-indigo-200', 'bg' => 'bg-indigo-100', 'icon' => 'text-indigo-600', 'badge' =>
+            'bg-indigo-600', 'hover' => 'group-hover:bg-indigo-600', 'hoverbg' => 'group-hover:bg-indigo-50'],
+            'sky' => ['ring' => 'ring-sky-200', 'bg' => 'bg-sky-100', 'icon' => 'text-sky-600', 'badge' => 'bg-sky-600',
+            'hover' => 'group-hover:bg-sky-600', 'hoverbg' => 'group-hover:bg-sky-50'],
+            ];
+
+            @endphp
 
             {{-- ── Desktop: Stepper Horizontal ── --}}
             <div class="hidden md:block relative" data-aos="fade-up" data-aos-delay="100">
-
                 {{-- Connector line --}}
+
                 <div class="absolute top-[52px] left-[10%] right-[10%] h-0.5 bg-slate-200 z-0" aria-hidden="true">
+
                     <div
                         class="proses-progress-line h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full w-0">
+
                     </div>
+
                 </div>
-
-                <div class="grid grid-cols-5 gap-4 relative z-10">
-                    @php
-                    $steps = [
-                    ['icon' => 'fa-comments', 'color' => 'blue', 'title' => 'Konsultasi', 'sub' => 'Gratis & tanpa
-                    syarat', 'detail' => 'Ceritakan kebutuhan bisnis Anda. Kami analisis, lalu susun solusi yang tepat
-                    bersama-sama.'],
-                    ['icon' => 'fa-pen-ruler', 'color' => 'violet', 'title' => 'Desain Visual', 'sub' => 'Revisi hingga
-                    deal', 'detail' => 'Kami buat mockup tampilan website. Anda bebas revisi minor hingga desain
-                    benar-benar sesuai visi.'],
-                    ['icon' => 'fa-code', 'color' => 'emerald', 'title' => 'Coding Sistem', 'sub' => 'Teknologi modern',
-                    'detail' => 'Proses pengembangan dimulai. Fitur dibangun sesuai spesifikasi yang sudah disepakati di
-                    kontrak.'],
-                    ['icon' => 'fa-magnifying-glass-chart','color' => 'orange', 'title' => 'Testing & Revisi', 'sub' =>
-                    'Teliti sebelum live', 'detail' => 'Pengujian menyeluruh di berbagai perangkat. Semua bug dan
-                    permintaan perubahan diselesaikan dulu.'],
-                    ['icon' => 'fa-rocket', 'color' => 'blue', 'title' => 'Go-Live & Training','sub' => 'Siap
-                    beroperasi', 'detail' => 'Website live! Kami training tim Anda, serahkan akses, dan tetap standby
-                    untuk pertanyaan pasca-launch.'],
-                    ];
-                    $colorMap = [
-                    'blue' => ['ring' => 'ring-blue-200', 'bg' => 'bg-blue-100', 'icon' => 'text-blue-600', 'badge' =>
-                    'bg-blue-600', 'hover' => 'group-hover:bg-blue-600', 'hoverbg' => 'group-hover:bg-blue-50'],
-                    'violet' => ['ring' => 'ring-violet-200', 'bg' => 'bg-violet-100', 'icon' => 'text-violet-600',
-                    'badge' => 'bg-violet-600', 'hover' => 'group-hover:bg-violet-600', 'hoverbg' =>
-                    'group-hover:bg-violet-50'],
-                    'emerald' => ['ring' => 'ring-emerald-200', 'bg' => 'bg-emerald-100', 'icon' => 'text-emerald-600',
-                    'badge' => 'bg-emerald-600', 'hover' => 'group-hover:bg-emerald-600', 'hoverbg' =>
-                    'group-hover:bg-emerald-50'],
-                    'orange' => ['ring' => 'ring-orange-200', 'bg' => 'bg-orange-100', 'icon' => 'text-orange-600',
-                    'badge' => 'bg-orange-600', 'hover' => 'group-hover:bg-orange-600', 'hoverbg' =>
-                    'group-hover:bg-orange-50'],
-                    ];
-                    @endphp
-
+                <div class="grid grid-cols-6 gap-4 relative z-10">
                     @foreach($steps as $i => $step)
                     @php $c = $colorMap[$step['color']]; @endphp
                     <div class="group flex flex-col items-center text-center cursor-default" data-aos="fade-up"
                         data-aos-delay="{{ 100 + $i * 100 }}">
-
                         <div class="relative mb-6">
                             <span
                                 class="absolute -top-1 -right-1 w-5 h-5 rounded-full {{ $c['badge'] }} text-white text-[10px] font-extrabold flex items-center justify-center z-10 shadow-sm">
                                 {{ $i + 1 }}
+
                             </span>
+
                             <div class="w-[104px] h-[104px] rounded-full {{ $c['bg'] }} {{ $c['ring'] }} ring-4
-                                        flex items-center justify-center
-                                        {{ $c['hover'] }} transition-all duration-300 shadow-sm
-                                        group-hover:shadow-lg group-hover:scale-105">
+
+                                            flex items-center justify-center
+
+                                            {{ $c['hover'] }} transition-all duration-300 shadow-sm
+
+                                            group-hover:shadow-lg group-hover:scale-105">
+
                                 <i class="fa-solid {{ $step['icon'] }} text-2xl {{ $c['icon'] }} group-hover:text-white transition-colors duration-300"
                                     aria-hidden="true"></i>
                             </div>
                         </div>
-
                         <h3
                             class="font-extrabold text-slate-900 text-sm mb-1 group-hover:text-blue-600 transition-colors">
                             {{ $step['title'] }}
                         </h3>
                         <p class="text-xs text-slate-400 mb-3 font-medium">{{ $step['sub'] }}</p>
-
                         <div
                             class="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out w-full">
                             <div
@@ -337,30 +373,24 @@
                                 {{ $step['detail'] }}
                             </div>
                         </div>
-
                     </div>
                     @endforeach
                 </div>
             </div>
-
             {{-- ── Mobile: Stepper Vertikal ── --}}
             <div class="md:hidden relative pl-10">
-
                 <div class="absolute left-[18px] top-0 bottom-0 w-0.5 bg-slate-200" aria-hidden="true">
                     <div
                         class="proses-progress-line-v w-full bg-gradient-to-b from-blue-400 to-blue-600 rounded-full h-0">
                     </div>
                 </div>
-
                 @foreach($steps as $i => $step)
                 @php $c = $colorMap[$step['color']]; @endphp
                 <div class="relative flex gap-4 mb-6 last:mb-0" data-aos="fade-right" data-aos-delay="{{ $i * 80 }}">
-
                     <div class="absolute -left-10 top-2 w-9 h-9 rounded-full {{ $c['bg'] }} {{ $c['ring'] }} ring-4
-                                flex items-center justify-center shrink-0 shadow-sm z-10">
+                                    flex items-center justify-center shrink-0 shadow-sm z-10">
                         <i class="fa-solid {{ $step['icon'] }} text-sm {{ $c['icon'] }}" aria-hidden="true"></i>
                     </div>
-
                     <div class="flex-1 bg-slate-50 rounded-2xl p-4 border border-slate-100">
                         <div class="flex items-start gap-2 mb-1.5">
                             <span
@@ -375,18 +405,9 @@
                         </div>
                         <p class="text-xs text-slate-600 leading-relaxed pl-7">{{ $step['detail'] }}</p>
                     </div>
-
                 </div>
                 @endforeach
             </div>
-
-            {{--
-                CTA Proses Kerja — DIUBAH dari tombol besar ke link teks.
-                Alasan: Ini adalah CTA pertama yang ditemui pengunjung (Hero
-                sudah dinonaktifkan tombolnya). Terlalu agresif jika langsung
-                tombol besar penuh. Link teks tetap mengundang tanpa mendorong.
-            --}}
-
             <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
                 <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20soal%20proses%20pembuatan%20website."
@@ -396,15 +417,12 @@
                     Tanya Langsung via WhatsApp
                 </a>
             </div>
-
         </div>
     </section>
 
 
     {{-- ================================================================
          SECTION 4: PORTOFOLIO
-         Mobile: border-b header diperbaiki agar tidak terlalu sempit,
-         kartu full-width 1 kolom.
     ================================================================ --}}
     <section id="portofolio" class="py-16 md:py-24 bg-white relative overflow-hidden">
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-100 opacity-40 blur-3xl pointer-events-none"
@@ -442,21 +460,24 @@
                     class="group flex flex-col bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
                     data-aos="fade-up" data-aos-delay="100">
                     <div class="aspect-video bg-slate-100 rounded-2xl mb-4 overflow-hidden relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm font-medium"
-                            aria-hidden="true">
-                            Screenshot Website Company Profile
-                        </div>
+                        {{-- Implementasi Gambar WebP dari Storage --}}
+                        <img src="{{ asset('storage/portofolio/porto-erp.webp') }}" alt="Sistem ERP Terintegrasi"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+
                         <span
-                            class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm">Website</span>
+                            class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm">
+                            Sistem Web
+                        </span>
                     </div>
+
                     <div class="px-2 flex-grow">
                         <h3
                             class="text-base md:text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                            Website Company Profile Profesional
+                            Sistem ERP Terintegrasi
                         </h3>
                         <p class="text-slate-500 text-sm mb-4 line-clamp-2">
-                            Website perusahaan dengan galeri visual, halaman layanan, dan dashboard admin mandiri untuk
-                            update konten sendiri.
+                            Platform komprehensif untuk mengelola seluruh operasional bisnis, mencakup manajemen
+                            keuangan, inventaris, hingga SDM dalam satu dashboard pusat.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span
@@ -464,14 +485,15 @@
                             <span
                                 class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Tailwind
                                 CSS</span>
-                            <span class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">12
-                                Fitur</span>
+                            <span
+                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Multi-Modul</span>
                         </div>
                     </div>
+
                     <div class="px-2 pb-2">
                         <blockquote class="bg-blue-50 border border-blue-100 p-3 rounded-xl">
-                            <p class="text-sm font-medium text-blue-700 italic">"Tampilan elegan dan galeri produk
-                                sangat mudah di-update sendiri."</p>
+                            <p class="text-sm font-medium text-blue-700 italic">"Manajemen data antar divisi kini jauh
+                                lebih rapi dan terpusat. Operasional jadi sangat efisien."</p>
                         </blockquote>
                     </div>
                 </article>
@@ -480,10 +502,8 @@
                     class="group flex flex-col bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
                     data-aos="fade-up" data-aos-delay="200">
                     <div class="aspect-video bg-emerald-50 rounded-2xl mb-4 overflow-hidden relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-emerald-400 text-sm font-medium"
-                            aria-hidden="true">
-                            Screenshot Katalog Produk Digital
-                        </div>
+                        <img src="{{ asset('storage/portofolio/porto-katalog.webp') }}" alt="Katalog Produk Digital"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <span
                             class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm">Katalog
                             Digital</span>
@@ -517,10 +537,8 @@
                     class="group flex flex-col bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
                     data-aos="fade-up" data-aos-delay="300">
                     <div class="aspect-video bg-orange-50 rounded-2xl mb-4 overflow-hidden relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-orange-400 text-sm font-medium"
-                            aria-hidden="true">
-                            Screenshot Sistem Kasir / POS
-                        </div>
+                        <img src="{{ asset('storage/portofolio/porto-pos.webp') }}" alt="Sistem Kasir & POS"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <span
                             class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm">Kasir
                             / POS</span>
@@ -528,18 +546,19 @@
                     <div class="px-2 flex-grow">
                         <h3
                             class="text-base md:text-lg font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">
-                            Sistem Kasir & Point of Sale (POS)
+                            Sistem Kasir &amp; Point of Sale (POS)
                         </h3>
                         <p class="text-slate-500 text-sm mb-4 line-clamp-2">
                             Kasir digital modern dengan manajemen stok real-time, laporan keuangan harian, dan dukungan
-                            QRIS.
+                            printer thermal.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span
                                 class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Inventory
                                 Real-time</span>
                             <span
-                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">QRIS</span>
+                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Mobile
+                                First</span>
                         </div>
                     </div>
                     <div class="px-2 pb-2">
@@ -557,7 +576,6 @@
 
     {{-- ================================================================
          SECTION 5: KEUNGGULAN
-         Mobile: grid 2 kolom tetap (sudah cukup kompak di sm:grid-cols-2).
     ================================================================ --}}
     <section id="keunggulan" class="py-16 md:py-24 bg-slate-900 text-white overflow-hidden relative">
         <div class="absolute top-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"
@@ -602,7 +620,7 @@
                             aria-hidden="true">
                             <i class="fa-solid fa-code text-lg md:text-xl"></i>
                         </div>
-                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Teknologi Modern & Terkini</h3>
+                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Teknologi Modern &amp; Terkini</h3>
                         <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
                             Dibangun dengan framework terkini — website Anda cepat, aman, dan mudah dikembangkan.
                         </p>
@@ -644,6 +662,33 @@
                         </p>
                     </div>
 
+                    <div class="group p-5 md:p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:bg-slate-800 hover:border-rose-500/50 transition-all duration-300"
+                        data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-10 md:w-12 h-10 md:h-12 bg-rose-500/10 text-rose-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+                            aria-hidden="true">
+                            <i class="fa-solid fa-clock-rotate-left text-lg md:text-xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Siaga 24/7 Tanpa Henti</h3>
+                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
+                            Tim kami selalu siap siaga membantu kendala teknis Anda kapan pun, siang maupun malam.
+                        </p>
+                    </div>
+
+                    {{-- Kartu 6: Cakupan Nasional --}}
+                    <div class="group p-5 md:p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300"
+                        data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-10 md:w-12 h-10 md:h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+                            aria-hidden="true">
+                            <i class="fa-solid fa-earth-asia text-lg md:text-xl"></i>
+                        </div>
+                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Jangkauan Seluruh Indonesia</h3>
+                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
+                            Melayani berbagai klien dari kota-kota besar yang ada di Indonesia dengan koordinasi
+                            digital yang efisien dan
+                            profesional.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -651,7 +696,7 @@
 
 
     {{-- ================================================================
-         SECTION 6: TESTIMONI (tidak berubah secara struktural)
+         SECTION 6: TESTIMONI
     ================================================================ --}}
     <section id="testimoni" class="py-16 md:py-24 bg-white overflow-hidden" x-data="testimonialData()"
         aria-label="Testimoni klien">
@@ -697,8 +742,6 @@
 
     {{-- ================================================================
          SECTION 7: TEKNOLOGI
-         Mobile: grid 4 kolom di sm, 2 kolom di xs — sudah bagus.
-         Banner bawah: stack vertikal di mobile.
     ================================================================ --}}
     <section id="teknologi" class="py-16 md:py-24 bg-slate-50 overflow-hidden">
         <div class="max-w-6xl mx-auto px-5 lg:px-10">
@@ -706,7 +749,7 @@
             <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
                 <span
                     class="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Teknologi Modern & Stabil
+                    Teknologi Modern &amp; Stabil
                 </span>
                 <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold mt-4 mb-3 text-slate-900">
                     Stack Teknologi yang Kami Gunakan
@@ -737,12 +780,17 @@
             ];
             @endphp
 
-            <div class="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-6" data-aos="fade-up"
-                data-aos-delay="200">
+            <div class="grid grid-cols-4 lg:grid-cols-8 gap-3 md:gap-6" data-aos="fade-up" data-aos-delay="200">
                 @foreach($techStack as $tech)
                 <div
                     class="group p-3 md:p-5 bg-white rounded-[20px] md:rounded-[28px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
-                    <img src="{{ $tech['src'] }}" alt="{{ $tech['alt'] }}" loading="lazy" width="40" height="40"
+                    {{--
+                            FIX CLS: Tambah atribut width="40" height="40" eksplisit dan decoding="async".
+                            Ini mencegah layout shift saat gambar belum dimuat karena browser sudah
+                            tahu dimensinya dari awal render. loading="lazy" sudah ada sebelumnya.
+                        --}}
+                    <img src="{{ $tech['src'] }}" alt="{{ $tech['alt'] }}" loading="lazy" decoding="async" width="40"
+                        height="40"
                         class="w-7 md:w-10 h-7 md:h-10 mb-2 md:mb-3 grayscale group-hover:grayscale-0 transition-all">
                     <span
                         class="text-[9px] md:text-[10px] font-bold text-slate-400 {{ $tech['hover'] }} transition-colors text-center leading-tight">
@@ -775,7 +823,6 @@
 
     {{-- ================================================================
          SECTION 8: FAQ
-         Mobile: nomor urut lebih kecil, padding dikurangi sedikit.
     ================================================================ --}}
     <section id="faq" class="py-16 md:py-24 bg-white" x-data="faqSection()">
         <div class="max-w-3xl mx-auto px-5 md:px-6">
@@ -799,18 +846,16 @@
                             :class="selected === faq.id ? 'bg-blue-500 opacity-100' : 'opacity-0'"></div>
 
                         {{-- Tombol pertanyaan --}}
-                        <button @click="toggleFaq(faq.id, $event)" class="faq-btn w-full flex items-center gap-3 md:gap-4 px-4 md:px-6 py-4 md:py-5 text-left
-                                       focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400
-                                       focus-visible:ring-inset relative overflow-hidden cursor-pointer"
+                        <button @click="toggleFaq(faq.id, $event)"
+                            class="faq-btn w-full flex items-center gap-3 md:gap-4 px-4 md:px-6 py-4 md:py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-inset relative overflow-hidden cursor-pointer"
                             :aria-expanded="selected === faq.id" :aria-controls="'faq-answer-' + faq.id">
 
-                            {{-- Ripple --}}
-                            <span class="faq-ripple absolute rounded-full bg-blue-100 opacity-0 pointer-events-none"
-                                style="width:10px;height:10px;transform:scale(0);transition:transform 0.5s ease,opacity 0.5s ease;"></span>
+                            {{-- Ripple: elemen kosong, style di-set sepenuhnya via JS --}}
+                            <span class="faq-ripple" aria-hidden="true"></span>
 
                             {{-- Nomor urut --}}
-                            <span class="shrink-0 w-6 md:w-7 h-6 md:h-7 rounded-full text-[10px] md:text-[11px] font-extrabold
-                                         flex items-center justify-center transition-all duration-300"
+                            <span
+                                class="shrink-0 w-6 md:w-7 h-6 md:h-7 rounded-full text-[10px] md:text-[11px] font-extrabold flex items-center justify-center transition-all duration-300"
                                 :class="selected === faq.id ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200'"
                                 x-text="String(index + 1).padStart(2, '0')">
                             </span>
@@ -845,11 +890,6 @@
                 </template>
             </div>
 
-            {{--
-                CTA FAQ: tetap tombol emerald (berbeda warna dari CTA lain).
-                Konteks sangat relevan — muncul persis setelah FAQ,
-                pengunjung yang punya pertanyaan belum terjawab akan klik ini.
-            --}}
             <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
                 <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ada%20pertanyaan%20seputar%20jasa%20website%20Anda."
@@ -866,7 +906,6 @@
 
     {{-- ================================================================
          SECTION 9: CTA AKHIR
-         Mobile: padding lebih kecil, tombol stack vertikal.
     ================================================================ --}}
     <section class="py-16 md:py-20 bg-slate-50" aria-label="Ajakan untuk memulai proyek website">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
@@ -966,40 +1005,57 @@
                 question: item.question,
                 answer: faqRichAnswers[index + 1] ?? `<p>${item.answer}</p>`,
             })),
+
             toggleFaq(id, event) {
                 const btn = event.currentTarget;
                 const ripple = btn.querySelector('.faq-ripple');
+
                 if (ripple) {
                     const rect = btn.getBoundingClientRect();
                     const size = Math.max(rect.width, rect.height) * 2;
-                    ripple.style.width = size + 'px';
-                    ripple.style.height = size + 'px';
-                    ripple.style.left = (event.clientX - rect.left - size / 2) + 'px';
-                    ripple.style.top = (event.clientY - rect.top - size / 2) + 'px';
-                    ripple.style.transform = 'scale(0)';
-                    ripple.style.opacity = '1';
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: #dbeafe;
+                        pointer-events: none;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${event.clientX - rect.left - size / 2}px;
+                        top: ${event.clientY - rect.top - size / 2}px;
+                        transform: scale(0);
+                        opacity: 1;
+                        transition: transform 0.5s ease, opacity 0.5s ease;
+                    `;
+
                     ripple.offsetWidth;
                     ripple.style.transform = 'scale(1)';
                     ripple.style.opacity = '0';
                 }
+
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
+
                 if (!wasOpen) {
-                    this.$nextTick(() => {
-                        const el = document.getElementById('faq-answer-' + id);
-                        if (el) {
-                            const parent = el.closest('.faq-item');
-                            if (parent) {
-                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({
-                                    top,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    });
+                    const isMobile = window.innerWidth < 768;
+                    if (isMobile) {
+                        setTimeout(() => this.scrollToElement(id), 300);
+                    } else {
+                        this.$nextTick(() => this.scrollToElement(id));
+                    }
                 }
             },
+
+            scrollToElement(id) {
+                const el = document.getElementById('faq-answer-' + id);
+                if (!el) return;
+                const parent = el.closest('.faq-item');
+                if (!parent) return;
+                const offsetPosition = parent.getBoundingClientRect().top + window.scrollY - 110;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
         };
     }
 
@@ -1040,14 +1096,14 @@
                 },
                 {
                     id: 4,
-                    name: 'Maya Sartika',
-                    role: 'Catering Ibu Maya (E-commerce)',
-                    initials: 'MS',
-                    bgColor: 'bg-emerald-50/50',
-                    borderColor: 'border-emerald-100',
-                    quoteColor: 'text-emerald-400',
-                    avatarBg: 'bg-emerald-600',
-                    content: 'Website e-commerce-nya gampang dikelola sendiri, bahkan buat saya yang bukan orang IT. Pesanan masuk jadi lebih teratur dan pembayaran otomatisnya sangat membantu.'
+                    name: 'Hendra Wijaya',
+                    role: 'Manajer Operasional (Sistem ERP)',
+                    initials: 'HW',
+                    bgColor: 'bg-amber-50/50',
+                    borderColor: 'border-amber-100',
+                    quoteColor: 'text-amber-400',
+                    avatarBg: 'bg-amber-500',
+                    content: 'Dulu pusing kalau mau cek stok di gudang dan laporan keuangan karena datanya kepisah-pisah. Sekarang semua sudah nyambung jadi satu sistem, kerjaan jadi jauh lebih ringan dan rapi.'
                 },
                 {
                     id: 5,
@@ -1073,17 +1129,6 @@
                 },
                 {
                     id: 7,
-                    name: 'Bpk. Subagyo',
-                    role: 'Warung Makan Barokah (Katalog QR)',
-                    initials: 'BS',
-                    bgColor: 'bg-orange-50/50',
-                    borderColor: 'border-orange-100',
-                    quoteColor: 'text-orange-400',
-                    avatarBg: 'bg-orange-600',
-                    content: 'Menu katalog QR code-nya simpel, anti ribet buat pembeli. Saya nggak perlu cetak ulang buku menu tiap kali ada perubahan harga atau menu baru.'
-                },
-                {
-                    id: 8,
                     name: 'Fandi Ahmad',
                     role: 'Bengkel Motor Fandi (POS Service)',
                     initials: 'FA',
@@ -1094,7 +1139,7 @@
                     content: 'Data pelanggan jadi rapi. Dulu sering lupa jadwal servis rutin pelanggan, sekarang tinggal cek di sistem. Bengkel jadi terlihat lebih modern dan dipercaya.'
                 },
                 {
-                    id: 9,
+                    id: 8,
                     name: 'Ibu Ratna',
                     role: 'Toko Sembako Jaya (POS Mobile)',
                     initials: 'IR',
@@ -1105,71 +1150,77 @@
                     content: 'Ditemenin sampai bisa pakai! Support-nya juara, kalau ada bingung soal input barang tinggal WA langsung dibantu sampai tuntas. Gak nyesel langganan di sini.'
                 },
                 {
-                    id: 10,
-                    name: 'Dewi Lestari',
-                    role: 'Home Industri Kerajinan (E-commerce)',
-                    initials: 'DL',
-                    bgColor: 'bg-emerald-50/50',
-                    borderColor: 'border-emerald-100',
-                    quoteColor: 'text-emerald-400',
-                    avatarBg: 'bg-emerald-500',
-                    content: 'Visual website e-commerce-nya bagus banget, sesuai ekspektasi saya yang peduli soal estetika. Sekarang produk kerajinan saya bisa menjangkau pembeli luar pulau.'
+                    id: 9,
+                    name: 'H. Suherman',
+                    role: 'Pemilik Pabrik Kerupuk (Sistem Operasional)',
+                    initials: 'HS',
+                    bgColor: 'bg-amber-50/50',
+                    borderColor: 'border-amber-100',
+                    quoteColor: 'text-amber-400',
+                    avatarBg: 'bg-amber-600',
+                    content: 'Sistemnya ngebantu banget buat mantau pengeluaran beli bahan baku sampai penjualan sales di lapangan. Jadi nggak ada lagi uang atau barang yang "hilang" tanpa catatan.'
                 },
             ]
         };
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        new Swiper('.testimonial-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 16,
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false
-            },
-            pagination: {
-                el: '.testimonial-pagination',
-                clickable: true
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 20
-                },
-                768: {
-                    slidesPerView: 2
-                },
-                1024: {
-                    slidesPerView: 3
-                }
-            }
-        });
-
-        const hLine = document.querySelector('.proses-progress-line');
-        const vLine = document.querySelector('.proses-progress-line-v');
-        if (hLine || vLine) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (hLine) hLine.style.width = '100%';
-                        if (vLine) vLine.style.height = '100%';
-                        observer.disconnect();
+    document.addEventListener('alpine:init', () => {
+        requestAnimationFrame(() => {
+            if (typeof Swiper !== 'undefined') {
+                new Swiper('.testimonial-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false
+                    },
+                    pagination: {
+                        el: '.testimonial-pagination',
+                        clickable: true
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 1.5,
+                            spaceBetween: 20
+                        },
+                        768: {
+                            slidesPerView: 2
+                        },
+                        1024: {
+                            slidesPerView: 3
+                        },
                     }
                 });
-            }, {
-                threshold: 0.25
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const hLine = document.querySelector('.proses-progress-line');
+        const vLine = document.querySelector('.proses-progress-line-v');
+        if (!hLine && !vLine) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (hLine) hLine.style.width = '100%';
+                    if (vLine) vLine.style.height = '100%';
+                    observer.disconnect();
+                }
             });
-            const sec = document.getElementById('proses-kerja');
-            if (sec) observer.observe(sec);
-        }
+        }, {
+            threshold: 0.25
+        });
+
+        const sec = document.getElementById('proses-kerja');
+        if (sec) observer.observe(sec);
     });
     </script>
     @endpush
 
     @push('styles')
     <style>
-    /* ── Swiper ──────────────────────────────────────── */
     .testimonial-swiper {
         overflow: hidden !important;
     }
@@ -1195,27 +1246,22 @@
         border-radius: 12px !important;
     }
 
-    /* ── FAQ ─────────────────────────────────────────── */
     .faq-answer {
-        transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+        transition:
+            max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1),
             opacity 0.28s ease;
     }
 
     .faq-ripple {
         position: absolute;
         border-radius: 50%;
-        background: #dbeafe;
-        transform: scale(0);
-        opacity: 0;
         pointer-events: none;
-        transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
     .faq-item:not([class*="border-blue"]):hover {
         background: #fafafa;
     }
 
-    /* ── Proses Kerja progress line ──────────────────── */
     .proses-progress-line {
         transition: width 1.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -1224,11 +1270,6 @@
         transition: height 1.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .group:hover .group-hover\:max-h-24 {
-        max-height: 6rem;
-    }
-
-    /* ── Reduced motion ──────────────────────────────── */
     @media (prefers-reduced-motion: reduce) {
 
         .faq-answer,

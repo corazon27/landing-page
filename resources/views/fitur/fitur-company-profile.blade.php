@@ -215,10 +215,12 @@
     <section class="pt-36 pb-14 bg-white">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
-            <x-breadcrumb :items="[
+            <div class="max-w-6xl mx-auto text-center mb-10">
+                <x-breadcrumb :items="[
             ['name' => 'Layanan',                  'url' => url('/layanan')],
-            ['name' => 'Website Company Profile',  'url' => url('/layanan/web-perusahaan')],
+            ['name' => 'Company Profile',  'url' => url('/layanan/web-perusahaan')],
         ]" current="Fitur & Harga" />
+            </div>
 
             <div class="text-center mt-8 mb-4 max-w-3xl mx-auto" data-aos="fade-up">
                 <span
@@ -250,20 +252,20 @@
             </p>
 
             <div class="overflow-x-auto rounded-3xl border border-slate-200 shadow-sm" data-aos="fade-up">
-                <table class="w-full text-left border-collapse min-w-[680px]">
+                <table class="w-full text-left border-collapse min-w-[680px] table-fixed">
 
                     <thead>
                         <tr class="bg-slate-50 border-b border-slate-200">
-
-                            <th class="py-6 px-5 w-[240px] lg:w-1/4 sticky left-0 bg-slate-50 z-10">
+                            <th
+                                class="py-6 px-5 w-[240px] sticky left-0 bg-slate-50 z-30 border-r border-slate-100 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Fitur</span>
                             </th>
 
                             @foreach($cols as $col)
-                            <th class="py-6 px-5 text-center relative">
+                            <th class="py-6 px-5 text-center relative w-[180px]">
                                 @if(!empty($col['badge']))
                                 <span
-                                    class="absolute top-2 left-1/2 -translate-x-1/2 {{ $col['badge_bg'] }} text-[9px] px-3 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap">
+                                    class="absolute top-2 left-1/2 -translate-x-1/2 {{ $col['badge_bg'] }} text-[9px] px-3 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap z-10">
                                     {{ $col['badge'] }}
                                 </span>
                                 @endif
@@ -274,25 +276,27 @@
                                 <span class="block text-[10px] text-slate-400 mt-0.5">{{ $col['note'] }}</span>
                             </th>
                             @endforeach
-
                         </tr>
                     </thead>
 
                     <tbody class="text-sm divide-y divide-slate-100">
-
                         @foreach($groups as $groupName => $rows)
-
-                        <tr class="bg-blue-50/40">
-                            <td colspan="4" class="py-3 px-5 sticky left-0 bg-blue-50/40">
+                        {{-- FIX: Judul Utama (Group Header) --}}
+                        <tr class="bg-blue-50/60">
+                            {{-- Kita buat td-nya sticky left-0 agar area biru tidak bergeser --}}
+                            <td colspan="4" class="py-3 px-5 sticky left-0 z-20 bg-blue-50">
+                                {{-- FIX: Tambahkan span dengan sticky left agar teks tidak ikut hilang --}}
                                 <span
-                                    class="text-[11px] font-bold text-blue-600 uppercase tracking-widest">{{ $groupName }}</span>
+                                    class="text-[11px] font-bold text-blue-600 uppercase tracking-widest sticky left-5 whitespace-nowrap">
+                                    {{ $groupName }}
+                                </span>
                             </td>
                         </tr>
 
                         @foreach($rows as $row)
                         <tr class="hover:bg-slate-50/50 transition-colors">
                             <td
-                                class="py-3.5 px-5 font-medium text-slate-700 text-sm sticky left-0 bg-white hover:bg-slate-50/50 transition-colors">
+                                class="py-3.5 px-5 font-medium text-slate-700 text-sm sticky left-0 bg-white z-10 border-r border-slate-50 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                                 {{ $row['label'] }}
                             </td>
                             @foreach($row['values'] as $val)
@@ -310,21 +314,20 @@
                             @endforeach
                         </tr>
                         @endforeach
-
                         @endforeach
-
                     </tbody>
 
                     <tfoot>
                         <tr class="border-t-2 border-slate-100 bg-slate-50/50">
-                            <td class="py-7 px-5 sticky left-0 bg-slate-50/50 text-xs text-slate-400 italic">
-                                *Harga belum termasuk biaya domain & hosting perpanjangan tahun berikutnya
+                            <td
+                                class="py-7 px-5 sticky left-0 bg-slate-50 z-10 border-r border-slate-100 text-[10px] text-slate-400 italic shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
+                                *Harga belum termasuk domain/hosting perpanjangan.
                             </td>
                             @foreach($cols as $col)
                             <td class="py-7 px-5 text-center">
                                 <a href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20tertarik%20dengan%20{{ $col['wa'] }}"
                                     target="_blank" rel="noopener noreferrer"
-                                    class="inline-block px-5 py-2.5 {{ $col['btn'] }} rounded-xl font-bold text-xs transition-all shadow-sm">
+                                    class="inline-block px-5 py-2.5 {{ $col['btn'] }} rounded-xl font-bold text-xs transition-all shadow-sm whitespace-nowrap">
                                     Pilih Paket
                                 </a>
                             </td>
@@ -334,7 +337,6 @@
 
                 </table>
             </div>
-
         </div>
     </section>
 
@@ -547,44 +549,56 @@
             },
             // Handler lanjutan dengan Smooth Scrolling & Ripple Effect
             toggleFaq(id, event) {
+                const btn = event.currentTarget;
+                const ripple = btn.querySelector('.faq-company-ripple');
+
+                if (ripple) {
+                    const rect = btn.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height) * 2;
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: #dbeafe;
+                        pointer-events: none;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${event.clientX - rect.left - size / 2}px;
+                        top: ${event.clientY - rect.top - size / 2}px;
+                        transform: scale(0);
+                        opacity: 1;
+                        transition: transform 0.5s ease, opacity 0.5s ease;
+                    `;
+
+                    ripple.offsetWidth;
+                    ripple.style.transform = 'scale(1)';
+                    ripple.style.opacity = '0';
+                }
+
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
 
-                // Animasi Sentuh (Ripple Effect)
-                const btn = event.currentTarget;
-                const ripple = btn.querySelector('.faq-company-ripple');
-                if (ripple) {
-                    const rect = btn.getBoundingClientRect();
-                    const x = event.clientX - rect.left;
-                    const y = event.clientY - rect.top;
-                    ripple.style.left = `${x}px`;
-                    ripple.style.top = `${y}px`;
-                    ripple.style.transform = 'scale(40)';
-                    ripple.style.opacity = '1';
-
-                    setTimeout(() => {
-                        ripple.style.transform = 'scale(0)';
-                        ripple.style.opacity = '0';
-                    }, 500);
-                }
-
-                // Autoscroll ke arah FAQ item yang diklik secara mulus
                 if (!wasOpen) {
-                    this.$nextTick(() => {
-                        const el = document.getElementById('faq-company-answer-' + id);
-                        if (el) {
-                            const parent = el.closest('.faq-company-item');
-                            if (parent) {
-                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({
-                                    top,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    });
+                    const isMobile = window.innerWidth < 768;
+                    if (isMobile) {
+                        setTimeout(() => this.scrollToElement(id), 300);
+                    } else {
+                        this.$nextTick(() => this.scrollToElement(id));
+                    }
                 }
             },
+
+            scrollToElement(id) {
+                const el = document.getElementById('faq-company-answer-' + id);
+                if (!el) return;
+                const parent = el.closest('.faq-company-item');
+                if (!parent) return;
+                const offsetPosition = parent.getBoundingClientRect().top + window.scrollY - 110;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            },
+
             faqs: rawFaqs.map((item, i) => ({
                 id: i + 1,
                 question: item.question,

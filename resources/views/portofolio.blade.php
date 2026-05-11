@@ -1,11 +1,12 @@
 <x-layout.app>
 
     {{-- ============================================================
-     SEO: Meta halaman /portofolio
-============================================================ --}}
+      SEO: Meta halaman /portofolio
+    ============================================================ --}}
     @php
     $title = 'Portofolio Website & Sistem Digital | Cakra Inovasi Digital';
-    $metaDescription= 'Lihat hasil kerja nyata Cakra Inovasi Digital — portofolio website e-commerce, company profile,
+    $metaDescription = 'Lihat hasil kerja nyata Cakra Inovasi Digital — portofolio website automasi bisnis, company
+    profile,
     kasir digital POS, katalog produk, dan aplikasi kustom untuk UMKM di seluruh Indonesia.';
     $metaKeywords = 'portofolio website, hasil kerja jasa website, website UMKM, kasir digital, toko online, company
     profile, Cakra Inovasi Digital';
@@ -13,8 +14,8 @@
     @endphp
 
     {{-- ============================================================
-     SEO: Schema ItemList — daftar portofolio untuk Google
-============================================================ --}}
+      SEO: Schema ItemList — daftar portofolio untuk Google
+    ============================================================ --}}
     @push('schema')
     <script type="application/ld+json">
     {
@@ -22,7 +23,7 @@
         "@type": "ItemList",
         "name": "Portofolio Cakra Inovasi Digital",
         "description": "Kumpulan hasil kerja nyata pembuatan website dan sistem digital untuk UMKM.",
-        "numberOfItems": 6,
+        "numberOfItems": 4,
         "itemListElement": [{
                 "@type": "ListItem",
                 "position": 1,
@@ -31,7 +32,7 @@
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Website E-Commerce Toko Online"
+                "name": "Website ERP & Automasi Bisnis"
             },
             {
                 "@type": "ListItem",
@@ -43,59 +44,38 @@
                 "position": 4,
                 "name": "Katalog Produk Digital + WhatsApp"
             },
-            {
-                "@type": "ListItem",
-                "position": 5,
-                "name": "Website Rental & Booking Online"
-            }
         ]
     }
     </script>
     @endpush
 
     {{-- ============================================================
-     Data portofolio — single source of truth
-============================================================ --}}
+      Data portofolio — single source of truth
+    ============================================================ --}}
     @php
     $portofolio = [
     [
     'kategori' => 'Kasir / POS',
     'filter' => 'pos',
     'bg' => 'bg-blue-600',
+    'gambar' => 'porto-pos.webp',
     'label_bg' => 'bg-blue-50 text-blue-700',
     'hover' => 'group-hover:text-blue-600',
     'icon' => '🛍️',
     'watermark' => 'POS',
     'judul' => 'Sistem Kasir & Point of Sale',
     'sub' => 'Toko Retail & Minimarket',
-    'desc' => 'Sistem kasir digital yang membantu pemilik toko memantau stok secara real-time, mencatat transaksi, dan
-    menghasilkan laporan keuangan harian — semua bisa dipantau dari HP.',
-    'tags' => ['#StokRealTime', '#LaporanOtomatis', '#QRIS'],
-    'fitur' => ['Manajemen stok & produk', 'Laporan penjualan harian', 'Support QRIS & printer thermal', 'Multi-kasir &
+    'desc' => 'Sistem kasir digital yang membantu pemilik toko memantau stok secara real-time...',
+    'tags' => ['#StokRealTime', '#LaporanOtomatis', '#PrinterThermal'],
+    'fitur' => ['Manajemen stok & produk', 'Laporan penjualan harian', 'Support printer thermal', 'Multi-kasir &
     multi-cabang'],
     'hasil' => 'Selisih stok turun drastis, proses kasir 3x lebih cepat.',
-    ],
-    [
-    'kategori' => 'E-Commerce',
-    'filter' => 'ecommerce',
-    'bg' => 'bg-slate-800',
-    'label_bg' => 'bg-slate-100 text-slate-700',
-    'hover' => 'group-hover:text-slate-600',
-    'icon' => '🛒',
-    'watermark' => 'SHOP',
-    'judul' => 'Website Toko Online (E-Commerce)',
-    'sub' => 'Toko Fashion & Retail',
-    'desc' => 'Toko online lengkap dengan keranjang belanja, payment gateway, manajemen produk, dan dashboard admin —
-    pelanggan bisa belanja 24 jam tanpa perlu DM satu per satu.',
-    'tags' => ['#PaymentGateway', '#AdminDashboard', '#MobileFriendly'],
-    'fitur' => ['Keranjang belanja & checkout', 'Integrasi payment gateway', 'Dashboard manajemen produk', 'Laporan
-    penjualan otomatis'],
-    'hasil' => 'Omzet naik signifikan, tidak bergantung marketplace.',
     ],
     [
     'kategori' => 'Company Profile',
     'filter' => 'company',
     'bg' => 'bg-indigo-600',
+    'gambar' => 'porto-pos.webp',
     'label_bg' => 'bg-indigo-50 text-indigo-700',
     'hover' => 'group-hover:text-indigo-600',
     'icon' => '🏢',
@@ -113,6 +93,7 @@
     'kategori' => 'Katalog Produk',
     'filter' => 'katalog',
     'bg' => 'bg-emerald-600',
+    'gambar' => 'porto-katalog.webp',
     'label_bg' => 'bg-emerald-50 text-emerald-700',
     'hover' => 'group-hover:text-emerald-600',
     'icon' => '📦',
@@ -127,53 +108,70 @@
     'hasil' => 'Proses closing lebih cepat, tidak perlu kirim foto manual.',
     ],
     [
-    'kategori' => 'Rental & Booking',
-    'filter' => 'rental',
-    'bg' => 'bg-violet-600',
-    'label_bg' => 'bg-violet-50 text-violet-700',
-    'hover' => 'group-hover:text-violet-600',
-    'icon' => '📅',
-    'watermark' => 'BOOK',
-    'judul' => 'Sistem Booking & Rental Online',
-    'sub' => 'Rental Mobil, Alat & Villa',
-    'desc' => 'Sistem booking online dengan kalender ketersediaan real-time, konfirmasi otomatis via WhatsApp, dan
-    manajemen jadwal terpusat — tidak perlu lagi kelola reservasi manual.',
-    'tags' => ['#KalenderRealTime', '#KonfirmasiOtomatis', '#AntiDoubleBooking'],
-    'fitur' => ['Kalender booking real-time', 'Konfirmasi otomatis via WA', 'Manajemen jadwal terpusat', 'Laporan
-    pendapatan bulanan'],
-    'hasil' => 'Double booking hilang, proses reservasi lebih rapi.',
+    'kategori' => 'ERP & Automasi',
+    'filter' => 'erp',
+    'bg' => 'bg-amber-600',
+    'gambar' => 'porto-erp.webp',
+    'label_bg' => 'bg-amber-50 text-amber-700',
+    'hover' => 'group-hover:text-amber-600',
+    'icon' => '⚙️',
+    'watermark' => 'ERP',
+    'judul' => 'Sistem ERP & Automasi Operasional',
+    'sub' => 'Manufaktur, Distribusi & UMKM Scale-up',
+    'desc' => 'Platform komprehensif untuk mengelola seluruh operasional bisnis, mencakup manajemen
+    keuangan, inventaris, hingga SDM dalam satu dashboard pusat.',
+    'tags' => ['#DataTerpusat', '#EfisiensiAlurKerja', '#CustomModule'],
+    'fitur' => [
+    'Manajemen stok & gudang multi-lokasi',
+    'Modul akuntansi & laporan laba rugi',
+    'Automasi alur kerja (workflow)',
+    'Dashboard analitik performa bisnis'
+    ],
+    'hasil' => 'Biaya operasional turun 30%, data lebih akurat dan transparan.',
     ],
     ];
 
+    $gallery = [
+    ['img' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800', 'title' =>
+    'Meeting Client A'],
+    ['img' => 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800', 'title' =>
+    'Proses Coding Sistem POS'],
+    ['img' => 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800', 'title' =>
+    'Diskusi UI/UX'],
+    ['img' => 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800', 'title' =>
+    'Team Collaboration'],
+    ['img' => 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800', 'title' =>
+    'Monitoring Server'],
+    ['img' => 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800', 'title' =>
+    'Workspace'],
+    ];
+
     $stats = [
-    ['angka' => '50+', 'label' => 'Proyek Selesai', 'color' => 'text-blue-600'],
-    ['angka' => '6', 'label' => 'Jenis Layanan', 'color' => 'text-indigo-600'],
-    ['angka' => '98%', 'label' => 'Klien Puas', 'color' => 'text-emerald-600'],
-    ['angka' => '3+', 'label' => 'Tahun Pengalaman', 'color' => 'text-orange-500'],
+    ['angka' => '30+', 'label' => 'Proyek Selesai', 'color' => 'text-blue-600'],
+    ['angka' => '4', 'label' => 'Jenis Layanan', 'color' => 'text-indigo-600'],
+    ['angka' => '99%', 'label' => 'Klien Puas', 'color' => 'text-emerald-600'],
+    ['angka' => '2+', 'label' => 'Tahun Pengalaman', 'color' => 'text-orange-500'],
     ];
     @endphp
 
-    {{-- ================================================================
-     SECTION 1: HERO
-     SEO: 1x <h1> dengan keyword, breadcrumb via x-breadcrumb component
-================================================================ --}}
-    <section class="pt-36 pb-16 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+    {{-- SECTION 1: HERO --}}
+    <section class="pt-28 md:pt-36 pb-16 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 lg:px-10">
-
             <x-breadcrumb :items="[]" current="Portofolio Kami" />
 
             <div class="mt-8 text-center max-w-3xl mx-auto" data-aos="fade-up">
                 <span
-                    class="inline-block bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
+                    class="inline-block bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-5">
                     Bukti Kerja Nyata
                 </span>
-                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-slate-900 mb-6">
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight text-slate-900 mb-6">
                     Portofolio Website &<br>
                     <span class="text-blue-600">Sistem Digital untuk UMKM</span>
                 </h1>
-                <p class="text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
+                <p class="text-base md:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
                     Kami bangga bisa mendampingi para pemilik usaha bertransformasi digital — dari toko online, katalog
-                    produk, kasir digital, hingga sistem booking. Semua dikerjakan dengan serius dan hasilnya bisa Anda
+                    produk, kasir digital, hingga sistem automasi bisnis. Semua dikerjakan dengan serius dan hasilnya
+                    bisa Anda
                     lihat di sini.
                 </p>
             </div>
@@ -181,140 +179,156 @@
             {{-- Stats Bar --}}
             <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="150">
                 @foreach($stats as $s)
-                <div class="bg-white border border-slate-100 rounded-2xl p-5 text-center shadow-sm">
-                    <p class="text-3xl font-extrabold {{ $s['color'] }}">{{ $s['angka'] }}</p>
-                    <p class="text-slate-500 text-xs mt-1">{{ $s['label'] }}</p>
+                <div class="bg-white border border-slate-100 rounded-2xl p-4 md:p-5 text-center shadow-sm">
+                    <p class="text-2xl md:text-3xl font-extrabold {{ $s['color'] }}">{{ $s['angka'] }}</p>
+                    <p class="text-slate-500 text-[10px] md:text-xs mt-1 uppercase font-semibold tracking-wide">
+                        {{ $s['label'] }}</p>
                 </div>
                 @endforeach
             </div>
-
         </div>
     </section>
 
-    {{-- ================================================================
-     SECTION 2: FILTER + GRID PORTOFOLIO
-     SEO: <h2> heading, tiap kartu pakai <article> + <h3>
-================================================================ --}}
-    <section class="py-20 bg-white" id="portofolio-grid">
-        <div class="max-w-6xl mx-auto px-6 lg:px-10">
+    {{-- SECTION 2: FILTER + GRID PORTOFOLIO --}}
+    <section class="py-16 md:py-24 bg-white" id="portfolio-section">
+        <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
 
-            <div class="text-center mb-10" data-aos="fade-up">
+            <div class="mb-10" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">
                     Hasil Kerja yang Sudah Kami Selesaikan
                 </h2>
                 <p class="text-slate-500 max-w-xl mx-auto text-sm">Filter berdasarkan jenis layanan untuk menemukan
-                    contoh yang paling relevan dengan bisnis Anda.</p>
+                    contoh yang paling relevan.</p>
             </div>
 
-            {{-- Filter Tabs (Alpine.js) --}}
-            <div class="flex flex-wrap justify-center gap-2 mb-12" x-data="{ active: 'semua' }" id="filter-tabs">
+            {{-- Filter Bar --}}
+            <div class="flex flex-wrap justify-center gap-2 mb-12" x-data="{ active: 'semua' }">
                 @php
                 $filters = [
                 'semua' => 'Semua',
                 'pos' => 'Kasir / POS',
-                'ecommerce'=> 'E-Commerce',
                 'company' => 'Company Profile',
                 'katalog' => 'Katalog Produk',
-                'rental' => 'Rental & Booking',
+                'erp' => 'Automasi Bisnis',
                 ];
                 @endphp
                 @foreach($filters as $key => $label)
-                <button @click="active = '{{ $key }}'; $dispatch('filter-change', { filter: '{{ $key }}' })" :class="active === '{{ $key }}'
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-200'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:border-blue-300 hover:text-blue-600'"
-                    class="px-4 py-2 rounded-full text-xs font-bold transition-all duration-200">
+                <button @click="active = '{{ $key }}'; $dispatch('filter-portfolio', { value: '{{ $key }}' })"
+                    :class="active === '{{ $key }}' ? 'bg-blue-600 text-white shadow-lg shadow-blue-200' : 'bg-white text-slate-600 border border-slate-200 hover:border-blue-300'"
+                    class="px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                     {{ $label }}
                 </button>
                 @endforeach
             </div>
 
             {{-- Grid Portofolio --}}
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7" x-data="portfolioFilter()"
-                @filter-change.window="setFilter($event.detail.filter)">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 min-h-[400px]" x-data="{ filter: 'semua' }"
+                @filter-portfolio.window="filter = $event.detail.value">
 
-                @foreach($portofolio as $i => $p)
-                <article x-show="isVisible('{{ $p['filter'] }}')" x-transition:enter="transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
-                    x-transition:leave="transition ease-in duration-200"
-                    x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                    class="group bg-white rounded-[28px] overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500 flex flex-col"
-                    data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 100 }}">
+                @foreach($portofolio as $p)
+                {{-- AOS DIHAPUS DISINI UNTUK CEGAH LAG SAAT FILTER --}}
+                <div x-show="filter === 'semua' || filter === '{{ $p['filter'] }}'"
+                    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95"
+                    x-transition:enter-end="opacity-100 scale-100" class="h-full">
 
-                    {{-- Visual header --}}
-                    <div
-                        class="{{ $p['bg'] }} aspect-video flex flex-col items-center justify-center text-white p-6 relative overflow-hidden">
-                        <span
-                            class="text-6xl font-black opacity-10 absolute -right-3 -bottom-3 leading-none select-none"
-                            aria-hidden="true">{{ $p['watermark'] }}</span>
-                        <div class="text-center z-10">
-                            <span class="text-4xl mb-2 block" role="img"
-                                aria-label="{{ $p['judul'] }}">{{ $p['icon'] }}</span>
-                            <p class="font-bold text-sm">{{ $p['kategori'] }}</p>
-                            <p class="text-white/70 text-xs mt-0.5">{{ $p['sub'] }}</p>
-                        </div>
-                    </div>
+                    <article
+                        class="group bg-white rounded-[28px] overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500 flex flex-col h-full text-left">
+                        <div class="aspect-video relative overflow-hidden bg-slate-200">
+                            {{-- Gambar Utama --}}
+                            @if(isset($p['gambar']))
+                            <img src="{{ asset('storage/portofolio/' . $p['gambar']) }}" alt="{{ $p['judul'] }}"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            @else
+                            {{-- Fallback jika gambar tidak ada --}}
+                            <div class="w-full h-full {{ $p['bg'] }} flex items-center justify-center">
+                                <span class="text-6xl">{{ $p['icon'] }}</span>
+                            </div>
+                            @endif
 
-                    {{-- Konten kartu --}}
-                    <div class="p-7 flex flex-col flex-grow">
-                        <div class="flex items-center gap-2 mb-3">
+                            {{-- Overlay Gradient agar Watermark Tetap Terbaca --}}
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+
+                            {{-- Watermark --}}
                             <span
-                                class="text-[10px] font-bold px-2.5 py-1 rounded-full {{ $p['label_bg'] }} uppercase tracking-wide">
+                                class="text-6xl font-black opacity-20 absolute -right-3 -bottom-3 leading-none select-none text-white z-10"
+                                aria-hidden="true">{{ $p['watermark'] }}</span>
+
+                            {{-- Label Kategori di Pojok Kiri Atas --}}
+                            <span
+                                class="absolute top-4 left-4 {{ $p['label_bg'] }} text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm z-20 uppercase tracking-wider">
                                 {{ $p['kategori'] }}
                             </span>
                         </div>
 
-                        <h3
-                            class="text-lg font-extrabold text-slate-900 mb-2 {{ $p['hover'] }} transition-colors leading-snug">
-                            {{ $p['judul'] }}
-                        </h3>
+                        <div class="p-7 flex flex-col flex-grow">
+                            <h3
+                                class="text-lg font-extrabold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                {{ $p['judul'] }}
+                            </h3>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-5">{{ $p['desc'] }}</p>
 
-                        <p class="text-slate-500 text-sm leading-relaxed mb-5">{{ $p['desc'] }}</p>
-
-                        {{-- Fitur --}}
-                        <ul class="space-y-1.5 mb-5" aria-label="Fitur yang dibangun">
-                            @foreach($p['fitur'] as $f)
-                            <li class="flex items-center gap-2 text-xs text-slate-600">
-                                <i class="fa-solid fa-check text-blue-500 shrink-0 text-[10px]"></i>
-                                {{ $f }}
-                            </li>
-                            @endforeach
-                        </ul>
-
-                        {{-- Hasil / impact --}}
-                        <div class="mt-auto pt-4 border-t border-slate-50">
-                            <p class="text-xs text-slate-400 italic mb-3">
-                                <span class="font-semibold not-italic text-slate-500">Hasil:</span> {{ $p['hasil'] }}
-                            </p>
-                            <div class="flex flex-wrap gap-1.5">
-                                @foreach($p['tags'] as $tag)
-                                <span
-                                    class="text-[10px] font-bold text-slate-400 bg-slate-50 px-2 py-0.5 rounded-full">{{ $tag }}</span>
+                            <ul class="space-y-2 mb-6">
+                                @foreach($p['fitur'] as $f)
+                                <li class="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                                    <i class="fa-solid fa-check text-blue-500 shrink-0 text-[10px]"></i>
+                                    {{ $f }}
+                                </li>
                                 @endforeach
+                            </ul>
+
+                            <div class="mt-auto pt-4 border-t border-slate-50">
+                                <p class="text-[11px] text-slate-400 italic">
+                                    <span
+                                        class="font-bold not-italic text-slate-600 uppercase tracking-tighter">Impact:</span>
+                                    {{ $p['hasil'] }}
+                                </p>
                             </div>
                         </div>
-                    </div>
-
-                </article>
+                    </article>
+                </div>
                 @endforeach
-
             </div>
-
         </div>
     </section>
 
-    {{-- ================================================================
-     SECTION 3: PROSES KERJA SINGKAT
-     Konten unik yang menambah nilai halaman portofolio
-================================================================ --}}
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-5xl mx-auto px-6 lg:px-10">
+    {{-- SECTION 3: GALERI DOKUMENTASI --}}
+    <section class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
+            <div class="mb-12" data-aos="fade-up">
+                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Aktivitas Kami</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 uppercase">Galeri Dokumentasi Kerja
+                </h2>
+            </div>
 
-            <div class="text-center mb-14" data-aos="fade-up">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
+                @foreach($gallery as $g)
+                <figure class="group relative aspect-square overflow-hidden rounded-2xl bg-slate-200 shadow-sm"
+                    data-aos="zoom-in" data-aos-delay="{{ $loop->index * 50 }}">
+                    <img src="{{ $g['img'] }}" alt="{{ $g['title'] }}" width="400" height="400" loading="lazy"
+                        decoding="async"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <figcaption
+                        class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-3">
+                        <p class="text-white text-center text-[10px] font-bold leading-snug uppercase">{{ $g['title'] }}
+                        </p>
+                    </figcaption>
+                </figure>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- SECTION 4: ALUR KERJA --}}
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
+            <div class="mb-14" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
                     Dari Ide ke Website Live — Prosesnya Simpel
                 </h2>
-                <p class="text-slate-500 max-w-xl mx-auto">Tidak perlu paham teknologi. Ceritakan kebutuhan bisnis Anda,
-                    kami yang urus semuanya hingga siap dipakai.</p>
+                <p class="text-slate-500 max-w-xl mx-auto text-sm">Tidak perlu paham teknologi. Ceritakan kebutuhan
+                    bisnis Anda, kami yang urus semuanya hingga siap dipakai.</p>
             </div>
 
             @php
@@ -332,162 +346,116 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach($alur as $a)
-                <div class="relative bg-white rounded-2xl p-6 border border-slate-100 shadow-sm text-center"
+                <div class="relative bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group"
                     data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                     <div
-                        class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md shadow-blue-200">
-                        <i class="fa-solid {{ $a['icon'] }} text-xl"></i>
+                        class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-100 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid {{ $a['icon'] }} text-2xl"></i>
                     </div>
-                    <span class="text-xs font-bold text-slate-300 tracking-widest">TAHAP {{ $a['step'] }}</span>
-                    <h3 class="text-base font-bold text-slate-900 mt-1 mb-2">{{ $a['title'] }}</h3>
+                    <span class="text-[10px] font-black text-slate-300 tracking-[0.2em] uppercase">Tahap
+                        {{ $a['step'] }}</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">{{ $a['title'] }}</h3>
                     <p class="text-slate-500 text-xs leading-relaxed">{{ $a['desc'] }}</p>
+
                     @if(!$loop->last)
-                    <div class="hidden lg:block absolute top-10 -right-3 z-10">
-                        <i class="fa-solid fa-chevron-right text-slate-200 text-xl"></i>
+                    <div class="hidden lg:block absolute top-12 -right-4 z-10">
+                        <i class="fa-solid fa-chevron-right text-slate-100 text-2xl"></i>
                     </div>
                     @endif
                 </div>
                 @endforeach
             </div>
-
         </div>
     </section>
 
-    {{-- ================================================================
-     SECTION 4: TESTIMONI PILIHAN
-     SEO: <h2> heading, pakai <blockquote> yang semantik
-================================================================ --}}
-    <section class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-6 lg:px-10">
-
-            <div class="text-center mb-14" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-                    Cerita Nyata dari Klien Kami
-                </h2>
-                <p class="text-slate-500 max-w-lg mx-auto">Bukan sekadar testimoni — bukti bahwa hasil kerja kami
-                    benar-benar memberi dampak nyata pada bisnis mereka.</p>
+    {{-- SECTION 5: TESTIMONI --}}
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
+            <div class="mb-14" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 uppercase">Cerita Nyata dari Klien
+                    Kami</h2>
+                <p class="text-slate-500 max-w-lg mx-auto text-sm">Bukan sekadar testimoni — bukti bahwa hasil kerja
+                    kami benar-benar memberi dampak nyata pada bisnis mereka.</p>
             </div>
 
-            @php
-            $testimonials = [
-            [
-            'nama' => 'Andi Pratama',
-            'peran' => 'Owner Toko Retail — Sistem Kasir POS',
-            'inisial' => 'AP',
-            'bg' => 'bg-blue-500',
-            'quote' => 'Sistem kasir yang mereka buat sangat mudah digunakan. Stok barang sekarang tidak pernah selisih
-            lagi dan laporan penjualan bisa saya pantau dari HP kapan saja.',
-            ],
-            [
-            'nama' => 'Siti Aminah',
-            'peran' => 'IT Manager — Company Profile & Sistem Kustom',
-            'inisial' => 'SA',
-            'bg' => 'bg-indigo-500',
-            'quote' => 'Profesional, tepat waktu, dan komunikatif. Solusi software kustom mereka membantu tim kami
-            bekerja jauh lebih efisien. Sangat merekomendasikan!',
-            ],
-            [
-            'nama' => 'Dewi Lestari',
-            'peran' => 'Owner Home Industri — Website E-Commerce',
-            'inisial' => 'DL',
-            'bg' => 'bg-emerald-500',
-            'quote' => 'Website e-commerce-nya bagus dan gampang dikelola sendiri. Produk kerajinan saya sekarang bisa
-            menjangkau pembeli dari luar pulau — sesuatu yang tidak pernah saya bayangkan sebelumnya.',
-            ],
-            [
-            'nama' => 'Bpk. Subagyo',
-            'peran' => 'Pemilik Warung Makan — Menu Digital QR Code',
-            'inisial' => 'BS',
-            'bg' => 'bg-rose-500',
-            'quote' => 'Menu QR Code-nya simpel sekali untuk pelanggan. Saya tidak perlu cetak ulang buku menu tiap ada
-            perubahan harga. Hemat biaya dan waktu.',
-            ],
-            ];
-            @endphp
-
-            <div class="grid md:grid-cols-2 gap-6">
-                @foreach($testimonials as $i => $t)
-                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-7 hover:shadow-md transition-shadow"
-                    data-aos="{{ $i % 2 === 0 ? 'fade-right' : 'fade-left' }}" data-aos-delay="{{ ($i % 2) * 100 }}">
-                    <div class="text-3xl text-slate-200 font-black mb-3 leading-none" aria-hidden="true">"</div>
-                    <blockquote class="text-slate-700 italic text-sm leading-relaxed mb-6">
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                @foreach([
+                ['nama' => 'Andi Pratama', 'peran' => 'Owner Toko Retail', 'inisial' => 'AP', 'bg' => 'bg-blue-500',
+                'quote' => 'Sistem kasir yang mereka buat sangat mudah digunakan. Stok barang sekarang tidak pernah
+                selisih lagi.'],
+                ['nama' => 'Siti Aminah', 'peran' => 'IT Manager', 'inisial' => 'SA', 'bg' => 'bg-indigo-500', 'quote'
+                => 'Profesional, tepat waktu, dan komunikatif. Solusi software kustom mereka membantu tim kami bekerja
+                efisien.'],
+                [
+                'nama' => 'Hendra Wijaya',
+                'peran' => 'Direktur Operasional',
+                'inisial' => 'HW',
+                'bg' => 'bg-amber-500',
+                'quote' => 'Dulu data antar divisi sering berantakan. Setelah pakai sistem ERP kustom ini, semua laporan
+                keuangan dan stok sinkron otomatis secara real-time.'
+                ],
+                ['nama' => 'Bpk. Subagyo', 'peran' => 'Pemilik Warung Makan', 'inisial' => 'BS', 'bg' => 'bg-rose-500',
+                'quote' => 'Menu QR Code-nya simpel sekali. Hemat biaya cetak buku menu tiap ada perubahan harga.'],
+                ] as $i => $t)
+                <div class="bg-white border border-slate-100 rounded-[2rem] p-8 shadow-sm hover:shadow-md transition-shadow"
+                    data-aos="{{ $i % 2 === 0 ? 'fade-right' : 'fade-left' }}">
+                    <div class="text-4xl text-blue-100 font-serif mb-4 leading-none" aria-hidden="true">“</div>
+                    <blockquote class="text-slate-700 italic text-sm leading-relaxed mb-8">
                         {{ $t['quote'] }}
                     </blockquote>
-                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                    <div class="flex items-center gap-4 pt-6 border-t border-slate-50">
                         <div
-                            class="w-11 h-11 {{ $t['bg'] }} rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0">
+                            class="w-12 h-12 {{ $t['bg'] }} rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0">
                             {{ $t['inisial'] }}
                         </div>
                         <div>
                             <p class="font-bold text-slate-900 text-sm">{{ $t['nama'] }}</p>
-                            <p class="text-xs text-slate-500">{{ $t['peran'] }}</p>
+                            <p class="text-[10px] text-slate-400 uppercase font-semibold tracking-wider">
+                                {{ $t['peran'] }}</p>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
-
         </div>
     </section>
 
-    {{-- ================================================================
-     SECTION 5: CTA
-================================================================ --}}
-    <section class="py-20 bg-slate-50" aria-label="Ajakan diskusi proyek baru">
-        <div class="max-w-4xl mx-auto px-6">
-            <div data-aos="zoom-in" data-aos-duration="800"
-                class="bg-slate-900 rounded-[2rem] p-12 lg:p-16 text-white text-center relative overflow-hidden shadow-2xl">
-
-                <div class="absolute inset-0 opacity-5" aria-hidden="true">
+    {{-- SECTION 6: CTA --}}
+    <section class="py-20 bg-white" aria-label="Ajakan diskusi proyek baru">
+        <div class="max-w-5xl mx-auto px-6">
+            <div data-aos="zoom-in"
+                class="bg-slate-900 rounded-[3rem] p-10 md:p-16 text-white text-center relative overflow-hidden shadow-2xl">
+                {{-- Decorative Shapes --}}
+                <div class="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
                     <div
-                        class="absolute top-0 left-0 w-64 h-64 bg-blue-400 rounded-full -translate-x-1/2 -translate-y-1/2">
+                        class="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
                     </div>
                     <div
-                        class="absolute bottom-0 right-0 w-64 h-64 bg-blue-400 rounded-full translate-x-1/2 translate-y-1/2">
+                        class="absolute bottom-0 right-0 w-64 h-64 bg-indigo-500 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl">
                     </div>
                 </div>
 
                 <div class="relative z-10">
                     <h2 class="text-3xl lg:text-4xl font-bold mb-4">Bisnis Anda Proyek Kami Berikutnya?</h2>
-                    <p class="text-slate-400 mb-8 leading-relaxed max-w-xl mx-auto">
+                    <p class="text-slate-400 mb-10 leading-relaxed max-w-xl mx-auto text-sm md:text-base">
                         Kami tidak hanya membuat website — kami membangun solusi yang pas dengan cara kerja dan budget
                         bisnis Anda. Yuk, diskusi dulu tanpa perlu komitmen apapun!
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20lihat%20portofolio%20Anda%20dan%20tertarik.%20Bisa%20bantu%20buatkan%20solusi%20yang%20pas%20untuk%20bisnis%20saya%3F"
-                            target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-500/30">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital..." target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20 active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
                             Diskusi via WhatsApp
                         </a>
                         <a href="/layanan"
-                            class="inline-flex items-center justify-center gap-2 border-2 border-slate-700 text-slate-300 px-8 py-4 rounded-xl font-bold hover:border-blue-500 hover:text-blue-400 transition">
+                            class="inline-flex items-center justify-center gap-3 border-2 border-slate-700 text-slate-300 px-8 py-4 rounded-2xl font-bold hover:border-blue-500 hover:text-blue-400 transition-all active:scale-95">
                             Lihat Semua Layanan
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
-    {{-- ================================================================
-     SCRIPTS — Alpine.js portfolio filter
-================================================================ --}}
-    @push('scripts')
-    <script>
-    function portfolioFilter() {
-        return {
-            activeFilter: 'semua',
-            setFilter(filter) {
-                this.activeFilter = filter;
-            },
-            isVisible(filterKey) {
-                return this.activeFilter === 'semua' || this.activeFilter === filterKey;
-            }
-        }
-    }
-    </script>
-    @endpush
 
 </x-layout.app>

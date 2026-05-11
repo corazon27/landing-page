@@ -2,11 +2,11 @@
 
     @php
     $title = 'Jasa Pembuatan Website Toko Online & Kasir Digital (POS) | Cakra Inovasi Digital';
-    $metaDescription = 'Solusi sistem kasir digital (POS) dan toko online untuk UMKM. Kelola stok, transaksi QRIS, dan
-    laporan penjualan real-time dari HP. Cakra Inovasi Digital, Magelang. Tinggalkan rekap manual! Jasa pembuatan sistem
-    Point of Sales (POS) & kasir digital untuk F&B,
-    retail, dan jasa. Pantau stok, shift, & omset real-time. Konsultasi gratis!';
-    $metaKeywords = 'website toko online, sistem kasir digital, POS UMKM, manajemen stok, QRIS kasir, web developer
+    $metaDescription = 'Solusi sistem kasir digital (POS) dan toko online untuk UMKM. Kelola stok, transaksi penjualan,
+    dan laporan keuangan real-time dari HP. Cakra Inovasi Digital, Magelang. Tinggalkan rekap manual! Jasa pembuatan
+    sistem Point of Sales (POS) & kasir digital untuk F&B, retail, dan jasa. Pantau stok, shift, & omset real-time.
+    Konsultasi gratis!';
+    $metaKeywords = 'website toko online, sistem kasir digital, POS UMKM, manajemen stok, web developer
     Magelang, Jawa Tengah, jasa pembuatan sistem kasir, web POS indonesia, point of sales custom, aplikasi kasir web,
     software
     kasir umkm, sistem kasir toko, kasir restoran, developer POS indonesia, solusi kasir digital, integrasi pembayaran
@@ -21,9 +21,9 @@
 
     @php
     $faqsData = [
-    ['question' => 'Bagaimana sistem pembayaran QRIS di toko saya?', 'answer' => 'Integrasi Payment Gateway resmi
-    memungkinkan QRIS Dinamis: kode QR muncul otomatis di kasir sesuai nominal belanja. Status transaksi otomatis
-    berubah jadi Lunas tanpa cek mutasi manual.'],
+    ['question' => 'Apakah sistem mendukung berbagai metode pembayaran?', 'answer' => 'Ya. Sistem kami dirancang
+    fleksibel untuk mendukung tunai, transfer bank, dan e-wallet. Integrasi payment gateway dapat disesuaikan sesuai
+    kebutuhan bisnis Anda saat pengembangan.'],
     ['question' => 'Apakah data penjualan dan stok saya aman?', 'answer' => 'Ya. Seluruh data dicadangkan harian secara
     otomatis dengan enkripsi SSL penuh antara toko dan server.'],
     ['question' => 'Bagaimana jika saya atau karyawan kesulitan menggunakannya?', 'answer' => 'Kami menyediakan video
@@ -52,7 +52,7 @@
         "@type": "Service",
         "@id": "{{ url('/layanan/web-kasir') }}/#service",
         "name": "Jasa Pembuatan Website Toko Online & Kasir Digital (POS)",
-        "description": "Solusi sistem kasir digital POS dan toko online untuk UMKM. Kelola stok, transaksi QRIS, dan laporan penjualan real-time dari HP.",
+        "description": "Solusi sistem kasir digital POS dan toko online untuk UMKM. Kelola stok, transaksi penjualan, dan laporan keuangan real-time dari HP.",
         "provider": {
             "@id": "{{ url('/') }}/#business"
         },
@@ -73,7 +73,7 @@
 
             <div class="max-w-6xl mx-auto text-center mb-10">
                 <x-breadcrumb :items="[['name' => 'Layanan', 'url' => url('/layanan')]]"
-                    current="Website Kasir Digital / POS" />
+                    current="Kasir Digital / POS" />
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -90,18 +90,18 @@
 
                     <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
                         Tinggalkan cara manual yang melelahkan. Saatnya punya sistem kasir digital yang bekerja untuk
-                        Anda — pantau stok, transaksi QRIS, dan laporan laba secara otomatis 24 jam nonstop.
+                        Anda — kelola penjualan, pantau stok real-time, dan tarik laporan keuangan otomatis kapan saja.
                     </p>
 
-                    <div class="flex flex-wrap gap-4 pt-2">
+                    <div class="flex flex-col sm:flex-row gap-3">
                         <a href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20ingin%20konsultasi%20sistem%20kasir%20digital%20untuk%20toko%20saya."
                             target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
+                            class="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
                             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                             Konsultasi Gratis
                         </a>
                         <a href="/layanan/web-kasir#fitur"
-                            class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border-2 border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all">
+                            class="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 rounded-2xl border-2 border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all">
                             Lihat Fitur
                             <i class="fa-solid fa-arrow-down text-sm" aria-hidden="true"></i>
                         </a>
@@ -138,7 +138,7 @@
                 </div>
 
                 {{-- HERO MOCKUP: Live POS Dashboard --}}
-                <div class="hidden lg:block relative" data-aos="fade-left">
+                <div class="relative" data-aos="fade-left">
 
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-amber-50 to-slate-100 rounded-[3rem] blur-3xl opacity-60 scale-110"
                         aria-hidden="true"></div>
@@ -271,8 +271,8 @@
                     </div>
                     <div class="absolute -top-3 -right-3 bg-blue-500 text-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2 z-20"
                         aria-hidden="true">
-                        <i class="fa-solid fa-qrcode text-white text-sm"></i>
-                        <span class="text-[10px] font-bold">QRIS Terverifikasi</span>
+                        <i class="fa-solid fa-lock text-white text-sm"></i>
+                        <span class="text-[10px] font-bold">Aman & Terpercaya</span>
                     </div>
                 </div>
 
@@ -579,10 +579,10 @@
                     ],
                     [
                     'id' => 3,
-                    'icon' => 'fa-solid fa-qrcode', // Lebih pas untuk QRIS daripada fa-credit-card
-                    'title' => 'Pembayaran Online & QRIS',
-                    'desc' => 'Terima pembayaran via Transfer, E-Wallet, hingga QRIS. Verifikasi uang masuk otomatis
-                    tanpa cek mutasi manual.'
+                    'icon' => 'fa-solid fa-credit-card',
+                    'title' => 'Sistem Pembayaran Fleksibel',
+                    'desc' => 'Dukung berbagai metode pembayaran mulai dari tunai, transfer bank, hingga e-wallet.
+                    Integrasi dapat disesuaikan dengan kebutuhan bisnis Anda.'
                     ],
                     [
                     'id' => 4,
@@ -887,13 +887,13 @@
 
             faqs: [{
                     id: 1,
-                    question: 'Bagaimana sistem pembayaran QRIS di toko saya?',
-                    answer: `<p class="mb-3">Integrasi via Payment Gateway resmi memungkinkan operasional lebih cepat:</p>
+                    question: 'Apakah sistem mendukung berbagai metode pembayaran?',
+                    answer: `<p class="mb-3">Ya. Sistem kasir kami dirancang fleksibel untuk mendukung:</p>
             <div class="space-y-2">
-                <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-xl"><i class="fa-solid fa-qrcode text-blue-600 mt-0.5 shrink-0 text-xs" aria-hidden="true"></i><p class="text-xs text-slate-600"><strong>QRIS Dinamis:</strong> Kode QR muncul otomatis di layar kasir/tablet sesuai nominal belanja tanpa input manual.</p></div>
-                <div class="flex items-start gap-3 p-3 bg-emerald-50 rounded-xl"><i class="fa-solid fa-bell text-emerald-600 mt-0.5 shrink-0 text-xs" aria-hidden="true"></i><p class="text-xs text-slate-600"><strong>Notifikasi Real-time:</strong> Status transaksi otomatis berubah jadi Lunas di sistem kasir begitu pelanggan membayar.</p></div>
+                <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-xl"><i class="fa-solid fa-money-bill text-blue-600 mt-0.5 shrink-0 text-xs" aria-hidden="true"></i><p class="text-xs text-slate-600"><strong>Pembayaran Tunai:</strong> Pencatatan dan pengelolaan uang tunai terintegrasi otomatis dengan laporan shift kasir.</p></div>
+                <div class="flex items-start gap-3 p-3 bg-emerald-50 rounded-xl"><i class="fa-solid fa-building-columns text-emerald-600 mt-0.5 shrink-0 text-xs" aria-hidden="true"></i><p class="text-xs text-slate-600"><strong>Transfer Bank & E-Wallet:</strong> Metode pembayaran digital dapat diintegrasikan sesuai kebutuhan bisnis Anda selama proses pengembangan sistem.</p></div>
             </div>
-            <p class="text-xs text-slate-400 mt-3 italic">Tidak perlu lagi cek mutasi manual di m-banking, semua tercatat otomatis oleh sistem.</p>`
+            <p class="text-xs text-slate-400 mt-3 italic">Diskusikan kebutuhan spesifik metode pembayaran Anda saat konsultasi awal.</p>`
                 },
                 {
                     id: 2,
@@ -964,7 +964,7 @@
                 <div class="p-2.5 bg-orange-50 border border-orange-100 rounded-lg text-xs"><p class="font-bold text-slate-700 mb-0.5">Penjualan</p><p class="text-slate-500">Harian, mingguan, bulanan</p></div>
                 <div class="p-2.5 bg-orange-50 border border-orange-100 rounded-lg text-xs"><p class="font-bold text-slate-700 mb-0.5">Laba Rugi</p><p class="text-slate-500">Margin keuntungan bersih</p></div>
                 <div class="p-2.5 bg-orange-50 border border-orange-100 rounded-lg text-xs"><p class="font-bold text-slate-700 mb-0.5">Top Product</p><p class="text-slate-500">Analisis barang terlaris</p></div>
-                <div class="p-2.5 bg-orange-50 border border-orange-100 rounded-lg text-xs"><p class="font-bold text-slate-700 mb-0.5">Metode Bayar</p><p class="text-slate-500">Tunai vs QRIS vs Bank</p></div>
+                <div class="p-2.5 bg-orange-50 border border-orange-100 rounded-lg text-xs"><p class="font-bold text-slate-700 mb-0.5">Metode Bayar</p><p class="text-slate-500">Tunai, Bank, E-Wallet</p></div>
             </div>`
                 },
                 {
@@ -993,6 +993,8 @@
             toggleFaq(id, event) {
                 const btn = event.currentTarget;
                 const ripple = btn.querySelector('.faq-pos-ripple');
+
+                // 1. Efek Ripple (Tetap sama)
                 if (ripple) {
                     const rect = btn.getBoundingClientRect();
                     const size = Math.max(rect.width, rect.height) * 2;
@@ -1006,24 +1008,51 @@
                     ripple.style.transform = 'scale(1)';
                     ripple.style.opacity = '0';
                 }
+
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
+
+                // 2. Logic Scroll Pintar
                 if (!wasOpen) {
-                    this.$nextTick(() => {
-                        const el = document.getElementById('faq-pos-answer-' + id);
-                        if (el) {
-                            const parent = el.closest('.faq-pos-item');
-                            if (parent) {
-                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({
-                                    top,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    });
+                    // Deteksi apakah user menggunakan layar smartphone (lebar < 768px)
+                    const isMobile = window.innerWidth < 768;
+
+                    if (isMobile) {
+                        // VERSI PRO MOBILE: Gunakan requestAnimationFrame untuk sinkronisasi dengan animasi browser
+                        // Kita beri sedikit jeda (delay) tapi lebih singkat agar tidak terasa lambat
+                        setTimeout(() => {
+                                this.scrollToElement(id);
+                            },
+                            290
+                        ); // 250ms adalah sweet spot: animasi penutupan sudah berjalan tapi user belum bosan menunggu
+                    } else {
+                        // VERSI DESKTOP: Gunakan $nextTick agar instan dan smooth
+                        this.$nextTick(() => {
+                            this.scrollToElement(id);
+                        });
+                    }
                 }
             },
+
+            // Fungsi pembantu agar kode lebih bersih
+            scrollToElement(id) {
+                const el = document.getElementById('faq-pos-answer-' + id);
+                if (el) {
+                    const parent = el.closest('.faq-pos-item');
+                    if (parent) {
+                        const offset = 110;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = parent.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
         };
     }
     </script>
@@ -1031,6 +1060,13 @@
 
     @push('styles')
     <style>
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+
     .faq-pos-answer {
         transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s ease;
     }

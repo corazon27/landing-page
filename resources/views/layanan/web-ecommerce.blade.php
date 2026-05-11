@@ -207,8 +207,9 @@
     <section class="pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
-            <x-breadcrumb :items="[['name' => 'Layanan', 'url' => url('/layanan')]]"
-                current="Website Toko Online & E-Commerce" />
+            <div class="max-w-6xl mx-auto text-center mb-10">
+                <x-breadcrumb :items="[['name' => 'Layanan', 'url' => url('/layanan')]]" current="E-Commerce" />
+            </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mt-5 md:mt-6">
 
@@ -226,7 +227,8 @@
                         </h1>
                         <p class="mt-4 md:mt-5 text-base md:text-lg text-slate-600 leading-relaxed">
                             Jualan di Tokopedia & Shopee itu bagus, tapi Anda bersaing dengan ribuan penjual lain di
-                            halaman yang sama. <strong>Cakra Inovasi Digital</strong> membangun toko online eksklusif
+                            halaman yang sama. <strong>Cakra Inovasi Digital</strong> membangun toko online
+                            eksklusif
                             milik Anda — tampil profesional, terima pembayaran otomatis, dan bangun brand yang
                             benar-benar diingat pelanggan.
                         </p>
@@ -276,7 +278,7 @@
                 </div>
 
                 {{-- ── Kolom Mockup Dashboard Toko Online ── --}}
-                <div class="hidden lg:block relative" data-aos="fade-left">
+                <div class="relative" data-aos="fade-left">
 
                     <div class="absolute inset-0 bg-gradient-to-br from-orange-100 via-amber-50 to-slate-100 rounded-[3rem] blur-3xl opacity-60 scale-110"
                         aria-hidden="true"></div>
@@ -342,13 +344,15 @@
                                     Premium','status'=>'Dibayar','color'=>'bg-emerald-500/20
                                     text-emerald-400','amount'=>'Rp 285.000'],
                                     ['id'=>'#3420','name'=>'Sari Dewi','product'=>'Tas Kulit
-                                    Wanita','status'=>'Dikemas','color'=>'bg-blue-500/20 text-blue-400','amount'=>'Rp
+                                    Wanita','status'=>'Dikemas','color'=>'bg-blue-500/20
+                                    text-blue-400','amount'=>'Rp
                                     450.000'],
                                     ['id'=>'#3419','name'=>'Andi Pratama','product'=>'Sepatu
                                     Casual','status'=>'Dikirim','color'=>'bg-violet-500/20
                                     text-violet-300','amount'=>'Rp 320.000'],
                                     ['id'=>'#3418','name'=>'Rina Wijaya','product'=>'Dompet
-                                    Canvas','status'=>'Selesai','color'=>'bg-slate-600/40 text-slate-400','amount'=>'Rp
+                                    Canvas','status'=>'Selesai','color'=>'bg-slate-600/40
+                                    text-slate-400','amount'=>'Rp
                                     150.000'],
                                     ];
                                     @endphp
@@ -364,7 +368,8 @@
                                                 <p class="text-[9px] text-slate-400">{{ $order['product'] }}</p>
                                             </div>
                                             <div class="text-right">
-                                                <p class="text-[9px] font-bold text-white">{{ $order['amount'] }}</p>
+                                                <p class="text-[9px] font-bold text-white">{{ $order['amount'] }}
+                                                </p>
                                                 <span
                                                     class="text-[8px] font-semibold {{ $order['color'] }}">{{ $order['status'] }}</span>
                                             </div>
@@ -391,7 +396,8 @@
                                 <div
                                     class="px-4 py-2.5 flex items-center justify-between border-b border-slate-700/20 last:border-0">
                                     <p class="text-[10px] text-slate-300">{{ $s['product'] }}</p>
-                                    <span class="text-[10px] font-bold {{ $s['color'] }}">Sisa {{ $s['stok'] }}</span>
+                                    <span class="text-[10px] font-bold {{ $s['color'] }}">Sisa
+                                        {{ $s['stok'] }}</span>
                                 </div>
                                 @endforeach
                             </div>
@@ -405,7 +411,8 @@
                             <i class="fa-solid fa-bag-shopping text-sm"></i>
                         </div>
                         <div>
-                            <p class="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Pesanan Baru!</p>
+                            <p class="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Pesanan Baru!
+                            </p>
                             <p class="text-sm font-extrabold text-slate-800">Rp 285.000 — Lunas</p>
                         </div>
                     </div>
@@ -1066,6 +1073,8 @@
             toggleFaq(id, event) {
                 const btn = event.currentTarget;
                 const ripple = btn.querySelector('.faq-ecommerce-ripple');
+
+                // 1. Efek Ripple (Tetap sama)
                 if (ripple) {
                     const rect = btn.getBoundingClientRect();
                     const size = Math.max(rect.width, rect.height) * 2;
@@ -1079,24 +1088,51 @@
                     ripple.style.transform = 'scale(1)';
                     ripple.style.opacity = '0';
                 }
+
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
+
+                // 2. Logic Scroll Pintar
                 if (!wasOpen) {
-                    this.$nextTick(() => {
-                        const el = document.getElementById('faq-ecommerce-answer-' + id);
-                        if (el) {
-                            const parent = el.closest('.faq-ecommerce-item');
-                            if (parent) {
-                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({
-                                    top,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    });
+                    // Deteksi apakah user menggunakan layar smartphone (lebar < 768px)
+                    const isMobile = window.innerWidth < 768;
+
+                    if (isMobile) {
+                        // VERSI PRO MOBILE: Gunakan requestAnimationFrame untuk sinkronisasi dengan animasi browser
+                        // Kita beri sedikit jeda (delay) tapi lebih singkat agar tidak terasa lambat
+                        setTimeout(() => {
+                                this.scrollToElement(id);
+                            },
+                            250
+                        ); // 250ms adalah sweet spot: animasi penutupan sudah berjalan tapi user belum bosan menunggu
+                    } else {
+                        // VERSI DESKTOP: Gunakan $nextTick agar instan dan smooth
+                        this.$nextTick(() => {
+                            this.scrollToElement(id);
+                        });
+                    }
                 }
             },
+
+            // Fungsi pembantu agar kode lebih bersih
+            scrollToElement(id) {
+                const el = document.getElementById('faq-ecommerce-answer-' + id);
+                if (el) {
+                    const parent = el.closest('.faq-ecommerce-item');
+                    if (parent) {
+                        const offset = 110;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = parent.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
         };
     }
     </script>
@@ -1104,8 +1140,17 @@
 
     @push('styles')
     <style>
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+
     .faq-ecommerce-answer {
-        transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s ease;
+        /* Gunakan durasi sedikit lebih cepat (0.3s) agar scroll tidak menunggu terlalu lama */
+        transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+        overflow: hidden;
     }
 
     .faq-ecommerce-ripple {
