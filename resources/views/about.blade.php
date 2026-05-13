@@ -1,29 +1,9 @@
 <x-layout.app>
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-10 text-center">
-
-            {{-- Navigasi Breadcrumbs di atas --}}
-            <nav class="flex justify-center mb-6" aria-label="Breadcrumb" data-aos="fade-down">
-                <ol
-                    class="inline-flex items-center bg-white/80 backdrop-blur-sm px-6 py-2.5 rounded-full border border-slate-200/60 shadow-sm">
-                    <li class="inline-flex items-center">
-                        <a href="/"
-                            class="text-xs font-semibold text-slate-500 hover:text-blue-600 transition flex items-center">
-                            <i class="fas fa-home mr-2.5"></i> Beranda
-                        </a>
-                    </li>
-
-                    <li aria-current="page">
-                        <div class="flex items-center">
-                            {{-- Menggunakan mx-4 yang konsisten --}}
-                            <i class="fas fa-chevron-right text-[9px] text-slate-300 mx-4"></i>
-                            <span class="text-xs font-bold text-blue-600 tracking-wide">Tentang Kami</span>
-                        </div>
-                    </li>
-                </ol>
-            </nav>
-        </div>
-        <div class="max-w-6xl mx-auto px-10">
+    <section class="pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-5 md:px-10">
+            <div class="max-w-6xl mx-auto text-center mb-10">
+                <x-breadcrumb :items="[]" current="Tentang Kami" />
+            </div>
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div data-aos="fade-right">
                     <span
@@ -50,7 +30,7 @@
                             Cakra Inovasi Digital</div>
                     </div>
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-xl border border-slate-100">
-                        <p class="text-3xl font-bold text-blue-600">50+</p>
+                        <p class="text-3xl font-bold text-blue-600">30+</p>
                         <p class="text-xs text-slate-500 font-medium">UMKM Telah Go-Digital</p>
                     </div>
                 </div>
@@ -141,7 +121,7 @@
     </section>
 
     <section class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-10">
+        <div class="max-w-6xl mx-auto px-5 md:px-10">
             <!-- Tambahan animasi pada header -->
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-slate-900">Pendekatan Kami</h2>
@@ -199,7 +179,7 @@
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl"></div>
 
-        <div class="max-w-4xl mx-auto px-10 text-center relative z-10" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto px-5 md:px-10 text-center relative z-10" data-aos="fade-up">
             <span
                 class="text-blue-400 font-bold bg-blue-900/50 px-4 py-2 rounded-full text-sm border border-blue-800">Kenapa
                 Cakra?</span>
@@ -215,7 +195,7 @@
     </section>
 
     <section class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-10">
+        <div class="max-w-6xl mx-auto px-5 md:px-10">
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100" data-aos="fade-up"
                     data-aos-delay="100">
@@ -243,7 +223,7 @@
     </section>
 
     <section class="py-20 bg-slate-50 border-t border-slate-100">
-        <div class="max-w-6xl mx-auto px-10">
+        <div class="max-w-6xl mx-auto px-5 md:px-10">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-slate-900">Kenalan Bersama Tim Kami</h2>
                 <p class="text-slate-500 mt-2">Wajah-wajah di balik layar yang siap mengawal digitalisasi bisnis Anda.

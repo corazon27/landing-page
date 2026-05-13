@@ -103,7 +103,7 @@
     {{-- ================================================================
          HERO HEADER ARTIKEL
     ================================================================ --}}
-    <section class="pt-24 pb-12 bg-white border-b border-slate-100 relative overflow-hidden">
+    <section class="pt-28 md:pt-36 pb-16 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
 
         <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
             <div
@@ -117,30 +117,10 @@
         <div class="max-w-4xl mx-auto px-5 md:px-6 relative z-10">
 
             {{-- Breadcrumb --}}
-            <nav class="flex justify-center mb-8" aria-label="Breadcrumb">
-                <ol
-                    class="inline-flex items-center bg-white px-4 py-2 rounded-full border border-slate-100 shadow-sm gap-2 flex-wrap justify-center">
-                    <li>
-                        <a href="/"
-                            class="text-[11px] font-semibold text-slate-400 hover:text-blue-600 transition flex items-center gap-1">
-                            <i class="fa-solid fa-house text-[9px]"></i> Beranda
-                        </a>
-                    </li>
-                    <li><i class="fa-solid fa-chevron-right text-[7px] text-slate-200"></i></li>
-                    <li>
-                        <a href="{{ route('front.artikel.index') }}"
-                            class="text-[11px] font-semibold text-slate-400 hover:text-blue-600 transition">
-                            Artikel
-                        </a>
-                    </li>
-                    <li><i class="fa-solid fa-chevron-right text-[7px] text-slate-200"></i></li>
-                    <li>
-                        <span class="text-[11px] font-bold text-blue-600 max-w-[180px] truncate block">
-                            {{ Str::limit($article->title, 35) }}
-                        </span>
-                    </li>
-                </ol>
-            </nav>
+            <div class="max-w-6xl mx-auto text-center mb-10">
+                <x-breadcrumb :items="[['name' => 'List Artikel', 'url' => url('/artikel')]]"
+                    current="Detail Artikel" />
+            </div>
 
             {{-- Kategori badge --}}
             <div class="flex justify-center mb-5" data-aos="fade-down">
@@ -323,7 +303,7 @@
                     <div class="mt-10 bg-gradient-to-br from-slate-50 to-blue-50/30 p-7 rounded-3xl border border-slate-100 flex items-center gap-5"
                         data-aos="fade-up">
                         <div class="w-16 h-16 rounded-2xl overflow-hidden bg-blue-100 shrink-0 shadow-sm">
-                            <img src="{{ asset('images/logo-cakra.png') }}" alt="Cakra Inovasi Digital"
+                            <img src="{{ asset('images/logo-cakra.webp') }}" alt="Cakra Inovasi Digital"
                                 class="w-full h-full object-cover">
                         </div>
                         <div>

@@ -12,13 +12,11 @@ $layananMenu = [
 
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
+            {{-- Gunakan h-36 atau h-40 untuk ukuran ekstra besar --}}
             <a href="{{ url('/') }}" aria-label="Cakra Inovasi Digital — Beranda"
-                class="flex items-center gap-3 hover:opacity-85 transition-opacity">
-                <img src="{{ asset('images/logo-cakra.png') }}" alt="Logo Cakra Inovasi Digital" width="48" height="48"
-                    fetchpriority="high" class="h-12 w-auto object-contain">
-                <div class="text-xl font-bold tracking-tight text-slate-900 leading-tight">
-                    Cakra <span class="text-blue-600">Inovasi Digital</span>
-                </div>
+                class="flex items-center gap-3 hover:opacity-85 transition-opacity flex-shrink-0">
+                <img src="{{ asset('images/logo-cakra.webp') }}" alt="Logo Cakra Inovasi Digital" width="330"
+                    height="330" fetchpriority="high" class="h-42 md:h-52 w-auto object-contain">
             </a>
 
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">

@@ -56,6 +56,10 @@
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex gap-2">
+                            <a href="{{ route('admin.comments.reply', $comment->id) }}"
+                                class="bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold py-2 px-4 rounded-lg transition">
+                                Balas
+                            </a>
                             @if(!$comment->is_approved)
                             <form action="{{ route('admin.comments.approve', $comment->id) }}" method="POST">
                                 @csrf
@@ -94,4 +98,44 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Balasan -->
+<div id="replyModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen px-4">
+        <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm" onclick="closeReplyModal()"></div>
+
+        <div class="relative bg-white rounded-3xl shadow-xl w-full max-w-md p-8">
+            <h3 class="text-xl font-bold text-slate-800 mb-2">Balas Komentar</h3>
+            <p id="replyingTo" class="text-sm text-slate-500 mb-6"></p>
+
+            <form id="replyForm" method="POST">
+                @csrf
+                <textarea name="reply_comment" required rows="4" placeholder="Tulis balasan resmi Anda..."
+                    class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none transition mb-4"></textarea>
+
+                <div class="flex justify-end gap-3">
+                    <button type="button" onclick="closeReplyModal()"
+                        class="text-slate-400 font-bold px-4 py-2 hover:text-slate-600">Batal</button>
+                    <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-lg shadow-blue-100 transition">
+                        Kirim Balasan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function openReplyModal(id, name) {
+    document.getElementById('replyModal').classList.remove('hidden');
+    document.getElementById('replyingTo').innerText = 'Membalas komentar dari: ' + name;
+    // Update action form secara dinamis
+    document.getElementById('replyForm').action = '/admin/comments/' + id + '/reply';
+}
+
+function closeReplyModal() {
+    document.getElementById('replyModal').classList.add('hidden');
+}
+</script>
 @endsection

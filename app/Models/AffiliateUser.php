@@ -23,6 +23,7 @@ class AffiliateUser extends Authenticatable implements MustVerifyEmail
         'bank_name',
         'account_number',
         'account_holder_name',
+        'referral_code',
     ];
 
     protected $hidden = [

@@ -52,7 +52,10 @@ Route::get('/tanya-jawab', function () { return view('faq'); })->name('faq');
 Route::middleware('guest:affiliate')->group(function () {
     Route::get('/affiliate/register', function () { return view('affiliate.register'); })->name('affiliate.register');
     Route::post('/affiliate/register', [RegisterController::class, 'store'])->name('affiliate.register.store');
-    Route::get('/affiliate/login', function() { return view('affiliate.login'); })->name('affiliate.login');
+    Route::get('/affiliate/login', function() { 
+        return view('affiliate.login'); 
+    })->name('affiliate.login')->name('login'); 
+    
     Route::post('/affiliate/login', [LoginController::class, 'login'])->name('affiliate.login.post');
 });
 
@@ -120,7 +123,9 @@ Route::middleware(['auth:admin'])->prefix('management-center')->group(function (
     Route::get('/comments', [CommentController::class, 'index'])->name('admin.comments.index');
     Route::patch('/comments/{id}/approve', [CommentController::class, 'approve'])->name('admin.comments.approve');
     Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('admin.comments.destroy');
-
+    // Route untuk menampilkan halaman (Ini yang menyebabkan 404 jika belum ada)
+    Route::get('/admin/comments/{id}/reply', [CommentController::class, 'reply'])->name('admin.comments.reply');
+    Route::post('/admin/comments/{id}/reply', [CommentController::class, 'storeReply'])->name('admin.comments.storeReply');
     Route::post('/logout', [AdminLogin::class, 'logout'])->name('admin.logout');
 });
 

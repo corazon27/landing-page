@@ -187,6 +187,44 @@ document.addEventListener('DOMContentLoaded', function() {
             ckfinder: {
                 uploadUrl: "{{ route('admin.articles.upload', ['_token' => csrf_token()]) }}"
             },
+            // Konfigurasi image untuk resize dan styling
+            image: {
+                toolbar: [
+                    'imageStyle:inline',
+                    'imageStyle:block',
+                    'imageStyle:side',
+                    '|',
+                    'toggleImageCaption',
+                    'imageTextAlternative',
+                    '|',
+                    'resizeImage:50',
+                    'resizeImage:75',
+                    'resizeImage:original'
+                ],
+                resizeUnit: '%',
+                resizeOptions: [
+                    {
+                        name: 'resizeImage:original',
+                        value: null,
+                        label: 'Original'
+                    },
+                    {
+                        name: 'resizeImage:25',
+                        value: '25',
+                        label: '25%'
+                    },
+                    {
+                        name: 'resizeImage:50',
+                        value: '50',
+                        label: '50%'
+                    },
+                    {
+                        name: 'resizeImage:75',
+                        value: '75',
+                        label: '75%'
+                    }
+                ]
+            },
             toolbar: [
                 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList',
                 'blockQuote', 'insertTable', 'imageUpload', 'undo', 'redo'

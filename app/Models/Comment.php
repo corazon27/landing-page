@@ -13,6 +13,7 @@ class Comment extends Model
     protected $fillable = [
         'article_id', 
         'parent_id',
+        'user_id',
         'name', 
         'email', 
         'comment', 
@@ -30,6 +31,16 @@ class Comment extends Model
     public function replies()
     {
         return $this->hasMany(Comment::class, 'parent_id')->where('is_approved', true);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function getIsAdminAttribute()
+    {
+        return $this->user_id !== null && $this->user->username === 'cakra_admin';
     }
 
     /**

@@ -40,14 +40,15 @@
                 <form method="POST" action="{{ route('verification.send') }}">
                     @csrf
                     <button type="submit"
-                        class="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-100">
+                        class="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-100 cursor-pointer">
                         Kirim Ulang Email
                     </button>
                 </form>
 
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="text-sm text-slate-400 hover:text-slate-600 font-medium underline">
+                    <button type="submit"
+                        class="text-sm text-slate-400 hover:text-slate-600 font-medium underline cursor-pointer">
                         Keluar / Ganti Akun
                     </button>
                 </form>

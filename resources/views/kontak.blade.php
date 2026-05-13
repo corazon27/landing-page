@@ -475,7 +475,7 @@
     {{-- ================================================================
      SECTION 4: FAQ KONTAK
 ================================================================ --}}
-    <section id="faq" class="py-16 md:py-20 bg-white-50" x-data="faqKontak()">
+    <section id="faq" class="py-16 md:py-20 bg-slate-50" x-data="faqKontak()">
         <div class="max-w-3xl mx-auto px-5 md:px-6">
 
             <div class="text-center mb-10 md:mb-12" data-aos="fade-up">
@@ -692,43 +692,54 @@
             },
             // Handler lanjutan dengan Smooth Scrolling & Ripple Effect
             toggleFaq(id, event) {
+                const btn = event.currentTarget;
+                const ripple = btn.querySelector('.faq-kontak-ripple');
+
+                if (ripple) {
+                    const rect = btn.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height) * 2;
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: #dbeafe;
+                        pointer-events: none;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${event.clientX - rect.left - size / 2}px;
+                        top: ${event.clientY - rect.top - size / 2}px;
+                        transform: scale(0);
+                        opacity: 1;
+                        transition: transform 0.5s ease, opacity 0.5s ease;
+                    `;
+
+                    ripple.offsetWidth;
+                    ripple.style.transform = 'scale(1)';
+                    ripple.style.opacity = '0';
+                }
+
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
 
-                // Animasi Sentuh (Ripple Effect)
-                const btn = event.currentTarget;
-                const ripple = btn.querySelector('.faq-kontak-ripple');
-                if (ripple) {
-                    const rect = btn.getBoundingClientRect();
-                    const x = event.clientX - rect.left;
-                    const y = event.clientY - rect.top;
-                    ripple.style.left = `${x}px`;
-                    ripple.style.top = `${y}px`;
-                    ripple.style.transform = 'scale(40)';
-                    ripple.style.opacity = '1';
-
-                    setTimeout(() => {
-                        ripple.style.transform = 'scale(0)';
-                        ripple.style.opacity = '0';
-                    }, 500);
-                }
-
-                // Autoscroll ke arah FAQ item yang diklik secara mulus
                 if (!wasOpen) {
-                    this.$nextTick(() => {
-                        const el = document.getElementById('faq-kontak-answer-' + id);
-                        if (el) {
-                            const parent = el.closest('.faq-kontak-item');
-                            if (parent) {
-                                const top = parent.getBoundingClientRect().top + window.scrollY - 100;
-                                window.scrollTo({
-                                    top,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    });
+                    const isMobile = window.innerWidth < 768;
+                    if (isMobile) {
+                        setTimeout(() => this.scrollToElement(id), 300);
+                    } else {
+                        this.$nextTick(() => this.scrollToElement(id));
+                    }
                 }
+            },
+
+            scrollToElement(id) {
+                const el = document.getElementById('faq-kontak-answer-' + id);
+                if (!el) return;
+                const parent = el.closest('.faq-kontak-item');
+                if (!parent) return;
+                const offsetPosition = parent.getBoundingClientRect().top + window.scrollY - 110;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             },
             faqs: rawFaqs.map((item, i) => ({
                 id: i + 1,

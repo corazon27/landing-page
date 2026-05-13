@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ckfinder: {
                 uploadUrl: "{{ route('admin.articles.upload', ['_token' => csrf_token()]) }}"
             },
-            // Tambahkan konfigurasi image di bawah ini
+            // Konfigurasi image untuk resize dan styling
             image: {
                 toolbar: [
                     'imageStyle:inline',
@@ -185,11 +185,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     'imageStyle:side',
                     '|',
                     'toggleImageCaption',
-                    'imageTextAlternative'
+                    'imageTextAlternative',
+                    '|',
+                    'resizeImage:50',
+                    'resizeImage:75',
+                    'resizeImage:original'
                 ],
-                // Ini adalah kunci agar handle resize muncul
                 resizeUnit: '%',
-                resizeOptions: [{
+                resizeOptions: [
+                    {
                         name: 'resizeImage:original',
                         value: null,
                         label: 'Original'

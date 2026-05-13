@@ -12,6 +12,112 @@
     @endphp
 
     @php
+    $stats = [
+    [
+    'value' => '30+',
+    'label' => 'Proyek Selesai',
+    'color' => 'text-blue-600'
+    ],
+    [
+    'value' => '99%',
+    'label' => 'Klien Puas',
+    'color' => 'text-emerald-600'
+    ],
+    [
+    'value' => '2+',
+    'label' => 'Tahun Pengalaman',
+    'color' => 'text-orange-500'
+    ],
+    [
+    'value' => '24/7',
+    'label' => 'Website Online',
+    'color' => 'text-purple-600'
+    ],
+    ];
+
+    $services = [
+    [
+    'title' => 'Katalog Produk Digital',
+    'desc' => 'Ubah brosur fisik jadi link website. Pelanggan bisa lihat semua produk Anda dari HP tanpa harus kirim
+    foto satu-satu lewat WhatsApp.',
+    'icon' => '🛍️',
+    'features' => ['Tampil profesional di Google', 'Bisa bagi link ke mana saja', 'Update harga sangat mudah'],
+    'color_bg' => 'bg-blue-50/60',
+    'color_border' => 'border-blue-100',
+    'color_icon' => 'text-blue-600',
+    'delay' => '100'
+    ],
+    [
+    'title' => 'Kasir Digital (POS)',
+    'desc' => 'Tinggalkan buku nota manual. Catat pesanan, cetak struk, dan pantau stok barang secara otomatis agar
+    tidak ada lagi barang yang hilang.',
+    'icon' => '💳',
+    'features' => ['Laporan untung-rugi otomatis', 'Pantau stok dari jarak jauh', 'Support cetak struk bluetooth'],
+    'color_bg' => 'bg-emerald-50/60',
+    'color_border' => 'border-emerald-100',
+    'color_icon' => 'text-emerald-600',
+    'delay' => '200'
+    ],
+    [
+    'title' => 'Sistem Kelola Bisnis',
+    'desc' => 'Satu tempat untuk atur semua operasional. Dari laporan keuangan, data karyawan, hingga jadwal project
+    agar semua rapi terkendali.',
+    'icon' => '🚀',
+    'features' => ['Data aman dan rapi', 'Bebas ribet hitung manual', 'Mudah pantau progres bisnis'],
+    'color_bg' => 'bg-orange-50/60',
+    'color_border' => 'border-orange-100',
+    'color_icon' => 'text-orange-600',
+    'delay' => '300'
+    ],
+    ];
+
+    $portfolios = [
+    [
+    'title' => 'Sistem ERP Terintegrasi',
+    'category' => 'Sistem Web',
+    'image' => 'porto-erp.webp',
+    'description' => 'Platform komprehensif untuk mengelola seluruh operasional bisnis, mencakup manajemen keuangan,
+    inventaris, hingga SDM.',
+    'tags' => ['Laravel', 'Tailwind CSS', 'Multi-Modul'],
+    'testimonial' => 'Manajemen data antar divisi kini jauh lebih rapi dan terpusat. Operasional jadi sangat efisien.',
+    // Masukkan class utuh di sini agar Tailwind langsung membacanya
+    'bg_class' => 'bg-blue-50',
+    'border_class' => 'border-blue-100',
+    'text_class' => 'text-blue-700',
+    'hover_class' => 'group-hover:text-blue-600',
+    'delay' => '100'
+    ],
+    [
+    'title' => 'Katalog Produk Digital + WhatsApp',
+    'category' => 'Katalog Digital',
+    'image' => 'porto-katalog.webp',
+    'description' => 'Katalog online responsif dengan kategori produk lengkap dan tombol direct-chat WhatsApp.',
+    'tags' => ['WhatsApp Link', 'Mobile-First'],
+    'testimonial' => 'Pelanggan bisa lihat koleksi barang dari HP kapan saja.',
+    'bg_class' => 'bg-emerald-50',
+    'border_class' => 'border-emerald-100',
+    'text_class' => 'text-emerald-700',
+    'hover_class' => 'group-hover:text-emerald-600',
+    'delay' => '200'
+    ],
+    [
+    'title' => 'Sistem Kasir & Point of Sale (POS)',
+    'category' => 'Kasir / POS',
+    'image' => 'porto-pos.webp',
+    'description' => 'Kasir digital modern dengan manajemen stok real-time, laporan harian, dan dukungan printer
+    thermal.',
+    'tags' => ['Inventory Real-time', 'Mobile First'],
+    'testimonial' => 'Dulu pusing stok hilang, sekarang semua tercatat rapi.',
+    'bg_class' => 'bg-orange-50',
+    'border_class' => 'border-orange-100',
+    'text_class' => 'text-orange-700',
+    'hover_class' => 'group-hover:text-orange-600',
+    'delay' => '300'
+    ],
+    ];
+    @endphp
+
+    @php
     $faqsData = [
     ['question' => 'Bagaimana tahapan pengerjaan proyek website di Cakra Inovasi Digital?', 'answer' => 'Kami bekerja
     melalui 5 tahap: (1) Konsultasi kebutuhan dan deal kontrak, (2) Pembuatan konsep desain visual, (3) Proses coding
@@ -47,7 +153,7 @@
     {{-- ================================================================
          SECTION 1: HERO
     ================================================================ --}}
-    <section class="pt-28 md:pt-36 pb-16 md:pb-20 bg-white overflow-hidden">
+    <section class="pt-28 md:pt-36 pb-16 md:pb-20 bg-white overflow-hidden" aria-labelledby="hero-heading">
         <div class="max-w-6xl mx-auto px-5 lg:px-10">
             <div class="flex flex-col md:flex-row items-center gap-10 md:gap-12">
 
@@ -71,7 +177,7 @@
 
                     {{-- CTA Hero --}}
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20gratis%20soal%20pembuatan%20website%20untuk%20bisnis%20saya."
+                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi gratis soal pembuatan website untuk bisnis saya.' . $suffix) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-7 py-3.5 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-sm md:text-base">
                             <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
@@ -98,30 +204,25 @@
                     <div
                         class="bg-gradient-to-br from-blue-50 to-slate-100 rounded-[32px] md:rounded-[40px] flex items-center justify-center p-6 md:p-10">
                         <div class="w-full text-center">
+                            {{-- Grid Wrapper --}}
                             <div class="grid grid-cols-2 gap-3 md:gap-4 mb-5">
+                                @foreach($stats as $item)
                                 <div
                                     class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 text-left">
-                                    <p class="text-2xl md:text-3xl font-extrabold text-blue-600">30+</p>
-                                    <p class="text-xs text-slate-500 mt-1">Proyek Selesai</p>
+                                    <p class="text-2xl md:text-3xl font-extrabold {{ $item['color'] }}">
+                                        {{ $item['value'] }}
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        {{ $item['label'] }}
+                                    </p>
                                 </div>
-                                <div
-                                    class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 text-left">
-                                    <p class="text-2xl md:text-3xl font-extrabold text-emerald-600">99%</p>
-                                    <p class="text-xs text-slate-500 mt-1">Klien Puas</p>
-                                </div>
-                                <div
-                                    class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 text-left">
-                                    <p class="text-2xl md:text-3xl font-extrabold text-orange-500">2+</p>
-                                    <p class="text-xs text-slate-500 mt-1">Tahun Pengalaman</p>
-                                </div>
-                                <div
-                                    class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 text-left">
-                                    <p class="text-2xl md:text-3xl font-extrabold text-purple-600">24/7</p>
-                                    <p class="text-xs text-slate-500 mt-1">Website Online</p>
-                                </div>
+                                @endforeach
                             </div>
-                            <p class="text-slate-500 text-xs md:text-sm font-medium italic">"Partner diskusi, bukan
-                                sekadar vendor."</p>
+
+                            {{-- Quote Section --}}
+                            <p class="text-slate-500 text-xs md:text-sm font-medium italic">
+                                "Partner diskusi, bukan sekadar vendor."
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -134,7 +235,7 @@
     {{-- ================================================================
          SECTION 2: LAYANAN
     ================================================================ --}}
-    <section id="layanan" class="py-16 md:py-20 bg-slate-50">
+    <section id="layanan" class="py-16 md:py-20 bg-slate-50" aria-labelledby="layanan-heading">
         <div class="max-w-6xl mx-auto px-5 lg:px-10">
 
             <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
@@ -146,75 +247,40 @@
                     Layanan Pembuatan Website Kami
                 </h2>
                 <p class="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">
-                    Kami urus teknologinya, Anda fokus kembangkan usahanya. Semua transparan dan tanpa biaya
-                    tersembunyi.
+                    Kami urus teknologinya, Anda fokus kembangkan usahanya. Semua transparan dan dirancang khusus untuk
+                    memudahkan bisnis Anda.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-
+                @foreach($services as $service)
                 <article
-                    class="p-6 md:p-8 rounded-3xl bg-blue-50/60 border border-blue-100 hover:shadow-lg transition group"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-3xl md:text-4xl mb-4 group-hover:scale-110 transition-transform inline-block"
-                        aria-hidden="true">🌐</div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">Website Toko Online &amp; Company
-                        Profile</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Tampil profesional di Google dengan website yang cantik, mobile-friendly, dan membantu Anda
-                        mendapatkan lebih banyak pelanggan baru.
-                    </p>
-                    <ul class="text-xs text-slate-500 space-y-2" aria-label="Keunggulan layanan website">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"
-                                aria-hidden="true"></i> Konsultasi gratis tanpa syarat</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"
-                                aria-hidden="true"></i> Sudah termasuk domain &amp; hosting</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600"
-                                aria-hidden="true"></i> SEO-ready dari hari pertama</li>
-                    </ul>
-                </article>
+                    class="p-6 md:p-8 rounded-3xl {{ $service['color_bg'] }} border {{ $service['color_border'] }} hover:shadow-lg transition group"
+                    data-aos="fade-up" data-aos-delay="{{ $service['delay'] }}">
 
-                <article
-                    class="p-6 md:p-8 rounded-3xl bg-emerald-50/60 border border-emerald-100 hover:shadow-lg transition group"
-                    data-aos="fade-up" data-aos-delay="200">
                     <div class="text-3xl md:text-4xl mb-4 group-hover:scale-110 transition-transform inline-block"
-                        aria-hidden="true">🛠️</div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">Sistem &amp; Aplikasi Khusus Bisnis
+                        aria-hidden="true">
+                        {{ $service['icon'] }}
+                    </div>
+
+                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">
+                        {{ $service['title'] }}
                     </h3>
+
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Punya alur kerja unik? Kami bangun sistem yang mengikuti cara kerja bisnis Anda, bukan
-                        sebaliknya.
+                        {{ $service['desc'] }}
                     </p>
-                    <ul class="text-xs text-slate-500 space-y-2" aria-label="Keunggulan layanan sistem khusus">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"
-                                aria-hidden="true"></i> Harga sesuai budget UMKM</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"
-                                aria-hidden="true"></i> Didampingi hingga tim bisa pakai</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"
-                                aria-hidden="true"></i> Bisa dikembangkan seiring tumbuh</li>
+
+                    <ul class="text-xs text-slate-500 space-y-2">
+                        @foreach($service['features'] as $feature)
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check {{ $service['color_icon'] }}" aria-hidden="true"></i>
+                            {{ $feature }}
+                        </li>
+                        @endforeach
                     </ul>
                 </article>
-
-                <article
-                    class="p-6 md:p-8 rounded-3xl bg-orange-50/60 border border-orange-100 hover:shadow-lg transition group"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-3xl md:text-4xl mb-4 group-hover:scale-110 transition-transform inline-block"
-                        aria-hidden="true">📑</div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">Kasir Digital &amp; Manajemen Stok</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Tinggalkan catatan manual yang rawan selisih. Pantau stok dan laporan penjualan harian dari HP
-                        kapan saja.
-                    </p>
-                    <ul class="text-xs text-slate-500 space-y-2" aria-label="Keunggulan kasir digital">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-600"
-                                aria-hidden="true"></i> Laporan otomatis real-time</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-600"
-                                aria-hidden="true"></i> Pantau stok lewat HP</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-600"
-                                aria-hidden="true"></i> Support printer thermal</li>
-                    </ul>
-                </article>
-
+                @endforeach
             </div>
 
             <div class="text-center mt-8 md:mt-10" data-aos="fade-up">
@@ -232,7 +298,7 @@
     {{-- ================================================================
          SECTION 3: PROSES KERJA
     ================================================================ --}}
-    <section id="proses-kerja" class="py-16 md:py-24 bg-white overflow-hidden">
+    <section id="proses-kerja" class="py-16 md:py-24 bg-white overflow-hidden" aria-labelledby="proses-kerja-heading">
 
         <div class="max-w-6xl mx-auto px-5 lg:px-10">
 
@@ -424,12 +490,13 @@
     {{-- ================================================================
          SECTION 4: PORTOFOLIO
     ================================================================ --}}
-    <section id="portofolio" class="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section id="portofolio" class="py-16 md:py-24 bg-white relative overflow-hidden"
+        aria-labelledby="portofolio-heading">
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-100 opacity-40 blur-3xl pointer-events-none"
             aria-hidden="true"></div>
 
         <div class="max-w-7xl mx-auto px-5 lg:px-10 relative z-10">
-
+            {{-- Header Section --}}
             <div
                 class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-14 gap-5 border-b border-slate-200 pb-7 md:pb-8">
                 <div class="md:w-2/3" data-aos="fade-right">
@@ -454,121 +521,51 @@
                 </div>
             </div>
 
+            {{-- Portfolio Grid --}}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
+                @foreach($portfolios as $porto)
                 <article
                     class="group flex flex-col bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="aspect-video bg-slate-100 rounded-2xl mb-4 overflow-hidden relative">
-                        {{-- Implementasi Gambar WebP dari Storage --}}
-                        <img src="{{ asset('storage/portofolio/porto-erp.webp') }}" alt="Sistem ERP Terintegrasi"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    data-aos="fade-up" data-aos-delay="{{ $porto['delay'] }}">
 
+                    {{-- Bagian Atas / Gambar --}}
+                    <div class="aspect-video {{ $porto['bg_class'] }} rounded-2xl mb-4 overflow-hidden relative">
+                        <img src="{{ asset('storage/portofolio/' . $porto['image']) }}" alt="{{ $porto['title'] }}"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <span
                             class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm">
-                            Sistem Web
+                            {{ $porto['category'] }}
                         </span>
                     </div>
 
+                    {{-- Bagian Tengah / Teks --}}
                     <div class="px-2 flex-grow">
                         <h3
-                            class="text-base md:text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                            Sistem ERP Terintegrasi
+                            class="text-base md:text-lg font-bold text-slate-900 mb-2 {{ $porto['hover_class'] }} transition-colors">
+                            {{ $porto['title'] }}
                         </h3>
                         <p class="text-slate-500 text-sm mb-4 line-clamp-2">
-                            Platform komprehensif untuk mengelola seluruh operasional bisnis, mencakup manajemen
-                            keuangan, inventaris, hingga SDM dalam satu dashboard pusat.
+                            {{ $porto['description'] }}
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Laravel</span>
-                            <span
-                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Tailwind
-                                CSS</span>
-                            <span
-                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Multi-Modul</span>
+                            @foreach($porto['tags'] as $tag)
+                            <span class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">
+                                {{ $tag }}
+                            </span>
+                            @endforeach
                         </div>
                     </div>
 
+                    {{-- Bagian Bawah / Testimonial --}}
                     <div class="px-2 pb-2">
-                        <blockquote class="bg-blue-50 border border-blue-100 p-3 rounded-xl">
-                            <p class="text-sm font-medium text-blue-700 italic">"Manajemen data antar divisi kini jauh
-                                lebih rapi dan terpusat. Operasional jadi sangat efisien."</p>
+                        <blockquote class="{{ $porto['bg_class'] }} border {{ $porto['border_class'] }} p-3 rounded-xl">
+                            <p class="text-sm font-medium {{ $porto['text_class'] }} italic">
+                                "{{ $porto['testimonial'] }}"
+                            </p>
                         </blockquote>
                     </div>
                 </article>
-
-                <article
-                    class="group flex flex-col bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="aspect-video bg-emerald-50 rounded-2xl mb-4 overflow-hidden relative">
-                        <img src="{{ asset('storage/portofolio/porto-katalog.webp') }}" alt="Katalog Produk Digital"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span
-                            class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm">Katalog
-                            Digital</span>
-                    </div>
-                    <div class="px-2 flex-grow">
-                        <h3
-                            class="text-base md:text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
-                            Katalog Produk Digital + WhatsApp
-                        </h3>
-                        <p class="text-slate-500 text-sm mb-4 line-clamp-2">
-                            Katalog online responsif dengan kategori produk lengkap dan tombol direct-chat WhatsApp
-                            untuk mempercepat closing.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">WhatsApp
-                                Link</span>
-                            <span
-                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Mobile-First</span>
-                        </div>
-                    </div>
-                    <div class="px-2 pb-2">
-                        <blockquote class="bg-emerald-50 border border-emerald-100 p-3 rounded-xl">
-                            <p class="text-sm font-medium text-emerald-700 italic">"Pelanggan bisa lihat koleksi barang
-                                dari HP kapan saja."</p>
-                        </blockquote>
-                    </div>
-                </article>
-
-                <article
-                    class="group flex flex-col bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="aspect-video bg-orange-50 rounded-2xl mb-4 overflow-hidden relative">
-                        <img src="{{ asset('storage/portofolio/porto-pos.webp') }}" alt="Sistem Kasir & POS"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span
-                            class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm">Kasir
-                            / POS</span>
-                    </div>
-                    <div class="px-2 flex-grow">
-                        <h3
-                            class="text-base md:text-lg font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">
-                            Sistem Kasir &amp; Point of Sale (POS)
-                        </h3>
-                        <p class="text-slate-500 text-sm mb-4 line-clamp-2">
-                            Kasir digital modern dengan manajemen stok real-time, laporan keuangan harian, dan dukungan
-                            printer thermal.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Inventory
-                                Real-time</span>
-                            <span
-                                class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">Mobile
-                                First</span>
-                        </div>
-                    </div>
-                    <div class="px-2 pb-2">
-                        <blockquote class="bg-orange-50 border border-orange-100 p-3 rounded-xl">
-                            <p class="text-sm font-medium text-orange-700 italic">"Dulu pusing stok hilang, sekarang
-                                semua tercatat rapi."</p>
-                        </blockquote>
-                    </div>
-                </article>
-
+                @endforeach
             </div>
         </div>
     </section>
@@ -577,7 +574,8 @@
     {{-- ================================================================
          SECTION 5: KEUNGGULAN
     ================================================================ --}}
-    <section id="keunggulan" class="py-16 md:py-24 bg-slate-900 text-white overflow-hidden relative">
+    <section id="keunggulan" class="py-16 md:py-24 bg-slate-900 text-white overflow-hidden relative"
+        aria-labelledby="keunggulan-heading">
         <div class="absolute top-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"
             aria-hidden="true"></div>
         <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none"
@@ -743,7 +741,7 @@
     {{-- ================================================================
          SECTION 7: TEKNOLOGI
     ================================================================ --}}
-    <section id="teknologi" class="py-16 md:py-24 bg-slate-50 overflow-hidden">
+    <section id="teknologi" class="py-16 md:py-24 bg-slate-50 overflow-hidden" aria-labelledby="teknologi-heading">
         <div class="max-w-6xl mx-auto px-5 lg:px-10">
 
             <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
@@ -824,7 +822,8 @@
     {{-- ================================================================
          SECTION 8: FAQ
     ================================================================ --}}
-    <section id="faq" class="py-16 md:py-24 bg-white" x-data="faqSection()">
+    <section id="faq" class="py-16 md:py-24 bg-white" x-data="faqSection()"
+        aria-label="Pertanyaan yang sering diajukan tentang jasa website kami">
         <div class="max-w-3xl mx-auto px-5 md:px-6">
 
             <div class="text-center mb-10 md:mb-12" data-aos="fade-up">

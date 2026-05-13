@@ -217,7 +217,7 @@
     @stack('styles')
 </head>
 
-<body class="bg-white text-slate-900 antialiased">
+<body class="bg-white text-slate-900 antialiased max-w-full overflow-x-hidden">
 
     <x-navbar />
 
@@ -237,8 +237,9 @@
         if (typeof AOS !== 'undefined') {
             AOS.init({
                 duration: 800,
-                once: true,
-                offset: 60
+                once: true, // Animasi hanya jalan sekali (mencegah konten hilang saat scroll balik)
+                mirror: false,
+                offset: 50,
             });
         }
     });

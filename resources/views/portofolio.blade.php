@@ -156,7 +156,7 @@
 
     {{-- SECTION 1: HERO --}}
     <section class="pt-28 md:pt-36 pb-16 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 lg:px-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
             <x-breadcrumb :items="[]" current="Portofolio Kami" />
 
             <div class="mt-8 text-center max-w-3xl mx-auto" data-aos="fade-up">
@@ -177,7 +177,8 @@
             </div>
 
             {{-- Stats Bar --}}
-            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up"
+                data-aos-delay="150">
                 @foreach($stats as $s)
                 <div class="bg-white border border-slate-100 rounded-2xl p-4 md:p-5 text-center shadow-sm">
                     <p class="text-2xl md:text-3xl font-extrabold {{ $s['color'] }}">{{ $s['angka'] }}</p>
@@ -191,7 +192,7 @@
 
     {{-- SECTION 2: FILTER + GRID PORTOFOLIO --}}
     <section class="py-16 md:py-24 bg-white" id="portfolio-section">
-        <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
 
             <div class="mb-10" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">
@@ -222,12 +223,12 @@
             </div>
 
             {{-- Grid Portofolio --}}
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 min-h-[400px]" x-data="{ filter: 'semua' }"
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 min-h-[400px]" x-data="{ filter: 'semua' }" x-cloak
                 @filter-portfolio.window="filter = $event.detail.value">
 
                 @foreach($portofolio as $p)
                 {{-- AOS DIHAPUS DISINI UNTUK CEGAH LAG SAAT FILTER --}}
-                <div x-show="filter === 'semua' || filter === '{{ $p['filter'] }}'"
+                <div x-show="filter === 'semua' || filter === '{{ $p['filter'] }}'" x-cloak
                     x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95"
                     x-transition:enter-end="opacity-100 scale-100" class="h-full">
 
@@ -295,7 +296,7 @@
 
     {{-- SECTION 3: GALERI DOKUMENTASI --}}
     <section class="py-20 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <div class="mb-12" data-aos="fade-up">
                 <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Aktivitas Kami</span>
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 uppercase">Galeri Dokumentasi Kerja
@@ -322,7 +323,7 @@
 
     {{-- SECTION 4: ALUR KERJA --}}
     <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <div class="mb-14" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
                     Dari Ide ke Website Live — Prosesnya Simpel
@@ -335,16 +336,24 @@
             $alur = [
             ['step' => '01', 'icon' => 'fa-comments', 'title' => 'Konsultasi Gratis', 'desc' => 'Ceritakan bisnis Anda.
             Kami bantu pilihkan solusi terbaik tanpa syarat apapun.'],
-            ['step' => '02', 'icon' => 'fa-pen-ruler', 'title' => 'Desain & Approval', 'desc' => 'Tim desainer kami buat
-            mockup tampilan. Anda review dan setujui sebelum coding dimulai.'],
-            ['step' => '03', 'icon' => 'fa-code', 'title' => 'Development', 'desc' => 'Website dibangun dengan teknologi
+            ['step' => '02', 'icon' => 'fa-code', 'title' => 'Development', 'desc' => 'Website dibangun dengan teknologi
             modern. Anda mendapat update progres berkala.'],
-            ['step' => '04', 'icon' => 'fa-rocket', 'title' => 'Live & Pelatihan', 'desc' => 'Website dipublish. Kami
-            dampingi Anda dan tim sampai benar-benar bisa pakai sendiri.'],
+            ['step' => '03', 'icon' => 'fa-magnifying-glass-chart', 'title' => 'Testing & Revisi', 'desc' => 'Pengujian
+            menyeluruh di berbagai perangkat untuk memastikan website bebas bug dan sesuai
+            keinginan Anda.'],
+            ['step' => '04', 'icon' => 'fa-chalkboard-teacher', 'title' => 'Training', 'desc' => 'Kami berikan pelatihan
+            intensif agar tim Anda mandiri mengoperasikan dashboard dan mengelola
+            konten tanpa kendala.'],
+            ['step' => '05', 'icon' => 'fa-rocket', 'title' => 'Go-Live', 'desc' => 'Website Anda resmi mengudara! Siap
+            melayani pelanggan dan memperkuat kredibilitas bisnis Anda
+            di dunia digital.'],
+            ['step' => '06', 'icon' => 'fa-headset', 'title' => 'Support', 'desc' => 'Bebas khawatir bug
+            atau error. Tim Cakra standby membantu kendala teknis maupun konsultasi
+            penggunaan kapan pun dibutuhkan.'],
             ];
             @endphp
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($alur as $a)
                 <div class="relative bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group"
                     data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
@@ -370,7 +379,7 @@
 
     {{-- SECTION 5: TESTIMONI --}}
     <section class="py-20 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <div class="mb-14" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 uppercase">Cerita Nyata dari Klien
                     Kami</h2>
@@ -422,7 +431,7 @@
 
     {{-- SECTION 6: CTA --}}
     <section class="py-20 bg-white" aria-label="Ajakan diskusi proyek baru">
-        <div class="max-w-5xl mx-auto px-6">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
             <div data-aos="zoom-in"
                 class="bg-slate-900 rounded-[3rem] p-10 md:p-16 text-white text-center relative overflow-hidden shadow-2xl">
                 {{-- Decorative Shapes --}}

@@ -1,79 +1,68 @@
 <x-layout.app>
 
     {{-- Header & Breadcrumbs Section --}}
-    <section class="py-20">
-        <div class="max-w-6xl mx-auto px-10 text-center">
+    <section class="pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
 
-            {{-- Navigasi Breadcrumbs di atas --}}
-            <nav class="flex justify-center mb-6" aria-label="Breadcrumb" data-aos="fade-down">
-                <ol
-                    class="inline-flex items-center bg-white/80 backdrop-blur-sm px-6 py-2.5 rounded-full border border-slate-200/60 shadow-sm">
-                    <li class="inline-flex items-center">
-                        <a href="/"
-                            class="text-xs font-semibold text-slate-500 hover:text-blue-600 transition flex items-center">
-                            <i class="fas fa-home mr-2.5"></i> Beranda
-                        </a>
-                    </li>
+        <div class="max-w-6xl mx-auto px-5 md:px-10">
+            <div class="max-w-6xl mx-auto text-center mb-6 md:mb-10">
+                <x-breadcrumb :items="[]" current="Affiliate" />
+            </div>
 
-                    <li aria-current="page">
-                        <div class="flex items-center">
-                            {{-- Menggunakan mx-4 agar jarak ikon pas dan tidak rapat --}}
-                            <i class="fas fa-chevron-right text-[9px] text-slate-300 mx-4"></i>
-                            <span class="text-xs font-bold text-blue-600 tracking-wide">Program Affiliate</span>
-                        </div>
-                    </li>
-                </ol>
-            </nav>
-        </div>
-
-        <div class="max-w-6xl mx-auto px-10">
-            <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <div class="md:w-1/2" data-aos="fade-right">
                     <span
-                        class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
+                        class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider">
                         🔥 Peluang Cuan Tanpa Modal
                     </span>
-                    <h1 class="text-5xl font-extrabold mt-6 mb-6 leading-tight text-slate-900">
+
+                    {{-- Perubahan: text-3xl di HP, text-5xl di Desktop --}}
+                    <h1
+                        class="text-3xl md:text-5xl font-extrabold mt-4 md:mt-6 mb-4 md:mb-6 leading-tight text-slate-900">
                         Hasilkan Komisi <span class="text-blue-600">10%</span> dari Setiap Klien yang Kamu
                         Rekomendasikan.
                     </h1>
-                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+
+                    {{-- Perubahan: text-base di HP, text-lg di Desktop --}}
+                    <p class="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">
                         Tanpa perlu punya produk, ngoding, atau skill teknis. Cukup rekomendasikan jasa pembuatan
                         website <strong>Cakra Inovasi Digital</strong> ke relasi bisnis kamu. Kami yang handle semuanya,
                         kamu tinggal terima komisi.
                     </p>
 
                     <div class="bg-orange-50 border border-orange-100 rounded-xl p-4 mb-8 inline-block">
-                        <p class="text-sm text-orange-800 font-semibold">
+                        <p class="text-xs md:text-sm text-orange-800 font-semibold">
                             🎁 <span class="font-bold">PROMO:</span> 50 Pendaftar pertama dapat tambahan bonus komisi 5%
                             di closing perdana!
                         </p>
                     </div>
 
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-col sm:flex-row gap-4">
                         <a href="{{ route('affiliate.register') }}"
-                            class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+                            class="bg-blue-600 text-white px-7 py-3.5 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-center">
                             Daftar Sekarang (Gratis)
                         </a>
                         <a href="#cara-kerja"
-                            class="bg-white border-2 border-slate-200 text-slate-600 px-8 py-4 rounded-2xl font-bold hover:bg-slate-50 transition">
+                            class="bg-white border-2 border-slate-200 text-slate-600 px-8 py-4 rounded-2xl font-bold hover:bg-slate-50 transition text-center">
                             Lihat Cara Kerjanya
                         </a>
                     </div>
                 </div>
 
-                <div class="md:w-1/2" data-aos="fade-left">
+                {{-- Sisi Kanan (Ilustrasi/Ikon) --}}
+                <div class="md:w-1/2 w-full mt-10 md:mt-0" data-aos="fade-left">
                     <div class="relative">
+                        {{-- Perubahan: aspect-video di HP agar tidak terlalu tinggi, aspect-square di desktop --}}
                         <div
-                            class="aspect-square bg-emerald-50 rounded-[40px] flex items-center justify-center p-12 relative overflow-hidden">
+                            class="aspect-video md:aspect-square bg-emerald-50 rounded-[30px] md:rounded-[40px] flex items-center justify-center p-8 md:p-12 relative overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-tr from-emerald-100/50 to-transparent"></div>
                             <div class="text-center relative z-10">
                                 <div
-                                    class="w-24 h-24 bg-emerald-500 rounded-3xl flex items-center justify-center text-white text-5xl mx-auto mb-6 shadow-xl shadow-emerald-200 transform rotate-3">
+                                    class="w-16 h-16 md:w-24 md:h-24 bg-emerald-500 rounded-2xl md:rounded-3xl flex items-center justify-center text-white text-3xl md:text-5xl mx-auto mb-4 md:mb-6 shadow-xl shadow-emerald-200 transform rotate-3">
                                     💸
                                 </div>
-                                <h3 class="text-2xl font-bold text-slate-800 mb-2">Pasif Income Nyata</h3>
-                                <p class="text-slate-500 font-medium">"Share link, santai, saldo nambah."</p>
+                                <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Pasif Income Nyata</h3>
+                                <p class="text-slate-500 text-sm md:text-base font-medium">"Share link, santai, saldo
+                                    nambah."</p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +72,7 @@
     </section>
 
     <section id="cara-kerja" class="py-24 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-10">
+        <div class="max-w-6xl mx-auto px-5 md:px-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl font-bold text-slate-900 mb-4">Cara Kerjanya Super Simpel 🚀</h2>
                 <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">
@@ -150,7 +139,7 @@
     </section>
 
     <section class="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div class="max-w-6xl mx-auto px-10 relative z-10">
+        <div class="max-w-6xl mx-auto px-5 md:px-10 relative z-10">
             <div class="flex flex-col md:flex-row items-center gap-16">
                 <div class="md:w-5/12" data-aos="fade-right">
                     <h2 class="text-3xl lg:text-5xl font-bold mb-6">Berapa yang Bisa Kamu Dapatkan? 💰</h2>
@@ -208,7 +197,7 @@
     </section>
 
     <section class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-10">
+        <div class="max-w-6xl mx-auto px-5 md:px-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl font-bold text-slate-900 mb-4">Kenapa Program Ini Menarik?</h2>
                 <p class="text-slate-500 max-w-2xl mx-auto">Sangat cocok untuk Freelancer, Digital Marketer, Mahasiswa,
@@ -249,7 +238,7 @@
     </section>
 
     <section class="py-20 bg-slate-50">
-        <div class="max-w-4xl mx-auto px-10">
+        <div class="max-w-4xl mx-auto px-5 md:px-10">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-slate-900">FAQ (Menghilangkan Keraguan) ❓</h2>
             </div>
@@ -281,7 +270,7 @@
     </section>
 
     <section id="daftar" class="py-24">
-        <div class="max-w-5xl mx-auto px-10">
+        <div class="max-w-5xl mx-auto px-5 md:px-10">
             <div data-aos="zoom-in" data-aos-duration="1000"
                 class="bg-blue-600 rounded-[2.5rem] p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl shadow-blue-900/20">
                 <div

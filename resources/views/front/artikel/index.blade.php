@@ -19,7 +19,7 @@
     {{-- ================================================================
          HERO SECTION
     ================================================================ --}}
-    <section class="relative pt-24 pb-16 bg-white overflow-hidden">
+    <section class="pt-28 md:pt-36 pb-16 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
 
         {{-- Dekoratif Background --}}
         <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -32,19 +32,9 @@
         <div class="max-w-7xl mx-auto px-5 md:px-6 relative z-10">
 
             {{-- Breadcrumb --}}
-            <nav class="flex justify-center mb-8" aria-label="Breadcrumb" data-aos="fade-down">
-                <ol
-                    class="inline-flex items-center bg-white px-5 py-2 rounded-full border border-slate-100 shadow-sm gap-2">
-                    <li>
-                        <a href="/"
-                            class="text-xs font-semibold text-slate-400 hover:text-blue-600 transition flex items-center gap-1.5">
-                            <i class="fa-solid fa-house text-[10px]"></i> Beranda
-                        </a>
-                    </li>
-                    <li><i class="fa-solid fa-chevron-right text-[8px] text-slate-300"></i></li>
-                    <li><span class="text-xs font-bold text-blue-600">Artikel</span></li>
-                </ol>
-            </nav>
+            <div class="max-w-6xl mx-auto text-center mb-10">
+                <x-breadcrumb :items="[]" current="List Artikel" />
+            </div>
 
             {{-- Heading --}}
             <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
