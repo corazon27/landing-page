@@ -70,51 +70,6 @@
     'delay' => '300'
     ],
     ];
-
-    $portfolios = [
-    [
-    'title' => 'Sistem ERP Terintegrasi',
-    'category' => 'Sistem Web',
-    'image' => 'porto-erp.webp',
-    'description' => 'Platform komprehensif untuk mengelola seluruh operasional bisnis, mencakup manajemen keuangan,
-    inventaris, hingga SDM.',
-    'tags' => ['Laravel', 'Tailwind CSS', 'Multi-Modul'],
-    'testimonial' => 'Manajemen data antar divisi kini jauh lebih rapi dan terpusat. Operasional jadi sangat efisien.',
-    // Masukkan class utuh di sini agar Tailwind langsung membacanya
-    'bg_class' => 'bg-blue-50',
-    'border_class' => 'border-blue-100',
-    'text_class' => 'text-blue-700',
-    'hover_class' => 'group-hover:text-blue-600',
-    'delay' => '100'
-    ],
-    [
-    'title' => 'Katalog Produk Digital + WhatsApp',
-    'category' => 'Katalog Digital',
-    'image' => 'porto-katalog.webp',
-    'description' => 'Katalog online responsif dengan kategori produk lengkap dan tombol direct-chat WhatsApp.',
-    'tags' => ['WhatsApp Link', 'Mobile-First'],
-    'testimonial' => 'Pelanggan bisa lihat koleksi barang dari HP kapan saja.',
-    'bg_class' => 'bg-emerald-50',
-    'border_class' => 'border-emerald-100',
-    'text_class' => 'text-emerald-700',
-    'hover_class' => 'group-hover:text-emerald-600',
-    'delay' => '200'
-    ],
-    [
-    'title' => 'Sistem Kasir & Point of Sale (POS)',
-    'category' => 'Kasir / POS',
-    'image' => 'porto-pos.webp',
-    'description' => 'Kasir digital modern dengan manajemen stok real-time, laporan harian, dan dukungan printer
-    thermal.',
-    'tags' => ['Inventory Real-time', 'Mobile First'],
-    'testimonial' => 'Dulu pusing stok hilang, sekarang semua tercatat rapi.',
-    'bg_class' => 'bg-orange-50',
-    'border_class' => 'border-orange-100',
-    'text_class' => 'text-orange-700',
-    'hover_class' => 'group-hover:text-orange-600',
-    'delay' => '300'
-    ],
-    ];
     @endphp
 
     @php
@@ -476,7 +431,7 @@
             </div>
             <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
-                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20soal%20proses%20pembuatan%20website."
+                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin tahu lebih lanjut soal proses pembuatan website.' . $suffix) }}"
                     target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 bg-emerald-500 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm">
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
@@ -488,11 +443,11 @@
 
 
     {{-- ================================================================
-         SECTION 4: PORTOFOLIO
+        SECTION 4: PORTOFOLIO (DINAMIS DATABASE)
     ================================================================ --}}
-    <section id="portofolio" class="py-16 md:py-24 bg-white relative overflow-hidden"
+    <section id="portfolio" class="py-16 md:py-24 bg-slate-50 relative overflow-hidden"
         aria-labelledby="portofolio-heading">
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-100 opacity-40 blur-3xl pointer-events-none"
+        <div class="absolute top-0 rioght-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-100 opacity-40 blur-3xl pointer-events-none"
             aria-hidden="true"></div>
 
         <div class="max-w-7xl mx-auto px-5 lg:px-10 relative z-10">
@@ -511,8 +466,8 @@
                         hingga sistem manajemen yang efisien.
                     </p>
                 </div>
-                <div data-aos="fade-left" class="shrink-0">
-                    <a href="/portofolio"
+                <div class="shrink-0" data-aos="fade-left">
+                    <a href="{{ url('/portofolio') }}"
                         class="group inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-300 rounded-full text-slate-700 font-semibold hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm hover:shadow text-sm">
                         Lihat Semua Proyek
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"
@@ -523,48 +478,94 @@
 
             {{-- Portfolio Grid --}}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                @foreach($portfolios as $porto)
-                <article
-                    class="group flex flex-col bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
-                    data-aos="fade-up" data-aos-delay="{{ $porto['delay'] }}">
+                @foreach($portfolios as $index => $porto)
+                @php
+                // Otomatisasi rotasi warna estetik berdasarkan urutan data agar layout tetap kaya warna
+                $colors = [
+                0 => ['bg' => 'bg-blue-50', 'border' => 'border-blue-100', 'text' => 'text-blue-700', 'hover' =>
+                'group-hover:text-blue-600'],
+                1 => ['bg' => 'bg-emerald-50', 'border' => 'border-emerald-100', 'text' => 'text-emerald-700', 'hover'
+                => 'group-hover:text-emerald-600'],
+                2 => ['bg' => 'bg-orange-50', 'border' => 'border-orange-100', 'text' => 'text-orange-700', 'hover' =>
+                'group-hover:text-orange-600']
+                ];
+                // Jika data lebih dari 3, dia akan mengulang palet warna pertama secara aman
+                $style = $colors[$index % 3];
 
-                    {{-- Bagian Atas / Gambar --}}
-                    <div class="aspect-video {{ $porto['bg_class'] }} rounded-2xl mb-4 overflow-hidden relative">
-                        <img src="{{ asset('storage/portofolio/' . $porto['image']) }}" alt="{{ $porto['title'] }}"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span
-                            class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm">
-                            {{ $porto['category'] }}
-                        </span>
-                    </div>
+                // Hitung delay AOS secara dinamis (100ms, 200ms, 300ms)
+                $delay = ($index % 3 + 1) * 100;
+                @endphp
 
-                    {{-- Bagian Tengah / Teks --}}
-                    <div class="px-2 flex-grow">
-                        <h3
-                            class="text-base md:text-lg font-bold text-slate-900 mb-2 {{ $porto['hover_class'] }} transition-colors">
-                            {{ $porto['title'] }}
-                        </h3>
-                        <p class="text-slate-500 text-sm mb-4 line-clamp-2">
-                            {{ $porto['description'] }}
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            @foreach($porto['tags'] as $tag)
-                            <span class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full font-medium">
-                                {{ $tag }}
+                <a href="{{ url('/portofolio/' . $porto->slug) }}" class="group block h-full focus:outline-none">
+                    <article
+                        class="flex flex-col h-full bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
+                        data-aos="fade-up" data-aos-delay="{{ $delay }}">
+
+                        {{-- Bagian Atas / Gambar Mockup WebP --}}
+                        <div
+                            class="aspect-video {{ $style['bg'] }} rounded-2xl mb-4 overflow-hidden relative border border-slate-100">
+                            @if($porto->gambar)
+                            <img src="{{ asset('storage/portofolio/' . $porto->gambar) }}" alt="{{ $porto->judul }}"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            @else
+                            <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                <i class="fas fa-image text-4xl"></i>
+                            </div>
+                            @endif
+                            <span
+                                class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-xs">
+                                {{ $porto->kategori }}
                             </span>
-                            @endforeach
                         </div>
-                    </div>
 
-                    {{-- Bagian Bawah / Testimonial --}}
-                    <div class="px-2 pb-2">
-                        <blockquote class="{{ $porto['bg_class'] }} border {{ $porto['border_class'] }} p-3 rounded-xl">
-                            <p class="text-sm font-medium {{ $porto['text_class'] }} italic">
-                                "{{ $porto['testimonial'] }}"
+                        {{-- Bagian Tengah / Teks Informasi --}}
+                        <div class="px-2 flex-grow">
+                            <h3
+                                class="text-base md:text-lg font-extrabold text-slate-900 mb-2 {{ $style['hover'] }} transition-colors line-clamp-1">
+                                {{ $porto->judul }}
+                            </h3>
+                            <p class="text-slate-500 text-sm mb-4 line-clamp-2">
+                                {{ $porto->deskripsi_singkat }}
                             </p>
-                        </blockquote>
-                    </div>
-                </article>
+
+                            {{-- Render Tech Stack --}}
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                @if(is_array($porto->tech_stack))
+                                @foreach(array_slice($porto->tech_stack, 0, 3) as $tech)
+                                <span
+                                    class="text-[11px] text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full font-medium">
+                                    {{ $tech }}
+                                </span>
+                                @endforeach
+                                @endif
+                            </div>
+                        </div>
+
+                        {{-- Bagian Bawah / Wrapper untuk Testimoni & Tombol Aksi --}}
+                        <div class="px-2 pb-2 mt-auto space-y-4">
+                            {{-- Testimonial Klien Dinamis --}}
+                            @if($porto->testimoni_konten)
+                            <blockquote class="{{ $style['bg'] }} border {{ $style['border'] }} p-3 rounded-xl">
+                                <p class="text-xs font-semibold {{ $style['text'] }} italic line-clamp-2">
+                                    "{{ $porto->testimoni_konten }}"
+                                </p>
+                            </blockquote>
+                            @endif
+
+                            {{-- Tombol Lihat Detail dengan Micro-Interaction --}}
+                            <div
+                                class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-700 group-hover:text-blue-600 transition-colors">
+                                <span>Lihat Detail Proyek</span>
+                                <span
+                                    class="w-6 h-6 rounded-full bg-slate-50 group-hover:bg-blue-50 flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-all duration-300">
+                                    <i
+                                        class="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-0.5 transition-transform"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                    </article>
+                </a>
                 @endforeach
             </div>
         </div>
@@ -809,7 +810,7 @@
                             teknologi terkini dan terpercaya.</p>
                     </div>
                 </div>
-                <a href="/portofolio"
+                <a href="{{ route('portofolio.index') }}"
                     class="whitespace-nowrap w-full md:w-auto text-center bg-white text-blue-600 px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-50 transition">
                     Lihat Hasil Kerja Kami
                 </a>
@@ -891,7 +892,7 @@
 
             <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
-                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ada%20pertanyaan%20seputar%20jasa%20website%20Anda."
+                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ada pertanyaan seputar jasa website Anda.' . $suffix) }}"
                     target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 bg-emerald-500 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm">
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
@@ -929,13 +930,13 @@
                         solusinya.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20untuk%20pembuatan%20website%20bisnis%20saya."
+                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi untuk pembuatan website bisnis saya.' . $suffix) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 px-8 md:px-10 py-3.5 md:py-4 bg-white text-blue-600 font-bold rounded-xl shadow-lg hover:bg-blue-50 transition text-sm md:text-base">
                             <i class="fa-brands fa-whatsapp text-emerald-500 text-lg" aria-hidden="true"></i>
                             Mulai Konsultasi Sekarang
                         </a>
-                        <a href="/portofolio"
+                        <a href="/portofolio" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 px-8 md:px-10 py-3.5 md:py-4 border-2 border-white/40 text-white font-bold rounded-xl hover:bg-white/10 transition text-sm md:text-base">
                             Lihat Portofolio Kami
                         </a>

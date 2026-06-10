@@ -47,13 +47,25 @@
                         </div>
 
                         <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="block text-sm font-bold text-slate-700">Password</label>
-                                <a href="#" class="text-xs text-blue-600 hover:underline">Lupa Password?</a>
-                            </div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Password</label>
                             <input type="password" name="password" required
                                 class="w-full px-5 py-4 rounded-xl border border-slate-200 focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none transition"
                                 placeholder="Masukkan password kamu">
+                        </div>
+
+                        {{-- BEST PRACTICE: Area Interaksi Tambahan (Remember Me & Lupa Password) --}}
+                        <div class="flex items-center justify-between pt-1">
+                            <label class="flex items-center select-none cursor-pointer group/remember">
+                                <input type="checkbox" name="remember"
+                                    class="w-4 h-4 rounded text-blue-600 border-slate-300 focus:ring-blue-500 cursor-pointer">
+                                <span
+                                    class="ml-2 text-xs font-semibold text-slate-500 group-hover/remember:text-slate-700 transition">Ingat
+                                    Saya</span>
+                            </label>
+                            <a href="{{ route('password.request') }}"
+                                class="text-xs font-bold text-blue-600 hover:text-blue-700 transition hover:underline">
+                                Lupa Password?
+                            </a>
                         </div>
 
                         <button type="submit"

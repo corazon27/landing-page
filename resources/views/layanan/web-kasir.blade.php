@@ -94,7 +94,7 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20ingin%20konsultasi%20sistem%20kasir%20digital%20untuk%20toko%20saya."
+                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra, saya ingin konsultasi sistem kasir digital untuk toko saya.' . $suffix) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
                             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
@@ -458,7 +458,7 @@
 
             <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-3">Bisnis Anda memiliki alur operasional yang unik?</p>
-                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20sistem%20kasir%20custom%20untuk%20bisnis%20saya."
+                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi sistem kasir custom untuk bisnis saya.' . $suffix) }}"
                     target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 text-blue-500 font-semibold hover:underline underline-offset-4 transition text-sm">
                     Mari diskusikan, kami bisa membuatkan fitur secara custom
@@ -648,7 +648,7 @@
                 $plans = [
                 [
                 'title' => 'Skema per Transaksi/Nota',
-                'price' => 'Rp200',
+                'price' => 'Rp75',
                 'unit' => 'Per transaksi/nota',
                 'desc' => 'Paling untung! Biaya transaksi bisa dibebankan ke pelanggan Anda.',
                 'note' => 'Gratis kertas thermal minimal biaya Rp400/transaksi.',
@@ -658,7 +658,7 @@
                 ],
                 [
                 'title' => 'Langganan Versi Handphone',
-                'price' => 'Rp125.000',
+                'price' => 'Rp50.000',
                 'unit' => 'Per bulan, per outlet',
                 'desc' => 'Tampilan praktis, fitur dasar kasir. Cocok untuk usaha kecil/UMKM.',
                 'note' => 'Langganan 12 bulan, gratis 2 bulan tambahan.',
@@ -668,7 +668,7 @@
                 ],
                 [
                 'title' => 'Langganan Versi Tablet',
-                'price' => 'Rp250.000',
+                'price' => 'Rp125.000',
                 'unit' => 'Per bulan, per outlet',
                 'desc' => 'Tampilan lengkap, fitur full access. Ideal buat restoran & kafe.',
                 'note' => 'Langganan 12 bulan, hemat Rp300ribu.',
@@ -678,7 +678,7 @@
                 ],
                 [
                 'title' => 'Langganan Versi Web',
-                'price' => 'Rp250.000',
+                'price' => 'Rp125.000',
                 'unit' => 'Per bulan, per outlet',
                 'desc' => 'Tampilan simpel, cocok buat operasional dari laptop/PC kasir.',
                 'note' => 'Langganan 12 bulan, hemat Rp300ribu.',
@@ -788,7 +788,7 @@
 
             <div class="mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
-                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20ada%20pertanyaan%20seputar%20sistem%20POS%20toko%20digital."
+                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra, saya ada pertanyaan seputar sistem POS toko digital.' . $suffix) }}"
                     target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 bg-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm">
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
@@ -863,7 +863,7 @@
 
             <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
-                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20ada%20pertanyaan%20seputar%20sistem%20POS%20atau%20Kasir%20Digital."
+                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra, saya ada pertanyaan seputar sistem POS atau Kasir Digital.' . $suffix) }}"
                     target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 bg-emerald-500 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm">
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>

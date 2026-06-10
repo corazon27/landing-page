@@ -37,7 +37,7 @@
     $cols = [
     [
     'label' => 'Starter',
-    'sub' => 'Rp 1.800.000',
+    'sub' => 'Rp 2.000.000',
     'note' => 'Biaya setup awal',
     'badge' => null,
     'btn' => 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',

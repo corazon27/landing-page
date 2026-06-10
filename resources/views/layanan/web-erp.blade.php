@@ -40,8 +40,8 @@
     [
     'nama' => 'ERP Starter',
     'tagline' => 'Fondasi digital untuk UMKM yang ingin rapi',
-    'harga' => 'Rp 8jt',
-    'harga_raw' => '8.000.000',
+    'harga' => 'Rp 3,5jt',
+    'harga_raw' => '3.500.000',
     'label' => null,
     'populer' => false,
     'wa_text' => 'Halo%20Cakra%2C%20saya%20tertarik%20Paket%20ERP%20Starter.',
@@ -75,8 +75,8 @@
     [
     'nama' => 'ERP Professional',
     'tagline' => 'Sistem lengkap untuk bisnis yang serius scale-up',
-    'harga' => 'Rp 18jt',
-    'harga_raw' => '18.000.000',
+    'harga' => 'Rp 6jt',
+    'harga_raw' => '6.000.000',
     'label' => 'Paling Populer',
     'populer' => true,
     'wa_text' => 'Halo%20Cakra%2C%20saya%20tertarik%20Paket%20ERP%20Professional.',
@@ -113,7 +113,7 @@
     'tagline' => 'Platform ERP penuh untuk perusahaan besar',
     'harga' => 'Custom',
     'harga_raw' => null,
-    'label' => 'Mulai Rp 35jt',
+    'label' => 'Mulai Rp 10jt',
     'populer' => false,
     'wa_text' => 'Halo%20Cakra%2C%20saya%20ingin%20diskusi%20paket%20Enterprise%20ERP.',
     'btn_style' => 'border-2 border-slate-800 text-slate-800 hover:bg-slate-900 hover:text-white',
@@ -211,7 +211,7 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20pembuatan%20sistem%20ERP%20untuk%20bisnis%20saya."
+                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi pembuatan sistem ERP untuk bisnis saya.' . $suffix) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 rounded-2xl bg-blue-600 text-white font-bold text-sm md:text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
                             <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
@@ -857,7 +857,7 @@
 
             <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
-                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20bertanya%20soal%20sistem%20ERP%20untuk%20bisnis%20saya."
+                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin bertanya soal sistem ERP untuk bisnis saya.' . $suffix) }}"
                     target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 bg-emerald-500 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm">
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>

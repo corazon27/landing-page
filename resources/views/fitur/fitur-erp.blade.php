@@ -36,7 +36,7 @@
     $cols = [
     [
     'label' => 'Starter',
-    'sub' => 'Rp 8.000.000',
+    'sub' => 'Rp 3.500.000',
     'note' => 'Biaya setup awal',
     'badge' => null,
     'btn' => 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
@@ -44,7 +44,7 @@
     ],
     [
     'label' => 'Professional',
-    'sub' => 'Rp 18.000.000',
+    'sub' => 'Rp 6.000.000',
     'note' => 'Biaya setup awal',
     'badge' => 'Paling Populer',
     'badge_bg' => 'bg-amber-400 text-amber-950',
@@ -53,7 +53,7 @@
     ],
     [
     'label' => 'Enterprise',
-    'sub' => 'Mulai Rp 35.000.000',
+    'sub' => 'Mulai Rp 10.000.000',
     'note' => 'Harga sesuai kebutuhan',
     'badge' => null,
     'btn' => 'bg-slate-800 hover:bg-slate-900 text-white',
@@ -120,7 +120,7 @@
     'ring' => 'border border-slate-200',
     'title' => 'ERP Starter',
     'tagline' => 'Fondasi digital untuk UMKM yang ingin rapi',
-    'price' => 'Rp 8.000.000',
+    'price' => 'Rp 3.500.000',
     'price_color' => 'text-slate-900',
     'note' => 'Biaya setup awal — cicil per milestone',
     'perks' => [
@@ -145,7 +145,7 @@
     'ring' => 'border-2 border-blue-600 shadow-2xl shadow-blue-100',
     'title' => 'ERP Professional',
     'tagline' => 'Sistem lengkap untuk bisnis yang serius scale-up',
-    'price' => 'Rp 18.000.000',
+    'price' => 'Rp 6.000.000',
     'price_color' => 'text-blue-600',
     'note' => 'Fitur terlengkap untuk operasional penuh',
     'perks' => [
@@ -164,7 +164,7 @@
     'wa' => 'Paket%20ERP%20Professional',
     ],
     [
-    'badge' => 'Mulai Rp 35jt',
+    'badge' => 'Mulai Rp 10jt',
     'badge_bg' => 'bg-slate-700 text-white',
     'ring' => 'border border-slate-200',
     'title' => 'Enterprise / Korporat',

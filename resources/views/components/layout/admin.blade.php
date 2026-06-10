@@ -22,27 +22,49 @@
                 </h1>
             </div>
 
-            <nav class="flex-1 px-4 space-y-2">
+            <nav class="flex-1 px-4 space-y-2 overflow-y-auto">
                 <a href="{{ route('admin.dashboard') }}"
                     class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.dashboard') ? 'bg-blue-600 text-white' : '' }}">
-                    <i class="fas fa-chart-line"></i> Dashboard
+                    <i class="fas fa-chart-line w-5 text-center"></i> Dashboard
                 </a>
+
                 <a href="{{ route('admin.articles.index') }}"
                     class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.articles.*') ? 'bg-blue-600 text-white' : '' }}">
-                    <i class="fas fa-newspaper"></i> Kelola Artikel
+                    <i class="fas fa-newspaper w-5 text-center"></i> Kelola Artikel
                 </a>
+
                 <a href="{{ route('admin.comments.index') }}"
                     class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.comments.*') ? 'bg-blue-600 text-white' : '' }}">
-                    <i class="fas fa-newspaper"></i> Kelola Komentar
+                    <i class="fas fa-comments w-5 text-center"></i> Kelola Komentar
                 </a>
+
                 <a href="{{ route('admin.cashflow.index') }}"
                     class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.cashflow.*') ? 'bg-blue-600 text-white' : '' }}">
-                    <i class="fas fa-coins"></i> Kelola Arus Kas
+                    <i class="fas fa-coins w-5 text-center"></i> Kelola Arus Kas
                 </a>
-                <div class="pt-4 pb-2 px-4 text-xs font-bold uppercase text-slate-500 tracking-wider">Sistem Affiliasi
+
+                <a href="{{ route('admin.portfolio.index') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.portfolio.*') ? 'bg-blue-600 text-white' : '' }}">
+                    <i class="fas fa-folder-open w-5 text-center"></i> Kelola Portfolio
+                </a>
+
+                <div class="pt-4 pb-2 px-4 text-xs font-bold uppercase text-slate-500 tracking-wider">
+                    Sistem Affiliasi
                 </div>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl opacity-50 cursor-not-allowed">
-                    <i class="fas fa-users"></i> Data Affiliator
+
+                <a href="{{ route('admin.affiliates.index') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.affiliates.*') ? 'bg-blue-600 text-white' : '' }}">
+                    <i class="fas fa-users w-5 text-center"></i> Data Affiliator
+                </a>
+
+                <a href="{{ route('admin.projects.index') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.projects.*') ? 'bg-blue-600 text-white' : '' }}">
+                    <i class="fas fa-briefcase w-5 text-center"></i> Kelola Proyek
+                </a>
+
+                <a href="{{ route('admin.withdrawals.index') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition {{ request()->routeIs('admin.withdrawals.*') ? 'bg-blue-600 text-white' : '' }}">
+                    <i class="fas fa-money-bill-wave w-5 text-center"></i> Kelola Penarikan
                 </a>
             </nav>
 
@@ -51,7 +73,7 @@
                     @csrf
                     <button type="submit"
                         class="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-red-500/10 rounded-xl transition">
-                        <i class="fas fa-sign-out-alt"></i> Keluar Sesi
+                        <i class="fas fa-sign-out-alt w-5 text-center"></i> Keluar Sesi
                     </button>
                 </form>
             </div>
@@ -75,7 +97,6 @@
         </main>
     </div>
     @stack('scripts')
-
 
 </body>
 

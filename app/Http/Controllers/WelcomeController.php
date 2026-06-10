@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\portfolio;
+use Illuminate\Http\Request;
+
+class WelcomeController extends Controller
+{
+    public function index()
+    {
+        // Ambil 3 portfolio terbaru dari database
+        $portfolios = portfolio::latest()->take(3)->get();
+
+        // Kirim data ke view welcome
+        return view('welcome', compact('portfolios'));
+    }
+}

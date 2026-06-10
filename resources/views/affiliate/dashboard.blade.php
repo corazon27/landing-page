@@ -15,7 +15,8 @@
                 <span class="bg-emerald-50 text-emerald-600 text-xs font-bold px-3 py-1 rounded-full">+12%</span>
             </div>
             <p class="text-slate-500 text-sm font-medium">Total Komisi</p>
-            <h3 class="text-3xl font-extrabold text-slate-900 mt-1">Rp 1.250.000</h3>
+            <h3 class="text-3xl font-extrabold text-slate-900 mt-1">Rp {{ number_format($totalKomisi, 0, ',', '.') }}
+            </h3>
         </div>
 
         <!-- Card Klik (Baru) -->
@@ -24,7 +25,7 @@
                 <i class="fas fa-mouse-pointer text-orange-600"></i>
             </div>
             <p class="text-slate-500 text-sm font-medium">Total Klik Link</p>
-            <h3 class="text-3xl font-extrabold text-slate-900 mt-1">2,450</h3>
+            <h3 class="text-3xl font-extrabold text-slate-900 mt-1">{{ number_format($totalKlik, 0, ',', '.') }}</h3>
         </div>
 
         <!-- Card Referral Aktif (Baru) -->
@@ -33,8 +34,8 @@
                 <i class="fas fa-users text-purple-600"></i>
             </div>
             <p class="text-slate-500 text-sm font-medium">Referral Bergabung</p>
-            <h3 class="text-3xl font-extrabold text-slate-900 mt-1">128 <span
-                    class="text-sm font-normal text-slate-400">User</span></h3>
+            <h3 class="text-3xl font-extrabold text-slate-900 mt-1">{{ $totalProyek }} <span
+                    class="text-sm font-normal text-slate-400">Proyek</span></h3>
         </div>
     </div>
 

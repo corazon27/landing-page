@@ -136,7 +136,7 @@
                             Eksplorasi Semua Layanan
                             <i class="fa-solid fa-arrow-down text-sm"></i>
                         </a>
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20mengenai%20layanan%20website%20yang%20cocok%20untuk%20bisnis%20saya."
+                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi mengenai layanan website yang cocok untuk bisnis saya.' . $suffix) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center sm:justify-start gap-2 bg-white border-2 border-slate-200 text-slate-700 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold hover:bg-slate-50 transition">
                             <i class="fa-brands fa-whatsapp text-emerald-500"></i>
@@ -430,15 +430,15 @@
                         pertama gratis, tanpa syarat.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20mau%20konsultasi%20untuk%20memilih%20layanan%20website%20yang%20paling%20tepat%20untuk%20bisnis%20saya."
+                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya mau konsultasi untuk memilih layanan website yang paling tepat untuk bisnis saya.' . $suffix) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 font-bold rounded-xl shadow-lg hover:bg-blue-50 transition text-sm sm:text-base">
                             <i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i>
                             Konsultasi Gratis via WhatsApp
                         </a>
-                        <a href="/portofolio"
+                        <a href="/portofolio" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/40 text-white font-bold rounded-xl hover:bg-white/10 transition text-sm sm:text-base">
-                            Lihat Portofolio Kami
+                            Lihat portofolio Kami
                         </a>
                     </div>
                 </div>

@@ -5,29 +5,43 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Models\AffiliateUser;
+use Illuminate\Support\Facades\Cookie;
 
 class TrackAffiliate
 {
     public function handle(Request $request, Closure $next): Response
     {
-        // 1. Ambil kode referral (dari URL atau dari Cookie yang sudah ada)
         $referralCode = $request->query('ref') ?: $request->cookie('affiliate_ref');
-
-        // 2. Siapkan variabel suffix untuk WhatsApp
         $suffix = $referralCode ? " (ID Affiliator: $referralCode)" : "";
-        
-        // 3. Bagikan ke seluruh View Blade (termasuk welcome dan layout)
         view()->share('suffix', $suffix);
 
-        // 4. Lanjutkan request
         $response = $next($request);
 
-        // 5. Jika ada parameter 'ref' di URL, pasangkan/perbarui Cookie di response
         if ($request->has('ref')) {
-            $response->cookie('affiliate_ref', $request->query('ref'), 43200);
+            $ref = $request->query('ref');
+            
+            // 1. Cek apakah user ini sudah pernah dihitung kliknya dalam sesi ini?
+            // Kita cek keberadaan cookie khusus 'counted_click'
+            $hasBeenCounted = $request->cookie('counted_click_' . $ref);
+
+            if (!$hasBeenCounted) {
+                $affiliator = AffiliateUser::where('referral_code', $ref)->first();
+                
+                if ($affiliator) {
+                    // 2. Tambah klik hanya jika belum dihitung sebelumnya
+                    $affiliator->increment('clicks');
+
+                    // 3. Pasang cookie pengaman selama 24 jam (1440 menit)
+                    // Agar refresh berulang kali tidak menambah angka klik
+                    $response->cookie('counted_click_' . $ref, 'true', 1440);
+                }
+            }
+
+            // Tetap simpan/perbarui cookie utama untuk keperluan suffix WhatsApp
+            $response->cookie('affiliate_ref', $ref, 43200);
         }
 
         return $response;
     }
-    
 }

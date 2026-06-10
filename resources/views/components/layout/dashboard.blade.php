@@ -39,6 +39,20 @@
                     <span x-show="sidebarOpen" class="font-medium text-sm">Dashboard</span>
                 </a>
 
+                <a href="{{ route('affiliate.riwayat') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl transition 
+   {{ request()->routeIs('affiliate.riwayat') ? 'bg-blue-50 text-blue-600 border-r-4 border-blue-600' : 'text-slate-500 hover:bg-slate-50' }}">
+                    <i class="fa-solid fa-wallet w-5 text-center"></i>
+                    <span x-show="sidebarOpen" class="font-medium text-sm">Riwayat Komisi</span>
+                </a>
+
+                <a href="{{ route('affiliate.withdraw') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl transition 
+   {{ request()->routeIs('affiliate.withdraw') ? 'bg-blue-50 text-blue-600 border-r-4 border-blue-600' : 'text-slate-500 hover:bg-slate-50' }}">
+                    <i class="fa-solid fa-money-bill-transfer w-5 text-center"></i>
+                    <span x-show="sidebarOpen" class="font-medium text-sm">Tarik Komisi</span>
+                </a>
+
                 <a href="{{ route('affiliate.settings') }}"
                     class="flex items-center gap-3 px-4 py-3 rounded-xl transition 
    {{ request()->routeIs('affiliate.settings*') ? 'bg-blue-50 text-blue-600 border-r-4 border-blue-600' : 'text-slate-500 hover:bg-slate-50' }}">

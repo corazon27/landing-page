@@ -128,7 +128,7 @@
     'tagline' => 'Untuk distributor, supplier & B2B skala besar',
     'harga' => 'Custom',
     'harga_raw' => null,
-    'label' => 'Mulai Rp 7jt',
+    'label' => 'Mulai Rp 6jt',
     'populer' => false,
     'wa_text' => 'Halo%20Cakra%2C%20saya%20ingin%20diskusi%20Paket%20Katalog%20Enterprise.',
     'btn_style' => 'border-2 border-slate-800 text-slate-800 hover:bg-slate-900 hover:text-white',
@@ -232,7 +232,7 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20pembuatan%20website%20katalog%20produk%20untuk%20bisnis%20saya."
+                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi pembuatan website katalog produk untuk bisnis saya.' . $suffix) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 rounded-2xl bg-emerald-600 text-white font-bold text-sm md:text-base hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-200">
                             <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
@@ -575,7 +575,7 @@
             <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-3">Produk Anda tidak ada di atas tapi tetap ingin punya katalog
                     digital?</p>
-                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20konsultasi%20katalog%20digital%20untuk%20bisnis%20saya."
+                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi katalog digital untuk bisnis saya.' . $suffix) }}"
                     target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:underline underline-offset-4 transition text-sm">
                     Ceritakan kebutuhan Anda — kami carikan solusinya
@@ -920,7 +920,7 @@
 
             <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
                 <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
-                <a href="https://wa.me/6285865405330?text=Halo%20Cakra%20Inovasi%20Digital%2C%20saya%20ingin%20bertanya%20soal%20pembuatan%20katalog%20digital."
+                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin bertanya soal pembuatan katalog digital.' . $suffix) }}"
                     target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 bg-emerald-500 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm">
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>

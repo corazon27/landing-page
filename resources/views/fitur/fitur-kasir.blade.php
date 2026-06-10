@@ -104,15 +104,15 @@
 
                             @php
                             $cols = [
-                            ['label' => 'Per Transaksi', 'sub' => 'Rp 200 / nota', 'badge' => 'Favorit', 'badge_bg' =>
+                            ['label' => 'Per Transaksi', 'sub' => 'Rp 75 / nota', 'badge' => 'Favorit', 'badge_bg' =>
                             'bg-emerald-500', 'btn' => 'bg-emerald-500 hover:bg-emerald-600 text-white', 'wa' =>
                             'Skema%20Per%20Transaksi'],
-                            ['label' => 'Versi HP', 'sub' => 'Rp 125rb / bulan', 'badge' => null, 'btn' => 'bg-slate-800
+                            ['label' => 'Versi HP', 'sub' => 'Rp 50rb / bulan', 'badge' => null, 'btn' => 'bg-slate-800
                             hover:bg-slate-900 text-white', 'wa' => 'Versi%20HP'],
-                            ['label' => 'Versi Tablet', 'sub' => 'Rp 250rb / bulan', 'badge' => 'Paling Laris',
+                            ['label' => 'Versi Tablet', 'sub' => 'Rp 125rb / bulan', 'badge' => 'Paling Laris',
                             'badge_bg' => 'bg-emerald-500', 'btn' => 'bg-emerald-500 hover:bg-emerald-600 text-white',
                             'wa' => 'Versi%20Tablet'],
-                            ['label' => 'Versi Web', 'sub' => 'Rp 250rb / bulan', 'badge' => null, 'btn' =>
+                            ['label' => 'Versi Web', 'sub' => 'Rp 125rb / bulan', 'badge' => null, 'btn' =>
                             'bg-slate-800 hover:bg-slate-900 text-white', 'wa' => 'Versi%20Web'],
                             ];
                             @endphp
@@ -237,18 +237,18 @@
             @php
             $cards = [
             ['badge' => 'Favorit', 'badge_bg' => 'bg-emerald-500', 'ring' => 'border-2 border-emerald-300', 'title' =>
-            'Per Transaksi', 'price' => 'Rp 200', 'unit' => '/ transaksi', 'price_color' => 'text-emerald-600', 'perks'
+            'Per Transaksi', 'price' => 'Rp 75', 'unit' => '/ transaksi', 'price_color' => 'text-emerald-600', 'perks'
             => ['Input POS & Cetak Struk', 'Manajemen Stok Otomatis', 'Garansi Bug & Error', 'Backup Harian'], 'btn' =>
             'bg-emerald-500 hover:bg-emerald-600 text-white', 'wa' => 'Skema%20Per%20Transaksi'],
-            ['badge' => null, 'ring' => 'border border-slate-200', 'title' => 'Versi HP', 'price' => 'Rp 125.000',
+            ['badge' => null, 'ring' => 'border border-slate-200', 'title' => 'Versi HP', 'price' => 'Rp 50.000',
             'unit' => '/ bulan / outlet', 'price_color' => 'text-slate-900', 'perks' => ['Semua Fitur Operasional',
             'Sistem Pembayaran Fleksibel', 'Video Tutorial', 'Konsultasi Teknis'], 'btn' => 'border-2 border-slate-800
             text-slate-800 hover:bg-slate-800 hover:text-white', 'wa' => 'Versi%20HP'],
             ['badge' => 'Paling Laris', 'badge_bg' => 'bg-emerald-500', 'ring' => 'border-2 border-emerald-300', 'title'
-            => 'Versi Tablet', 'price' => 'Rp 250.000', 'unit' => '/ bulan / outlet', 'price_color' =>
+            => 'Versi Tablet', 'price' => 'Rp 125.000', 'unit' => '/ bulan / outlet', 'price_color' =>
             'text-emerald-600', 'perks' => ['Laporan Laba Rugi Real-time', 'Ekspor Excel', 'Multi-Kasir', 'Backup
             Real-time'], 'btn' => 'bg-emerald-500 hover:bg-emerald-600 text-white', 'wa' => 'Versi%20Tablet'],
-            ['badge' => null, 'ring' => 'border border-slate-200', 'title' => 'Versi Web', 'price' => 'Rp 250.000',
+            ['badge' => null, 'ring' => 'border border-slate-200', 'title' => 'Versi Web', 'price' => 'Rp 125.000',
             'unit' => '/ bulan / outlet', 'price_color' => 'text-slate-900', 'perks' => ['Laporan Laba Rugi Real-time',
             'Ekspor Excel', 'Dari Laptop / PC', 'Backup Real-time'], 'btn' => 'border-2 border-slate-800 text-slate-800
             hover:bg-slate-800 hover:text-white', 'wa' => 'Versi%20Web'],

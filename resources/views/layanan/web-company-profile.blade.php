@@ -12,7 +12,7 @@
 
     $faqsData = [
     ['question' => 'Apa perbedaan website company profile dengan website biasa?', 'answer' => 'Website company profile
-    dirancang khusus untuk membangun kredibilitas dan kepercayaan — menampilkan profil perusahaan, layanan, portofolio,
+    dirancang khusus untuk membangun kredibilitas dan kepercayaan — menampilkan profil perusahaan, layanan, portfolio,
     dan kontak secara profesional. Berbeda dengan toko online yang fokus pada transaksi, company profile fokus pada
     konversi prospek menjadi klien.'],
     ['question' => 'Apakah saya bisa update konten website sendiri?', 'answer' => 'Ya. Anda mendapatkan Dashboard Admin
@@ -66,7 +66,7 @@
     ],
     'fitur_tidak' => [
     'Halaman blog / artikel',
-    'Portofolio proyek detail',
+    'Portfolio proyek detail',
     'Live chat widget',
     'Integrasi Google Analytics',
     'Animasi & interaksi premium',
@@ -87,7 +87,7 @@
     'Hingga 10 halaman dinamis',
     'Desain premium dengan animasi scroll',
     'Halaman layanan detail per item',
-    'Portofolio / galeri proyek + filter kategori',
+    'Portfolio / galeri proyek + filter kategori',
     'Halaman blog / artikel SEO-friendly',
     'Formulir kontak + notifikasi email & WA',
     'Tombol WhatsApp + live chat widget',
@@ -114,7 +114,7 @@
     'tagline' => 'Untuk perusahaan besar dengan kebutuhan kustom',
     'harga' => 'Custom',
     'harga_raw' => null,
-    'label' => 'Mulai Rp 7jt',
+    'label' => 'Mulai Rp 6jt',
     'populer' => false,
     'wa_text' => 'Halo%20Cakra%2C%20saya%20ingin%20diskusi%20paket%20Enterprise%20Company%20Profile.',
     'btn_style' => 'border-2 border-slate-800 text-slate-800 hover:bg-slate-900 hover:text-white',
@@ -302,7 +302,7 @@
                                     Kami</div>
                                 <div
                                     class="px-3 py-1.5 bg-white/20 rounded-lg text-[9px] font-semibold text-white border border-white/30">
-                                    Lihat Portofolio</div>
+                                    Lihat Portfolio</div>
                             </div>
                         </div>
 
@@ -358,7 +358,7 @@
                                 'text-emerald-400 bg-emerald-400/10'],
                                 ['icon' => 'fa-briefcase', 'name' => 'Layanan Kami', 'status' => 'Publik', 'color' =>
                                 'text-emerald-400 bg-emerald-400/10'],
-                                ['icon' => 'fa-images', 'name' => 'Portofolio', 'status' => 'Publik', 'color' =>
+                                ['icon' => 'fa-images', 'name' => 'Portfolio', 'status' => 'Publik', 'color' =>
                                 'text-emerald-400 bg-emerald-400/10'],
                                 ['icon' => 'fa-newspaper', 'name' => 'Blog & Artikel', 'status' => 'Draft', 'color' =>
                                 'text-amber-400 bg-amber-400/10'],
@@ -459,7 +459,7 @@
                             <li class="flex items-start gap-3 text-sm text-red-500 italic font-medium">
                                 <i class="fa-solid fa-circle-dot text-[8px] mt-2 text-red-300 shrink-0"
                                     aria-hidden="true"></i>
-                                Portofolio dan prestasi kerja keras Anda tidak punya panggung yang layak untuk
+                                Portfolio dan prestasi kerja keras Anda tidak punya panggung yang layak untuk
                                 ditampilkan.
                             </li>
                         </ul>
@@ -497,7 +497,7 @@
                             </li>
                             <li class="flex items-start gap-3 text-sm text-white font-bold">
                                 <i class="fa-solid fa-circle-check text-blue-200 mt-1 shrink-0" aria-hidden="true"></i>
-                                Portofolio dan pencapaian terbaik Anda tampil di panggung digital yang bisa dilihat
+                                Portfolio dan pencapaian terbaik Anda tampil di panggung digital yang bisa dilihat
                                 seluruh dunia.
                             </li>
                         </ul>
@@ -532,7 +532,7 @@
             ['icon' => 'fa-solid fa-building', 'color' => 'blue', 'label' => 'Perusahaan & Korporasi', 'desc' =>
             'Membangun citra profesional untuk tender, profil pemegang saham, dan struktur organisasi.'],
             ['icon' => 'fa-solid fa-helmet-safety', 'color' => 'orange', 'label' => 'Kontraktor & Konstruksi', 'desc' =>
-            'Menampilkan portofolio proyek yang telah selesai, daftar alat berat, dan sertifikasi keamanan.'],
+            'Menampilkan portfolio proyek yang telah selesai, daftar alat berat, dan sertifikasi keamanan.'],
             ['icon' => 'fa-solid fa-briefcase-medical', 'color' => 'emerald', 'label' => 'Klinik & Tenaga Medis', 'desc'
             => 'Informasi jadwal dokter, fasilitas layanan kesehatan, dan edukasi pasien secara online.'],
             ['icon' => 'fa-solid fa-graduation-cap', 'color' => 'indigo', 'label' => 'Institusi Pendidikan', 'desc' =>
@@ -629,7 +629,7 @@
                     dengan struktur heading yang benar, meta tag, schema markup, kecepatan loading, dan sitemap otomatis
                     agar Google mudah mengindeks bisnis Anda.<br><strong>Manfaat:</strong> Bisnis Anda ditemukan calon
                     klien yang sedang aktif mencari layanan Anda di Google — traffic organik tanpa biaya iklan.'],
-                    [3, 'fa-images', 'Portofolio & Galeri Proyek yang Memukau', 'Tampilkan portofolio terbaik Anda dalam
+                    [3, 'fa-images', 'Portfolio & Galeri Proyek yang Memukau', 'Tampilkan portfolio terbaik Anda dalam
                     galeri visual yang terorganisir dengan filter kategori. Setiap proyek bisa dilengkapi foto,
                     deskripsi, dan hasil yang dicapai.<br><strong>Manfaat:</strong> Bukti nyata kualitas kerja Anda
                     berbicara lebih keras dari seribu kata — konversi calon klien lebih tinggi.'],

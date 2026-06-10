@@ -3,15 +3,20 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\frontArtikelController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\WelcomeController;
 
 // rute admin
 use App\Http\Controllers\Admin\LoginController as AdminLogin;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Admin\ArticleController as AdminArticle;
 use App\Http\Controllers\Admin\CashFlowController as AdminCashFlow;
-
+use App\Http\Controllers\Admin\ProjectController as AdminProject;
+use App\Http\Controllers\Admin\AffiliateAdminController as AdminAffiliate;
+use App\Http\Controllers\Admin\PortfolioController as AdminPortfolioController;
 // rute affiliate
 use App\Http\Controllers\Affiliate\RegisterController;
+use App\Http\Controllers\Affiliate\ForgotPasswordController;
 use App\Http\Controllers\Affiliate\LoginController;
 use App\Http\Controllers\Affiliate\DashboardController;
 use App\Http\Controllers\Affiliate\SettingsController;
@@ -24,7 +29,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
 // --- GUEST ROUTES (PUBLIC) ---
-Route::get('/', function () { return view('welcome'); })->name('home');
+ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/tentang', function () { return view('about'); })->name('about');
 Route::get('/layanan', function () { return view('services'); })->name('services');
 Route::get('/hubungi-kami', function () { return view('kontak'); })->name('kontak');
@@ -45,7 +50,8 @@ Route::prefix('layanan')->name('layanan.')->group(function () {
 });
 
 Route::get('/affiliate', function () { return view('affiliate'); })->name('affiliate');
-Route::get('/portofolio', function () { return view('portofolio'); })->name('portofolio');
+Route::get('/portofolio', [PortfolioController::class, 'index'])->name('portofolio.index');
+Route::get('/portofolio/{slug}', [PortfolioController::class, 'show'])->name('portofolio.show');
 Route::get('/tanya-jawab', function () { return view('faq'); })->name('faq');
 
 // --- AFFILIATE AUTH (GUEST ONLY) ---
@@ -54,9 +60,15 @@ Route::middleware('guest:affiliate')->group(function () {
     Route::post('/affiliate/register', [RegisterController::class, 'store'])->name('affiliate.register.store');
     Route::get('/affiliate/login', function() { 
         return view('affiliate.login'); 
-    })->name('affiliate.login')->name('login'); 
+    })->name('affiliate.login'); 
     
     Route::post('/affiliate/login', [LoginController::class, 'login'])->name('affiliate.login.post');
+    Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+    Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+    // Jalur Eksekusi Pembuatan Password Baru
+    Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
+    Route::post('reset-password', [ForgotPasswordController::class, 'resetPassword'])->name('password.update');
 });
 
 // --- 1. EMAIL VERIFICATION ROUTES ---
@@ -86,6 +98,9 @@ Route::prefix('affiliate')->name('affiliate.')->group(function () {
     
     Route::middleware(['auth:affiliate', 'verified'])->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/riwayat', [DashboardController::class, 'riwayat'])->name('riwayat');
+        Route::get('/withdraw', [DashboardController::class, 'withdrawPage'])->name('withdraw');
+        Route::post('/withdraw', [DashboardController::class, 'processWithdraw'])->name('withdraw-store');
         Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
         Route::post('/settings', [SettingsController::class, 'update'])->name('settings.update');
     });
@@ -117,7 +132,7 @@ Route::middleware(['auth:admin'])->prefix('management-center')->group(function (
         'update'  => 'admin.articles.update',
         'destroy' => 'admin.articles.destroy',
     ])->parameters([
-        'articles' => 'id' // Agar tetap menggunakan {id} sesuai controller Anda
+        'articles' => 'id'
     ]);
 
     Route::get('/comments', [CommentController::class, 'index'])->name('admin.comments.index');
@@ -126,6 +141,43 @@ Route::middleware(['auth:admin'])->prefix('management-center')->group(function (
     // Route untuk menampilkan halaman (Ini yang menyebabkan 404 jika belum ada)
     Route::get('/admin/comments/{id}/reply', [CommentController::class, 'reply'])->name('admin.comments.reply');
     Route::post('/admin/comments/{id}/reply', [CommentController::class, 'storeReply'])->name('admin.comments.storeReply');
+    //data affiliator
+    Route::resource('affiliates', AdminAffiliate::class )->names([
+        'index' => 'admin.affiliates.index',
+        'create' => 'admin.affiliates.create',
+        'store' => 'admin.affiliates.store',
+        'show' => 'admin.affiliates.show',
+        'destroy' => 'admin.affiliates.destroy',
+    ])->parameters([
+        'affiliates' => 'id'
+    ]);
+    
+    // Route untuk proyek yang sudah oke tadi
+    Route::resource('projects', AdminProject::class)->names([
+        'index' => 'admin.projects.index',
+        'create' => 'admin.projects.create',
+        'store' => 'admin.projects.store',
+        'edit' => 'admin.projects.edit',
+        'update' => 'admin.projects.update',
+        'destroy' => 'admin.projects.destroy',
+    ])->parameters([
+        'projects' => 'id'
+    ]);
+
+    Route::resource('portfolio', AdminPortfolioController::class)->names([
+        'index' => 'admin.portfolio.index',
+        'create' => 'admin.portfolio.create',
+        'store' => 'admin.portfolio.store',
+        'edit' => 'admin.portfolio.edit',
+        'update' => 'admin.portfolio.update',
+        'destroy' => 'admin.portfolio.destroy',
+    ])->parameters([
+        'portfolio' => 'id'
+    ]);
+
+    Route::get('withdrawals', [AdminAffiliate::class, 'indexWithdrawals'])->name('admin.withdrawals.index');
+    Route::post('withdrawals/{id}/approve', [AdminAffiliate::class, 'approve'])->name('admin.withdrawals.approve');
+    Route::post('withdrawals/{id}/reject', [AdminAffiliate::class, 'reject'])->name('admin.withdrawals.reject');
     Route::post('/logout', [AdminLogin::class, 'logout'])->name('admin.logout');
 });
 
