@@ -10,7 +10,7 @@ class PortfolioController extends Controller
     public function index()
     {
         // Ambil semua data portfolio untuk galeri utama
-        $portfolios = portfolio::latest()->get();
+        $portfolios = Portfolio::latest()->get();
 
         // Hitung total data untuk keperluan Schema ItemList Google secara dinamis
         $totalItems = $portfolios->count();
@@ -21,7 +21,7 @@ class PortfolioController extends Controller
     public function show($slug)
     {
         // Cari portfolio berdasarkan slug, jika tidak ada langsung lempar ke 404
-        $portfolio = portfolio::where('slug', $slug)->firstOrFail();
+        $portfolio = Portfolio::where('slug', $slug)->firstOrFail();
 
         // Pastikan kolom JSON di-decode jika belum dikonfigurasi cast di Model
         // Jika di Model portfolio sudah ada protected $casts = ['tech_stack' => 'array', ...], baris di bawah ini tidak perlu.

@@ -13,7 +13,7 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        $portfolios = portfolio::latest()->paginate(10);
+        $portfolios = Portfolio::latest()->paginate(10);
         return view('admin.portfolio.index', compact('portfolios'));
     }
 
@@ -74,13 +74,13 @@ class PortfolioController extends Controller
 
     public function edit($id)
     {
-        $portfolio = portfolio::findOrFail($id);
+        $portfolio = Portfolio::findOrFail($id);
         return view('admin.portfolio.edit', compact('portfolio'));
     }
 
     public function update(Request $request, $id)
     {
-        $portfolio = portfolio::findOrFail($id);
+        $portfolio = Portfolio::findOrFail($id);
 
         // Validasi opsional untuk gambar saat update
         $request->validate([
@@ -114,7 +114,7 @@ class PortfolioController extends Controller
 
     public function destroy($id)
     {
-        $portfolio = portfolio::findOrFail($id);
+        $portfolio = Portfolio::findOrFail($id);
         
         // Hapus file gambar fisik agar tidak memenuhi memori server
         if ($portfolio->gambar) {
