@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\portfolio;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
