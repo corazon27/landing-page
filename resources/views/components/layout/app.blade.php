@@ -188,7 +188,7 @@
     {{-- ============================================================
          FAVICON & PRECONNECT
     ============================================================ --}}
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-cakra.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo-cakra.webp') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preload" as="image" href="{{ $ogImage ?? asset('images/og-image.png') }}">
