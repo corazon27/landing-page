@@ -17,6 +17,7 @@ $faqSchema = [
 'mainEntity' => $schemaItems,
 ];
 @endphp
+
 <script type="application/ld+json">
 {
     !!json_encode($faqSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!
