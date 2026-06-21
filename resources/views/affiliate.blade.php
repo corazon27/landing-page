@@ -1,28 +1,30 @@
 <x-layout.app>
 
     {{-- Header & Breadcrumbs Section --}}
-    <section class="pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
+    <section class="relative pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
 
-        <div class="max-w-6xl mx-auto px-5 md:px-10">
+        <div class="absolute inset-0 hidden md:block bg-cover bg-right bg-no-repeat pointer-events-none z-0"
+            style="background-image: url('{{ asset('images/hero-affiliate.webp') }}');">
+        </div>
+
+        <div class="max-w-6xl mx-auto px-5 md:px-10 relative z-10">
             <div class="max-w-6xl mx-auto text-center mb-6 md:mb-10">
                 <x-breadcrumb :items="[]" current="Affiliate" />
             </div>
 
             <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                <div class="md:w-1/2" data-aos="fade-right">
+                <div class="w-full md:w-1/2 z-10" data-aos="fade-right">
                     <span
                         class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider">
                         🔥 Peluang Cuan Tanpa Modal
                     </span>
 
-                    {{-- Perubahan: text-3xl di HP, text-5xl di Desktop --}}
                     <h1
                         class="text-3xl md:text-5xl font-extrabold mt-4 md:mt-6 mb-4 md:mb-6 leading-tight text-slate-900">
                         Hasilkan Komisi <span class="text-blue-600">10%</span> dari Setiap Klien yang Kamu
                         Rekomendasikan.
                     </h1>
 
-                    {{-- Perubahan: text-base di HP, text-lg di Desktop --}}
                     <p class="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">
                         Tanpa perlu punya produk, ngoding, atau skill teknis. Cukup rekomendasikan jasa pembuatan
                         website <strong>Cakra Inovasi Digital</strong> ke relasi bisnis kamu. Kami yang handle semuanya,
@@ -48,24 +50,17 @@
                     </div>
                 </div>
 
-                {{-- Sisi Kanan (Ilustrasi/Ikon) --}}
-                <div class="md:w-1/2 w-full mt-10 md:mt-0" data-aos="fade-left">
-                    <div class="relative">
-                        {{-- Perubahan: aspect-video di HP agar tidak terlalu tinggi, aspect-square di desktop --}}
-                        <div
-                            class="aspect-video md:aspect-square bg-emerald-50 rounded-[30px] md:rounded-[40px] flex items-center justify-center p-8 md:p-12 relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-emerald-100/50 to-transparent"></div>
-                            <div class="text-center relative z-10">
-                                <div
-                                    class="w-16 h-16 md:w-24 md:h-24 bg-emerald-500 rounded-2xl md:rounded-3xl flex items-center justify-center text-white text-3xl md:text-5xl mx-auto mb-4 md:mb-6 shadow-xl shadow-emerald-200 transform rotate-3">
-                                    💸
-                                </div>
-                                <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">Pasif Income Nyata</h3>
-                                <p class="text-slate-500 text-sm md:text-base font-medium">"Share link, santai, saldo
-                                    nambah."</p>
-                            </div>
+                <div class="w-full md:w-1/2" data-aos="fade-left">
+                    <div
+                        class="block md:hidden w-full rounded-[24px] overflow-hidden bg-gradient-to-tr from-slate-50 to-blue-50/50 p-3 border border-slate-100">
+                        <div class="w-full overflow-hidden rounded-[18px]">
+                            <img src="{{ asset('images/hero-affiliate.webp') }}"
+                                class="w-full h-auto object-cover object-right scale-125 origin-right transform translate-x-[-5%]"
+                                alt="Program Affiliate Cakra Inovasi Digital">
                         </div>
                     </div>
+
+                    <div class="hidden md:block h-[480px] lg:h-[580px] pointer-events-none"></div>
                 </div>
             </div>
         </div>

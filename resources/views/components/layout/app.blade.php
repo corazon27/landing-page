@@ -211,6 +211,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+    /* Definisikan family secara global atau di tailwind.config.js */
+    .font-heading {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    </style>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles

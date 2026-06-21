@@ -185,7 +185,14 @@
     {{-- ================================================================
      SECTION 1: HERO
 ================================================================ --}}
-    <section class="pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
+    <section class="relative pt-32 pb-20 bg-white overflow-hidden">
+
+        {{-- LAYER BACKGROUND AI - Dibuat "Tegas" dengan menghilangkan overlay putih --}}
+        <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0
+            bg-[length:100%_auto] bg-[position:center_bottom]
+            lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
+            style="background-image: url('{{ asset('images/hero-company.webp') }}');">
+        </div>
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
             <div class="max-w-6xl mx-auto text-center mb-10">
@@ -200,9 +207,20 @@
                             class="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-3 md:mb-4">
                             Website Company Profile
                         </span>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                        <!-- <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
                             Jadikan Website Anda<br class="hidden sm:block">
                             <span class="text-blue-600">Sales Terbaik</span> yang Bekerja 24 Jam
+                            <span class="absolute -bottom-2 left-0 w-full h-1 bg-emerald-400 rounded-full"
+                                aria-hidden="true"></span>
+                        </h1> -->
+                        <h1 id="hero-heading"
+                            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-5 mb-5 leading-tight text-slate-950 font-heading">
+                            Jadikan Website Anda<br class="hidden sm:block">
+                            <span class="relative inline-block">
+                                <span class="text-blue-600">Sales Terbaik</span> yang Bekerja 24 Jam
+                                <span class="absolute -bottom-2 left-0 w-full h-1 bg-emerald-400 rounded-full"
+                                    aria-hidden="true"></span>
+                            </span>
                         </h1>
                         <p class="mt-4 md:mt-5 text-base md:text-lg text-slate-600 leading-relaxed">
                             Calon klien Anda <em>menilai profesionalisme bisnis Anda</em> dari website sebelum
@@ -254,153 +272,7 @@
                     </div>
                 </div>
 
-                {{-- Kolom Mockup Dashboard Company Profile --}}
-                <div class="relative" data-aos="fade-left">
 
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-indigo-50 to-slate-100 rounded-[3rem] blur-3xl opacity-60 scale-110"
-                        aria-hidden="true"></div>
-
-                    <div
-                        class="relative z-10 bg-slate-900 rounded-[2rem] shadow-2xl overflow-hidden border border-slate-700/50">
-
-                        {{-- Topbar --}}
-                        <div
-                            class="bg-slate-800 px-5 py-3.5 flex items-center justify-between border-b border-slate-700/60">
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
-                            </div>
-                            <div class="flex items-center gap-1.5 bg-slate-700/60 rounded-lg px-3 py-1">
-                                <i class="fa-solid fa-lock text-slate-400 text-[9px]" aria-hidden="true"></i>
-                                <span class="text-[10px] text-slate-400 font-mono">perusahaan-anda.com</span>
-                            </div>
-                            <div class="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
-                                <span class="text-[8px] font-bold text-white">A</span>
-                            </div>
-                        </div>
-
-                        {{-- Hero section mini --}}
-                        <div class="bg-gradient-to-br from-blue-700 to-indigo-800 px-5 py-6 relative overflow-hidden">
-                            <div class="absolute right-0 top-0 w-24 h-24 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/4"
-                                aria-hidden="true"></div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
-                                    <i class="fa-solid fa-building text-white text-sm" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[11px] font-extrabold text-white">PT. Maju Bersama Indonesia</p>
-                                    <p class="text-[9px] text-blue-200">Solusi Konstruksi & Bangunan</p>
-                                </div>
-                            </div>
-                            <div class="space-y-2 mb-4">
-                                <div class="h-2.5 w-3/4 bg-white/30 rounded-full"></div>
-                                <div class="h-2 w-1/2 bg-white/20 rounded-full"></div>
-                            </div>
-                            <div class="flex gap-2">
-                                <div class="px-3 py-1.5 bg-white rounded-lg text-[9px] font-bold text-blue-700">Hubungi
-                                    Kami</div>
-                                <div
-                                    class="px-3 py-1.5 bg-white/20 rounded-lg text-[9px] font-semibold text-white border border-white/30">
-                                    Lihat Portfolio</div>
-                            </div>
-                        </div>
-
-                        {{-- Body --}}
-                        <div class="p-5 space-y-4">
-
-                            {{-- Statistik website --}}
-                            <div class="grid grid-cols-3 gap-2.5">
-                                <div class="bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center">
-                                    <p class="text-base font-extrabold text-white leading-none">1.240</p>
-                                    <p class="text-[9px] text-slate-400 mt-1">Pengunjung / Bln</p>
-                                </div>
-                                <div class="bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center">
-                                    <p class="text-base font-extrabold text-emerald-400 leading-none">38</p>
-                                    <p class="text-[9px] text-slate-400 mt-1">Inquiry Masuk</p>
-                                </div>
-                                <div class="bg-slate-800/80 rounded-xl p-3 border border-slate-700/40 text-center">
-                                    <p class="text-base font-extrabold text-blue-400 leading-none">#4</p>
-                                    <p class="text-[9px] text-slate-400 mt-1">Posisi Google</p>
-                                </div>
-                            </div>
-
-                            {{-- Grafik pengunjung --}}
-                            <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700/40">
-                                <div class="flex items-center justify-between mb-3">
-                                    <p class="text-[10px] text-slate-300 font-semibold">Grafik Pengunjung — 7 Hari</p>
-                                    <span
-                                        class="text-[9px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full">+24%</span>
-                                </div>
-                                <div class="flex items-end gap-1.5 h-16">
-                                    @php $bars = [40,65,50,80,60,90,100]; $days =
-                                    ['Sen','Sel','Rab','Kam','Jum','Sab','Min']; @endphp
-                                    @foreach($bars as $i => $h)
-                                    <div class="flex-1 flex flex-col items-center gap-1">
-                                        <div class="w-full rounded-t-md"
-                                            style="height: {{ $h }}%; background: {{ $h === 100 ? '#3b82f6' : 'rgba(99,102,241,0.4)' }}">
-                                        </div>
-                                        <span class="text-[7px] text-slate-500">{{ $days[$i] }}</span>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-
-                            {{-- Halaman & Konten --}}
-                            <div class="bg-slate-800/80 rounded-xl border border-slate-700/40 overflow-hidden">
-                                <div class="px-4 py-2.5 border-b border-slate-700/40 flex items-center justify-between">
-                                    <p class="text-[10px] text-slate-300 font-semibold">Manajemen Halaman</p>
-                                    <span class="text-[9px] text-blue-400">+ Tambah Halaman</span>
-                                </div>
-                                @php
-                                $pages = [
-                                ['icon' => 'fa-house', 'name' => 'Beranda', 'status' => 'Publik', 'color' =>
-                                'text-emerald-400 bg-emerald-400/10'],
-                                ['icon' => 'fa-briefcase', 'name' => 'Layanan Kami', 'status' => 'Publik', 'color' =>
-                                'text-emerald-400 bg-emerald-400/10'],
-                                ['icon' => 'fa-images', 'name' => 'Portfolio', 'status' => 'Publik', 'color' =>
-                                'text-emerald-400 bg-emerald-400/10'],
-                                ['icon' => 'fa-newspaper', 'name' => 'Blog & Artikel', 'status' => 'Draft', 'color' =>
-                                'text-amber-400 bg-amber-400/10'],
-                                ];
-                                @endphp
-                                @foreach($pages as $page)
-                                <div
-                                    class="px-4 py-2.5 flex items-center justify-between border-b border-slate-700/20 last:border-0">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-7 h-7 rounded-lg bg-slate-700 flex items-center justify-center">
-                                            <i class="fa-solid {{ $page['icon'] }} text-slate-400 text-[9px]"
-                                                aria-hidden="true"></i>
-                                        </div>
-                                        <p class="text-[10px] font-semibold text-slate-200">{{ $page['name'] }}</p>
-                                    </div>
-                                    <span
-                                        class="text-[8px] font-semibold px-1.5 py-0.5 rounded-full {{ $page['color'] }}">{{ $page['status'] }}</span>
-                                </div>
-                                @endforeach
-                            </div>
-
-                        </div>
-                    </div>
-
-                    {{-- Floating badges --}}
-                    <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl border border-slate-100 px-4 py-3 flex items-center gap-3 animate-bounce z-20"
-                        aria-hidden="true">
-                        <div class="w-9 h-9 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-envelope text-sm"></i>
-                        </div>
-                        <div>
-                            <p class="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Inquiry Baru!</p>
-                            <p class="text-sm font-extrabold text-slate-800">Permintaan Penawaran</p>
-                        </div>
-                    </div>
-                    <div class="absolute -top-3 -right-3 bg-blue-600 text-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2 z-20"
-                        aria-hidden="true">
-                        <i class="fa-solid fa-magnifying-glass text-blue-200 text-sm"></i>
-                        <span class="text-[10px] font-bold">Halaman #4 Google</span>
-                    </div>
-
-                </div>
             </div>
         </div>
     </section>
@@ -601,143 +473,138 @@
     {{-- ================================================================
      SECTION 3: FITUR
 ================================================================ --}}
-    <section id="fitur" class="py-14 md:py-24 bg-slate-50" x-data="{ activeFeature: 1 }">
+    <section id="fitur" class="py-16 md:py-24 bg-[#eae7dc]" x-data="{ activeFeature: 1 }">
         <div class="max-w-6xl mx-auto px-5 md:px-6">
 
-            <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3 md:mb-4">
-                    Fitur Unggulan <span class="text-blue-600">Company Profile Profesional</span>
+            {{-- Section Header --}}
+            <div class="mb-10 md:mb-14" data-aos="fade-up">
+                <span class="font-mono text-xs font-bold tracking-widest text-[#e85a4f] uppercase block mb-2">
+                    SEKAT 01–05
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#1e302b] mb-3 md:mb-4">
+                    Fitur unggulan company profile
                 </h2>
-                <p class="text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
-                    Lebih dari sekadar brosur digital. Website company profile kami dirancang untuk mengkonversi
-                    pengunjung menjadi klien nyata.
+                <p class="text-[#5b5853] max-w-2xl text-sm md:text-base font-normal">
+                    Bukan sekadar brosur digital — mesin pemasaran pasif yang bekerja 24 jam.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            @php
+            $fiturList = [
+            [
+            'id' => 1,
+            'icon' => 'fa-star',
+            'judul' => 'Desain Premium Sesuai Identitas Brand',
+            'deskripsi' => 'Website dirancang mengikuti palet warna, tipografi, dan gaya visual brand Anda — bukan
+            template generik. Setiap elemen mencerminkan nilai dan karakter bisnis Anda.',
+            'manfaat' => 'Kesan pertama yang konsisten memperkuat brand awareness dan membangun kepercayaan lebih
+            cepat.'
+            ],
+            [
+            'id' => 2,
+            'icon' => 'fa-magnifying-glass',
+            'judul' => 'SEO On-Page Lengkap — Tampil di Google',
+            'deskripsi' => 'Setiap halaman dioptimasi dengan struktur heading yang benar, meta tag, schema markup,
+            kecepatan loading, dan sitemap otomatis agar Google mudah mengindeks bisnis Anda.',
+            'manfaat' => 'Bisnis Anda ditemukan calon klien yang sedang aktif mencari layanan Anda di Google — traffic
+            organik tanpa biaya iklan.'
+            ],
+            [
+            'id' => 3,
+            'icon' => 'fa-images',
+            'judul' => 'Portfolio & Galeri Proyek yang Memukau',
+            'deskripsi' => 'Tampilkan portfolio terbaik Anda dalam galeri visual yang terorganisir dengan filter
+            kategori. Setiap proyek bisa dilengkapi foto, deskripsi, dan hasil yang dicapai.',
+            'manfaat' => 'Bukti nyata kualitas kerja Anda berbicara lebih keras dari seribu kata — konversi calon klien
+            lebih tinggi.'
+            ],
+            [
+            'id' => 4,
+            'icon' => 'fa-envelope',
+            'judul' => 'Formulir Kontak & WhatsApp Terintegrasi',
+            'deskripsi' => 'Setiap halaman dilengkapi Call-to-Action strategis, formulir kontak dengan notifikasi email,
+            dan tombol WhatsApp langsung ke nomor Anda.',
+            'manfaat' => 'Tidak ada prospek yang terlewat — setiap pengunjung yang berminat punya jalan mudah untuk
+            langsung menghubungi Anda.'
+            ],
+            [
+            'id' => 5,
+            'icon' => 'fa-newspaper',
+            'judul' => 'Blog / Artikel SEO untuk Konten Marketing',
+            'deskripsi' => 'Halaman blog yang terstruktur untuk publikasi artikel informatif seputar industri Anda —
+            lengkap dengan SEO on-page per artikel.',
+            'manfaat' => 'Konten berkualitas memposisikan bisnis Anda sebagai ahli di bidangnya, meningkatkan
+            kepercayaan dan peringkat di Google secara jangka panjang.'
+            ],
+            ];
+            @endphp
 
-                {{-- Feature Accordion — tampil PERTAMA di mobile --}}
-                <div class="lg:col-span-7 space-y-2.5 md:space-y-3 order-first lg:order-last" data-aos="fade-left">
+            {{-- Main Layout Container: Menggabungkan list tab (kiri) dan panel deskripsi (kanan) --}}
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-[#d8d3c5] rounded-sm overflow-hidden bg-[#f4f1ea]"
+                data-aos="fade-up">
 
-                    @php
-                    $fiturList = [
-                    [1, 'fa-star', 'Desain Premium Sesuai Identitas Brand', 'Website dirancang mengikuti palet warna,
-                    tipografi, dan gaya visual brand Anda — bukan template generik. Setiap elemen mencerminkan nilai dan
-                    karakter bisnis Anda.<br><strong>Manfaat:</strong> Kesan pertama yang konsisten memperkuat brand
-                    awareness dan membangun kepercayaan lebih cepat.'],
-                    [2, 'fa-magnifying-glass', 'SEO On-Page Lengkap — Tampil di Google', 'Setiap halaman dioptimasi
-                    dengan struktur heading yang benar, meta tag, schema markup, kecepatan loading, dan sitemap otomatis
-                    agar Google mudah mengindeks bisnis Anda.<br><strong>Manfaat:</strong> Bisnis Anda ditemukan calon
-                    klien yang sedang aktif mencari layanan Anda di Google — traffic organik tanpa biaya iklan.'],
-                    [3, 'fa-images', 'Portfolio & Galeri Proyek yang Memukau', 'Tampilkan portfolio terbaik Anda dalam
-                    galeri visual yang terorganisir dengan filter kategori. Setiap proyek bisa dilengkapi foto,
-                    deskripsi, dan hasil yang dicapai.<br><strong>Manfaat:</strong> Bukti nyata kualitas kerja Anda
-                    berbicara lebih keras dari seribu kata — konversi calon klien lebih tinggi.'],
-                    [4, 'fa-envelope', 'Formulir Kontak & WhatsApp Terintegrasi', 'Setiap halaman dilengkapi
-                    Call-to-Action strategis, formulir kontak dengan notifikasi email, dan tombol WhatsApp langsung ke
-                    nomor Anda.<br><strong>Manfaat:</strong> Tidak ada prospek yang terlewat — setiap pengunjung yang
-                    berminat punya jalan mudah untuk langsung menghubungi Anda.'],
-                    [5, 'fa-newspaper', 'Blog / Artikel SEO untuk Konten Marketing', 'Halaman blog yang terstruktur
-                    untuk publikasi artikel informatif seputar industri Anda — lengkap dengan SEO on-page per
-                    artikel.<br><strong>Manfaat:</strong> Konten berkualitas memposisikan bisnis Anda sebagai ahli di
-                    bidangnya, meningkatkan kepercayaan dan peringkat di Google secara jangka panjang.'],
-                    ];
-                    @endphp
+                {{-- KOLOM KIRI: Daftar Pilihan Fitur (Tab Navigasi) --}}
+                <div
+                    class="lg:col-span-5 flex flex-col divide-y divide-[#d8d3c5] border-b lg:border-b-0 lg:border-r border-[#d8d3c5]">
+                    @foreach($fiturList as $f)
+                    <button @click="activeFeature = {{ $f['id'] }}"
+                        class="w-full text-left p-4 md:p-5 flex items-center gap-4 transition-all duration-150 focus:outline-none select-none"
+                        :class="activeFeature === {{ $f['id'] }} ? 'bg-[#1e302b] text-[#f0ede4]' : 'bg-[#f4f1ea] hover:bg-[#ebe6da] text-[#1e302b]'">
 
-                    @foreach($fiturList as [$id, $icon, $judul, $konten])
-                    <div @click="activeFeature = {{ $id }}"
-                        class="p-4 md:p-5 rounded-2xl cursor-pointer transition-all duration-300 border"
-                        :class="activeFeature === {{ $id }} ? 'bg-blue-600 text-white shadow-xl shadow-blue-200/60 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
-                        <h3 class="font-bold flex items-center justify-between text-sm md:text-base">
-                            <span class="flex items-center gap-2.5 md:gap-3">
-                                <i class="fa-solid {{ $icon }} w-4 shrink-0"
-                                    :class="activeFeature === {{ $id }} ? 'text-white' : 'text-blue-600'"
-                                    aria-hidden="true"></i>
-                                {{ $judul }}
-                            </span>
-                            <i class="fa-solid fa-chevron-right text-[10px] transition-transform duration-300 shrink-0 ml-2"
-                                :class="activeFeature === {{ $id }} ? 'rotate-90' : ''" aria-hidden="true"></i>
-                        </h3>
-                        <div x-show="activeFeature === {{ $id }}" x-transition:enter="transition ease-out duration-200"
-                            x-transition:enter-start="opacity-0 -translate-y-1"
-                            x-transition:enter-end="opacity-100 translate-y-0"
-                            x-transition:leave="transition ease-in duration-150"
-                            x-transition:leave-start="opacity-100 translate-y-0"
-                            x-transition:leave-end="opacity-0 -translate-y-1">
-                            <p class="text-sm mt-3 opacity-90 leading-relaxed">{!! $konten !!}</p>
-                        </div>
-                    </div>
+                        {{-- Nomor Fitur --}}
+                        <span class="font-mono text-xs font-semibold shrink-0"
+                            :class="activeFeature === {{ $f['id'] }} ? 'text-[#e85a4f]' : 'text-[#e85a4f]/70'">
+                            0{{ $f['id'] }}
+                        </span>
+
+                        {{-- Icon --}}
+                        <i class="fa-solid {{ $f['icon'] }} w-5 shrink-0 text-center text-sm"
+                            :class="activeFeature === {{ $f['id'] }} ? 'text-[#f0ede4]' : 'text-[#1e302b]'"
+                            aria-hidden="true"></i>
+
+                        {{-- Judul Menu --}}
+                        <span class="font-serif font-bold text-sm md:text-base leading-tight">
+                            {{ $f['judul'] }}
+                        </span>
+                    </button>
                     @endforeach
-
                 </div>
 
-                {{-- Visual sticky --}}
-                <div class="lg:col-span-5 order-last lg:order-first lg:sticky lg:top-24" data-aos="fade-right">
-                    <div
-                        class="bg-gradient-to-br from-slate-900 to-slate-800 p-4 md:p-5 rounded-[1.5rem] md:rounded-[2rem] shadow-2xl border border-slate-700/50 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"
-                            aria-hidden="true"></div>
-                        <div class="bg-slate-800/80 rounded-2xl p-4 md:p-5 space-y-3 md:space-y-4 relative z-10">
+                {{-- KOLOM KANAN: Panel Penjelasan Dinamis --}}
+                <div class="lg:col-span-7 p-6 md:p-10 lg:p-12 bg-[#f4f1ea] flex flex-col justify-center min-h-[320px]">
+                    @foreach($fiturList as $f)
+                    <div x-show="activeFeature === {{ $f['id'] }}" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 translate-x-4"
+                        x-transition:enter-end="opacity-100 translate-x-0" class="space-y-4 md:space-y-6">
 
-                            <div class="flex items-center gap-3 border-b border-slate-700/40 pb-3 md:pb-4">
-                                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                                    <i class="fa-solid fa-building text-white text-xs" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs font-bold text-white">Dashboard Company Profile</p>
-                                    <p class="text-[9px] text-slate-400">Manajemen Konten Mudah</p>
-                                </div>
-                                <div class="ml-auto flex items-center gap-1.5">
-                                    <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                                    <span class="text-[9px] text-emerald-400">Online</span>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-2.5 md:gap-3">
-                                <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-700/30">
-                                    <i class="fa-solid fa-star text-yellow-400 mb-2 text-sm" aria-hidden="true"></i>
-                                    <p class="text-[9px] text-slate-400">Desain Premium</p>
-                                    <p class="text-xs font-bold text-white">Sesuai Brand</p>
-                                </div>
-                                <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-700/30">
-                                    <i class="fa-solid fa-magnifying-glass text-blue-400 mb-2 text-sm"
-                                        aria-hidden="true"></i>
-                                    <p class="text-[9px] text-slate-400">SEO Google</p>
-                                    <p class="text-xs font-bold text-white">Halaman #1-5</p>
-                                </div>
-                                <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-700/30">
-                                    <i class="fa-solid fa-images text-emerald-400 mb-2 text-sm" aria-hidden="true"></i>
-                                    <p class="text-[9px] text-slate-400">Portofolio</p>
-                                    <p class="text-xs font-bold text-white">Galeri Proyek</p>
-                                </div>
-                                <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-700/30">
-                                    <i class="fa-solid fa-envelope text-orange-400 mb-2 text-sm" aria-hidden="true"></i>
-                                    <p class="text-[9px] text-slate-400">Inquiry Masuk</p>
-                                    <p class="text-xs font-bold text-white">38 / Bulan</p>
-                                </div>
-                            </div>
-
-                            <div class="bg-blue-600 rounded-xl p-3 flex items-center justify-between">
-                                <div>
-                                    <p class="text-[9px] text-blue-200">Pengunjung Bulan Ini</p>
-                                    <p class="text-base font-extrabold text-white">1.240 Orang</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-[9px] text-blue-200">Posisi Google</p>
-                                    <p class="text-sm font-bold text-emerald-300">#4 ↑</p>
-                                </div>
-                            </div>
-
+                        {{-- Besar Icon Aksen Terracotta --}}
+                        <div class="text-[#e85a4f] text-2xl md:text-3xl">
+                            <i class="fa-solid {{ $f['icon'] }}" aria-hidden="true"></i>
                         </div>
-                        <div class="absolute -bottom-2 -right-2 bg-blue-500 text-white px-3 py-2 rounded-xl shadow-lg flex items-center gap-1.5"
-                            aria-hidden="true">
-                            <i class="fa-solid fa-trophy text-xs"></i>
-                            <span class="text-[10px] font-bold">Top Google</span>
+
+                        {{-- Judul Fitur di Panel --}}
+                        <h3 class="font-serif font-bold text-xl md:text-2xl text-[#1e302b] leading-tight">
+                            {{ $f['judul'] }}
+                        </h3>
+
+                        {{-- Konten Deskripsi Utama --}}
+                        <p class="text-sm md:text-base text-[#5b5853] leading-relaxed">
+                            {{ $f['deskripsi'] }}
+                        </p>
+
+                        {{-- Kotak Manfaat Terpisah --}}
+                        <div class="pt-4 border-t border-[#d8d3c5]">
+                            <p class="text-sm md:text-base text-[#5b5853] leading-relaxed">
+                                <strong class="text-[#1e302b]">Manfaat:</strong> {{ $f['manfaat'] }}
+                            </p>
                         </div>
+
                     </div>
+                    @endforeach
                 </div>
 
             </div>
+
         </div>
     </section>
 
@@ -745,59 +612,63 @@
     {{-- ================================================================
      SECTION 4: PAKET HARGA
 ================================================================ --}}
-    <section id="paket" class="py-14 md:py-24 bg-white-50">
+    <section id="paket" class="py-16 md:py-24 bg-[#16291F] border-t border-[#D8D0BD]">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
-            <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl md:text-3xl lg:text-5xl font-extrabold text-slate-900 mb-3 md:mb-4">
-                    Bangun <span class="text-blue-600">Identitas Digital Anda</span>
+            <div class="max-w-2xl mb-12 md:mb-16" data-aos="fade-up">
+                <p class="font-mono text-xs tracking-[0.18em] uppercase text-[#B8924A] mb-3">Daftar Harga</p>
+                <h2 class="font-display text-2xl md:text-4xl font-semibold text-[#EFEAE0]">
+                    Bangun <span class="text-[#B8924A]">Identitas Digital Anda</span>
                 </h2>
-                <p class="text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
+                <p class="text-[#EFEAE0]/60 text-sm md:text-base mt-3 font-body">
                     Harga transparan, fitur jelas. Pilih paket sesuai skala bisnis Anda — semua bisa didiskusikan.
                 </p>
-                <p class="text-xs text-slate-400 mt-3 italic">*Harga belum termasuk biaya domain dan hosting tahunan.
-                    Bisa dicicil 2–3 termin.</p>
+                <p class="text-xs text-[#B8924A] mt-3 italic font-body">
+                    *Harga belum termasuk biaya domain dan hosting tahunan. Bisa dicicil 2–3 termin.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-[#EFEAE0]/15" data-aos="fade-up">
 
                 @foreach($paket as $i => $p)
                 <article
-                    class="relative bg-white rounded-3xl flex flex-col transition-all duration-300
-                       {{ $p['populer'] ? 'border-2 border-blue-600 shadow-2xl shadow-blue-100 lg:-translate-y-4' : 'border border-slate-200 shadow-sm hover:shadow-md' }}"
+                    class="relative flex flex-col bg-[#F6F2E8] {{ $i > 0 ? 'lg:border-l border-[#EFEAE0]/15' : '' }} {{ $p['populer'] ? 'lg:scale-[1.02] z-10' : '' }}"
                     data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
 
                     @if($p['label'])
-                    <div
-                        class="absolute -top-3.5 left-1/2 -translate-x-1/2
-                                    {{ $p['populer'] ? 'bg-amber-400 text-amber-950' : 'bg-slate-700 text-white' }}
-                                    text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider shadow-sm whitespace-nowrap">
-                        {{ $p['label'] }}
+                    <div class="absolute -top-4 right-5 w-16 h-16 rounded-full border border-[#D8D0BD] flex items-center justify-center bg-[#F6F2E8] z-10"
+                        aria-hidden="true">
+                        <span
+                            class="text-[8px] text-center leading-tight font-bold uppercase text-[#2B2620]">{{ $p['label'] }}</span>
                     </div>
                     @endif
 
-                    <div class="p-5 md:p-6 lg:p-8 {{ $p['label'] ? 'pt-8 md:pt-10' : '' }}">
+                    <div class="p-6 md:p-8 flex-1 flex flex-col {{ $p['label'] ? 'pt-8 md:pt-10' : '' }}">
 
-                        <div class="mb-5 pb-5 border-b border-slate-100">
-                            <h3 class="text-base md:text-lg font-extrabold text-slate-900 mb-1">{{ $p['nama'] }}</h3>
-                            <p class="text-slate-500 text-xs mb-3 md:mb-4">{{ $p['tagline'] }}</p>
-                            @if($p['harga'] === 'Custom')
-                            <p class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900">Custom</p>
-                            <p class="text-xs text-slate-400 mt-1">Harga sesuai kebutuhan</p>
-                            @else
-                            <p class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900">{{ $p['harga'] }}
+                        <div class="mb-5 pb-5 border-b border-dashed border-[#D8D0BD]">
+                            <p class="font-mono text-[10px] text-[#B23A2E] tracking-widest mb-2">
+                                PAKET-{{ str_pad($i+1, 2, '0', STR_PAD_LEFT) }}
                             </p>
-                            <p class="text-xs text-slate-400 mt-1">Biaya setup awal — bisa 2–3 termin</p>
+                            <h3 class="font-display text-lg font-semibold text-[#2B2620] mb-1">{{ $p['nama'] }}</h3>
+                            <p class="text-[#6B6357] text-xs mb-4 font-body">{{ $p['tagline'] }}</p>
+
+                            @if($p['harga'] === 'Custom')
+                            <p class="font-mono text-3xl md:text-4xl font-semibold text-[#1F3A2E]">Custom</p>
+                            <p class="text-xs text-[#6B6357] mt-1 font-body">Harga sesuai kebutuhan</p>
+                            @else
+                            <p class="font-mono text-3xl md:text-4xl font-semibold text-[#1F3A2E]">{{ $p['harga'] }}</p>
+                            <p class="text-xs text-[#6B6357] mt-1 font-body">Biaya setup awal — bisa 2–3 termin</p>
                             @endif
                         </div>
 
-                        <div class="mb-4">
-                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2.5 md:mb-3">
-                                Yang Anda Dapatkan</p>
-                            <ul class="space-y-1.5 md:space-y-2">
+                        <div class="mb-4 font-body">
+                            <p class="text-[10px] font-bold text-[#6B6357] uppercase tracking-widest mb-2.5 md:mb-3">
+                                Yang Anda Dapatkan
+                            </p>
+                            <ul class="space-y-2">
                                 @foreach($p['fitur_ya'] as $f)
-                                <li class="flex items-start gap-2 md:gap-2.5 text-xs text-slate-700">
-                                    <i class="fa-solid fa-circle-check text-blue-600 mt-0.5 shrink-0 text-[11px]"
+                                <li class="flex items-start gap-2.5 text-xs text-[#3A352C]">
+                                    <i class="fa-solid fa-check text-[#1F3A2E] mt-0.5 shrink-0 text-[10px]"
                                         aria-hidden="true"></i>
                                     {{ $f }}
                                 </li>
@@ -806,23 +677,23 @@
                         </div>
 
                         @if(count($p['fitur_tidak']) > 0)
-                        <div class="mb-5 pt-3 md:pt-4 border-t border-slate-50">
-                            <p class="text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-2.5 md:mb-3">
-                                Tidak Termasuk</p>
-                            <ul class="space-y-1.5 md:space-y-2">
+                        <div class="mb-6 pt-3 border-t border-[#D8D0BD] font-body">
+                            <p class="text-[10px] font-bold text-[#B23A2E] uppercase tracking-widest mb-2.5 md:mb-3">
+                                Tidak Termasuk
+                            </p>
+                            <ul class="space-y-2">
                                 @foreach($p['fitur_tidak'] as $f)
-                                <li class="flex items-start gap-2 md:gap-2.5 text-xs text-slate-400">
-                                    <i class="fa-solid fa-xmark text-slate-300 mt-0.5 shrink-0 text-[11px]"
-                                        aria-hidden="true"></i>
+                                <li class="flex items-start gap-2.5 text-xs text-[#A39C8E]">
+                                    <i class="fa-solid fa-xmark mt-0.5 shrink-0 text-[10px]" aria-hidden="true"></i>
                                     {{ $f }}
                                 </li>
                                 @endforeach
                             </ul>
                         </div>
                         @else
-                        <div class="mb-5 pt-3 md:pt-4 border-t border-slate-50">
-                            <p class="text-xs text-slate-400 italic flex items-center gap-2">
-                                <i class="fa-solid fa-infinity text-blue-400"></i>
+                        <div class="mb-6 pt-3 border-t border-[#D8D0BD] font-body">
+                            <p class="text-xs text-[#6B6357] italic flex items-center gap-2">
+                                <i class="fa-solid fa-infinity text-[#1F3A2E]"></i>
                                 Semua fitur tersedia — tidak ada batasan.
                             </p>
                         </div>
@@ -830,7 +701,7 @@
 
                         <a href="https://wa.me/6285865405330?text={{ $p['wa_text'] }}" target="_blank"
                             rel="noopener noreferrer"
-                            class="block w-full py-3 md:py-3.5 px-6 text-center rounded-2xl font-bold text-sm transition-all duration-200 {{ $p['btn_style'] }}">
+                            class="mt-auto block w-full py-3 px-6 text-center rounded-sm font-body font-bold text-sm transition-colors {{ $p['populer'] ? 'bg-[#1F3A2E] text-[#EFEAE0] hover:bg-[#16291F]' : 'border border-[#1F3A2E] text-[#1F3A2E] hover:bg-[#1F3A2E] hover:text-[#EFEAE0]' }}">
                             @if($p['populer']) Ambil Penawaran Ini
                             @elseif($p['harga'] === 'Custom') Diskusi dengan Tim Ahli
                             @else Pilih Paket Ini
@@ -843,9 +714,9 @@
 
             </div>
 
-            <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
+            <div class="mt-9 text-center" data-aos="fade-up">
                 <a href="{{ url('/fitur-company-profile') }}"
-                    class="inline-flex items-center gap-2 px-6 md:px-8 py-3 bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 text-slate-700 font-semibold rounded-full transition-all text-sm shadow-sm">
+                    class="inline-flex items-center gap-2 text-[#EFEAE0]/80 hover:text-[#EFEAE0] font-semibold text-sm font-body underline underline-offset-4">
                     Lihat perbandingan fitur &amp; harga lengkap
                     <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
                 </a>
@@ -858,7 +729,7 @@
     {{-- ================================================================
      SECTION 5: FAQ
 ================================================================ --}}
-    <section id="faq" class="py-14 md:py-24 bg-slate-50" x-data="faqCompanyProfile()">
+    <section id="faq" class="py-14 md:py-24 bg-[#FAF8F5]" x-data="faqCompanyProfile()">
         <div class="max-w-3xl mx-auto px-5 md:px-6">
 
             <div class="text-center mb-10 md:mb-12" data-aos="fade-up">
@@ -1104,12 +975,41 @@
     @endpush
 
     @push('styles')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
     <style>
+    :root {
+        --ink: #1F3A2E;
+        --ink-deep: #16291F;
+        --paper: #EFEAE0;
+        --paper-soft: #F6F2E8;
+        --stempel: #B23A2E;
+        --brass: #B8924A;
+        --charcoal: #2B2620;
+        --muted: #6B6357;
+        --line: #D8D0BD;
+    }
+
     html,
     body {
         max-width: 100% !important;
         overflow-x: hidden !important;
         position: relative;
+    }
+
+    .font-display {
+        font-family: 'Fraunces', serif;
+    }
+
+    .font-body {
+        font-family: 'Inter', sans-serif;
+    }
+
+    .font-mono {
+        font-family: 'IBM Plex Mono', monospace;
     }
 
     .faq-cp-answer {
@@ -1138,6 +1038,76 @@
         .faq-cp-ripple {
             display: none;
         }
+    }
+
+    /* ring holes — the signature binder spine, reused as a section rail */
+    .ring-spine {
+        position: relative;
+        background-image: radial-gradient(circle at 50% 50%, var(--brass) 0 2px, transparent 2.4px);
+        background-size: 100% 64px;
+        background-position: 0 18px;
+    }
+
+    .ring-spine::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, .25) 0 2px, transparent 2.6px);
+        background-size: 100% 64px;
+        background-position: 1px 19px;
+        pointer-events: none;
+    }
+
+    /* stempel / official stamp badge — replaces generic pill */
+    .stempel-badge {
+        border: 2.5px solid var(--stempel);
+        color: var(--stempel);
+        border-radius: 999px;
+        transform: rotate(-6deg);
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: .08em;
+        box-shadow: inset 0 0 0 2px rgba(178, 58, 46, .15);
+    }
+
+    .stempel-badge::after {
+        content: '';
+        position: absolute;
+        inset: 3px;
+        border: 1px dashed var(--stempel);
+        border-radius: 999px;
+        opacity: .5;
+    }
+
+    .paper-texture {
+        background-color: var(--paper);
+        background-image:
+            radial-gradient(rgba(43, 38, 32, .035) 1px, transparent 1px);
+        background-size: 4px 4px;
+    }
+
+    .ledger-rule {
+        border-bottom: 1px dashed var(--line);
+    }
+
+    .tab-rail-item {
+        transition: padding-left .25s ease, color .25s ease;
+    }
+
+    .tab-rail-item[data-active="true"] {
+        padding-left: 1.1rem;
+    }
+
+    a,
+    button,
+    [tabindex] {
+        outline-offset: 3px;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible {
+        outline: 2.5px solid var(--stempel);
+        border-radius: 6px;
     }
     </style>
     @endpush

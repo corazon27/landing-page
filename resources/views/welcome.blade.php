@@ -1,998 +1,971 @@
 <x-layout.app>
 
     @php
-    $title = 'Jasa Pembuatan Website Profesional untuk UMKM | Cakra Inovasi Digital';
-    $metaDescription = 'Cakra Inovasi Digital — jasa pembuatan website profesional, toko online, company profile, sistem
-    manajemen bisnis (ERP), dan
-    kasir digital untuk UMKM. Harga transparan, teknologi modern, support purna jual.';
-    $metaKeywords = 'jasa pembuatan website, website UMKM, toko online, company profile, kasir digital, sistem
-    manajemen (ERP), bisnis web developer
-    Magelang, Jawa Tengah';
+    // --- Konfigurasi Metadata & SEO ---
+    $title = 'Cakra Inovasi Digital | Mitra Transformasi Digital UMKM Indonesia Profesional';
+    $metaDescription = 'Cakra Inovasi Digital menyediakan jasa pembuatan website profesional, toko online, sistem POS
+    (Kasir Digital), dan solusi ERP kustom untuk UMKM. Tingkatkan level bisnis Anda dengan teknologi modern, harga
+    transparan, dan dukungan purna jual terpercaya.';
+    $metaKeywords = 'jasa pembuatan website profesional, website UMKM premium, toko online kustom, company profile
+    modern, sistem kasir digital POS, ERP UMKM, web developer Magelang, solusi digital Jawa Tengah';
     $ogType = 'website';
+    // Asumsi suffix didefinisikan di app.blade.php atau controller, jika tidak, uncomment baris bawah:
+    // $suffix = ' | Cakra Digital';
     @endphp
 
+    {{-- --- Data Structures (Tetap Rapi di PHP Block) --- --}}
     @php
     $stats = [
-    [
-    'value' => '30+',
-    'label' => 'Proyek Selesai',
-    'color' => 'text-blue-600'
-    ],
-    [
-    'value' => '99%',
-    'label' => 'Klien Puas',
-    'color' => 'text-emerald-600'
-    ],
-    [
-    'value' => '2+',
-    'label' => 'Tahun Pengalaman',
-    'color' => 'text-orange-500'
-    ],
-    [
-    'value' => '24/7',
-    'label' => 'Website Online',
-    'color' => 'text-purple-600'
-    ],
+    ['value' => '30+', 'label' => 'Proyek Spesialis Selesai', 'color' => 'text-blue-700'],
+    ['value' => '99%', 'label' => 'Kepuasan Klien UMKM', 'color' => 'text-emerald-700'],
+    ['value' => '2+', 'label' => 'Tahun Pengalaman Dedicated', 'color' => 'text-orange-600'],
+    ['value' => '24/7', 'label' => 'Jaminan Uptime Website', 'color' => 'text-purple-700'],
     ];
 
     $services = [
     [
-    'title' => 'Katalog Produk Digital',
-    'desc' => 'Ubah brosur fisik jadi link website. Pelanggan bisa lihat semua produk Anda dari HP tanpa harus kirim
-    foto satu-satu lewat WhatsApp.',
-    'icon' => '🛍️',
-    'features' => ['Tampil profesional di Google', 'Bisa bagi link ke mana saja', 'Update harga sangat mudah'],
-    'color_bg' => 'bg-blue-50/60',
-    'color_border' => 'border-blue-100',
-    'color_icon' => 'text-blue-600',
-    'delay' => '100'
+    'title' => 'Katalog Produk Digital Premium',
+    'desc' => 'Transformasikan brosur fisik menjadi platform digital interaktif. Pelanggan mengakses seluruh koleksi
+    Anda instan via tautan unik, tanpa beban pengiriman foto manual.',
+    'icon' => '🛍️', // Pertimbangkan ganti dengan SVG kustom untuk 'anti-AI' maksimal
+    'features' => ['Visibilitas Profesional di Google', 'Distribusi Tautan Mudah', 'Manajemen Harga Real-time'],
+    'color_theme' => 'blue',
+    'delay' => '150'
     ],
     [
-    'title' => 'Kasir Digital (POS)',
-    'desc' => 'Tinggalkan buku nota manual. Catat pesanan, cetak struk, dan pantau stok barang secara otomatis agar
-    tidak ada lagi barang yang hilang.',
+    'title' => 'Sistem Kasir Digital (POS) Terintegrasi',
+    'desc' => 'Modernisasi operasional dengan POS berbasis cloud. Tinggalkan pencatatan manual; kelola pesanan, cetak
+    struk, dan pantau inventaris otomatis secara real-time.',
     'icon' => '💳',
-    'features' => ['Laporan untung-rugi otomatis', 'Pantau stok dari jarak jauh', 'Support cetak struk bluetooth'],
-    'color_bg' => 'bg-emerald-50/60',
-    'color_border' => 'border-emerald-100',
-    'color_icon' => 'text-emerald-600',
-    'delay' => '200'
-    ],
-    [
-    'title' => 'Sistem Kelola Bisnis',
-    'desc' => 'Satu tempat untuk atur semua operasional. Dari laporan keuangan, data karyawan, hingga jadwal project
-    agar semua rapi terkendali.',
-    'icon' => '🚀',
-    'features' => ['Data aman dan rapi', 'Bebas ribet hitung manual', 'Mudah pantau progres bisnis'],
-    'color_bg' => 'bg-orange-50/60',
-    'color_border' => 'border-orange-100',
-    'color_icon' => 'text-orange-600',
+    'features' => ['Pelaporan Laba-Rugi Otomatis', 'Manajemen Stok Multi-Lokasi', 'Dukungan Printer Thermal Bluetooth'],
+    'color_theme' => 'emerald',
     'delay' => '300'
     ],
+    [
+    'title' => 'Solusi Kelola Bisnis (ERP) Kustom',
+    'desc' => 'Pusat kendali operasional komprehensif. Integrasikan laporan keuangan, data karyawan, hingga manajemen
+    proyek dalam satu dashboard yang efisien dan aman.',
+    'icon' => '🚀',
+    'features' => ['Keamanan Data Tingkat Tinggi', 'Eliminasi Kalkulasi Manual', 'Pemantauan Progres Bisnis Terpusat'],
+    'color_theme' => 'orange',
+    'delay' => '450'
+    ],
     ];
-    @endphp
 
-    @php
+    // Map tema warna layanan ke kelas Tailwind spesifik
+    $serviceColorMap = [
+    'blue' => [
+    'bg' => 'bg-blue-50/70', 'border' => 'border-blue-100', 'icon_text' => 'text-blue-600', 'icon_bg' => 'bg-blue-100'
+    ],
+    'emerald' => [
+    'bg' => 'bg-emerald-50/70', 'border' => 'border-emerald-100', 'icon_text' => 'text-emerald-600', 'icon_bg' =>
+    'bg-emerald-100'
+    ],
+    'orange' => [
+    'bg' => 'bg-orange-50/70', 'border' => 'border-orange-100', 'icon_text' => 'text-orange-600', 'icon_bg' =>
+    'bg-orange-100'
+    ],
+    ];
+
+    $steps = [
+    ['icon' => 'fa-comments', 'color' => 'blue', 'title' => 'Konsultasi Strategis', 'sub' => 'Eksplorasi Kebutuhan
+    Gratis', 'detail' => 'Analisis mendalam visi bisnis Anda. Kami menyusun cetak biru solusi digital yang paling
+    efektif dan efisien.'],
+    ['icon' => 'fa-pencil-ruler', 'color' => 'emerald', 'title' => 'Desain UI/UX Kustom', 'sub' => 'Estetika &
+    Fungsionalitas', 'detail' => 'Perancangan maket visual yang merefleksikan identitas brand Anda, fokus pada
+    pengalaman pengguna yang intuitif.'],
+    ['icon' => 'fa-code', 'color' => 'orange', 'title' => 'Pengembangan Sistem', 'sub' => 'Kode Bersih & Modern',
+    'detail' => 'Proses coding menggunakan framework terkini, memastikan performa tinggi, keamanan, dan kemudahan
+    skalabilitas.'],
+    ['icon' => 'fa-vials', 'color' => 'indigo', 'title' => 'Uji Coba & Penjaminan Mutu', 'sub' => 'Teliti Sebelum
+    Rilis', 'detail' => 'Pengujian komprehensif di berbagai perangkat untuk memastikan sistem bebas bug dan beroperasi
+    sempurna.'],
+    ['icon' => 'fa-rocket', 'color' => 'violet', 'title' => 'Peluncuran & Pelatihan', 'sub' => 'Go-Live & Transfer
+    Ilmu', 'detail' => 'Website resmi mengudara, diikuti pelatihan intensif agar tim Anda mandiri mengoperasikan
+    sistem.'],
+    ['icon' => 'fa-headset', 'color' => 'sky', 'title' => 'Dukungan Berkelanjutan', 'sub' => 'Mitra Purna Jual
+    Tepercaya', 'detail' => 'Pendampingan teknis siaga, pemeliharaan server, dan konsultasi fitur baru untuk pertumbuhan
+    bisnis Anda.'],
+    ];
+
+    $colorMap = [
+    'blue' => ['ring' => 'ring-blue-200', 'bg' => 'bg-blue-100', 'icon' => 'text-blue-600', 'badge' => 'bg-blue-600',
+    'hover' => 'group-hover:bg-blue-600', 'hoverbg' => 'group-hover:bg-blue-50', 'text_hover' =>
+    'group-hover:text-blue-700'],
+    'emerald' => ['ring' => 'ring-emerald-200', 'bg' => 'bg-emerald-100', 'icon' => 'text-emerald-600', 'badge' =>
+    'bg-emerald-600', 'hover' => 'group-hover:bg-emerald-600', 'hoverbg' => 'group-hover:bg-emerald-50', 'text_hover' =>
+    'group-hover:text-emerald-700'],
+    'orange' => ['ring' => 'ring-orange-200', 'bg' => 'bg-orange-100', 'icon' => 'text-orange-600', 'badge' =>
+    'bg-orange-600', 'hover' => 'group-hover:bg-orange-600', 'hoverbg' => 'group-hover:bg-orange-50', 'text_hover' =>
+    'group-hover:text-orange-700'],
+    'indigo' => ['ring' => 'ring-indigo-200', 'bg' => 'bg-indigo-100', 'icon' => 'text-indigo-600', 'badge' =>
+    'bg-indigo-600', 'hover' => 'group-hover:bg-indigo-600', 'hoverbg' => 'group-hover:bg-indigo-50', 'text_hover' =>
+    'group-hover:text-indigo-700'],
+    'violet' => ['ring' => 'ring-violet-200', 'bg' => 'bg-violet-100', 'icon' => 'text-violet-600', 'badge' =>
+    'bg-violet-600', 'hover' => 'group-hover:bg-violet-600', 'hoverbg' => 'group-hover:bg-violet-50', 'text_hover' =>
+    'group-hover:text-violet-700'],
+    'sky' => ['ring' => 'ring-sky-200', 'bg' => 'bg-sky-100', 'icon' => 'text-sky-600', 'badge' => 'bg-sky-600', 'hover'
+    => 'group-hover:bg-sky-600', 'hoverbg' => 'group-hover:bg-sky-50', 'text_hover' => 'group-hover:text-sky-700'],
+    ];
+
     $faqsData = [
     ['question' => 'Bagaimana tahapan pengerjaan proyek website di Cakra Inovasi Digital?', 'answer' => 'Kami bekerja
-    melalui 5 tahap: (1) Konsultasi kebutuhan dan deal kontrak, (2) Pembuatan konsep desain visual, (3) Proses coding
-    sistem, (4) Testing dan revisi, (5) Go-Live dan pelatihan admin.'],
-    ['question' => 'Apa saja yang saya dapatkan setelah website selesai dibuat?', 'answer' => 'Anda mendapatkan akses
-    penuh Dashboard Admin, domain (.com/.id) dan hosting aktif 1 tahun, sertifikat SSL (HTTPS), dan video panduan
-    operasional sistem.'],
-    ['question' => 'Bagaimana sistem pembayaran jasa pembuatan website?', 'answer' => 'Kami menggunakan sistem 3 termin:
-    DP saat deal kontrak, termin progres setelah desain disetujui, dan pelunasan setelah website selesai dan siap
-    dipublish.'],
-    ['question' => 'Apakah ada layanan after sales setelah website jadi?', 'answer' => 'Ya. Kami memberikan garansi
-    perbaikan bug/error, konsultasi teknis gratis, pemantauan server dan backup, serta update panduan fitur baru.'],
-    ['question' => 'Berapa kali revisi yang dapat dilakukan?', 'answer' => 'Revisi minor pada tahap desain dapat
-    dilakukan hingga deal. Pada tahap coding, revisi mencakup perubahan fungsi dan konten (bukan perombakan
-    struktur).'],
-    ['question' => 'Apakah website bisa diakses dan dikelola dari HP atau tablet?', 'answer' => 'Sangat bisa. Sistem
-    berbasis web responsif yang dapat diakses via Android dan iOS, mendukung laptop, PC kasir, serta printer thermal
-    Bluetooth maupun USB.'],
-    ['question' => 'Apakah saya bisa update konten website sendiri setelah website jadi?', 'answer' => 'Ya. Kami
-    menyediakan Dashboard Admin yang user-friendly sehingga Anda bisa menambah artikel, galeri, atau mengubah harga
-    layanan kapan saja tanpa keahlian teknis.'],
-    ['question' => 'Bagaimana jika saya atau karyawan kesulitan menggunakan sistem?', 'answer' => 'Kami menyediakan
-    video tutorial lengkap, konsultasi teknis gratis, dan buku panduan PDF untuk memastikan tim Anda bisa mengoperasikan
-    sistem dengan lancar.'],
+    melalui 6 tahap profesional: (1) Konsultasi Strategis untuk deal kontrak, (2) Desain UI/UX Kustom, (3) Pengembangan
+    Sistem (Coding), (4) Uji Coba & Penjaminan Mutu (QA), (5) Peluncuran & Pelatihan, dan (6) Dukungan Berkelanjutan.'],
+    ['question' => 'Apa saja yang saya dapatkan setelah website selesai dibuat?', 'answer' => 'Anda menerima paket siap
+    operasional penuh: akses Dashboard Admin/Kasir, kepemilikan Domain (.com/.id) aktif 1 tahun, Cloud Hosting aktif 1
+    tahun, sertifikat SSL (HTTPS) untuk keamanan, serta video panduan operasional lengkap.'],
+    ['question' => 'Bagaimana sistem pembayaran jasa pembuatan website?', 'answer' => 'Kami menggunakan sistem
+    pembayaran 3 termin transparan: Termin 1 (DP) saat penandatanganan kontrak, Termin 2 (Progres) setelah desain UI/UX
+    disetujui dan masuk tahap coding, serta Termin 3 (Pelunasan) setelah website selesai diuji dan siap diluncurkan.'],
+    ['question' => 'Apakah ada layanan after sales setelah website jadi?', 'answer' => 'Ya, sangat ada. Kami menyediakan
+    garansi perbaikan bug/error, konsultasi teknis siaga, pemantauan performa server, backup data rutin, serta pembaruan
+    panduan jika ada fitur baru.'],
+    ['question' => 'Berapa kali revisi yang dapat dilakukan?', 'answer' => 'Pada tahap Desain UI/UX, revisi minor dapat
+    dilakukan sepuasnya hingga mencapai kesepakatan (deal). Pada tahap Coding, revisi mencakup penyesuaian
+    fungsionalitas dan konten, bukan perubahan struktur fundamental desain.'],
+    ['question' => 'Apakah website bisa diakses dan dikelola dari HP atau tablet?', 'answer' => 'Sangat bisa. Seluruh
+    sistem kami berbasis web responsif modern, optimal diakses via Android, iOS, laptop, PC kasir, serta mendukung
+    printer thermal Bluetooth maupun USB.'],
+    ['question' => 'Apakah saya bisa update konten website sendiri setelah website jadi?', 'answer' => 'Ya, 100%. Kami
+    menyediakan Dashboard Admin yang user-friendly (mudah digunakan), memungkinkan Anda menambah produk, artikel,
+    galeri, atau mengubah harga layanan kapan saja tanpa memerlukan keahlian teknis.'],
+    ['question' => 'Bagaimana jika saya atau karyawan kesulitan menggunakan sistem?', 'answer' => 'Kami memastikan tim
+    Anda mandiri. Kami menyediakan video tutorial operasional lengkap, buku panduan dalam format PDF, serta konsultasi
+    teknis siaga via WhatsApp untuk membantu kendala apa pun.'],
     ];
     @endphp
 
+    {{-- Push FAQ Schema to Head --}}
     @push('schema')
     <x-faq-schema :faqs="$faqsData" />
     @endpush
 
+    {{-- --- Main Content --- --}}
+    <main>
+        {{-- ================================================================
+             SECTION 1: HERO - Reworked with Generated Image
+        ================================================================ --}}
+        <header class="relative pt-24 md:pt-32 pb-16 md:pb-24 bg-cover bg-center bg-no-repeat overflow-hidden"
+            aria-labelledby="hero-heading">
+            <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0
+            bg-[length:100%_auto] bg-[position:center_bottom]
+            lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
+                style="background-image: url('{{ asset('images/hero-beranda1.webp') }}');">
+            </div>
 
-    {{-- ================================================================
-         SECTION 1: HERO
-    ================================================================ --}}
-    <section class="pt-28 md:pt-36 pb-16 md:pb-20 bg-white overflow-hidden" aria-labelledby="hero-heading">
-        <div class="max-w-6xl mx-auto px-5 lg:px-10">
-            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-12">
+            {{-- Overlay Transparan untuk memastikan kontras teks di layar kecil --}}
+            <div class="absolute inset-0 bg-white/10 md:bg-transparent backdrop-blur-[1px] md:backdrop-blur-none pointer-events-none"
+                aria-hidden="true"></div>
 
-                {{-- Kolom Teks --}}
-                <div class="w-full md:w-1/2" data-aos="fade-right">
-                    <span
-                        class="bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                        Teman Tumbuh UMKM Indonesia
-                    </span>
+            <div class="max-w-7xl mx-auto px-5 lg:px-10 relative z-10">
+                {{-- Grid Utama Kontainer --}}
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-4 mb-4 leading-tight text-slate-900">
-                        Jasa Pembuatan Website<br>
-                        <span class="text-blue-600">Profesional untuk UMKM</span>
-                    </h1>
-
-                    <p class="text-base md:text-lg text-slate-600 mb-7 leading-relaxed">
-                        Capek urus catatan manual yang sering selisih? Mau punya toko online tapi bingung mulainya?
-                        <strong>Cakra Inovasi Digital</strong> hadir untuk mendampingi UMKM go-digital — simpel,
-                        transparan, dan harga bersahabat.
-                    </p>
-
-                    {{-- CTA Hero --}}
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi gratis soal pembuatan website untuk bisnis saya.' . $suffix) }}"
-                            target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-7 py-3.5 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-sm md:text-base">
-                            <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
-                            Konsultasi Gratis via WhatsApp
-                        </a>
-                    </div>
-
-                    {{-- Trust Badges --}}
-                    <div class="mt-7 flex flex-wrap items-center gap-4 md:gap-5 text-xs md:text-sm text-slate-500">
-                        <span class="flex items-center gap-1.5">
-                            <i class="fa-solid fa-headset text-blue-500" aria-hidden="true"></i> Garansi Support
+                    {{-- Kolom Teks (Kiri) --}}
+                    <div class="w-full lg:col-span-7" data-aos="fade-right">
+                        <span
+                            class="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-rocket text-blue-600" aria-hidden="true"></i>
+                            Teman Tumbuh UMKM Indonesia
                         </span>
-                        <span class="flex items-center gap-1.5">
-                            <i class="fa-solid fa-tags text-blue-500" aria-hidden="true"></i> Harga Transparan
-                        </span>
-                        <span class="flex items-center gap-1.5">
-                            <i class="fa-solid fa-mobile-screen text-blue-500" aria-hidden="true"></i> Responsif di HP
-                        </span>
-                    </div>
-                </div>
 
-                {{-- Kolom Stats --}}
-                <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <div
-                        class="bg-gradient-to-br from-blue-50 to-slate-100 rounded-[32px] md:rounded-[40px] flex items-center justify-center p-6 md:p-10">
-                        <div class="w-full text-center">
-                            {{-- Grid Wrapper --}}
-                            <div class="grid grid-cols-2 gap-3 md:gap-4 mb-5">
-                                @foreach($stats as $item)
-                                <div
-                                    class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 text-left">
-                                    <p class="text-2xl md:text-3xl font-extrabold {{ $item['color'] }}">
-                                        {{ $item['value'] }}
-                                    </p>
-                                    <p class="text-xs text-slate-500 mt-1">
-                                        {{ $item['label'] }}
-                                    </p>
-                                </div>
-                                @endforeach
-                            </div>
-
-                            {{-- Quote Section --}}
-                            <p class="text-slate-500 text-xs md:text-sm font-medium italic">
-                                "Partner diskusi, bukan sekadar vendor."
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    {{-- ================================================================
-         SECTION 2: LAYANAN
-    ================================================================ --}}
-    <section id="layanan" class="py-16 md:py-20 bg-slate-50" aria-labelledby="layanan-heading">
-        <div class="max-w-6xl mx-auto px-5 lg:px-10">
-
-            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
-                <span
-                    class="text-blue-600 font-bold bg-blue-50 px-4 py-1.5 rounded-full text-xs uppercase tracking-wider">
-                    Solusi Digital untuk Bisnis Anda
-                </span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold mt-4 mb-3 text-slate-900">
-                    Layanan Pembuatan Website Kami
-                </h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">
-                    Kami urus teknologinya, Anda fokus kembangkan usahanya. Semua transparan dan dirancang khusus untuk
-                    memudahkan bisnis Anda.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                @foreach($services as $service)
-                <article
-                    class="p-6 md:p-8 rounded-3xl {{ $service['color_bg'] }} border {{ $service['color_border'] }} hover:shadow-lg transition group"
-                    data-aos="fade-up" data-aos-delay="{{ $service['delay'] }}">
-
-                    <div class="text-3xl md:text-4xl mb-4 group-hover:scale-110 transition-transform inline-block"
-                        aria-hidden="true">
-                        {{ $service['icon'] }}
-                    </div>
-
-                    <h3 class="text-lg md:text-xl font-bold mb-3 text-slate-900">
-                        {{ $service['title'] }}
-                    </h3>
-
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        {{ $service['desc'] }}
-                    </p>
-
-                    <ul class="text-xs text-slate-500 space-y-2">
-                        @foreach($service['features'] as $feature)
-                        <li class="flex items-center gap-2">
-                            <i class="fa-solid fa-check {{ $service['color_icon'] }}" aria-hidden="true"></i>
-                            {{ $feature }}
-                        </li>
-                        @endforeach
-                    </ul>
-                </article>
-                @endforeach
-            </div>
-
-            <div class="text-center mt-8 md:mt-10" data-aos="fade-up">
-                <a href="/layanan"
-                    class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:underline underline-offset-4 transition text-sm md:text-base">
-                    Lihat semua jenis layanan kami
-                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-
-    {{-- ================================================================
-         SECTION 3: PROSES KERJA
-    ================================================================ --}}
-    <section id="proses-kerja" class="py-16 md:py-24 bg-white overflow-hidden" aria-labelledby="proses-kerja-heading">
-
-        <div class="max-w-6xl mx-auto px-5 lg:px-10">
-
-
-
-            {{-- Header --}}
-
-            <div class="text-center mb-14 md:mb-20" data-aos="fade-up">
-
-                <span
-                    class="inline-block bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-
-                    Transparan dari Awal
-
-                </span>
-
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
-
-                    Bagaimana Kami Bekerja?
-
-                </h2>
-
-                <p class="text-slate-500 max-w-xl mx-auto text-sm md:text-base">
-
-                    Tidak ada yang disembunyikan. Dari konsultasi pertama hingga website live, setiap langkah kami
-
-                    lakukan bersama Anda.
-
-                </p>
-
-            </div>
-
-
-
-            @php
-
-            $steps = [
-            [
-            'icon' => 'fa-comments', 'color' => 'blue', 'title' => 'Konsultasi',
-            'sub' => 'Gratis & Tanpa Syarat',
-            'detail' => 'Ceritakan kebutuhan bisnis Anda. Kami analisis dan susun solusi digital yang paling efektif
-            bersama Anda.'
-            ],
-            [
-            'icon' => 'fa-code', 'color' => 'emerald', 'title' => 'Coding Sistem',
-            'sub' => 'Teknologi Modern',
-            'detail' => 'Proses pengembangan dimulai. Kami membangun fitur website Anda dengan standar kode yang bersih
-            dan aman.'
-            ],
-            [
-            'icon' => 'fa-magnifying-glass-chart','color' => 'orange', 'title' => 'Testing & Revisi',
-            'sub' => 'Teliti Sebelum Live',
-            'detail' => 'Pengujian menyeluruh di berbagai perangkat untuk memastikan website bebas bug dan sesuai
-            keinginan Anda.'
-            ],
-            [
-            'icon' => 'fa-chalkboard-teacher', 'color' => 'indigo', 'title' => 'Training',
-            'sub' => 'Mahir Kelola Sistem',
-            'detail' => 'Kami berikan pelatihan intensif agar tim Anda mandiri mengoperasikan dashboard dan mengelola
-            konten tanpa kendala.'
-            ],
-            [
-            'icon' => 'fa-rocket', 'color' => 'violet', 'title' => 'Go-Live',
-            'sub' => 'Website Resmi Rilis',
-            'detail' => 'Website Anda resmi mengudara! Siap melayani pelanggan dan memperkuat kredibilitas bisnis Anda
-            di dunia digital.'
-            ],
-            [
-            'icon' => 'fa-headset', 'color' => 'sky', 'title' => 'Support',
-            'sub' => 'Pendampingan Teknis',
-            'detail' => 'Bebas khawatir bug atau error. Tim Cakra standby membantu kendala teknis maupun konsultasi
-            penggunaan kapan pun dibutuhkan.'
-            ],
-            ];
-
-            $colorMap = [
-            'blue' => ['ring' => 'ring-blue-200', 'bg' => 'bg-blue-100', 'icon' => 'text-blue-600', 'badge' =>
-            'bg-blue-600', 'hover' => 'group-hover:bg-blue-600', 'hoverbg' => 'group-hover:bg-blue-50'],
-            'emerald' => ['ring' => 'ring-emerald-200', 'bg' => 'bg-emerald-100', 'icon' => 'text-emerald-600', 'badge'
-            => 'bg-emerald-600', 'hover' => 'group-hover:bg-emerald-600', 'hoverbg' => 'group-hover:bg-emerald-50'],
-            'orange' => ['ring' => 'ring-orange-200', 'bg' => 'bg-orange-100', 'icon' => 'text-orange-600', 'badge' =>
-            'bg-orange-600', 'hover' => 'group-hover:bg-orange-600', 'hoverbg' => 'group-hover:bg-orange-50'],
-            'violet' => ['ring' => 'ring-violet-200', 'bg' => 'bg-violet-100', 'icon' => 'text-violet-600', 'badge' =>
-            'bg-violet-600', 'hover' => 'group-hover:bg-violet-600', 'hoverbg' => 'group-hover:bg-violet-50'],
-            'indigo' => ['ring' => 'ring-indigo-200', 'bg' => 'bg-indigo-100', 'icon' => 'text-indigo-600', 'badge' =>
-            'bg-indigo-600', 'hover' => 'group-hover:bg-indigo-600', 'hoverbg' => 'group-hover:bg-indigo-50'],
-            'sky' => ['ring' => 'ring-sky-200', 'bg' => 'bg-sky-100', 'icon' => 'text-sky-600', 'badge' => 'bg-sky-600',
-            'hover' => 'group-hover:bg-sky-600', 'hoverbg' => 'group-hover:bg-sky-50'],
-            ];
-
-            @endphp
-
-            {{-- ── Desktop: Stepper Horizontal ── --}}
-            <div class="hidden md:block relative" data-aos="fade-up" data-aos-delay="100">
-                {{-- Connector line --}}
-
-                <div class="absolute top-[52px] left-[10%] right-[10%] h-0.5 bg-slate-200 z-0" aria-hidden="true">
-
-                    <div
-                        class="proses-progress-line h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full w-0">
-
-                    </div>
-
-                </div>
-                <div class="grid grid-cols-6 gap-4 relative z-10">
-                    @foreach($steps as $i => $step)
-                    @php $c = $colorMap[$step['color']]; @endphp
-                    <div class="group flex flex-col items-center text-center cursor-default" data-aos="fade-up"
-                        data-aos-delay="{{ 100 + $i * 100 }}">
-                        <div class="relative mb-6">
-                            <span
-                                class="absolute -top-1 -right-1 w-5 h-5 rounded-full {{ $c['badge'] }} text-white text-[10px] font-extrabold flex items-center justify-center z-10 shadow-sm">
-                                {{ $i + 1 }}
-
+                        <h1 id="hero-heading"
+                            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-5 mb-5 leading-tight text-slate-950 font-heading">
+                            Jasa Pembuatan Website<br>
+                            <span class="text-blue-600 relative inline-block">
+                                Profesional untuk UMKM
+                                <span class="absolute -bottom-2 left-0 w-full h-1 bg-emerald-400 rounded-full"
+                                    aria-hidden="true"></span>
                             </span>
+                        </h1>
 
-                            <div class="w-[104px] h-[104px] rounded-full {{ $c['bg'] }} {{ $c['ring'] }} ring-4
+                        <p class="text-base md:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl">
+                            Tingkatkan level bisnis Anda dengan kehadiran digital yang kuat. <strong>Cakra Inovasi
+                                Digital</strong> menghadirkan solusi pembuatan website profesional, toko online, dan
+                            sistem kustom yang simpel, transparan, dan dirancang khusus untuk pertumbuhan UMKM
+                            Indonesia.
+                        </p>
 
-                                            flex items-center justify-center
-
-                                            {{ $c['hover'] }} transition-all duration-300 shadow-sm
-
-                                            group-hover:shadow-lg group-hover:scale-105">
-
-                                <i class="fa-solid {{ $step['icon'] }} text-2xl {{ $c['icon'] }} group-hover:text-white transition-colors duration-300"
+                        {{-- CTA Hero --}}
+                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi gratis soal pembuatan website untuk bisnis saya.' . ($suffix ?? '')) }}"
+                                target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center gap-2.5 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition duration-300 shadow-lg shadow-blue-200 text-sm md:text-base group">
+                                <i class="fa-brands fa-whatsapp text-lg transition-transform group-hover:scale-110"
                                     aria-hidden="true"></i>
-                            </div>
+                                Konsultasi Strategis Gratis
+                            </a>
+                            <a href="#layanan"
+                                class="inline-flex items-center justify-center gap-2 text-slate-800 font-semibold hover:text-blue-600 transition py-4 text-sm md:text-base group">
+                                Jelajahi Layanan Kami
+                                <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"
+                                    aria-hidden="true"></i>
+                            </a>
                         </div>
-                        <h3
-                            class="font-extrabold text-slate-900 text-sm mb-1 group-hover:text-blue-600 transition-colors">
-                            {{ $step['title'] }}
-                        </h3>
-                        <p class="text-xs text-slate-400 mb-3 font-medium">{{ $step['sub'] }}</p>
+
+                        {{-- Trust Badges --}}
                         <div
-                            class="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out w-full">
-                            <div
-                                class="{{ $c['hoverbg'] }} rounded-2xl px-3 py-3 text-xs text-slate-600 leading-relaxed border border-slate-100 transition-colors duration-300">
-                                {{ $step['detail'] }}
-                            </div>
+                            class="flex flex-wrap items-center gap-5 md:gap-6 text-sm text-slate-600 border-t border-slate-200 pt-6">
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-emerald-500" aria-hidden="true"></i> Harga
+                                Transparan
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-emerald-500" aria-hidden="true"></i> Responsif
+                                Modern
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-emerald-500" aria-hidden="true"></i> Garansi
+                                Support Purna Jual
+                            </span>
                         </div>
-                    </div>
+                    </div> {{-- PERBAIKAN: Tag penutup kontainer kiri dipindahkan ke sini --}}
+
+
+                </div> {{-- Penutup Grid Utama --}}
+            </div>
+        </header>
+
+        {{-- ================================================================
+             SECTION 2: LAYANAN - Elevated Cards
+        ================================================================ --}}
+        <section id="layanan" class="py-20 md:py-28 bg-white" aria-labelledby="layanan-heading">
+            <div class="max-w-7xl mx-auto px-5 lg:px-10">
+
+                <div class="text-center mb-16 md:mb-20" data-aos="fade-up">
+                    <span
+                        class="text-blue-700 font-bold bg-blue-50 px-4 py-1.5 rounded-full text-xs uppercase tracking-wider">
+                        Solusi Digital Komprehensif
+                    </span>
+                    <h2 id="layanan-heading"
+                        class="text-3xl md:text-4xl lg:text-5xl font-extrabold mt-5 mb-5 text-slate-950 font-heading leading-tight">
+                        Layanan Spesialis Kami
+                    </h2>
+                    <p class="text-slate-700 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                        Kami mengelola kompleksitas teknologi agar Anda dapat fokus sepenuhnya pada pengembangan inti
+                        usaha. Setiap layanan dirancang transparan, efisien, dan disesuaikan dengan kebutuhan unik UMKM.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10">
+                    @foreach($services as $service)
+                    @php $theme = $serviceColorMap[$service['color_theme']]; @endphp
+                    <article
+                        class="flex flex-col h-full p-8 md:p-10 rounded-3xl {{ $theme['bg'] }} border {{ $theme['border'] }} hover:shadow-2xl hover:shadow-slate-200/70 transition duration-500 group"
+                        data-aos="fade-up" data-aos-delay="{{ $service['delay'] }}">
+
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="w-16 h-16 flex items-center justify-center rounded-2xl {{ $theme['icon_bg'] }} text-4xl shadow-inner group-hover:scale-110 transition-transform duration-300"
+                                aria-hidden="true">
+                                {{ $service['icon'] }}
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-950 font-heading leading-snug flex-1">
+                                {{ $service['title'] }}
+                            </h3>
+                        </div>
+
+                        <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-8 flex-grow">
+                            {{ $service['desc'] }}
+                        </p>
+
+                        <div class="border-t border-black/5 pt-6 mt-auto">
+                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Fitur
+                                Unggulan:</p>
+                            <ul class="text-sm text-slate-700 space-y-3" role="list">
+                                @foreach($service['features'] as $feature)
+                                <li class="flex items-center gap-3">
+                                    <i class="fa-solid fa-circle-check {{ $theme['icon_text'] }} text-base shrink-0"
+                                        aria-hidden="true"></i>
+                                    <span>{{ $feature }}</span>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </article>
                     @endforeach
                 </div>
-            </div>
-            {{-- ── Mobile: Stepper Vertikal ── --}}
-            <div class="md:hidden relative pl-10">
-                <div class="absolute left-[18px] top-0 bottom-0 w-0.5 bg-slate-200" aria-hidden="true">
-                    <div
-                        class="proses-progress-line-v w-full bg-gradient-to-b from-blue-400 to-blue-600 rounded-full h-0">
-                    </div>
-                </div>
-                @foreach($steps as $i => $step)
-                @php $c = $colorMap[$step['color']]; @endphp
-                <div class="relative flex gap-4 mb-6 last:mb-0" data-aos="fade-right" data-aos-delay="{{ $i * 80 }}">
-                    <div class="absolute -left-10 top-2 w-9 h-9 rounded-full {{ $c['bg'] }} {{ $c['ring'] }} ring-4
-                                    flex items-center justify-center shrink-0 shadow-sm z-10">
-                        <i class="fa-solid {{ $step['icon'] }} text-sm {{ $c['icon'] }}" aria-hidden="true"></i>
-                    </div>
-                    <div class="flex-1 bg-slate-50 rounded-2xl p-4 border border-slate-100">
-                        <div class="flex items-start gap-2 mb-1.5">
-                            <span
-                                class="w-5 h-5 rounded-full {{ $c['badge'] }} text-white text-[10px] font-extrabold flex items-center justify-center shrink-0 mt-0.5">
-                                {{ $i + 1 }}
-                            </span>
-                            <div>
-                                <h3 class="font-extrabold text-slate-900 text-sm leading-tight">{{ $step['title'] }}
-                                </h3>
-                                <p class="text-[11px] text-slate-400 font-medium mt-0.5">{{ $step['sub'] }}</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed pl-7">{{ $step['detail'] }}</p>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-            <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
-                <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
-                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin tahu lebih lanjut soal proses pembuatan website.' . $suffix) }}"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 bg-emerald-500 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                    Tanya Langsung via WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
 
-
-    {{-- ================================================================
-        SECTION 4: PORTOFOLIO (DINAMIS DATABASE)
-    ================================================================ --}}
-    <section id="portfolio" class="py-16 md:py-24 bg-slate-50 relative overflow-hidden"
-        aria-labelledby="portofolio-heading">
-        <div class="absolute top-0 rioght-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-100 opacity-40 blur-3xl pointer-events-none"
-            aria-hidden="true"></div>
-
-        <div class="max-w-7xl mx-auto px-5 lg:px-10 relative z-10">
-            {{-- Header Section --}}
-            <div
-                class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-14 gap-5 border-b border-slate-200 pb-7 md:pb-8">
-                <div class="md:w-2/3" data-aos="fade-right">
-                    <span
-                        class="text-blue-600 font-semibold tracking-wider uppercase text-xs md:text-sm mb-2 block">Hasil
-                        Nyata</span>
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3 md:mb-4">
-                        Portofolio Website yang Kami Bangun
-                    </h2>
-                    <p class="text-slate-600 leading-relaxed max-w-2xl text-sm md:text-base">
-                        Lihat bagaimana kami membantu para pemilik usaha bertransformasi digital — dari katalog produk
-                        hingga sistem manajemen yang efisien.
-                    </p>
-                </div>
-                <div class="shrink-0" data-aos="fade-left">
-                    <a href="{{ url('/portofolio') }}"
-                        class="group inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-300 rounded-full text-slate-700 font-semibold hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm hover:shadow text-sm">
-                        Lihat Semua Proyek
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"
+                <div class="text-center mt-12 md:mt-16" data-aos="fade-up">
+                    <a href="/layanan"
+                        class="inline-flex items-center gap-2.5 text-blue-600 font-semibold hover:text-blue-800 transition text-base md:text-lg group">
+                        Lihat Semua Solusi Digital Kami
+                        <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1.5"
                             aria-hidden="true"></i>
                     </a>
                 </div>
+
             </div>
+        </section>
 
-            {{-- Portfolio Grid --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                @foreach($portfolios as $index => $porto)
-                @php
-                // Otomatisasi rotasi warna estetik berdasarkan urutan data agar layout tetap kaya warna
-                $colors = [
-                0 => ['bg' => 'bg-blue-50', 'border' => 'border-blue-100', 'text' => 'text-blue-700', 'hover' =>
-                'group-hover:text-blue-600'],
-                1 => ['bg' => 'bg-emerald-50', 'border' => 'border-emerald-100', 'text' => 'text-emerald-700', 'hover'
-                => 'group-hover:text-emerald-600'],
-                2 => ['bg' => 'bg-orange-50', 'border' => 'border-orange-100', 'text' => 'text-orange-700', 'hover' =>
-                'group-hover:text-orange-600']
-                ];
-                // Jika data lebih dari 3, dia akan mengulang palet warna pertama secara aman
-                $style = $colors[$index % 3];
+        {{-- ================================================================
+             SECTION 3: PROSES KERJA - Optimized Stepper
+        ================================================================ --}}
+        <section id="proses-kerja" class="py-20 md:py-28 bg-[#FAF8F5] overflow-hidden"
+            aria-labelledby="proses-kerja-heading">
+            <div class="max-w-7xl mx-auto px-5 lg:px-10">
 
-                // Hitung delay AOS secara dinamis (100ms, 200ms, 300ms)
-                $delay = ($index % 3 + 1) * 100;
-                @endphp
-
-                <a href="{{ url('/portofolio/' . $porto->slug) }}" class="group block h-full focus:outline-none">
-                    <article
-                        class="flex flex-col h-full bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
-                        data-aos="fade-up" data-aos-delay="{{ $delay }}">
-
-                        {{-- Bagian Atas / Gambar Mockup WebP --}}
-                        <div
-                            class="aspect-video {{ $style['bg'] }} rounded-2xl mb-4 overflow-hidden relative border border-slate-100">
-                            @if($porto->gambar)
-                            <img src="{{ asset('storage/portofolio/' . $porto->gambar) }}" alt="{{ $porto->judul }}"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            @else
-                            <div class="w-full h-full flex items-center justify-center text-slate-300">
-                                <i class="fas fa-image text-4xl"></i>
-                            </div>
-                            @endif
-                            <span
-                                class="absolute top-3 left-3 bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-xs">
-                                {{ $porto->kategori }}
-                            </span>
-                        </div>
-
-                        {{-- Bagian Tengah / Teks Informasi --}}
-                        <div class="px-2 flex-grow">
-                            <h3
-                                class="text-base md:text-lg font-extrabold text-slate-900 mb-2 {{ $style['hover'] }} transition-colors line-clamp-1">
-                                {{ $porto->judul }}
-                            </h3>
-                            <p class="text-slate-500 text-sm mb-4 line-clamp-2">
-                                {{ $porto->deskripsi_singkat }}
-                            </p>
-
-                            {{-- Render Tech Stack --}}
-                            <div class="flex flex-wrap gap-1.5 mb-4">
-                                @if(is_array($porto->tech_stack))
-                                @foreach(array_slice($porto->tech_stack, 0, 3) as $tech)
-                                <span
-                                    class="text-[11px] text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full font-medium">
-                                    {{ $tech }}
-                                </span>
-                                @endforeach
-                                @endif
-                            </div>
-                        </div>
-
-                        {{-- Bagian Bawah / Wrapper untuk Testimoni & Tombol Aksi --}}
-                        <div class="px-2 pb-2 mt-auto space-y-4">
-                            {{-- Testimonial Klien Dinamis --}}
-                            @if($porto->testimoni_konten)
-                            <blockquote class="{{ $style['bg'] }} border {{ $style['border'] }} p-3 rounded-xl">
-                                <p class="text-xs font-semibold {{ $style['text'] }} italic line-clamp-2">
-                                    "{{ $porto->testimoni_konten }}"
-                                </p>
-                            </blockquote>
-                            @endif
-
-                            {{-- Tombol Lihat Detail dengan Micro-Interaction --}}
-                            <div
-                                class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-700 group-hover:text-blue-600 transition-colors">
-                                <span>Lihat Detail Proyek</span>
-                                <span
-                                    class="w-6 h-6 rounded-full bg-slate-50 group-hover:bg-blue-50 flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-all duration-300">
-                                    <i
-                                        class="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-0.5 transition-transform"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                    </article>
-                </a>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-
-    {{-- ================================================================
-         SECTION 5: KEUNGGULAN
-    ================================================================ --}}
-    <section id="keunggulan" class="py-16 md:py-24 bg-slate-900 text-white overflow-hidden relative"
-        aria-labelledby="keunggulan-heading">
-        <div class="absolute top-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            aria-hidden="true"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none"
-            aria-hidden="true"></div>
-
-        <div class="max-w-7xl mx-auto px-5 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
-
-                <div data-aos="fade-right">
+                <div class="text-center mb-16 md:mb-24" data-aos="fade-up">
                     <span
-                        class="text-blue-400 font-semibold tracking-wider uppercase text-xs md:text-sm mb-3 block">Kenapa
-                        Pilih Kami?</span>
-                    <h2 class="text-2xl md:text-3xl lg:text-5xl font-extrabold mb-5 leading-tight">
-                        Keunggulan Jasa Website<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                            Cakra Inovasi Digital
-                        </span>
+                        class="inline-block bg-blue-100 text-blue-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
+                        Transparansi & Kolaborasi
+                    </span>
+                    <h2 id="proses-kerja-heading"
+                        class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-950 font-heading mb-5 leading-tight">
+                        Bagaimana Kami Bekerja Bersama Anda?
                     </h2>
-                    <p class="text-slate-400 text-base md:text-lg mb-7 leading-relaxed max-w-md">
-                        Kami tidak sekadar membuat website. Kami membangun sistem digital yang dirancang khusus untuk
-                        mempercepat pertumbuhan bisnis Anda.
+                    <p class="text-slate-700 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+                        Tanpa biaya tersembunyi. Dari konsultasi awal hingga peluncuran dan dukungan teknis, setiap
+                        tahapan kami lakukan secara transparan dan berkolaborasi erat dengan Anda.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-3 mt-6">
-                        <a href="/hubungi-kami"
-                            class="inline-flex items-center justify-center gap-2 px-7 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-full transition-all shadow-lg shadow-blue-500/30 text-sm">
-                            Mulai Konsultasi Gratis <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
-                        </a>
-                        <a href="/tentang"
-                            class="inline-flex items-center justify-center gap-2 px-7 py-3 border-2 border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white font-bold rounded-full transition-all text-sm">
-                            Tentang Kami
-                        </a>
-                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 md:gap-6">
-
-                    <div class="group p-5 md:p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:bg-slate-800 hover:border-blue-500/50 transition-all duration-300"
-                        data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-10 md:w-12 h-10 md:h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                            aria-hidden="true">
-                            <i class="fa-solid fa-code text-lg md:text-xl"></i>
+                {{-- ── Desktop: Stepper Horizontal (md+) ── --}}
+                <div class="hidden md:block relative" data-aos="fade-up" data-aos-delay="150">
+                    {{-- Connector line with animation --}}
+                    <div class="absolute top-[52px] left-[5%] right-[5%] h-0.5 bg-slate-200 z-0" aria-hidden="true">
+                        <div
+                            class="proses-progress-line h-full bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-600 rounded-full w-0 transition-all duration-1000 ease-in-out">
                         </div>
-                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Teknologi Modern &amp; Terkini</h3>
-                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
-                            Dibangun dengan framework terkini — website Anda cepat, aman, dan mudah dikembangkan.
-                        </p>
                     </div>
 
-                    <div class="group p-5 md:p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:bg-slate-800 hover:border-emerald-500/50 transition-all duration-300"
-                        data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-10 md:w-12 h-10 md:h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                            aria-hidden="true">
-                            <i class="fa-solid fa-mobile-screen text-lg md:text-xl"></i>
-                        </div>
-                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Responsif di Semua Perangkat</h3>
-                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
-                            Tampilan optimal di HP, tablet, maupun komputer.
-                        </p>
-                    </div>
+                    <div class="grid grid-cols-6 gap-6 relative z-10">
+                        @foreach($steps as $i => $step)
+                        @php $c = $colorMap[$step['color']]; @endphp
+                        <article class="group flex flex-col items-center text-center cursor-default" data-aos="fade-up"
+                            data-aos-delay="{{ 150 + $i * 100 }}">
+                            <div class="relative mb-8">
+                                {{-- Step Number Badge --}}
+                                <span
+                                    class="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full {{ $c['badge'] }} text-white text-[11px] font-extrabold flex items-center justify-center z-10 shadow-md">
+                                    {{ $i + 1 }}
+                                </span>
 
-                    <div class="group p-5 md:p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:bg-slate-800 hover:border-orange-500/50 transition-all duration-300"
-                        data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-10 md:w-12 h-10 md:h-12 bg-orange-500/10 text-orange-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                            aria-hidden="true">
-                            <i class="fa-solid fa-tags text-lg md:text-xl"></i>
-                        </div>
-                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Harga Transparan</h3>
-                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
-                            Tidak ada kejutan biaya di tengah jalan — semua disepakati di kontrak.
-                        </p>
-                    </div>
-
-                    <div class="group p-5 md:p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:bg-slate-800 hover:border-purple-500/50 transition-all duration-300"
-                        data-aos="fade-up" data-aos-delay="400">
-                        <div class="w-10 md:w-12 h-10 md:h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                            aria-hidden="true">
-                            <i class="fa-solid fa-headset text-lg md:text-xl"></i>
-                        </div>
-                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Garansi Support Purna Jual</h3>
-                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
-                            Dukungan teknis terus berjalan setelah serah terima.
-                        </p>
-                    </div>
-
-                    <div class="group p-5 md:p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:bg-slate-800 hover:border-rose-500/50 transition-all duration-300"
-                        data-aos="fade-up" data-aos-delay="500">
-                        <div class="w-10 md:w-12 h-10 md:h-12 bg-rose-500/10 text-rose-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                            aria-hidden="true">
-                            <i class="fa-solid fa-clock-rotate-left text-lg md:text-xl"></i>
-                        </div>
-                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Siaga 24/7 Tanpa Henti</h3>
-                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
-                            Tim kami selalu siap siaga membantu kendala teknis Anda kapan pun, siang maupun malam.
-                        </p>
-                    </div>
-
-                    {{-- Kartu 6: Cakupan Nasional --}}
-                    <div class="group p-5 md:p-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300"
-                        data-aos="fade-up" data-aos-delay="600">
-                        <div class="w-10 md:w-12 h-10 md:h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                            aria-hidden="true">
-                            <i class="fa-solid fa-earth-asia text-lg md:text-xl"></i>
-                        </div>
-                        <h3 class="text-sm md:text-lg font-bold mb-2 text-slate-100">Jangkauan Seluruh Indonesia</h3>
-                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
-                            Melayani berbagai klien dari kota-kota besar yang ada di Indonesia dengan koordinasi
-                            digital yang efisien dan
-                            profesional.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    {{-- ================================================================
-         SECTION 6: TESTIMONI
-    ================================================================ --}}
-    <section id="testimoni" class="py-16 md:py-24 bg-white overflow-hidden" x-data="testimonialData()"
-        aria-label="Testimoni klien">
-        <div class="max-w-7xl mx-auto px-5 lg:px-10">
-            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900">Cerita Nyata dari Klien Kami
-                </h2>
-                <p class="text-slate-500 mt-4 max-w-2xl mx-auto text-base md:text-lg">
-                    Bukan sekadar testimoni — bukti nyata bahwa kami serius mendampingi bisnis Anda tumbuh.
-                </p>
-            </div>
-            <div class="relative">
-                <div class="swiper testimonial-swiper">
-                    <div class="swiper-wrapper">
-                        <template x-for="item in testimonials" :key="item.id">
-                            <div class="swiper-slide h-auto py-4 px-2">
+                                {{-- Icon Container --}}
                                 <div
-                                    :class="`p-6 md:p-8 rounded-3xl border h-full flex flex-col relative transition-all duration-300 shadow-sm hover:shadow-md ${item.bgColor} ${item.borderColor}`">
-                                    <div :class="`text-4xl absolute top-4 right-6 opacity-20 ${item.quoteColor}`"
-                                        aria-hidden="true">"</div>
-                                    <p class="text-slate-700 text-sm md:text-base italic leading-relaxed mb-7 flex-grow"
-                                        x-text="item.content"></p>
-                                    <div class="flex items-center gap-3 mt-auto border-t border-black/5 pt-5">
-                                        <div :class="`w-10 md:w-12 h-10 md:h-12 rounded-full flex items-center justify-center font-bold text-white shadow-sm flex-shrink-0 text-sm ${item.avatarBg}`"
-                                            x-text="item.initials" :aria-label="'Inisial ' + item.name"></div>
-                                        <div class="overflow-hidden">
-                                            <h3 class="font-bold text-slate-900 text-sm md:text-base truncate"
-                                                x-text="item.name"></h3>
-                                            <p class="text-xs text-slate-500 truncate" x-text="item.role"></p>
-                                        </div>
-                                    </div>
+                                    class="w-[104px] h-[104px] rounded-full {{ $c['bg'] }} {{ $c['ring'] }} ring-4 flex items-center justify-center {{ $c['hover'] }} transition-all duration-300 shadow-lg shadow-slate-100 group-hover:shadow-blue-100 group-hover:scale-105 group-hover:-translate-y-1">
+                                    <i class="fa-solid {{ $step['icon'] }} text-3xl {{ $c['icon'] }} group-hover:text-white transition-colors duration-300"
+                                        aria-hidden="true"></i>
                                 </div>
                             </div>
-                        </template>
+
+                            <h3
+                                class="font-bold text-slate-950 text-base mb-1.5 {{ $c['text_hover'] }} transition-colors font-heading">
+                                {{ $step['title'] }}
+                            </h3>
+                            <p class="text-xs text-blue-700 mb-4 font-semibold uppercase tracking-wider">
+                                {{ $step['sub'] }}</p>
+
+                            {{-- Detail Dropdown on Hover --}}
+                            <div
+                                class="w-full max-h-0 overflow-hidden group-hover:max-h-32 transition-all duration-500 ease-in-out">
+                                <div
+                                    class="{{ $c['hoverbg'] }} rounded-2xl px-4 py-4 text-xs text-slate-700 leading-relaxed border border-slate-100 shadow-inner mt-2 transition-colors duration-300">
+                                    {{ $step['detail'] }}
+                                </div>
+                            </div>
+                        </article>
+                        @endforeach
                     </div>
                 </div>
-                <div class="testimonial-pagination flex justify-center gap-2 mt-8 md:mt-10" role="tablist"
-                    aria-label="Navigasi testimoni"></div>
+
+                {{-- ── Mobile: Stepper Vertikal (<md) ── --}}
+                <div class="md:hidden relative pl-12">
+                    {{-- Connector line --}}
+                    <div class="absolute left-[20px] top-0 bottom-0 w-0.5 bg-slate-200" aria-hidden="true">
+                        <div
+                            class="proses-progress-line-v w-full bg-gradient-to-b from-blue-500 to-emerald-500 rounded-full h-0 transition-all duration-1000 ease-in-out">
+                        </div>
+                    </div>
+
+                    @foreach($steps as $i => $step)
+                    @php $c = $colorMap[$step['color']]; @endphp
+                    <article class="relative flex gap-5 mb-8 last:mb-0" data-aos="fade-right"
+                        data-aos-delay="{{ $i * 100 }}">
+                        {{-- Icon Container Mobile --}}
+                        <div
+                            class="absolute -left-12 top-1.5 w-10 h-10 rounded-full {{ $c['bg'] }} {{ $c['ring'] }} ring-4 flex items-center justify-center shrink-0 shadow-md z-10">
+                            <i class="fa-solid {{ $step['icon'] }} text-base {{ $c['icon'] }}" aria-hidden="true"></i>
+                        </div>
+
+                        {{-- Content Mobile --}}
+                        <div class="flex-1 bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
+                            <div class="flex items-start gap-3 mb-2">
+                                <span
+                                    class="w-6 h-6 rounded-full {{ $c['badge'] }} text-white text-[11px] font-extrabold flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                                    {{ $i + 1 }}
+                                </span>
+                                <div>
+                                    <h3 class="font-bold text-slate-950 text-base leading-tight font-heading">
+                                        {{ $step['title'] }}</h3>
+                                    <p class="text-[11px] text-blue-700 font-semibold mt-1 uppercase tracking-wider">
+                                        {{ $step['sub'] }}</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-700 leading-relaxed pl-9 mt-3 border-l-2 border-slate-100">
+                                {{ $step['detail'] }}</p>
+                        </div>
+                    </article>
+                    @endforeach
+                </div>
+
+                {{-- CTA Below Stepper --}}
+                <div class="mt-16 md:mt-20 text-center border-t border-slate-200 pt-10" data-aos="fade-up">
+                    <p class="text-slate-600 text-sm mb-5">Masih memiliki pertanyaan mengenai proses kolaborasi?</p>
+                    <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin tahu lebih lanjut soal proses pembuatan website.' . ($suffix ?? '')) }}"
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2.5 bg-emerald-500 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm md:text-base group shadow-lg shadow-emerald-100">
+                        <i class="fa-brands fa-whatsapp text-lg transition-transform group-hover:scale-110"
+                            aria-hidden="true"></i>
+                        Diskusi Langsung via WhatsApp
+                    </a>
+                </div>
             </div>
+        </section>
+
+        {{-- ================================================================
+            SECTION 4: PORTOFOLIO - Premium Grid
+        ================================================================ --}}
+        {{-- Section Portofolio dinonaktifkan sementara karena membutuhkan data dinamis --}}
+        {{-- Jika Anda siap mengaktifkannya, pastikan variabel $portfolios dikirim dari Controller --}}
+        {{--
+        <section id="portfolio" class="py-20 md:py-28 bg-white relative overflow-hidden" aria-labelledby="portofolio-heading">
+            <div class="max-w-7xl mx-auto px-5 lg:px-10 relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 border-b border-slate-200 pb-10">
+                    <div class="md:w-2/3" data-aos="fade-right">
+                        <span class="text-blue-700 font-semibold tracking-wider uppercase text-xs md:text-sm mb-3 block">Bukti Nyata Kinerja</span>
+                        <h2 id="portofolio-heading" class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-950 font-heading mb-4 leading-tight">
+                            Kemitraan Sukses Transformasi Digital
+                        </h2>
+                        <p class="text-slate-700 leading-relaxed max-w-3xl text-base md:text-lg">
+                            Jelajahi bagaimana kami membantu mitra UMKM bertransformasi digital—dari katalog produk interaktif hingga sistem manajemen operasional yang efisien dan terukur.
+                        </p>
+                    </div>
+                    <div class="shrink-0" data-aos="fade-left">
+                        <a href="{{ url('/portofolio') }}" class="group inline-flex items-center gap-2.5 px-6 py-3
+        bg-white border border-slate-300 rounded-full text-slate-800 font-semibold hover:border-blue-600
+        hover:text-blue-600 transition-all shadow-sm hover:shadow-md text-sm md:text-base group">
+        Lihat Semua Proyek
+        <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+        </a>
         </div>
-    </section>
+        </div>
 
-
-    {{-- ================================================================
-         SECTION 7: TEKNOLOGI
-    ================================================================ --}}
-    <section id="teknologi" class="py-16 md:py-24 bg-slate-50 overflow-hidden" aria-labelledby="teknologi-heading">
-        <div class="max-w-6xl mx-auto px-5 lg:px-10">
-
-            <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
-                <span
-                    class="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Teknologi Modern &amp; Stabil
-                </span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold mt-4 mb-3 text-slate-900">
-                    Stack Teknologi yang Kami Gunakan
-                </h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">
-                    Kombinasi teknologi terbaik untuk memastikan website Anda cepat, aman, dan mudah dikembangkan.
-                </p>
-            </div>
-
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            @forelse($portfolios ?? [] as $index => $porto)
             @php
-            $techStack = [
-            ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg', 'alt' =>
-            'Laravel — PHP Framework', 'label' => 'Laravel', 'hover' => 'group-hover:text-red-600'],
-            ['src' => 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg', 'alt' => 'Tailwind
-            CSS — Utility CSS', 'label' => 'Tailwind', 'hover' => 'group-hover:text-cyan-500'],
-            ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg', 'alt' =>
-            'CodeIgniter — PHP Framework', 'label' => 'CodeIgniter', 'hover' => 'group-hover:text-orange-600'],
-            ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', 'alt' => 'React JS
-            — JavaScript Library', 'label' => 'React JS', 'hover' => 'group-hover:text-cyan-400'],
-            ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', 'alt' => 'Node JS
-            — JavaScript Runtime', 'label' => 'Node JS', 'hover' => 'group-hover:text-green-600'],
-            ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', 'alt' => 'MySQL —
-            Relational Database', 'label' => 'MySQL', 'hover' => 'group-hover:text-blue-600'],
-            ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', 'alt' =>
-            'JavaScript Modern (ES6+)', 'label' => 'JS Modern', 'hover' => 'group-hover:text-yellow-500'],
-            ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', 'alt' => 'PHP 8+ —
-            Server Side Language', 'label' => 'PHP 8+', 'hover' => 'group-hover:text-indigo-600'],
+            $colors = [
+            ['bg' => 'bg-blue-50', 'border' => 'border-blue-100', 'text' => 'text-blue-800'],
+            ['bg' => 'bg-emerald-50', 'border' => 'border-emerald-100', 'text' => 'text-emerald-800'],
+            ['bg' => 'bg-orange-50', 'border' => 'border-orange-100', 'text' => 'text-orange-800']
             ];
+            $style = $colors[$index % 3];
+            $delay = ($index % 3 + 1) * 150;
             @endphp
 
-            <div class="grid grid-cols-4 lg:grid-cols-8 gap-3 md:gap-6" data-aos="fade-up" data-aos-delay="200">
-                @foreach($techStack as $tech)
-                <div
-                    class="group p-3 md:p-5 bg-white rounded-[20px] md:rounded-[28px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
-                    {{--
-                            FIX CLS: Tambah atribut width="40" height="40" eksplisit dan decoding="async".
-                            Ini mencegah layout shift saat gambar belum dimuat karena browser sudah
-                            tahu dimensinya dari awal render. loading="lazy" sudah ada sebelumnya.
-                        --}}
-                    <img src="{{ $tech['src'] }}" alt="{{ $tech['alt'] }}" loading="lazy" decoding="async" width="40"
-                        height="40"
-                        class="w-7 md:w-10 h-7 md:h-10 mb-2 md:mb-3 grayscale group-hover:grayscale-0 transition-all">
-                    <span
-                        class="text-[9px] md:text-[10px] font-bold text-slate-400 {{ $tech['hover'] }} transition-colors text-center leading-tight">
-                        {{ strtoupper($tech['label']) }}
-                    </span>
-                </div>
-                @endforeach
-            </div>
-
-            <div class="mt-10 md:mt-14 p-6 md:p-8 bg-blue-600 rounded-[24px] md:rounded-[32px] text-white flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6"
-                data-aos="zoom-in">
-                <div class="flex items-center gap-4 text-center md:text-left">
-                    <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl shrink-0"
-                        aria-hidden="true">🚀</div>
-                    <div>
-                        <h3 class="font-bold text-sm md:text-base">Selalu Up-to-Date dengan Teknologi Terbaru</h3>
-                        <p class="text-blue-100 text-xs md:text-sm mt-1">Kami memastikan sistem Anda menggunakan versi
-                            teknologi terkini dan terpercaya.</p>
+            <a href="{{ url('/portofolio/' . $porto->slug) }}"
+                class="group block h-full focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 rounded-3xl">
+                <article
+                    class="flex flex-col h-full bg-white rounded-3xl p-5 shadow-sm hover:shadow-2xl hover:shadow-slate-200/70 transition-all duration-500 border border-slate-100">
+                    <div
+                        class="aspect-[16/10] {{ $style['bg'] }} rounded-2xl mb-5 overflow-hidden relative border border-slate-100 shadow-inner">
+                        @if($porto->gambar)
+                        <img src="{{ asset('storage/portofolio/' . $porto->gambar) }}"
+                            alt="Mockup website {{ $porto->judul }}" loading="lazy" width="400" height="250"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                        @else
+                        <div class="w-full h-full flex items-center justify-center text-slate-300" aria-hidden="true">
+                            <i class="fas fa-image text-5xl"></i>
+                        </div>
+                        @endif
+                        <span
+                            class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-slate-900 text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            {{ $porto->kategori }}
+                        </span>
                     </div>
-                </div>
-                <a href="{{ route('portofolio.index') }}"
-                    class="whitespace-nowrap w-full md:w-auto text-center bg-white text-blue-600 px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-50 transition">
-                    Lihat Hasil Kerja Kami
-                </a>
-            </div>
 
+                    <div class="px-2 flex-grow flex flex-col">
+                        <h3
+                            class="text-lg md:text-xl font-bold text-slate-950 mb-2.5 group-hover:text-blue-700 transition-colors font-heading leading-tight line-clamp-2">
+                            {{ $porto->judul }}
+                        </h3>
+                        <p class="text-slate-600 text-sm md:text-base mb-5 line-clamp-3 leading-relaxed flex-grow">
+                            {{ $porto->deskripsi_singkat }}
+                        </p>
+
+                        @if(is_array($porto->tech_stack))
+                        <div class="flex flex-wrap gap-2 mb-6 border-t border-slate-100 pt-5" role="list"
+                            aria-label="Teknologi yang digunakan">
+                            @foreach(array_slice($porto->tech_stack, 0, 3) as $tech)
+                            <span
+                                class="text-[11px] text-slate-600 bg-slate-100 px-3 py-1 rounded-full font-medium shadow-inner uppercase tracking-wider">
+                                {{ $tech }}
+                            </span>
+                            @endforeach
+                            @if(count($porto->tech_stack) > 3)
+                            <span class="text-[11px] text-slate-500 font-medium">+{{ count($porto->tech_stack) - 3 }}
+                                Lainnya</span>
+                            @endif
+                        </div>
+                        @endif
+                    </div>
+
+                    <div class="px-2 pb-2 mt-auto">
+                        <div
+                            class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs md:text-sm font-bold text-slate-800 group-hover:text-blue-700 transition-colors">
+                            <span>Eksplorasi Detail Proyek</span>
+                            <span
+                                class="w-7 h-7 rounded-full bg-slate-100 group-hover:bg-blue-100 flex items-center justify-center text-slate-500 group-hover:text-blue-700 transition-all duration-300 Shadow-inner">
+                                <i
+                                    class="fa-solid fa-arrow-right text-[11px] transform group-hover:translate-x-0.5 transition-transform"></i>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            @empty
+            <div class="md:col-span-2 lg:col-span-3 text-center py-16 bg-slate-50 rounded-3xl border border-slate-100">
+                <i class="fas fa-folder-open text-5xl text-slate-300 mb-4" aria-hidden="true"></i>
+                <p class="text-slate-600 font-medium">Data portofolio sedang disiapkan.</p>
+            </div>
+            @endforelse
         </div>
-    </section>
+        </div>
+        </section>
+        --}}
 
+        {{-- ================================================================
+             SECTION 5: KEUNGGULAN - Modernized Layout
+        ================================================================ --}}
+        <section id="keunggulan" class="py-20 md:py-28 bg-[#0A1931] text-white overflow-hidden relative"
+            aria-labelledby="keunggulan-heading">
+            {{-- Modern Graphic Overlays --}}
+            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500/15 rounded-full blur-[128px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                aria-hidden="true"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/15 rounded-full blur-[128px] translate-x-1/3 translate-y-1/3 pointer-events-none"
+                aria-hidden="true"></div>
 
-    {{-- ================================================================
-         SECTION 8: FAQ
-    ================================================================ --}}
-    <section id="faq" class="py-16 md:py-24 bg-white" x-data="faqSection()"
-        aria-label="Pertanyaan yang sering diajukan tentang jasa website kami">
-        <div class="max-w-3xl mx-auto px-5 md:px-6">
+            <div class="max-w-7xl mx-auto px-5 lg:px-10 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-center">
 
-            <div class="text-center mb-10 md:mb-12" data-aos="fade-up">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3 md:mb-4">
-                    Pertanyaan Seputar <span class="text-blue-600">Jasa Website Kami</span>
-                </h2>
-                <p class="text-slate-600 text-sm md:text-base">Semua yang perlu Anda ketahui sebelum memulai kerja sama
-                    bersama kami.</p>
-            </div>
-
-            <div class="space-y-2.5 md:space-y-3" data-aos="fade-up" data-aos-delay="100">
-                <template x-for="(faq, index) in faqs" :key="faq.id">
-
-                    <div class="faq-item group relative bg-white rounded-2xl overflow-hidden shadow-sm border transition-all duration-300"
-                        :class="selected === faq.id ? 'border-blue-300 shadow-blue-100 shadow-md' : 'border-slate-200 hover:border-slate-300 hover:shadow-md'">
-
-                        {{-- Garis aksen kiri --}}
-                        <div class="absolute left-0 top-0 bottom-0 w-1 rounded-l-full transition-all duration-300"
-                            :class="selected === faq.id ? 'bg-blue-500 opacity-100' : 'opacity-0'"></div>
-
-                        {{-- Tombol pertanyaan --}}
-                        <button @click="toggleFaq(faq.id, $event)"
-                            class="faq-btn w-full flex items-center gap-3 md:gap-4 px-4 md:px-6 py-4 md:py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-inset relative overflow-hidden cursor-pointer"
-                            :aria-expanded="selected === faq.id" :aria-controls="'faq-answer-' + faq.id">
-
-                            {{-- Ripple: elemen kosong, style di-set sepenuhnya via JS --}}
-                            <span class="faq-ripple" aria-hidden="true"></span>
-
-                            {{-- Nomor urut --}}
+                    {{-- Kolom Teks (lg:5) --}}
+                    <div class="lg:col-span-5" data-aos="fade-right">
+                        <span
+                            class="text-emerald-400 font-semibold tracking-wider uppercase text-xs md:text-sm mb-3 block">Mengapa
+                            Bermitra dengan Kami?</span>
+                        <h2 id="keunggulan-heading"
+                            class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight text-white font-heading">
+                            Keunggulan Kompetitif<br>
                             <span
-                                class="shrink-0 w-6 md:w-7 h-6 md:h-7 rounded-full text-[10px] md:text-[11px] font-extrabold flex items-center justify-center transition-all duration-300"
-                                :class="selected === faq.id ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200'"
-                                x-text="String(index + 1).padStart(2, '0')">
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-400">
+                                Cakra Inovasi Digital
                             </span>
-
-                            {{-- Teks pertanyaan --}}
-                            <span
-                                class="flex-1 font-bold text-sm md:text-base pr-3 md:pr-4 transition-colors duration-200"
-                                :class="selected === faq.id ? 'text-blue-700' : 'text-slate-800'" x-text="faq.question">
-                            </span>
-
-                            {{-- Chevron --}}
-                            <span
-                                class="shrink-0 w-7 md:w-8 h-7 md:h-8 rounded-full flex items-center justify-center border transition-all duration-300"
-                                :class="selected === faq.id ? 'bg-blue-600 border-blue-600 rotate-180' : 'bg-white border-slate-200 group-hover:border-slate-300'">
-                                <i class="fa-solid fa-chevron-down text-[10px] md:text-[11px] transition-colors duration-200"
-                                    :class="selected === faq.id ? 'text-white' : 'text-slate-400'"
+                        </h2>
+                        <p class="text-slate-300 text-base md:text-lg mb-10 leading-relaxed max-w-xl">
+                            Kami tidak sekadar membangun website. Kami bermitra untuk menciptakan ekosistem digital yang
+                            taktis, efisien, dan dirancang khusus untuk mengakselerasi pertumbuhan bisnis UMKM Anda di
+                            era digital.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-8 border-t border-slate-800 pt-8">
+                            <a href="/hubungi-kami"
+                                class="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-600/30 text-sm md:text-base group">
+                                Mulai Konsultasi Strategis <i
+                                    class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1.5"
                                     aria-hidden="true"></i>
-                            </span>
-                        </button>
+                            </a>
+                        </div>
+                    </div>
 
-                        {{-- Panel jawaban --}}
-                        <div :id="'faq-answer-' + faq.id" class="faq-answer overflow-hidden"
-                            :style="selected === faq.id ? 'max-height: 500px; opacity: 1;' : 'max-height: 0; opacity: 0;'">
-                            <div class="px-4 md:px-6 pb-4 md:pb-5 pt-0">
-                                <div class="border-t border-slate-100 mb-3 md:mb-4"></div>
-                                <div class="pl-9 md:pl-11 text-sm text-slate-600 leading-relaxed" x-html="faq.answer">
+                    {{-- Kolom Grid Keunggulan (lg:7) - Optimized Rapi --}}
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                        @php
+                        $usp = [
+                        ['icon' => 'fa-code', 'color' => 'blue', 'title' => 'Teknologi Modern & Stabil', 'desc' =>
+                        'Dibangun dengan framework terkini (Laravel/Tailwind) memastikan performa tinggi, keamanan
+                        maksimal, dan kemudahan skalabilitas.'],
+                        ['icon' => 'fa-mobile-screen', 'color' => 'emerald', 'title' => 'Responsif & User-Centric',
+                        'desc' => 'Desain adaptif yang sempurna diakses dari HP, tablet, maupun desktop, fokus pada
+                        pengalaman pengguna yang intuitif.'],
+                        ['icon' => 'fa-tags', 'color' => 'orange', 'title' => 'Harga Transparan & Adil', 'desc' =>
+                        'Struktur biaya jelas sejak awal sesuai kontrak kesepakatan, tanpa kejutan biaya tersembunyi di
+                        tengah jalan.'],
+                        ['icon' => 'fa-headset', 'color' => 'purple', 'title' => 'Garansi Support Purna Jual', 'desc' =>
+                        'Dukungan teknis siaga pasca peluncuran, memastikan sistem Anda beroperasi prima tanpa kendala
+                        berkelanjutan.'],
+                        ['icon' => 'fa-server', 'color' => 'rose', 'title' => 'Infrastruktur Cloud Handal', 'desc' =>
+                        'Jaminan uptime server tinggi dan backup data rutin untuk keamanan dan ketersediaan sistem
+                        bisnis Anda.'],
+                        ['icon' => 'fa-earth-asia', 'color' => 'cyan', 'title' => 'Jangkauan Layanan Nasional', 'desc'
+                        => 'Koordinasi digital yang efisien memungkinkan kami melayani mitra UMKM profesional dari
+                        seluruh penjuru Indonesia.'],
+                        ];
+                        $uspColorMap = [
+                        'blue' => ['icon_text' => 'text-blue-400', 'icon_bg' => 'bg-blue-500/10', 'border' =>
+                        'group-hover:border-blue-500/50'],
+                        'emerald' => ['icon_text' => 'text-emerald-400', 'icon_bg' => 'bg-emerald-500/10', 'border' =>
+                        'group-hover:border-emerald-500/50'],
+                        'orange' => ['icon_text' => 'text-orange-400', 'icon_bg' => 'bg-orange-500/10', 'border' =>
+                        'group-hover:border-orange-500/50'],
+                        'purple' => ['icon_text' => 'text-purple-400', 'icon_bg' => 'bg-purple-500/10', 'border' =>
+                        'group-hover:border-purple-500/50'],
+                        'rose' => ['icon_text' => 'text-rose-400', 'icon_bg' => 'bg-rose-500/10', 'border' =>
+                        'group-hover:border-rose-500/50'],
+                        'cyan' => ['icon_text' => 'text-cyan-400', 'icon_bg' => 'bg-cyan-500/10', 'border' =>
+                        'group-hover:border-cyan-500/50'],
+                        ];
+                        @endphp
+
+                        @foreach($usp as $i => $item)
+                        @php $uColor = $uspColorMap[$item['color']]; @endphp
+                        <article
+                            class="group p-6 md:p-8 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-3xl transition-all duration-300 {{ $uColor['border'] }} hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/10"
+                            data-aos="fade-up" data-aos-delay="{{ 100 + $i * 100 }}">
+                            <div class="w-12 h-12 {{ $uColor['icon_bg'] }} {{ $uColor['icon_text'] }} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-inner"
+                                aria-hidden="true">
+                                <i class="fa-solid {{ $item['icon'] }} text-xl md:text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-3 text-white font-heading">{{ $item['title'] }}</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">{{ $item['desc'] }}</p>
+                        </article>
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        {{-- ================================================================
+             SECTION 6: TESTIMONI - Reworked for Whitespace
+        ================================================================ --}}
+        <section id="testimoni" class="py-20 md:py-28 bg-white overflow-hidden" x-data="testimonialData()"
+            aria-labelledby="testimoni-heading">
+            <div class="max-w-7xl mx-auto px-5 lg:px-10">
+
+                <div class="text-center mb-16 md:mb-20" data-aos="fade-up">
+                    <span
+                        class="text-emerald-700 font-bold bg-emerald-50 px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-5 Inline-block">Kisah
+                        Sukses Mitra</span>
+                    <h2 id="testimoni-heading"
+                        class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-950 font-heading leading-tight mb-5">
+                        Cerita Nyata dari Klien Kami
+                    </h2>
+                    <p class="text-slate-700 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+                        Bukan sekadar testimoni—bukti otentik dedikasi kami dalam mendampingi pertumbuhan bisnis UMKM
+                        melalui solusi digital yang taktis.
+                    </p>
+                </div>
+
+                <div class="relative px-2">
+                    <div class="swiper testimonial-swiper pb-12">
+                        <div class="swiper-wrapper">
+                            <template x-for="item in testimonials" :key="item.id">
+                                <div class="swiper-slide h-auto py-4 px-2">
+                                    <article
+                                        :class="`p-8 md:p-10 rounded-3xl border h-full flex flex-col relative transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-slate-100 ${item.bgColor} ${item.borderColor}`">
+                                        {{-- Quote Icon --}}
+                                        <div :class="`text-6xl absolute top-6 right-8 opacity-20 font-serif ${item.quoteColor}`"
+                                            aria-hidden="true">“</div>
+
+                                        <p class="text-slate-800 text-sm md:text-base italic leading-relaxed mb-8 flex-grow relative z-10"
+                                            x-text="item.content"></p>
+
+                                        <div
+                                            class="flex items-center gap-4 mt-auto border-t border-black/5 pt-6 relative z-10">
+                                            <div :class="`w-12 h-12 rounded-full flex items-center justify-center font-bold text-white shadow-md flex-shrink-0 text-sm ${item.avatarBg}`"
+                                                x-text="item.initials" :aria-label="'Inisial ' + item.name"></div>
+                                            <div class="overflow-hidden">
+                                                <h3 class="font-bold text-slate-950 text-base truncate font-heading"
+                                                    x-text="item.name"></h3>
+                                                <p class="text-xs md:text-sm text-blue-800 font-medium truncate"
+                                                    x-text="item.role"></p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    {{-- Optimized Pagination --}}
+                    <div class="testimonial-pagination flex justify-center gap-3 mt-10" role="tablist"
+                        aria-label="Navigasi testimoni"></div>
+                </div>
+
+            </div>
+        </section>
+
+        {{-- ================================================================
+             SECTION 7: TEKNOLOGI - Elevated Grid
+        ================================================================ --}}
+        <section id="teknologi" class="py-20 md:py-28 bg-[#FAF8F5] overflow-hidden" aria-labelledby="teknologi-heading">
+            <div class="max-w-7xl mx-auto px-5 lg:px-10">
+
+                <div class="text-center mb-16 md:mb-20" data-aos="fade-up">
+                    <span
+                        class="bg-blue-100 text-blue-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5 Inline-block">Pondasi
+                        Digital Kokoh</span>
+                    <h2 id="teknologi-heading"
+                        class="text-3xl md:text-4xl lg:text-5xl font-extrabold mt-4 mb-5 text-slate-950 font-heading leading-tight">
+                        Stack Teknologi Modern & Stabil
+                    </h2>
+                    <p class="text-slate-700 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+                        Kami menggunakan kombinasi teknologi terkini dan teruji untuk memastikan website Anda berjalan
+                        cepat, aman, responsif, dan mudah dikembangkan di masa depan.
+                    </p>
+                </div>
+
+                @php
+                $techStack = [
+                ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg', 'alt' =>
+                'Laravel — PHP Framework', 'label' => 'Laravel', 'hover' => 'group-hover:text-red-600'],
+                ['src' => 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg', 'alt' =>
+                'Tailwind CSS — Utility CSS Framework', 'label' => 'Tailwind CSS', 'hover' =>
+                'group-hover:text-cyan-500'],
+                ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg', 'alt'
+                => 'CodeIgniter — PHP Framework', 'label' => 'CodeIgniter', 'hover' => 'group-hover:text-orange-600'],
+                ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', 'alt' => 'React
+                JS — JavaScript Library', 'label' => 'React JS', 'hover' => 'group-hover:text-cyan-400'],
+                ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', 'alt' =>
+                'Node JS — JavaScript Runtime', 'label' => 'Node JS', 'hover' => 'group-hover:text-green-600'],
+                ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', 'alt' => 'MySQL
+                — Relational Database', 'label' => 'MySQL', 'hover' => 'group-hover:text-blue-600'],
+                ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', 'alt'
+                => 'JavaScript Modern (ES6+)', 'label' => 'JS Modern', 'hover' => 'group-hover:text-yellow-500'],
+                ['src' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', 'alt' => 'PHP 8+ —
+                Server Side Language', 'label' => 'PHP 8+', 'hover' => 'group-hover:text-indigo-600'],
+                ];
+                @endphp
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-5 md:gap-6" data-aos="fade-up"
+                    data-aos-delay="200">
+                    @foreach($techStack as $tech)
+                    <div
+                        class="group p-6 bg-white rounded-3xl shadow-sm hover:shadow-xl hover:shadow-slate-100 hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center border border-slate-100">
+                        <img src="{{ $tech['src'] }}" alt="{{ $tech['alt'] }}" loading="lazy" decoding="async"
+                            width="48" height="48"
+                            class="w-10 h-10 md:w-12 md:h-12 mb-4 grayscale group-hover:grayscale-0 transition-all duration-300">
+                        <span
+                            class="text-xs font-bold text-slate-500 {{ $tech['hover'] }} transition-colors text-center leading-tight uppercase tracking-wider">
+                            {{ $tech['label'] }}
+                        </span>
+                    </div>
+                    @endforeach
+                </div>
+
+                {{-- Banner Kecil Up-to-Date --}}
+                <div class="mt-16 md:mt-20 p-8 md:p-10 bg-blue-600 rounded-3xl text-white flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 Shadow-xl shadow-blue-100"
+                    data-aos="zoom-in">
+                    <div class="flex items-center gap-5 text-center md:text-left">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl shrink-0 Shadow-inner"
+                            aria-hidden="true">🚀</div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg font-heading">Selalu Up-to-Date dengan Inovasi
+                                Teknologi</h3>
+                            <p class="text-blue-100 text-sm mt-1 leading-relaxed max-w-xl">Kami menjamin sistem Anda
+                                dibangun menggunakan versi teknologi terkini yang stabil, aman, dan berkinerja tinggi.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="{{ route('portofolio.index') }}"
+                        class="whitespace-nowrap w-full md:w-auto text-center bg-white text-blue-600 px-6 py-3 rounded-xl font-bold text-sm md:text-base hover:bg-blue-50 transition duration-300 shadow-md">
+                        Lihat Hasil Kinerja Kami
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        {{-- ================================================================
+             SECTION 8: FAQ - Accordion Refined
+        ================================================================ --}}
+        <section id="faq" class="py-20 md:py-28 bg-white" x-data="faqSection()" aria-labelledby="faq-heading">
+            <div class="max-w-4xl mx-auto px-5 lg:px-10">
+
+                <div class="text-center mb-16 md:mb-20" data-aos="fade-up">
+                    <span
+                        class="text-blue-700 font-bold bg-blue-50 px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-5 Inline-block">Pusat
+                        Informasi</span>
+                    <h2 id="faq-heading"
+                        class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-950 font-heading mb-5 leading-tight">
+                        Pertanyaan Seputar <span class="text-blue-600">Jasa Kami</span>
+                    </h2>
+                    <p class="text-slate-700 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">Temukan jawaban
+                        cepat atas pertanyaan yang sering diajukan mengenai proses kerja, fasilitas, dan dukungan kami
+                        sebelum memulai kerja sama.</p>
+                </div>
+
+                <div class="space-y-4 md:space-y-5" data-aos="fade-up" data-aos-delay="100">
+                    <template x-for="(faq, index) in faqs" :key="faq.id">
+                        <div class="faq-item group relative bg-white rounded-2xl overflow-hidden shadow-sm border transition-all duration-300"
+                            :class="selected === faq.id ? 'border-blue-300 shadow-blue-50 shadow-md' : 'border-slate-200 hover:border-slate-300 hover:shadow-md'">
+
+                            {{-- Left Accent Line --}}
+                            <div class="absolute left-0 top-0 bottom-0 w-1.5 rounded-l-full transition-all duration-300"
+                                :class="selected === faq.id ? 'bg-blue-500 opacity-100' : 'opacity-0'"></div>
+
+                            {{-- Question Button --}}
+                            <button @click="toggleFaq(faq.id, $event)"
+                                class="faq-btn w-full flex items-center gap-4 md:gap-5 px-6 md:px-8 py-5 md:py-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-inset relative overflow-hidden cursor-pointer"
+                                :aria-expanded="selected === faq.id" :aria-controls="'faq-answer-' + faq.id">
+
+                                {{-- Ripple Element (handled by JS) --}}
+                                <span class="faq-ripple" aria-hidden="true"></span>
+
+                                {{-- Index Number --}}
+                                <span
+                                    class="shrink-0 w-8 h-8 rounded-full text-xs font-extrabold flex items-center justify-center transition-all duration-300 Shadow-inner"
+                                    :class="selected === faq.id ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200'"
+                                    x-text="String(index + 1).padStart(2, '0')">
+                                </span>
+
+                                {{-- Question Text --}}
+                                <span
+                                    class="flex-1 font-bold text-sm md:text-base pr-4 transition-colors duration-200 font-heading"
+                                    :class="selected === faq.id ? 'text-blue-900' : 'text-slate-900'"
+                                    x-text="faq.question">
+                                </span>
+
+                                {{-- Chevron Icon --}}
+                                <span
+                                    class="shrink-0 w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-300 shadow-sm"
+                                    :class="selected === faq.id ? 'bg-blue-600 border-blue-600 rotate-180' : 'bg-white border-slate-200 group-hover:border-slate-300'">
+                                    <i class="fa-solid fa-chevron-down text-[11px] transition-colors duration-200"
+                                        :class="selected === faq.id ? 'text-white' : 'text-slate-500'"
+                                        aria-hidden="true"></i>
+                                </span>
+                            </button>
+
+                            {{-- Answer Panel --}}
+                            <div :id="'faq-answer-' + faq.id"
+                                class="faq-answer overflow-hidden transition-all duration-300 ease-in-out"
+                                :style="selected === faq.id ? 'max-height: 500px; opacity: 1;' : 'max-height: 0; opacity: 0;'"
+                                aria-hidden="selected !== faq.id">
+                                <div class="px-6 md:px-8 pb-6 md:pb-8 pt-0 pl-16 md:pl-20 relative">
+                                    <div class="border-t border-slate-100 mb-5"></div>
+                                    <div class="text-sm md:text-base text-slate-700 leading-relaxed space-y-3"
+                                        x-html="faq.answer"></div>
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                </template>
-            </div>
-
-            <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
-                <p class="text-slate-500 text-sm mb-4">Masih ada pertanyaan lain?</p>
-                <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ada pertanyaan seputar jasa website Anda.' . $suffix) }}"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 bg-emerald-500 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                    Tanya Langsung via WhatsApp
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-
-    {{-- ================================================================
-         SECTION 9: CTA AKHIR
-    ================================================================ --}}
-    <section class="py-16 md:py-20 bg-slate-50" aria-label="Ajakan untuk memulai proyek website">
-        <div class="max-w-7xl mx-auto px-5 md:px-6">
-            <div data-aos="zoom-in" data-aos-duration="800"
-                class="bg-blue-600 rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-12 lg:p-20 text-center relative overflow-hidden shadow-2xl">
-
-                <div class="absolute inset-0 opacity-10" aria-hidden="true">
-                    <div
-                        class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2">
-                    </div>
-                    <div
-                        class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 translate-y-1/2">
-                    </div>
+                    </template>
                 </div>
 
-                <div class="relative z-10 text-white">
-                    <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold mb-3 md:mb-4">
-                        Siap Punya Website Profesional untuk Bisnis Anda?
-                    </h2>
-                    <p class="text-blue-100 text-base md:text-lg mb-7 md:mb-8 max-w-2xl mx-auto">
-                        Konsultasi pertama gratis, tanpa syarat. Ceritakan kebutuhan bisnis Anda dan kami siapkan
-                        solusinya.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi untuk pembuatan website bisnis saya.' . $suffix) }}"
-                            target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center gap-2 px-8 md:px-10 py-3.5 md:py-4 bg-white text-blue-600 font-bold rounded-xl shadow-lg hover:bg-blue-50 transition text-sm md:text-base">
-                            <i class="fa-brands fa-whatsapp text-emerald-500 text-lg" aria-hidden="true"></i>
-                            Mulai Konsultasi Sekarang
-                        </a>
-                        <a href="/portofolio" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center gap-2 px-8 md:px-10 py-3.5 md:py-4 border-2 border-white/40 text-white font-bold rounded-xl hover:bg-white/10 transition text-sm md:text-base">
-                            Lihat Portofolio Kami
-                        </a>
-                    </div>
+                {{-- CTA Below FAQ --}}
+                <div class="mt-16 md:mt-20 text-center border-t border-slate-200 pt-10" data-aos="fade-up">
+                    <p class="text-slate-600 text-sm mb-5">Masih memiliki pertanyaan spesifik lainnya?</p>
+                    <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ada pertanyaan seputar jasa website Anda.' . ($suffix ?? '')) }}"
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2.5 bg-emerald-500 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-emerald-600 transition text-sm md:text-base group shadow-lg shadow-emerald-100">
+                        <i class="fa-brands fa-whatsapp text-lg transition-transform group-hover:scale-110"
+                            aria-hidden="true"></i>
+                        Tanya Langsung via WhatsApp
+                    </a>
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
 
+        {{-- ================================================================
+             SECTION 9: CTA AKHIR - Reworked Premium
+        ================================================================ --}}
+        <section class="py-16 md:py-24 bg-[#FAF8F5]" aria-label="Ajakan untuk memulai proyek website">
+            <div class="max-w-7xl mx-auto px-5 lg:px-10">
+                <div data-aos="zoom-in" data-aos-duration="800"
+                    class="bg-blue-600 rounded-[2rem] md:rounded-[3rem] p-10 md:p-16 lg:p-20 text-center relative overflow-hidden shadow-2xl shadow-blue-200">
 
+                    {{-- Modern Decorative Elements --}}
+                    <div class="absolute inset-0 opacity-15 pointer-events-none" aria-hidden="true">
+                        <div
+                            class="absolute top-0 left-0 w-80 h-80 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
+                        </div>
+                        <div
+                            class="absolute bottom-0 right-0 w-80 h-80 bg-emerald-300 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl">
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 text-white">
+                        <span
+                            class="inline-block bg-white/15 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6 Shadow-inner">Siap
+                            Naik Kelas?</span>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-5LEADING-tight font-heading">
+                            Wujudkan Website Profesional<br> Bisnis Anda Sekarang
+                        </h2>
+                        <p
+                            class="text-blue-100 text-base md:text-lg mb-12 max-w-2xl mx-auto leading-relaxed opacity-90">
+                            Konsultasi strategi pertama gratis, tanpa syarat. Ceritakan visi dan kebutuhan bisnis Anda,
+                            dan kami akan siapkan solusi digital taktis terbaik untuk pertumbuhan UMKM Anda.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+                            <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi untuk pembuatan website bisnis saya.' . ($suffix ?? '')) }}"
+                                target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center gap-2.5 px-10 py-4.5 bg-white text-blue-600 font-bold rounded-xl shadow-xl hover:bg-blue-50 transition duration-300 text-sm md:text-base group">
+                                <i class="fa-brands fa-whatsapp text-emerald-500 text-xl transition-transform group-hover:scale-110"
+                                    aria-hidden="true"></i>
+                                Mulai Konsultasi Strategis
+                            </a>
+                            <a href="/portofolio"
+                                class="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/60 transition duration-300 text-sm md:text-base group">
+                                Lihat Portofolio Kami
+                                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1.5"
+                                    aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {{-- --- Scripts & Styles --- --}}
     @push('scripts')
     <script>
+    // --- FAQ Logic (Enhanced with Ripple & Scroller) ---
     const faqRichAnswers = {
-        1: `Kami bekerja melalui 5 tahap profesional:
-        <ul class="mt-3 space-y-2">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-1 text-[10px] bg-blue-100 text-blue-600 p-1 rounded" aria-hidden="true"></i> Konsultasi kebutuhan &amp; deal kontrak.</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-2 text-[10px] bg-blue-100 text-blue-600 p-1 rounded" aria-hidden="true"></i> Pembuatan konsep desain visual.</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-3 text-[10px] bg-blue-100 text-blue-600 p-1 rounded" aria-hidden="true"></i> Proses coding sistem.</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-4 text-[10px] bg-blue-100 text-blue-600 p-1 rounded" aria-hidden="true"></i> Testing sistem &amp; revisi.</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-5 text-[10px] bg-blue-100 text-blue-600 p-1 rounded" aria-hidden="true"></i> Go-Live &amp; pelatihan admin/kasir.</li>
+        1: `Kami bekerja melalui 6 tahap profesional dan transparan:
+        <ul class="mt-4 space-y-2.5 pl-1">
+            <li class="flex items-center gap-3"><i class="fa-solid fa-1 text-[10px] bg-blue-100 text-blue-700 p-1.5 rounded-full shadow-inner" aria-hidden="true"></i> <span><strong>Konsultasi Strategis:</strong> Analisis kebutuhan & deal kontrak.</span></li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-2 text-[10px] bg-blue-100 text-blue-700 p-1.5 rounded-full shadow-inner" aria-hidden="true"></i> <span><strong>Desain UI/UX Kustom:</strong> Perancangan maket visual.</span></li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-3 text-[10px] bg-blue-100 text-blue-700 p-1.5 rounded-full shadow-inner" aria-hidden="true"></i> <span><strong>Pengembangan Sistem:</strong> Proses coding kode bersih.</span></li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-4 text-[10px] bg-blue-100 text-blue-700 p-1.5 rounded-full shadow-inner" aria-hidden="true"></i> <span><strong>Uji Coba (QA):</strong> Pengujian bug & performa.</span></li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-5 text-[10px] bg-blue-100 text-blue-700 p-1.5 rounded-full shadow-inner" aria-hidden="true"></i> <span><strong>Peluncuran & Pelatihan:</strong> Go-live & transfer ilmu.</span></li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-6 text-[10px] bg-blue-100 text-blue-700 p-1.5 rounded-full shadow-inner" aria-hidden="true"></i> <span><strong>Dukungan Berkelanjutan:</strong> Pemeliharaan & konsultasi siaga.</span></li>
         </ul>`,
-        2: `<p class="mb-3 font-medium">Anda menerima paket siap operasional:</p>
-        <ul class="space-y-2">
-            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1" aria-hidden="true"></i> <span>Akses penuh Dashboard Admin &amp; Kasir.</span></li>
-            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1" aria-hidden="true"></i> <span>Domain (.com/.id) &amp; Cloud Hosting aktif 1 tahun.</span></li>
-            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1" aria-hidden="true"></i> <span>Sertifikat keamanan SSL (HTTPS).</span></li>
-            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-600 mt-1" aria-hidden="true"></i> <span>Video panduan operasional sistem.</span></li>
+        2: `<p class="mb-4 font-medium text-slate-800">Anda menerima paket operasional lengkap siap pakai:</p>
+        <ul class="space-y-3 pl-1">
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-emerald-500 mt-1" aria-hidden="true"></i> <span>Akses penuh Dashboard Admin & Kasir.</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-emerald-500 mt-1" aria-hidden="true"></i> <span>Domain (.com/.id) aktif 1 tahun.</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-emerald-500 mt-1" aria-hidden="true"></i> <span>Cloud Hosting aktif 1 tahun.</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-emerald-500 mt-1" aria-hidden="true"></i> <span>Sertifikat keamanan SSL (HTTPS).</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-emerald-500 mt-1" aria-hidden="true"></i> <span>Video panduan operasional sistem lengkap.</span></li>
         </ul>`,
-        3: `<p class="mb-4 text-slate-700">Kami menggunakan sistem <strong>3 Termin</strong>:</p>
-        <div class="space-y-4 pl-4 border-l-2 border-slate-100">
-            <div><span class="font-bold block text-slate-900">1. Termin Awal (DP)</span><span class="text-xs">Saat deal proyek dan penandatanganan kontrak.</span></div>
-            <div><span class="font-bold block text-slate-900">2. Termin Progres</span><span class="text-xs">Setelah desain disetujui dan masuk tahap coding.</span></div>
-            <div><span class="font-bold block text-slate-900">3. Termin Pelunasan</span><span class="text-xs">Setelah website selesai dan siap dipublish.</span></div>
+        3: `<p class="mb-5 text-slate-700 leading-relaxed">Kami menggunakan sistem pembayaran <strong>3 Termin</strong> transparan:</p>
+        <div class="space-y-5 pl-5 border-l-2 border-slate-100">
+            <div class="relative"><span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full bg-blue-500 border-2 border-white Shadow-md" aria-hidden="true"></span><span class="font-bold block text-slate-950 font-heading text-sm">Termin 1 (DP)</span><span class="text-xs text-slate-600">Saat penandatanganan kontrak pengerjaan.</span></div>
+            <div class="relative"><span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white Shadow-md" aria-hidden="true"></span><span class="font-bold block text-slate-950 font-heading text-sm">Termin 2 (Progres)</span><span class="text-xs text-slate-600">Setelah desain UI/UX disetujui & masuk tahap coding.</span></div>
+            <div class="relative"><span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full bg-blue-600 border-2 border-white Shadow-md" aria-hidden="true"></span><span class="font-bold block text-slate-950 font-heading text-sm">Termin 3 (Pelunasan)</span><span class="text-xs text-slate-600">Setelah website diuji penuh & siap diluncurkan.</span></div>
         </div>`,
-        4: `<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-tools text-blue-600" aria-hidden="true"></i> <span>Garansi bug/error sistem.</span></div>
-            <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-headset text-blue-600" aria-hidden="true"></i> <span>Konsultasi teknis gratis.</span></div>
-            <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-server text-blue-600" aria-hidden="true"></i> <span>Pemantauan server &amp; backup.</span></div>
-            <div class="p-3 bg-slate-50 rounded-xl flex gap-3"><i class="fa-solid fa-circle-play text-blue-600" aria-hidden="true"></i> <span>Update panduan fitur baru.</span></div>
+        4: `<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 bg-slate-50 rounded-xl flex gap-3.5 items-start border border-slate-100 shadow-inner"><i class="fa-solid fa-bug text-blue-600 mt-1 shrink-0" aria-hidden="true"></i> <span class="text-xs text-slate-700">Garansi bug/error sistem berkelanjutan.</span></div>
+            <div class="p-4 bg-slate-50 rounded-xl flex gap-3.5 items-start border border-slate-100 shadow-inner"><i class="fa-solid fa-headset text-blue-600 mt-1 shrink-0" aria-hidden="true"></i> <span class="text-xs text-slate-700">Konsultasi teknis siaga via WhatsApp.</span></div>
+            <div class="p-4 bg-slate-50 rounded-xl flex gap-3.5 items-start border border-slate-100 shadow-inner"><i class="fa-solid fa-server text-blue-600 mt-1 shrink-0" aria-hidden="true"></i> <span class="text-xs text-slate-700">Pemantauan server & backup rutin.</span></div>
+            <div class="p-4 bg-slate-50 rounded-xl flex gap-3.5 items-start border border-slate-100 shadow-inner"><i class="fa-solid fa-sync text-blue-600 mt-1 shrink-0" aria-hidden="true"></i> <span class="text-xs text-slate-700">Update panduan jika ada fitur baru.</span></div>
         </div>`,
-        5: `<ul class="space-y-3">
-            <li class="flex items-start gap-3"><i class="fa-solid fa-palette text-blue-600 mt-1" aria-hidden="true"></i> <span><strong>Tahap Desain:</strong> Revisi minor sepuasnya hingga deal.</span></li>
-            <li class="flex items-start gap-3"><i class="fa-solid fa-code text-blue-600 mt-1" aria-hidden="true"></i> <span><strong>Tahap Coding:</strong> Revisi fungsi/konten (bukan rombak struktur).</span></li>
+        5: `<ul class="space-y-4 pl-1">
+            <li class="flex items-start gap-3.5"><i class="fa-solid fa-palette text-blue-600 mt-1 shrink-0" aria-hidden="true"></i> <span><strong>Tahap Desain UI/UX:</strong> Revisi minor dapat dilakukan sepuasnya hingga deal.</span></li>
+            <li class="flex items-start gap-3.5"><i class="fa-solid fa-code text-blue-600 mt-1 shrink-0" aria-hidden="true"></i> <span><strong>Tahap Coding:</strong> Revisi fungsi & konten (bukan rombak struktur desain).</span></li>
         </ul>`,
-        6: `<p><strong>Sangat bisa!</strong> Sistem berbasis web responsif:</p>
-        <ul class="mt-3 space-y-2">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 text-[10px]" aria-hidden="true"></i> Akses via Android/iOS.</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 text-[10px]" aria-hidden="true"></i> Support Laptop/PC Kasir.</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-600 text-[10px]" aria-hidden="true"></i> Support Printer Thermal Bluetooth/USB.</li>
+        6: `<p><strong>Sangat bisa!</strong> Seluruh sistem kami berbasis web responsif modern:</p>
+        <ul class="mt-4 space-y-2.5 pl-1">
+            <li class="flex items-center gap-3"><i class="fa-solid fa-mobile-alt text-blue-600 text-xs shrink-0" aria-hidden="true"></i> Akses optimal via Android & iOS.</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-laptop text-blue-600 text-xs shrink-0" aria-hidden="true"></i> Mendukung Laptop & PC Kasir.</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-print text-blue-600 text-xs shrink-0" aria-hidden="true"></i> Mendukung Printer Thermal Bluetooth/USB.</li>
         </ul>`,
-        7: `<p><strong>Sangat bisa!</strong> Kami menyediakan Dashboard Admin yang user-friendly sehingga Anda bisa menambah artikel, galeri, atau mengubah harga layanan kapan saja — tanpa keahlian teknis apapun.</p>`,
-        8: `<ul class="space-y-2">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-video text-blue-500" aria-hidden="true"></i> Video tutorial lengkap.</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-headset text-blue-500" aria-hidden="true"></i> Konsultasi teknis gratis via WhatsApp.</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-book text-blue-500" aria-hidden="true"></i> Buku panduan dalam format PDF.</li>
+        7: `<p><strong>Ya, 100% bisa!</strong> Kami menyediakan Dashboard Admin yang user-friendly (mudah digunakan). Anda dapat menambah produk, artikel, galeri, atau mengubah harga layanan kapan saja secara mandiri—tanpa memerlukan keahlian teknis.</p>`,
+        8: `<p class="mb-4">Kami memastikan tim Anda mandiri operasional:</p>
+        <ul class="space-y-3 pl-1 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+            <li class="flex items-center gap-3"><i class="fa-solid fa-video text-emerald-500 shrink-0" aria-hidden="true"></i> Video tutorial operasional lengkap.</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-book text-emerald-500 shrink-0" aria-hidden="true"></i> Buku panduanformat PDF.</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-headset text-emerald-500 shrink-0" aria-hidden="true"></i> Konsultasi siaga via WhatsApp.</li>
         </ul>`,
     };
 
@@ -1010,6 +983,7 @@
                 const btn = event.currentTarget;
                 const ripple = btn.querySelector('.faq-ripple');
 
+                // Modern Ripple Effect
                 if (ripple) {
                     const rect = btn.getBoundingClientRect();
                     const size = Math.max(rect.width, rect.height) * 2;
@@ -1024,10 +998,9 @@
                         top: ${event.clientY - rect.top - size / 2}px;
                         transform: scale(0);
                         opacity: 1;
-                        transition: transform 0.5s ease, opacity 0.5s ease;
+                        transition: transform 0.6s ease-out, opacity 0.5s ease-out;
                     `;
-
-                    ripple.offsetWidth;
+                    ripple.offsetWidth; // Force reflow
                     ripple.style.transform = 'scale(1)';
                     ripple.style.opacity = '0';
                 }
@@ -1035,13 +1008,11 @@
                 const wasOpen = this.selected === id;
                 this.selected = wasOpen ? null : id;
 
+                // Smooth Scroll to Opened Item (A11y enhanced)
                 if (!wasOpen) {
-                    const isMobile = window.innerWidth < 768;
-                    if (isMobile) {
-                        setTimeout(() => this.scrollToElement(id), 300);
-                    } else {
-                        this.$nextTick(() => this.scrollToElement(id));
-                    }
+                    this.$nextTick(() => {
+                        setTimeout(() => this.scrollToElement(id), 100);
+                    });
                 }
             },
 
@@ -1050,7 +1021,7 @@
                 if (!el) return;
                 const parent = el.closest('.faq-item');
                 if (!parent) return;
-                const offsetPosition = parent.getBoundingClientRect().top + window.scrollY - 110;
+                const offsetPosition = parent.getBoundingClientRect().top + window.scrollY - 100;
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
@@ -1059,6 +1030,7 @@
         };
     }
 
+    // --- Testimonial Data ---
     function testimonialData() {
         return {
             testimonials: [{
@@ -1066,11 +1038,11 @@
                     name: 'Bu Hj. Nurhasanah',
                     role: 'Pemilik Toko Berkah (POS)',
                     initials: 'HN',
-                    bgColor: 'bg-blue-50/50',
+                    bgColor: 'bg-blue-50/40',
                     borderColor: 'border-blue-100',
                     quoteColor: 'text-blue-400',
-                    avatarBg: 'bg-blue-500',
-                    content: 'Awalnya saya gaptek banget, takut pakai sistem kasir karena mikirnya bakal ribet. Tapi tim Cakra sabar banget ngajarin pelan-pelan sampai saya bisa operasikan sendiri.'
+                    avatarBg: 'bg-blue-600',
+                    content: 'Awalnya saya gaptek banget, takut pakai sistem kasir karena mikirnya bakal ribet. Tapi tim Cakra sabar banget ngajarin pelan-pelan sampai saya bisa operasikan sendiri. Alhamdulillah, sekarang pembukuan rapi.'
                 },
                 {
                     id: 2,
@@ -1080,41 +1052,41 @@
                     bgColor: 'bg-slate-50/50',
                     borderColor: 'border-slate-100',
                     quoteColor: 'text-slate-400',
-                    avatarBg: 'bg-slate-600',
-                    content: 'Landing page-nya kenceng dan clean. Conversion rate bisnis saya naik signifikan sejak pakai jasa Cakra Digital. Benar-benar paham cara bikin desain yang menjual.'
+                    avatarBg: 'bg-slate-700',
+                    content: 'Landing page-nya kenceng dan clean. Conversion rate bisnis saya naik signifikan sejak pakai jasa Cakra Digital. Benar-benar paham cara bikin desain yang menjual untuk target UMKM.'
                 },
                 {
                     id: 3,
                     name: 'Siska Amelia',
                     role: 'Owner Butik Siska (Katalog Digital)',
                     initials: 'SA',
-                    bgColor: 'bg-orange-50/50',
+                    bgColor: 'bg-orange-50/40',
                     borderColor: 'border-orange-100',
                     quoteColor: 'text-orange-400',
-                    avatarBg: 'bg-orange-500',
-                    content: 'Katalog digitalnya bikin jualan di WA jadi lebih profesional. Pelanggan tinggal pilih barang dari katalog, nggak perlu kirim foto manual satu-satu lagi.'
+                    avatarBg: 'bg-orange-600',
+                    content: 'Katalog digitalnya bikin jualan di WA jadi lebih profesional. Pelanggan tinggal pilih barang dari katalog, nggak perlu kirim foto manual satu-satu lagi. Hemat waktu banget!'
                 },
                 {
                     id: 4,
                     name: 'Hendra Wijaya',
                     role: 'Manajer Operasional (Sistem ERP)',
                     initials: 'HW',
-                    bgColor: 'bg-amber-50/50',
-                    borderColor: 'border-amber-100',
-                    quoteColor: 'text-amber-400',
-                    avatarBg: 'bg-amber-500',
-                    content: 'Dulu pusing kalau mau cek stok di gudang dan laporan keuangan karena datanya kepisah-pisah. Sekarang semua sudah nyambung jadi satu sistem, kerjaan jadi jauh lebih ringan dan rapi.'
+                    bgColor: 'bg-emerald-50/40',
+                    borderColor: 'border-emerald-100',
+                    quoteColor: 'text-emerald-400',
+                    avatarBg: 'bg-emerald-600',
+                    content: 'Dulu pusing kalau mau cek stok di gudang dan laporan keuangan karena datanya kepisah-pisah. Sekarang semua sudah nyambung jadi satu sistem ERP, kerjaan jadi jauh lebih ringan, rapi, dan terkontrol.'
                 },
                 {
                     id: 5,
                     name: 'Andi Wijaya',
                     role: 'Distributor Material (Inventory POS)',
                     initials: 'AW',
-                    bgColor: 'bg-blue-50/50',
+                    bgColor: 'bg-blue-50/40',
                     borderColor: 'border-blue-100',
                     quoteColor: 'text-blue-400',
                     avatarBg: 'bg-blue-600',
-                    content: 'Sistem stoknya real-time banget. Saya bisa pantau keluar masuk barang di gudang dari luar kota cuma modal HP saja. Sangat membantu kontrol bisnis jarak jauh.'
+                    content: 'Sistem stoknya real-time banget. Saya bisa pantau keluar masuk barang di gudang dari luar kota cuma modal HP saja. Sangat membantu kontrol bisnis jarak jauh buat UMKM yang dinamis.'
                 },
                 {
                     id: 6,
@@ -1124,55 +1096,57 @@
                     bgColor: 'bg-slate-50/50',
                     borderColor: 'border-slate-100',
                     quoteColor: 'text-slate-400',
-                    avatarBg: 'bg-slate-500',
-                    content: 'Cari vendor IT yang nggak "nakutin" soal harga itu susah. Di sini saya dapat landing page berkualitas dengan budget yang bersahabat buat UMKM seperti saya.'
+                    avatarBg: 'bg-slate-600',
+                    content: 'Cari vendor IT yang nggak nakutin soal harga itu susah buat UMKM. Di sini saya dapat landing page berkualitas premium dengan budget yang sangat bersahabat. Support-nya juga juara.'
                 },
                 {
                     id: 7,
                     name: 'Fandi Ahmad',
                     role: 'Bengkel Motor Fandi (POS Service)',
                     initials: 'FA',
-                    bgColor: 'bg-emerald-50/50',
+                    bgColor: 'bg-emerald-50/40',
                     borderColor: 'border-emerald-100',
                     quoteColor: 'text-emerald-400',
-                    avatarBg: 'bg-emerald-400',
-                    content: 'Data pelanggan jadi rapi. Dulu sering lupa jadwal servis rutin pelanggan, sekarang tinggal cek di sistem. Bengkel jadi terlihat lebih modern dan dipercaya.'
+                    avatarBg: 'bg-emerald-500',
+                    content: 'Data pelanggan jadi rapi. Dulu sering lupa jadwal servis rutin pelanggan, sekarang tinggal cek di sistem. Bengkel jadi terlihat lebih modern, dipercaya, dan pelanggan makin loyal.'
                 },
                 {
                     id: 8,
                     name: 'Ibu Ratna',
                     role: 'Toko Sembako Jaya (POS Mobile)',
                     initials: 'IR',
-                    bgColor: 'bg-blue-50/50',
+                    bgColor: 'bg-blue-50/40',
                     borderColor: 'border-blue-100',
                     quoteColor: 'text-blue-400',
-                    avatarBg: 'bg-blue-400',
-                    content: 'Ditemenin sampai bisa pakai! Support-nya juara, kalau ada bingung soal input barang tinggal WA langsung dibantu sampai tuntas. Gak nyesel langganan di sini.'
+                    avatarBg: 'bg-blue-500',
+                    content: 'Ditemenin sampai bisa pakai! Support-nya juara, kalau ada bingung soal input barang tinggal WA langsung dibantu sampai tuntas. Gak nyesel langganan di sini buat toko kecil saya.'
                 },
                 {
                     id: 9,
                     name: 'H. Suherman',
                     role: 'Pemilik Pabrik Kerupuk (Sistem Operasional)',
                     initials: 'HS',
-                    bgColor: 'bg-amber-50/50',
-                    borderColor: 'border-amber-100',
-                    quoteColor: 'text-amber-400',
-                    avatarBg: 'bg-amber-600',
-                    content: 'Sistemnya ngebantu banget buat mantau pengeluaran beli bahan baku sampai penjualan sales di lapangan. Jadi nggak ada lagi uang atau barang yang "hilang" tanpa catatan.'
+                    bgColor: 'bg-orange-50/40',
+                    borderColor: 'border-orange-100',
+                    quoteColor: 'text-orange-400',
+                    avatarBg: 'bg-orange-700',
+                    content: 'Sistemnya ngebantu banget buat mantau pengeluaran beli bahan baku sampai penjualan sales di lapangan. Jadi nggak ada lagi uang atau barang yang hilang tanpa catatan.'
                 },
             ]
         };
     }
 
+    // --- Initialize Alpine & Swiper ---
     document.addEventListener('alpine:init', () => {
+        // Initialize Swiper after Alpine has rendered the template
         requestAnimationFrame(() => {
             if (typeof Swiper !== 'undefined') {
                 new Swiper('.testimonial-swiper', {
                     slidesPerView: 1,
-                    spaceBetween: 16,
+                    spaceBetween: 20,
                     loop: true,
                     autoplay: {
-                        delay: 4000,
+                        delay: 5000,
                         disableOnInteraction: false
                     },
                     pagination: {
@@ -1182,13 +1156,15 @@
                     breakpoints: {
                         640: {
                             slidesPerView: 1.5,
-                            spaceBetween: 20
+                            spaceBetween: 24
                         },
                         768: {
-                            slidesPerView: 2
+                            slidesPerView: 2,
+                            spaceBetween: 30
                         },
                         1024: {
-                            slidesPerView: 3
+                            slidesPerView: 3,
+                            spaceBetween: 30
                         },
                     }
                 });
@@ -1196,6 +1172,7 @@
         });
     });
 
+    // --- Process Line Animation ---
     document.addEventListener('DOMContentLoaded', () => {
         const hLine = document.querySelector('.proses-progress-line');
         const vLine = document.querySelector('.proses-progress-line-v');
@@ -1206,7 +1183,7 @@
                 if (entry.isIntersecting) {
                     if (hLine) hLine.style.width = '100%';
                     if (vLine) vLine.style.height = '100%';
-                    observer.disconnect();
+                    observer.disconnect(); // Animate only once
                 }
             });
         }, {
@@ -1220,7 +1197,46 @@
     @endpush
 
     @push('styles')
+    {{-- A assumptions: Montserrat & Inter fonts are imported in app.blade.php --}}
     <style>
+    @keyframes floating {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes floating-delayed {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .animate-floating {
+        animation: floating 4s ease-in-out infinite;
+    }
+
+    .animate-floating-delayed {
+        animation: floating-delayed 5s ease-in-out infinite;
+        animation-delay: 1.5s;
+    }
+
+    /* Swiper Customization */
     .testimonial-swiper {
         overflow: hidden !important;
     }
@@ -1231,25 +1247,26 @@
     }
 
     .testimonial-pagination .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 12px;
         background: #cbd5e1;
         opacity: 1;
         border-radius: 50%;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
         cursor: pointer;
+        border: 2px solid white;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     .testimonial-pagination .swiper-pagination-bullet-active {
         background: #2563eb !important;
-        width: 28px !important;
-        border-radius: 12px !important;
+        width: 32px !important;
+        border-radius: 16px !important;
     }
 
+    /* FAQ Customization */
     .faq-answer {
-        transition:
-            max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.28s ease;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
     }
 
     .faq-ripple {
@@ -1259,27 +1276,39 @@
     }
 
     .faq-item:not([class*="border-blue"]):hover {
-        background: #fafafa;
+        background: #FAFDFB;
     }
 
-    .proses-progress-line {
-        transition: width 1.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
+    /* Process Line Customization */
+    .proses-progress-line,
     .proses-progress-line-v {
-        transition: height 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: width 2s cubic-bezier(0.22, 1, 0.36, 1), height 2s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
+    /* Typography Assumed classes - Add to tailwind.config.js or parent style */
+    /*
+    .font-heading { font-family: 'Montserrat', sans-serif; }
+    body { font-family: 'Inter', sans-serif; }
+    */
+
+    /* Performance: Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
 
         .faq-answer,
         .proses-progress-line,
-        .proses-progress-line-v {
-            transition: none;
+        .proses-progress-line-v,
+        .transition-all,
+        .transition {
+            transition: none !important;
         }
 
         .faq-ripple {
             display: none;
+        }
+
+        [data-aos] {
+            opacity: 1 !important;
+            transform: none !important;
         }
     }
     </style>

@@ -68,24 +68,46 @@
 
 
     {{-- SECTION 1: HERO --}}
-    <section class="pt-32 pb-20 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
+    <section class="relative pt-32 pb-20 bg-white overflow-hidden">
+
+        {{-- 🛠️ 1. LAYER BACKGROUND AI --}}
+        {{-- Menggunakan trik width 55% agar mesin kasir tidak terlalu raksasa dan menepi ke kanan --}}
+        <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0
+            bg-[length:100%_auto] bg-[position:center_bottom]
+            lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
+            style="background-image: url('{{ asset('images/hero-pos.webp') }}');">
+        </div>
+
+        {{-- 💡 2. GRADIENT OVERLAY --}}
+        {{-- Meleburkan warna background putih agar teks di sisi kiri dijamin 100% terbaca tajam --}}
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent lg:w-1/2 z-0 pointer-events-none"
+            aria-hidden="true"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
 
             <div class="max-w-6xl mx-auto text-center mb-10">
                 <x-breadcrumb :items="[['name' => 'Layanan', 'url' => url('/layanan')]]"
                     current="Kasir Digital / POS" />
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {{-- 📐 3. GRID LAYOUT DIPERBARUI --}}
+            {{-- Menggunakan rasio 7:5 agar kolom teks lebih leluasa --}}
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-                <div class="text-left space-y-6" data-aos="fade-right">
+                {{-- KOLOM KIRI: Teks & Tombol (lg:7) --}}
+                <div class="lg:col-span-7 text-left space-y-6" data-aos="fade-right">
                     <span
                         class="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold uppercase tracking-wider">
                         Sistem POS & Inventaris
                     </span>
 
                     <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                        Kelola Toko Jadi <span class="text-blue-600">Lebih Ringan</span> &amp; Otomatis
+                        Kelola Toko Jadi <br class="hidden sm:block">
+                        <span class="text-blue-600 relative inline-block mt-1">
+                            Lebih Ringan &amp; Otomatis
+                            <span class="absolute -bottom-1 md:-bottom-2 left-0 w-full h-1 bg-emerald-400 rounded-full"
+                                aria-hidden="true"></span>
+                        </span>
                     </h1>
 
                     <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
@@ -94,13 +116,13 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra, saya ingin konsultasi sistem kasir digital untuk toko saya.' . $suffix) }}"
+                        <a href="https://wa.me/6285865405330?text={{ urlencode('Halo Cakra Inovasi Digital, saya ingin konsultasi sistem kasir digital untuk toko saya.' . ($suffix ?? '')) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
                             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                             Konsultasi Gratis
                         </a>
-                        <a href="/layanan/web-kasir#fitur"
+                        <a href="#fitur"
                             class="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 rounded-2xl border-2 border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all">
                             Lihat Fitur
                             <i class="fa-solid fa-arrow-down text-sm" aria-hidden="true"></i>
@@ -137,143 +159,10 @@
                     </div>
                 </div>
 
-                {{-- HERO MOCKUP: Live POS Dashboard --}}
-                <div class="relative" data-aos="fade-left">
-
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-amber-50 to-slate-100 rounded-[3rem] blur-3xl opacity-60 scale-110"
-                        aria-hidden="true"></div>
-
-                    <div
-                        class="relative z-10 bg-slate-900 rounded-[2rem] shadow-2xl overflow-hidden border border-slate-700/50">
-
-                        {{-- Topbar --}}
-                        <div
-                            class="bg-slate-800 px-5 py-3.5 flex items-center justify-between border-b border-slate-700/60">
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
-                            </div>
-                            <div class="flex items-center gap-1.5 bg-slate-700/60 rounded-lg px-3 py-1">
-                                <i class="fa-solid fa-lock text-slate-400 text-[9px]" aria-hidden="true"></i>
-                                <span class="text-[10px] text-slate-400 font-mono">pos.toko-anda.com/kasir</span>
-                            </div>
-                            <div class="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
-                                <span class="text-[8px] font-bold text-white">K</span>
-                            </div>
-                        </div>
-
-                        {{-- Body --}}
-                        <div class="p-5 space-y-4">
-
-                            {{-- Stats row --}}
-                            <div class="grid grid-cols-3 gap-3">
-                                <div class="bg-slate-800/80 rounded-xl p-3.5 border border-slate-700/40">
-                                    <p class="text-[9px] text-slate-400 uppercase tracking-wider font-semibold mb-1">
-                                        Shift Aktif</p>
-                                    <p class="text-lg font-extrabold text-white leading-none">Budi H.</p>
-                                    <p class="text-[9px] text-emerald-400 mt-1 flex items-center gap-1"><i
-                                            class="fa-solid fa-circle text-[6px]" aria-hidden="true"></i> Kasir 1</p>
-                                </div>
-                                <div class="bg-slate-800/80 rounded-xl p-3.5 border border-slate-700/40">
-                                    <p class="text-[9px] text-slate-400 uppercase tracking-wider font-semibold mb-1">
-                                        Transaksi Shift</p>
-                                    <p class="text-lg font-extrabold text-white leading-none">42</p>
-                                    <p class="text-[9px] text-orange-400 mt-1 flex items-center gap-1"><i
-                                            class="fa-solid fa-receipt" aria-hidden="true"></i> Nota tercetak</p>
-                                </div>
-                                <div class="bg-slate-800/80 rounded-xl p-3.5 border border-slate-700/40">
-                                    <p class="text-[9px] text-slate-400 uppercase tracking-wider font-semibold mb-1">
-                                        Omset Shift</p>
-                                    <p class="text-lg font-extrabold text-white leading-none">Rp 4,2jt</p>
-                                    <p class="text-[9px] text-red-400 mt-1">Live Update</p>
-                                </div>
-                            </div>
-
-                            {{-- Pesanan terbaru / Layar Kasir --}}
-                            <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700/40">
-                                <div class="flex items-center justify-between mb-3">
-                                    <p class="text-[10px] text-slate-300 font-semibold">Transaksi Terakhir</p>
-                                    <span
-                                        class="text-[9px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full">Sukses</span>
-                                </div>
-                                <div class="space-y-2">
-                                    @php
-                                    $orders = [
-                                    ['id'=>'TRX-092','type'=>'Takeaway','product'=>'Kopi Susu Gula Aren
-                                    x2','status'=>'Lunas','color'=>'bg-emerald-500/20 text-emerald-400','amount'=>'Rp
-                                    44.000'],
-                                    ['id'=>'TRX-091','type'=>'Dine-in (M2)','product'=>'Nasi Goreng Spesial
-                                    x1','status'=>'Lunas','color'=>'bg-emerald-500/20 text-emerald-400','amount'=>'Rp
-                                    35.000'],
-                                    ['id'=>'TRX-090','type'=>'Takeaway','product'=>'Roti Bakar Coklat
-                                    x3','status'=>'Lunas','color'=>'bg-emerald-500/20 text-emerald-400','amount'=>'Rp
-                                    45.000'],
-                                    ];
-                                    @endphp
-                                    @foreach($orders as $order)
-                                    <div class="flex items-center gap-3">
-                                        <span
-                                            class="text-[9px] text-slate-500 font-mono w-12 shrink-0">{{ $order['id'] }}</span>
-                                        <div
-                                            class="flex-1 flex items-center justify-between bg-slate-700/40 rounded-lg px-3 py-1.5">
-                                            <div>
-                                                <p class="text-[10px] font-semibold text-slate-200 leading-tight">
-                                                    {{ $order['type'] }}</p>
-                                                <p class="text-[9px] text-slate-400">{{ $order['product'] }}</p>
-                                            </div>
-                                            <div class="text-right">
-                                                <p class="text-[9px] font-bold text-white">{{ $order['amount'] }}</p>
-                                                <span
-                                                    class="text-[8px] font-semibold {{ $order['color'] }}">{{ $order['status'] }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-
-                            {{-- Stok alert --}}
-                            <div class="bg-slate-800/80 rounded-xl border border-slate-700/40 overflow-hidden">
-                                <div class="px-4 py-2.5 border-b border-slate-700/40 flex items-center justify-between">
-                                    <p class="text-[10px] text-slate-300 font-semibold">Peringatan Stok Gudang</p>
-                                    <span class="text-[9px] text-amber-400">2 Item Menipis</span>
-                                </div>
-                                @php
-                                $stocks = [
-                                ['product'=>'Biji Kopi Arabica','stok'=>'0.5 Kg','color'=>'text-red-400'],
-                                ['product'=>'Gula Aren Cair','stok'=>'2 Botol','color'=>'text-amber-400'],
-                                ];
-                                @endphp
-                                @foreach($stocks as $s)
-                                <div
-                                    class="px-4 py-2.5 flex items-center justify-between border-b border-slate-700/20 last:border-0">
-                                    <p class="text-[10px] text-slate-300">{{ $s['product'] }}</p>
-                                    <span class="text-[10px] font-bold {{ $s['color'] }}">Sisa {{ $s['stok'] }}</span>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Floating badges --}}
-                    <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl border border-slate-100 px-4 py-3 flex items-center gap-3 animate-bounce z-20"
-                        aria-hidden="true">
-                        <div
-                            class="w-9 h-9 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-print text-sm"></i>
-                        </div>
-                        <div>
-                            <p class="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Transaksi Sukses
-                            </p>
-                            <p class="text-sm font-extrabold text-slate-800">Mencetak Struk...</p>
-                        </div>
-                    </div>
-                    <div class="absolute -top-3 -right-3 bg-blue-500 text-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2 z-20"
-                        aria-hidden="true">
-                        <i class="fa-solid fa-lock text-white text-sm"></i>
-                        <span class="text-[10px] font-bold">Aman & Terpercaya</span>
-                    </div>
+                {{-- KOLOM KANAN: Visual Spacer (lg:5) --}}
+                {{-- Menggantikan seluruh kode Mockup Dashboard Kasir HTML lama Anda --}}
+                <div class="lg:col-span-5 relative h-[350px] sm:h-[450px] lg:h-[550px] hidden lg:block"
+                    aria-hidden="true" data-aos="fade-left">
                 </div>
 
             </div>
@@ -470,179 +359,154 @@
     </section>
 
 
-    {{-- SECTION 3: FITUR --}}
-    <section id="fitur" class="py-24 bg-slate-50" x-data="{ activeFeature: 1 }">
-        <div class="max-w-6xl mx-auto px-6">
+    {{-- SECTION 4: FITUR --}}
+    <section id="fitur" class="py-16 md:py-24 bg-[#eae7dc]" x-data="{ activeFeature: 1 }">
+        <div class="max-w-5xl mx-auto px-5 md:px-6">
 
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-                    Solusi Digital <span class="text-blue-600">All-in-One</span>
+            {{-- Header Section dengan Gaya Minimalis Klasik --}}
+            <div class="text-left mb-10 md:mb-14" data-aos="fade-up">
+                <span class="text-xs font-bold tracking-widest text-[#e85a4f] uppercase block mb-2">SEKAT 01–05</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#1e302b] mb-3">
+                    Solusi Digital All-in-One
                 </h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">
+                <p class="text-[#5b5853] text-sm md:text-base font-normal">
                     Kelola toko online dan kasir fisik Anda dalam satu sistem yang otomatis dan terintegrasi penuh.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {{-- Container Utama Arsitektur Split Grid --}}
+            <div class="grid grid-cols-1 md:grid-cols-12 border border-[#d8d3c5] rounded-sm overflow-hidden bg-[#f0ede4]"
+                data-aos="fade-up">
 
-                {{-- Feature Visual --}}
-                <div class="lg:sticky lg:top-24" data-aos="fade-right">
-                    <div class="bg-white p-5 rounded-[2.5rem] shadow-2xl border border-slate-100 overflow-hidden">
-                        <div class="bg-slate-800 rounded-2xl p-5 space-y-4">
-                            <div class="flex items-center justify-between">
-                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Dashboard Toko
-                                </p>
-                                <span class="flex items-center gap-1 text-[9px] text-emerald-400 font-bold">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Online
-                                </span>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="bg-slate-700/60 rounded-xl p-3">
-                                    <p class="text-[9px] text-slate-400 mb-1">Total Produk</p>
-                                    <p class="text-lg font-extrabold text-white">248</p>
-                                    <div class="mt-1.5 h-1 bg-slate-600 rounded-full">
-                                        <div class="h-1 bg-blue-400 rounded-full w-3/4"></div>
-                                    </div>
-                                </div>
-                                <div class="bg-slate-700/60 rounded-xl p-3">
-                                    <p class="text-[9px] text-slate-400 mb-1">Omzet Bulan Ini</p>
-                                    <p class="text-lg font-extrabold text-emerald-400">Rp 48jt</p>
-                                    <p class="text-[9px] text-emerald-500 mt-1">↑ 23% bulan lalu</p>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-700/60 rounded-xl p-3 space-y-2">
-                                <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Stok Kritis</p>
-                                @php
-                                $stocks = [
-                                ['name' => 'Kopi Arabika 250g', 'pct' => '15%', 'color' => 'bg-red-500', 'label' => '3
-                                pcs'],
-                                ['name' => 'Gula Aren 500g', 'pct' => '28%', 'color' => 'bg-blue-400', 'label' => '7
-                                pcs'],
-                                ['name' => 'Susu UHT 1L', 'pct' => '42%', 'color' => 'bg-yellow-400', 'label' => '12
-                                pcs'],
-                                ];
-                                @endphp
-                                @foreach($stocks as $stock)
-                                <div>
-                                    <div class="flex justify-between mb-0.5">
-                                        <span class="text-[9px] text-slate-300">{{ $stock['name'] }}</span>
-                                        <span class="text-[9px] font-bold text-slate-400">{{ $stock['label'] }}</span>
-                                    </div>
-                                    <div class="h-1.5 bg-slate-600 rounded-full">
-                                        <div class="h-1.5 {{ $stock['color'] }} rounded-full"
-                                            style="width: {{ $stock['pct'] }}"></div>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-
-                            <div class="grid grid-cols-3 gap-2">
-                                @php
-                                $actions = [
-                                ['icon' => 'fa-cash-register', 'label' => 'Kasir', 'color' => 'text-blue-400'],
-                                ['icon' => 'fa-boxes-stacked', 'label' => 'Stok', 'color' => 'text-emerald-400'],
-                                ['icon' => 'fa-chart-pie', 'label' => 'Laporan','color' => 'text-blue-400'],
-                                ];
-                                @endphp
-                                @foreach($actions as $action)
-                                <div class="bg-slate-700/60 rounded-xl p-3 flex flex-col items-center gap-1.5">
-                                    <i class="fa-solid {{ $action['icon'] }} {{ $action['color'] }}"
-                                        aria-hidden="true"></i>
-                                    <span class="text-[9px] text-slate-400 font-medium">{{ $action['label'] }}</span>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Feature Accordion --}}
-                <div class="space-y-3" data-aos="fade-left">
+                {{-- Sisi Kiri: Tab Pilihan Point Fitur (md:col-span-5) --}}
+                <div class="md:col-span-5 flex flex-col divide-y divide-[#d8d3c5] border-r border-[#d8d3c5]">
 
                     @php
-                    $features = [
+                    $fiturList = [
                     [
-                    'id' => 1,
-                    'icon' => 'fa-solid fa-cash-register', // Menambahkan fa-solid
-                    'title' => 'Sistem Kasir (POS) Digital',
-                    'desc' => 'Transaksi langsung dari HP, tablet, atau komputer. Proses jual beli lebih cepat dan
-                    profesional seperti minimarket modern.'
+                    1,
+                    'fa-solid fa-cash-register',
+                    'Sistem Kasir (POS) Digital',
+                    'Transaksi langsung dari HP, tablet, atau komputer. Proses jual beli lebih cepat dan profesional
+                    seperti minimarket modern.',
+                    'seluruh pencatatan penjualan terarsip otomatis, meminimalisir kesalahan manual atau selisih kas
+                    kasir.'
                     ],
                     [
-                    'id' => 2,
-                    'icon' => 'fa-solid fa-boxes-stacked',
-                    'title' => 'Stok Otomatis (Omnichannel)',
-                    'desc' => 'Kelola produk dan stok dalam satu dashboard pusat. Stok terupdate otomatis di web maupun
-                    toko fisik secara bersamaan.'
+                    2,
+                    'fa-solid fa-boxes-stacked',
+                    'Stok Otomatis (Omnichannel)',
+                    'Kelola produk and stok dalam satu dashboard pusat. Stok terupdate otomatis di web maupun toko fisik
+                    secara bersamaan.',
+                    'terhindar dari risiko over-selling atau kehabisan stok tanpa sadar di salah satu cabang/saluran
+                    penjualan.'
                     ],
                     [
-                    'id' => 3,
-                    'icon' => 'fa-solid fa-credit-card',
-                    'title' => 'Sistem Pembayaran Fleksibel',
-                    'desc' => 'Dukung berbagai metode pembayaran mulai dari tunai, transfer bank, hingga e-wallet.
-                    Integrasi dapat disesuaikan dengan kebutuhan bisnis Anda.'
+                    3,
+                    'fa-solid fa-credit-card',
+                    'Sistem Pembayaran Fleksibel',
+                    'Dukung berbagai metode pembayaran mulai dari tunai, transfer bank, hingga e-wallet. Integrasi dapat
+                    disesuaikan dengan kebutuhan bisnis Anda.',
+                    'meningkatkan kenyamanan pelanggan saat bertransaksi yang berdampak langsung pada conversion rate
+                    toko.'
                     ],
                     [
-                    'id' => 4,
-                    'icon' => 'fa-solid fa-chart-column', // Memberikan kesan dashboard keuangan yang tumbuh
-                    'title' => 'Laporan Penjualan Real-Time',
-                    'desc' => 'Pantau omzet dan keuntungan langsung dari HP. Mengetahui kondisi kesehatan bisnis kapan
-                    saja tanpa laporan manual.'
+                    4,
+                    'fa-solid fa-chart-column',
+                    'Laporan Penjualan Real-Time',
+                    'Pantau omzet dan keuntungan langsung dari HP. Mengetahui kondisi kesehatan bisnis kapan saja tanpa
+                    laporan manual.',
+                    'bisa mengambil keputusan bisnis taktis secara cepat berdasarkan akurasi data finansial yang sahih.'
                     ],
                     [
-                    'id' => 5,
-                    'icon' => 'fa-brands fa-whatsapp',
-                    'title' => 'Integrasi WhatsApp Otomatis',
-                    'desc' => 'Pesanan website langsung masuk ke WhatsApp admin. Closing lebih cepat karena bisa
-                    langsung chat pembeli tanpa pindah aplikasi.'
-                    ],
+                    5,
+                    'fa-brands fa-whatsapp',
+                    'Integrasi WhatsApp Otomatis',
+                    'Pesanan website langsung masuk ke WhatsApp admin. Closing lebih cepat karena bisa langsung chat
+                    pembeli tanpa pindah aplikasi.',
+                    'membangun kedekatan personal secara instan dengan pembeli untuk mempercepat proses konversi
+                    orderan.'
+                    ]
                     ];
                     @endphp
-                    @foreach($features as $feat)
-                    <div @click="activeFeature = activeFeature === {{ $feat['id'] }} ? null : {{ $feat['id'] }}"
-                        class="rounded-2xl cursor-pointer transition-all duration-300 border overflow-hidden"
-                        :class="activeFeature === {{ $feat['id'] }} ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
-                        <div class="p-5">
-                            <h3 class="font-bold flex items-center justify-between text-sm md:text-base">
-                                <span class="flex items-center gap-3">
-                                    <i class="{{ $feat['icon'] }}"
-                                        :class="activeFeature === {{ $feat['id'] }} ? 'text-white' : 'text-blue-600'"
-                                        aria-hidden="true"></i>
-                                    {{ $feat['title'] }}
-                                </span>
-                                <i class="fa-solid fa-chevron-right text-[10px] transition-transform flex-shrink-0"
-                                    :class="activeFeature === {{ $feat['id'] }} ? 'rotate-90' : ''"
-                                    aria-hidden="true"></i>
-                            </h3>
-                            <div x-show="activeFeature === {{ $feat['id'] }}" x-collapse>
-                                <p class="text-sm mt-3 opacity-90 leading-relaxed">{{ $feat['desc'] }}</p>
-                            </div>
+
+                    @foreach($fiturList as [$id, $icon, $judul, $deskripsi, $manfaat])
+                    <button @click="activeFeature = {{ $id }}" type="button"
+                        class="w-full text-left px-5 py-4 md:py-5 flex items-center gap-4 transition-all duration-200 focus:outline-none group text-sm md:text-base font-semibold"
+                        :class="activeFeature === {{ $id }} ? 'bg-[#1e302b] text-[#f0ede4]' : 'bg-transparent text-[#1e302b] hover:bg-[#e7e3d4]'">
+
+                        {{-- Nomor Seri Point Fitur --}}
+                        <span class="text-xs font-mono tracking-wider"
+                            :class="activeFeature === {{ $id }} ? 'text-[#e85a4f]' : 'text-[#e85a4f]/70 group-hover:text-[#e85a4f]'">
+                            0{{ $id }}
+                        </span>
+
+                        {{-- Icon & Judul Ringkas --}}
+                        <span class="flex items-center gap-2.5">
+                            <i class="{{ $icon }} text-sm transition-colors"
+                                :class="activeFeature === {{ $id }} ? 'text-[#f0ede4]' : 'text-[#1e302b]'"></i>
+                            {{ $judul }}
+                        </span>
+                    </button>
+                    @endforeach
+
+                </div>
+
+                {{-- Sisi Kanan: Ruang Penjelasan Detail Dinamis (md:col-span-7) --}}
+                <div class="md:col-span-7 bg-[#f4f1ea] p-6 md:p-10 flex flex-col justify-center min-h-[320px]">
+
+                    @foreach($fiturList as [$id, $icon, $judul, $deskripsi, $manfaat])
+                    <div x-show="activeFeature === {{ $id }}" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform translate-x-2"
+                        x-transition:enter-end="opacity-100 transform translate-x-0" class="space-y-4">
+
+                        {{-- Besar Icon Penanda Konten --}}
+                        <div class="text-[#e85a4f] text-2xl md:text-3xl">
+                            <i class="{{ $icon }}"></i>
                         </div>
+
+                        {{-- Judul Detail --}}
+                        <h3 class="text-xl md:text-2xl font-serif font-bold text-[#1e302b]">
+                            {{ $judul }}
+                        </h3>
+
+                        {{-- Deskripsi Utama --}}
+                        <p class="text-[#5b5853] text-sm md:text-base leading-relaxed font-normal">
+                            {{ $deskripsi }}
+                        </p>
+
+                        {{-- Highlight Manfaat --}}
+                        <p class="text-[#3a3834] text-sm md:text-base leading-relaxed pt-2">
+                            <span class="font-bold text-[#1e302b]">Manfaat:</span> {{ $manfaat }}
+                        </p>
                     </div>
                     @endforeach
 
                 </div>
+
             </div>
         </div>
     </section>
 
 
-    {{-- SECTION 4: PAKET HARGA --}}
-    <section class="py-24 bg-white-50">
-        <div class="max-w-7xl mx-auto px-6">
+    {{-- SECTION 5: PAKET HARGA --}}
+    <section id="paket" class="py-16 md:py-24 bg-[#16291F] border-t border-[#D8D0BD]">
+        <div class="max-w-7xl mx-auto px-5 md:px-6">
 
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-                    Skema Langganan <span class="text-blue-600">Sesuai Kebutuhan</span>
+            {{-- Header Section --}}
+            <div class="max-w-2xl mb-12 md:mb-16" data-aos="fade-up">
+                <p class="font-mono text-xs tracking-[0.18em] uppercase text-[#B8924A] mb-3">Daftar Harga</p>
+                <h2 class="font-display text-2xl md:text-4xl font-semibold text-[#EFEAE0]">
+                    Skema Langganan <span class="text-[#B8924A]">Sesuai Kebutuhan</span>
                 </h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">
+                <p class="text-[#EFEAE0]/60 text-sm md:text-base mt-3 font-body">
                     Mulai digitalisasi operasional toko Anda dengan biaya investasi yang fleksibel dan terjangkau.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+            {{-- Grid Wrapper: Ubah gap menjadi 0 agar kartu menyatu seperti di referensi gambar --}}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 lg:border border-[#EFEAE0]/15"
+                data-aos="fade-up">
 
                 @php
                 $plans = [
@@ -690,56 +554,73 @@
                 @endphp
 
                 @foreach($plans as $i => $plan)
+                {{-- Perubahan Card: Background menyatu, efek membesar (scale) pada paket unggulan, dan border pemisah antar kolom --}}
                 <article
-                    class="bg-white p-7 rounded-3xl flex flex-col relative overflow-hidden transition-all
-                            {{ $plan['accent'] === 'green' ? 'border-2 border-green-500 shadow-lg' : 'border border-slate-200 shadow-sm hover:border-blue-200 hover:shadow-md' }}"
+                    class="relative flex flex-col transition-all duration-300 border-b lg:border-b-0 {{ $plan['accent'] === 'green' ? 'bg-[#FCFAF5] lg:scale-[1.04] lg:-my-2 z-20 shadow-[0_10px_40px_rgba(0,0,0,0.15)] rounded-sm' : 'bg-[#F6F2E8] z-10' }} {{ $i > 0 && $plan['accent'] !== 'green' && $plans[$i-1]['accent'] !== 'green' ? 'lg:border-l lg:border-[#D8D0BD]/50' : '' }}"
                     data-aos="fade-up" data-aos-delay="{{ $i * 80 }}">
 
+                    {{-- Lencana Stempel Merah Klasik (Rotated) sesuai referensi --}}
                     @if($plan['badge'])
-                    <div
-                        class="absolute top-0 right-0 bg-green-500 text-white text-[10px] px-5 py-1.5 rounded-bl-xl font-bold uppercase tracking-wider">
-                        {{ $plan['badge'] }}
+                    <div class="absolute -top-5 right-2 lg:-top-6 lg:-right-4 w-16 h-16 rounded-full border-[1.5px] border-[#B23A2E] flex items-center justify-center {{ $plan['accent'] === 'green' ? 'bg-[#FCFAF5]' : 'bg-[#F6F2E8]' }} z-30 shadow-sm transform rotate-[15deg]"
+                        aria-hidden="true">
+                        <span
+                            class="text-[8.5px] text-center leading-[1.15] font-bold uppercase text-[#B23A2E] tracking-wider px-1">
+                            {{ $plan['badge'] }}
+                        </span>
                     </div>
                     @endif
 
-                    <div class="mb-6 text-center {{ $plan['badge'] ? 'mt-4' : '' }}">
-                        <h3 class="text-sm font-bold text-slate-800 mb-4 leading-snug">{{ $plan['title'] }}</h3>
-                        <p class="text-slate-400 text-xs mb-1">Mulai dari</p>
-                        <p
-                            class="text-3xl font-extrabold {{ $plan['accent'] === 'green' ? 'text-green-600' : 'text-slate-900' }}">
-                            {{ $plan['price'] }}
+                    <div class="p-6 md:p-8 flex-1 flex flex-col">
+
+                        {{-- Bagian Atas / Header Card dengan Garis Pemisah Putus-Putus (Dashed) --}}
+                        <div class="mb-5 pb-6 border-b border-dashed border-[#D8D0BD]">
+                            <p class="font-mono text-[10.5px] text-[#B23A2E] tracking-widest mb-2 uppercase">
+                                OPSI-{{ str_pad($i+1,2,'0',STR_PAD_LEFT) }}
+                            </p>
+                            <h3 class="font-display text-lg md:text-xl font-bold text-[#2B2620] mb-2.5 leading-snug">
+                                {{ $plan['title'] }}
+                            </h3>
+                            <p class="text-[#6B6357] text-[11px] mb-1 font-body">Mulai dari</p>
+
+                            {{-- Harga menggunakan teks besar & Monospace --}}
+                            <p class="font-mono text-3xl md:text-4xl font-bold text-[#1F3A2E]">
+                                {{ $plan['price'] }}
+                            </p>
+                            <p class="text-xs text-[#6B6357] mt-2 font-body">
+                                {{ $plan['unit'] }}
+                            </p>
+                        </div>
+
+                        {{-- Deskripsi Utama --}}
+                        <p class="text-[#3A352C] text-sm mb-6 flex-grow leading-relaxed font-body">
+                            {{ $plan['desc'] }}
                         </p>
-                        <p
-                            class="text-[11px] {{ $plan['accent'] === 'green' ? 'text-green-700' : 'text-slate-500' }} font-medium mt-1">
-                            {{ $plan['unit'] }}
-                        </p>
+
+                        {{-- Info Box Tanpa Background Tebal (Sesuai gaya elegan minimalis) --}}
+                        <div
+                            class="bg-transparent p-3 rounded-sm flex items-start gap-2.5 mb-6 border border-[#D8D0BD]/60">
+                            <i class="fa-solid fa-circle-info text-[#B8924A] mt-0.5 shrink-0 text-xs"
+                                aria-hidden="true"></i>
+                            <p class="text-[11px] text-[#5A5245] leading-snug font-body">{{ $plan['note'] }}</p>
+                        </div>
+
+                        {{-- Tombol CTA --}}
+                        <a href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20tertarik%20dengan%20paket%20{{ urlencode($plan['title']) }}"
+                            target="_blank" rel="noopener noreferrer"
+                            class="block w-full py-3 px-4 mt-auto text-center rounded-sm font-body font-bold text-sm transition-colors {{ $plan['accent'] === 'green' ? 'bg-[#1F3A2E] text-[#EFEAE0] hover:bg-[#16291F]' : 'bg-transparent border border-[#1F3A2E] text-[#1F3A2E] hover:bg-[#1F3A2E] hover:text-[#EFEAE0]' }}">
+                            {{ $plan['cta'] }}
+                        </a>
                     </div>
-
-                    <p class="text-sm text-slate-600 text-center mb-5 flex-grow leading-relaxed">
-                        {{ $plan['desc'] }}
-                    </p>
-
-                    <div class="bg-blue-50 p-3 rounded-xl flex items-start gap-2 mb-5">
-                        <i class="fa-solid fa-circle-info text-blue-500 mt-0.5 flex-shrink-0 text-xs"
-                            aria-hidden="true"></i>
-                        <p class="text-[10px] text-blue-700 leading-snug">{{ $plan['note'] }}</p>
-                    </div>
-
-                    <a href="https://wa.me/6285865405330?text=Halo%20Cakra%2C%20saya%20tertarik%20dengan%20paket%20{{ urlencode($plan['title']) }}"
-                        target="_blank" rel="noopener noreferrer"
-                        class="block w-full py-3 px-4 text-center rounded-xl font-bold transition-all text-sm
-                          {{ $plan['accent'] === 'green' ? 'bg-green-500 text-white hover:bg-green-600' : 'border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white' }}">
-                        {{ $plan['cta'] }}
-                    </a>
 
                 </article>
                 @endforeach
 
             </div>
 
-            <div class="mt-10 text-center" data-aos="fade-up">
+            {{-- Bagian Link Bawah / Footer Section --}}
+            <div class="mt-14 text-center" data-aos="fade-up">
                 <a href="{{ url('/fitur-web-kasir') }}"
-                    class="inline-flex items-center gap-2 px-8 py-3 bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 text-slate-700 font-semibold rounded-full transition-all text-sm shadow-sm">
+                    class="inline-flex items-center gap-2 text-[#EFEAE0]/80 hover:text-[#EFEAE0] font-semibold text-sm font-body underline underline-offset-4">
                     Lihat perbandingan fitur &amp; harga lengkap
                     <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
                 </a>
@@ -747,7 +628,6 @@
 
         </div>
     </section>
-
 
     {{-- SECTION 5: FAQ --}}
     <!-- <section class="py-24 bg-slate-50" x-data="faqSection()">
@@ -799,7 +679,7 @@
         </div>
     </section> -->
 
-    <section id="faq" class="py-14 md:py-24 bg-slate-50" x-data="faqPOS()">
+    <section id="faq" class="py-14 md:py-24 bg-[#FAF8F5]" x-data="faqPOS()">
         <div class="max-w-3xl mx-auto px-5 md:px-6">
 
             <div class="text-center mb-10 md:mb-12" data-aos="fade-up">
@@ -1059,7 +939,24 @@
     @endpush
 
     @push('styles')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
     <style>
+    :root {
+        --ink: #1F3A2E;
+        --ink-deep: #16291F;
+        --paper: #EFEAE0;
+        --paper-soft: #F6F2E8;
+        --stempel: #B23A2E;
+        --brass: #B8924A;
+        --charcoal: #2B2620;
+        --muted: #6B6357;
+        --line: #D8D0BD;
+    }
+
     html,
     body {
         max-width: 100% !important;
@@ -1093,6 +990,87 @@
         .faq-pos-ripple {
             display: none;
         }
+    }
+
+    .font-display {
+        font-family: 'Fraunces', serif;
+    }
+
+    .font-body {
+        font-family: 'Inter', sans-serif;
+    }
+
+    .font-mono {
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .ring-spine {
+        position: relative;
+        background-image: radial-gradient(circle at 50% 50%, var(--brass) 0 2px, transparent 2.4px);
+        background-size: 100% 64px;
+        background-position: 0 18px;
+    }
+
+    .ring-spine::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, .25) 0 2px, transparent 2.6px);
+        background-size: 100% 64px;
+        background-position: 1px 19px;
+        pointer-events: none;
+    }
+
+    /* stempel / official stamp badge — replaces generic pill */
+    .stempel-badge {
+        border: 2.5px solid var(--stempel);
+        color: var(--stempel);
+        border-radius: 999px;
+        transform: rotate(-6deg);
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: .08em;
+        box-shadow: inset 0 0 0 2px rgba(178, 58, 46, .15);
+    }
+
+    .stempel-badge::after {
+        content: '';
+        position: absolute;
+        inset: 3px;
+        border: 1px dashed var(--stempel);
+        border-radius: 999px;
+        opacity: .5;
+    }
+
+    .paper-texture {
+        background-color: var(--paper);
+        background-image:
+            radial-gradient(rgba(43, 38, 32, .035) 1px, transparent 1px);
+        background-size: 4px 4px;
+    }
+
+    .ledger-rule {
+        border-bottom: 1px dashed var(--line);
+    }
+
+    .tab-rail-item {
+        transition: padding-left .25s ease, color .25s ease;
+    }
+
+    .tab-rail-item[data-active="true"] {
+        padding-left: 1.1rem;
+    }
+
+    a,
+    button,
+    [tabindex] {
+        outline-offset: 3px;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible {
+        outline: 2.5px solid var(--stempel);
+        border-radius: 6px;
     }
     </style>
     @endpush

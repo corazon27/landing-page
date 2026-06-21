@@ -184,7 +184,14 @@
     {{-- ================================================================
      SECTION 1: HERO
 ================================================================ --}}
-    <section class="pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
+    <section class="relative pt-28 md:pt-36 pb-12 md:pb-24 bg-[#FAFCFA] overflow-hidden">
+
+        {{-- 🛠️ TRIK CSS: Div absolute khusus sebagai pembungkus gambar banner dari AI --}}
+        <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0
+            bg-[length:100%_auto] bg-[position:center_bottom]
+            lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
+            style="background-image: url('{{ asset('images/hero-erp.webp') }}');">
+        </div>
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
             <div class="max-w-6xl mx-auto text-center mb-10">
@@ -199,9 +206,18 @@
                             class="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-3 md:mb-4">
                             Sistem Manajemen Bisnis (ERP)
                         </span>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                        <!-- <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
                             Kelola Seluruh Bisnis<br class="hidden sm:block">
                             dari <span class="text-blue-600">Satu Platform</span> Terpadu
+                        </h1> -->
+                        <h1 id="hero-heading"
+                            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-5 mb-5 leading-tight text-slate-950 font-heading">
+                            Kelola Seluruh Bisnis<br class="hidden sm:block">
+                            <span class="relative inline-block">
+                                dari <span class="text-blue-600">Satu Platform</span> Terpadu
+                                <span class="absolute -bottom-2 left-0 w-full h-1 bg-emerald-400 rounded-full"
+                                    aria-hidden="true"></span>
+                            </span>
                         </h1>
                         <p class="mt-4 md:mt-5 text-base md:text-lg text-slate-600 leading-relaxed">
                             Masih kelola stok di Excel, keuangan di aplikasi berbeda, dan data SDM di kertas? Saatnya
@@ -253,179 +269,6 @@
                     </div>
                 </div>
 
-                {{-- Kolom Mockup Dashboard ERP --}}
-                <div class="relative" data-aos="fade-left">
-
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-indigo-50 to-slate-100 rounded-[3rem] blur-3xl opacity-60 scale-110"
-                        aria-hidden="true"></div>
-
-                    <div
-                        class="relative z-10 bg-slate-900 rounded-[2rem] shadow-2xl overflow-hidden border border-slate-700/50">
-
-                        {{-- Topbar --}}
-                        <div
-                            class="bg-slate-800 px-5 py-3.5 flex items-center justify-between border-b border-slate-700/60">
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
-                            </div>
-                            <div class="flex items-center gap-1.5 bg-slate-700/60 rounded-lg px-3 py-1">
-                                <i class="fa-solid fa-lock text-slate-400 text-[9px]" aria-hidden="true"></i>
-                                <span class="text-[10px] text-slate-400 font-mono">erp.perusahaan-anda.com</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[9px] text-emerald-400 font-semibold flex items-center gap-1">
-                                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse inline-block"
-                                        aria-hidden="true"></span> Live
-                                </span>
-                                <div class="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
-                                    <span class="text-[8px] font-bold text-white">A</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- Sidebar + Content --}}
-                        <div class="flex">
-
-                            {{-- Mini Sidebar --}}
-                            <div
-                                class="bg-slate-800/60 w-10 flex flex-col items-center py-4 gap-4 border-r border-slate-700/40 shrink-0">
-                                @php
-                                $sideIcons = [
-                                ['fa-gauge', 'text-blue-400', true],
-                                ['fa-boxes-stacked', 'text-emerald-400',false],
-                                ['fa-chart-pie', 'text-purple-400', false],
-                                ['fa-users', 'text-orange-400', false],
-                                ['fa-file-invoice', 'text-sky-400', false],
-                                ['fa-gear', 'text-slate-500', false],
-                                ];
-                                @endphp
-                                @foreach($sideIcons as [$icon, $color, $active])
-                                <div
-                                    class="w-7 h-7 rounded-lg flex items-center justify-center {{ $active ? 'bg-blue-600' : '' }}">
-                                    <i class="fa-solid {{ $icon }} text-[10px] {{ $active ? 'text-white' : $color }}"
-                                        aria-hidden="true"></i>
-                                </div>
-                                @endforeach
-                            </div>
-
-                            {{-- Main Content --}}
-                            <div class="flex-1 p-4 space-y-3">
-
-                                {{-- KPI Row --}}
-                                <div class="grid grid-cols-3 gap-2">
-                                    @php
-                                    $kpis = [
-                                    ['Omzet Bulan Ini', 'Rp 182jt', '+12%', 'text-emerald-400'],
-                                    ['Stok Produk', '1.284', '-3%', 'text-red-400'],
-                                    ['Piutang', 'Rp 24jt', 'Jatuh Tempo', 'text-amber-400'],
-                                    ];
-                                    @endphp
-                                    @foreach($kpis as [$label, $val, $sub, $subColor])
-                                    <div class="bg-slate-800/80 rounded-xl p-3 border border-slate-700/40">
-                                        <p
-                                            class="text-[8px] text-slate-400 uppercase tracking-wider font-semibold mb-1">
-                                            {{ $label }}</p>
-                                        <p class="text-sm font-extrabold text-white leading-none">{{ $val }}</p>
-                                        <p class="text-[8px] {{ $subColor }} mt-1">{{ $sub }}</p>
-                                    </div>
-                                    @endforeach
-                                </div>
-
-                                {{-- Chart --}}
-                                <div class="bg-slate-800/80 rounded-xl p-3 border border-slate-700/40">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <p class="text-[10px] text-slate-300 font-semibold">Omzet vs HPP — 6 Bulan</p>
-                                        <span
-                                            class="text-[8px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full">Auto-kalkulasi</span>
-                                    </div>
-                                    <div class="flex items-end gap-1 h-12">
-                                        @php
-                                        $chartData = [
-                                        [55, 40], [65, 48], [50, 38], [80, 55], [70, 50], [100, 68]
-                                        ];
-                                        @endphp
-                                        @foreach($chartData as $idx => [$omzet, $hpp])
-                                        <div class="flex-1 flex flex-col justify-end gap-0.5">
-                                            <div class="w-full rounded-t"
-                                                style="height: {{ $omzet }}%; background: {{ $idx === 5 ? '#3b82f6' : 'rgba(99,102,241,0.4)' }}">
-                                            </div>
-                                            <div class="w-full rounded-t bg-emerald-500/30" style="height: {{ $hpp }}%">
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                    </div>
-                                    <div class="flex items-center gap-4 mt-2">
-                                        <span class="flex items-center gap-1 text-[8px] text-slate-400"><span
-                                                class="w-2 h-1.5 bg-blue-500 rounded inline-block"></span> Omzet</span>
-                                        <span class="flex items-center gap-1 text-[8px] text-slate-400"><span
-                                                class="w-2 h-1.5 bg-emerald-500/60 rounded inline-block"></span>
-                                            HPP</span>
-                                    </div>
-                                </div>
-
-                                {{-- Module Status --}}
-                                <div class="bg-slate-800/80 rounded-xl border border-slate-700/40 overflow-hidden">
-                                    <div
-                                        class="px-3 py-2 border-b border-slate-700/40 flex items-center justify-between">
-                                        <p class="text-[10px] text-slate-300 font-semibold">Status Modul Aktif</p>
-                                        <span class="text-[8px] text-emerald-400">Semua Online</span>
-                                    </div>
-                                    @php
-                                    $modules = [
-                                    ['fa-boxes-stacked', 'text-emerald-400', 'Manajemen Stok', '1.284 item',
-                                    'text-emerald-400 bg-emerald-400/10', 'Aktif'],
-                                    ['fa-file-invoice', 'text-blue-400', 'Keuangan & Akun.', '24 transaksi',
-                                    'text-blue-400 bg-blue-400/10', 'Aktif'],
-                                    ['fa-users', 'text-purple-400', 'SDM & Penggajian', '48 karyawan', 'text-emerald-400
-                                    bg-emerald-400/10', 'Aktif'],
-                                    ['fa-chart-bar', 'text-orange-400', 'Laporan BI', 'Update otomatis','text-amber-400
-                                    bg-amber-400/10', 'Sync'],
-                                    ];
-                                    @endphp
-                                    @foreach($modules as [$icon, $iconColor, $name, $detail, $statusColor, $status])
-                                    <div
-                                        class="px-3 py-2 flex items-center justify-between border-b border-slate-700/20 last:border-0">
-                                        <div class="flex items-center gap-2">
-                                            <div
-                                                class="w-6 h-6 rounded-lg bg-slate-700 flex items-center justify-center">
-                                                <i class="fa-solid {{ $icon }} {{ $iconColor }} text-[9px]"
-                                                    aria-hidden="true"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-[10px] font-semibold text-slate-200">{{ $name }}</p>
-                                                <p class="text-[8px] text-slate-500">{{ $detail }}</p>
-                                            </div>
-                                        </div>
-                                        <span
-                                            class="text-[8px] font-semibold px-1.5 py-0.5 rounded-full {{ $statusColor }}">{{ $status }}</span>
-                                    </div>
-                                    @endforeach
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Floating badges --}}
-                    <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl border border-slate-100 px-4 py-3 flex items-center gap-3 animate-bounce z-20"
-                        aria-hidden="true">
-                        <div class="w-9 h-9 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-triangle-exclamation text-amber-500 text-sm"></i>
-                        </div>
-                        <div>
-                            <p class="text-[9px] text-slate-400 uppercase font-bold tracking-widest">Alert Otomatis!</p>
-                            <p class="text-sm font-extrabold text-slate-800">Stok Kritis: 3 Item</p>
-                        </div>
-                    </div>
-                    <div class="absolute -top-3 -right-3 bg-blue-600 text-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2 z-20"
-                        aria-hidden="true">
-                        <i class="fa-solid fa-circle-check text-emerald-300 text-sm"></i>
-                        <span class="text-[10px] font-bold">Laporan Ter-generate</span>
-                    </div>
-
-                </div>
             </div>
         </div>
     </section>
@@ -534,145 +377,135 @@
     {{-- ================================================================
      SECTION 3: FITUR / MODUL
 ================================================================ --}}
-    <section id="fitur" class="py-14 md:py-24 bg-white" x-data="{ activeFeature: 1 }">
+    <section id="fitur" class="py-14 md:py-24 bg-[#eae7dc] border-t border-[#d8d3c5]" x-data="{ activeFeature: 1 }">
         <div class="max-w-6xl mx-auto px-5 md:px-6">
 
-            <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3 md:mb-4">
-                    Modul Unggulan <span class="text-blue-600">Sistem ERP Profesional</span>
+            {{-- Section Header --}}
+            <div class="mb-10 md:mb-16" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-[#1e302b] mb-3 md:mb-4">
+                    Modul Utama <span class="text-[#e85a4f]">Sistem ERP Profesional</span>
                 </h2>
-                <p class="text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
+                <p class="text-[#5b5853] max-w-2xl text-sm md:text-base font-body">
                     Setiap modul dirancang saling terhubung — data dari satu modul otomatis memperbarui modul lainnya
                     tanpa input ulang.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            @php
+            $fiturList = [
+            [
+            'id' => 1,
+            'icon' => 'fa-boxes-stacked',
+            'judul' => 'Manajemen Stok & Inventaris Real-time',
+            'deskripsi' => 'Pantau keluar-masuk stok, level minimum, dan valuasi inventaris secara real-time di semua
+            gudang sekaligus.',
+            'manfaat' => 'Tidak ada lagi stok habis mendadak atau penumpukan barang mati — setiap keputusan pembelian
+            berbasis data aktual.'
+            ],
+            [
+            'id' => 2,
+            'icon' => 'fa-file-invoice',
+            'judul' => 'Akuntansi & Laporan Keuangan Otomatis',
+            'deskripsi' => 'Setiap transaksi penjualan, pembelian, dan pengeluaran otomatis terposting ke jurnal
+            akuntansi dan laporan keuangan (Neraca, Laba Rugi, Arus Kas).',
+            'manfaat' => 'Laporan keuangan bulanan yang biasanya butuh seminggu rekap manual kini tersedia dalam
+            hitungan detik.'
+            ],
+            [
+            'id' => 3,
+            'icon' => 'fa-users',
+            'judul' => 'Manajemen SDM & Penggajian Otomatis',
+            'deskripsi' => 'Kelola data karyawan, absensi, lembur, cuti, dan hitung gaji secara otomatis dengan slip
+            gaji digital.',
+            'manfaat' => 'Proses penggajian yang biasanya butuh 2-3 hari kini selesai dalam hitungan jam — akurat dan
+            bebas human error.'
+            ],
+            [
+            'id' => 4,
+            'icon' => 'fa-handshake',
+            'judul' => 'CRM — Manajemen Pelanggan & Pipeline Penjualan',
+            'deskripsi' => 'Rekam riwayat interaksi setiap pelanggan, kelola pipeline penjualan, dan otomatiskan
+            follow-up prospek.',
+            'manfaat' => 'Tim sales bekerja lebih terarah — tidak ada lagi prospek yang jatuh karena lupa di-follow up.'
+            ],
+            [
+            'id' => 5,
+            'icon' => 'fa-chart-bar',
+            'judul' => 'Business Intelligence & Dashboard Eksekutif',
+            'deskripsi' => 'Dashboard real-time yang merangkum KPI bisnis terpenting — omzet, margin, produktivitas, dan
+            tren — dalam visual yang mudah dibaca.',
+            'manfaat' => 'Pimpinan bisa memantau kondisi bisnis dan mengambil keputusan strategis kapan saja, dari mana
+            saja, hanya dari HP.'
+            ],
+            ];
+            @endphp
 
-                {{-- Feature Accordion --}}
-                <div class="lg:col-span-7 space-y-2.5 md:space-y-3 order-first lg:order-last" data-aos="fade-left">
+            {{-- Main Layout Container: Pembatas luar terpadu layaknya cetakan ledger/katalog --}}
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-[#d8d3c5] rounded-sm overflow-hidden bg-[#f4f1ea]"
+                data-aos="fade-up">
 
-                    @php
-                    $fiturList = [
-                    [1, 'fa-boxes-stacked', 'Manajemen Stok & Inventaris Real-time', 'Pantau keluar-masuk stok, level
-                    minimum, dan valuasi inventaris secara real-time di semua gudang
-                    sekaligus.<br><strong>Manfaat:</strong> Tidak ada lagi stok habis mendadak atau penumpukan barang
-                    mati — setiap keputusan pembelian berbasis data aktual.'],
-                    [2, 'fa-file-invoice', 'Akuntansi & Laporan Keuangan Otomatis', 'Setiap transaksi penjualan,
-                    pembelian, dan pengeluaran otomatis terposting ke jurnal akuntansi dan laporan keuangan (Neraca,
-                    Laba Rugi, Arus Kas).<br><strong>Manfaat:</strong> Laporan keuangan bulanan yang biasanya butuh
-                    seminggu rekap manual kini tersedia dalam hitungan detik.'],
-                    [3, 'fa-users', 'Manajemen SDM & Penggajian Otomatis', 'Kelola data karyawan, absensi, lembur, cuti,
-                    dan hitung gaji secara otomatis dengan slip gaji digital.<br><strong>Manfaat:</strong> Proses
-                    penggajian yang biasanya butuh 2-3 hari kini selesai dalam hitungan jam — akurat dan bebas human
-                    error.'],
-                    [4, 'fa-handshake', 'CRM — Manajemen Pelanggan & Pipeline Penjualan', 'Rekam riwayat interaksi
-                    setiap pelanggan, kelola pipeline penjualan, dan otomatiskan follow-up
-                    prospek.<br><strong>Manfaat:</strong> Tim sales bekerja lebih terarah — tidak ada lagi prospek yang
-                    jatuh karena lupa di-follow up.'],
-                    [5, 'fa-chart-bar', 'Business Intelligence & Dashboard Eksekutif', 'Dashboard real-time yang
-                    merangkum KPI bisnis terpenting — omzet, margin, produktivitas, dan tren — dalam visual yang mudah
-                    dibaca.<br><strong>Manfaat:</strong> Pimpinan bisa memantau kondisi bisnis dan mengambil keputusan
-                    strategis kapan saja, dari mana saja, hanya dari HP.'],
-                    ];
-                    @endphp
+                {{-- KOLOM KIRI: Navigasi Tab Pilihan Modul --}}
+                <div
+                    class="lg:col-span-5 flex flex-col divide-y divide-[#d8d3c5] border-b lg:border-b-0 lg:border-r border-[#d8d3c5]">
+                    @foreach($fiturList as $f)
+                    <button @click="activeFeature = {{ $f['id'] }}"
+                        class="w-full text-left p-4 md:p-5 flex items-center gap-4 transition-all duration-150 focus:outline-none select-none font-body"
+                        :class="activeFeature === {{ $f['id'] }} ? 'bg-[#1e302b] text-[#f0ede4]' : 'bg-[#f4f1ea] hover:bg-[#ebe6da] text-[#1e302b]'">
 
-                    @foreach($fiturList as [$id, $icon, $judul, $konten])
-                    <div @click="activeFeature = {{ $id }}"
-                        class="p-4 md:p-5 rounded-2xl cursor-pointer transition-all duration-300 border"
-                        :class="activeFeature === {{ $id }} ? 'bg-blue-600 text-white shadow-xl shadow-blue-200/60 border-transparent' : 'bg-white hover:shadow-md text-slate-800 border-slate-100'">
-                        <h3 class="font-bold flex items-center justify-between text-sm md:text-base">
-                            <span class="flex items-center gap-2.5 md:gap-3">
-                                <i class="fa-solid {{ $icon }} w-4 shrink-0"
-                                    :class="activeFeature === {{ $id }} ? 'text-white' : 'text-blue-600'"
-                                    aria-hidden="true"></i>
-                                {{ $judul }}
-                            </span>
-                            <i class="fa-solid fa-chevron-right text-[10px] transition-transform duration-300 shrink-0 ml-2"
-                                :class="activeFeature === {{ $id }} ? 'rotate-90' : ''" aria-hidden="true"></i>
-                        </h3>
-                        <div x-show="activeFeature === {{ $id }}" x-transition:enter="transition ease-out duration-200"
-                            x-transition:enter-start="opacity-0 -translate-y-1"
-                            x-transition:enter-end="opacity-100 translate-y-0"
-                            x-transition:leave="transition ease-in duration-150"
-                            x-transition:leave-start="opacity-100 translate-y-0"
-                            x-transition:leave-end="opacity-0 -translate-y-1">
-                            <p class="text-sm mt-3 opacity-90 leading-relaxed">{!! $konten !!}</p>
-                        </div>
-                    </div>
+                        {{-- Kode Nomor Urut --}}
+                        <span class="font-mono text-xs font-semibold shrink-0"
+                            :class="activeFeature === {{ $f['id'] }} ? 'text-[#e85a4f]' : 'text-[#e85a4f]/70'">
+                            0{{ $f['id'] }}
+                        </span>
+
+                        {{-- Icon Modul --}}
+                        <i class="fa-solid {{ $f['icon'] }} w-5 shrink-0 text-center text-sm"
+                            :class="activeFeature === {{ $f['id'] }} ? 'text-[#f0ede4]' : 'text-[#1e302b]'"
+                            aria-hidden="true"></i>
+
+                        {{-- Judul Menu --}}
+                        <span class="font-serif font-bold text-sm md:text-base leading-tight">
+                            {{ $f['judul'] }}
+                        </span>
+                    </button>
                     @endforeach
-
                 </div>
 
-                {{-- Visual sticky --}}
-                <div class="lg:col-span-5 order-last lg:order-first lg:sticky lg:top-24" data-aos="fade-right">
-                    <div
-                        class="bg-gradient-to-br from-slate-900 to-slate-800 p-4 md:p-5 rounded-[1.5rem] md:rounded-[2rem] shadow-2xl border border-slate-700/50 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"
-                            aria-hidden="true"></div>
-                        <div class="bg-slate-800/80 rounded-2xl p-4 md:p-5 space-y-3 md:space-y-4 relative z-10">
+                {{-- KOLOM KANAN: Panel Detail Penjelasan Dinamis --}}
+                <div class="lg:col-span-7 p-6 md:p-10 lg:p-12 bg-[#f4f1ea] flex flex-col justify-center min-h-[340px]">
+                    @foreach($fiturList as $f)
+                    <div x-show="activeFeature === {{ $f['id'] }}" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 translate-x-4"
+                        x-transition:enter-end="opacity-100 translate-x-0" class="space-y-4 md:space-y-6">
 
-                            <div class="flex items-center gap-3 border-b border-slate-700/40 pb-3 md:pb-4">
-                                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                                    <i class="fa-solid fa-cubes text-white text-xs" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs font-bold text-white">Dashboard ERP</p>
-                                    <p class="text-[9px] text-slate-400">Semua Modul Aktif</p>
-                                </div>
-                                <div class="ml-auto flex items-center gap-1.5">
-                                    <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                                    <span class="text-[9px] text-emerald-400">Real-time</span>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-2.5 md:gap-3">
-                                <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-700/30">
-                                    <i class="fa-solid fa-boxes-stacked text-emerald-400 mb-2 text-sm"
-                                        aria-hidden="true"></i>
-                                    <p class="text-[9px] text-slate-400">Stok & Gudang</p>
-                                    <p class="text-xs font-bold text-white">Real-time</p>
-                                </div>
-                                <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-700/30">
-                                    <i class="fa-solid fa-file-invoice text-blue-400 mb-2 text-sm"
-                                        aria-hidden="true"></i>
-                                    <p class="text-[9px] text-slate-400">Akuntansi</p>
-                                    <p class="text-xs font-bold text-white">Auto-posting</p>
-                                </div>
-                                <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-700/30">
-                                    <i class="fa-solid fa-users text-purple-400 mb-2 text-sm" aria-hidden="true"></i>
-                                    <p class="text-[9px] text-slate-400">SDM & Gaji</p>
-                                    <p class="text-xs font-bold text-white">Otomatis</p>
-                                </div>
-                                <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-700/30">
-                                    <i class="fa-solid fa-chart-bar text-orange-400 mb-2 text-sm"
-                                        aria-hidden="true"></i>
-                                    <p class="text-[9px] text-slate-400">Laporan BI</p>
-                                    <p class="text-xs font-bold text-white">1 Klik</p>
-                                </div>
-                            </div>
-
-                            <div class="bg-blue-600 rounded-xl p-3 flex items-center justify-between">
-                                <div>
-                                    <p class="text-[9px] text-blue-200">Laba Bersih Bulan Ini</p>
-                                    <p class="text-base font-extrabold text-white">Rp 38.400.000</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-[9px] text-blue-200">vs Bulan Lalu</p>
-                                    <p class="text-sm font-bold text-emerald-300">+14,2% ↑</p>
-                                </div>
-                            </div>
-
+                        {{-- Besar Icon Penanda --}}
+                        <div class="text-[#e85a4f] text-2xl md:text-3xl">
+                            <i class="fa-solid {{ $f['icon'] }}" aria-hidden="true"></i>
                         </div>
-                        <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-white px-3 py-2 rounded-xl shadow-lg flex items-center gap-1.5"
-                            aria-hidden="true">
-                            <i class="fa-solid fa-link text-xs"></i>
-                            <span class="text-[10px] font-bold">Semua Terhubung</span>
+
+                        {{-- Judul Fitur Aktif --}}
+                        <h3 class="font-serif font-bold text-xl md:text-2xl text-[#1e302b] leading-tight">
+                            {{ $f['judul'] }}
+                        </h3>
+
+                        {{-- Deskripsi Utama --}}
+                        <p class="text-sm md:text-base text-[#5b5853] leading-relaxed font-body">
+                            {{ $f['deskripsi'] }}
+                        </p>
+
+                        {{-- Informasi Khusus Manfaat --}}
+                        <div class="pt-4 border-t border-[#d8d3c5]">
+                            <p class="text-sm md:text-base text-[#5b5853] leading-relaxed font-body">
+                                <strong class="text-[#1e302b]">Manfaat:</strong> {{ $f['manfaat'] }}
+                            </p>
                         </div>
+
                     </div>
+                    @endforeach
                 </div>
 
             </div>
+
         </div>
     </section>
 
@@ -680,59 +513,69 @@
     {{-- ================================================================
      SECTION 4: PAKET HARGA
 ================================================================ --}}
-    <section id="paket" class="py-14 md:py-24 bg-slate-50">
+    <section id="paket" class="py-14 md:py-24 bg-[#16291F] border-t border-[#D8D0BD]">
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
             <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl md:text-3xl lg:text-5xl font-extrabold text-slate-900 mb-3 md:mb-4">
-                    Investasi untuk <span class="text-blue-600">Efisiensi Bisnis Anda</span>
+                <p class="font-mono text-xs tracking-[0.18em] uppercase text-[#B8924A] mb-3">Investasi & Kemitraan</p>
+                <h2 class="font-display text-2xl md:text-3xl lg:text-5xl font-semibold text-[#EFEAE0] mb-3 md:mb-4">
+                    Investasi untuk <span class="text-[#B8924A]">Efisiensi Bisnis Anda</span>
                 </h2>
-                <p class="text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
+                <p class="text-[#EFEAE0]/60 max-w-2xl mx-auto text-sm md:text-base font-body">
                     Harga transparan, modul jelas. Pilih paket sesuai skala bisnis Anda — semua bisa dikustomisasi.
                 </p>
-                <p class="text-xs text-slate-400 mt-3 italic">*Harga belum termasuk biaya domain, hosting, dan server
+                <p class="text-xs text-[#EFEAE0]/40 mt-3 italic font-body">*Harga belum termasuk biaya domain, hosting,
+                    dan server
                     tahunan. Dapat dicicil per milestone pengerjaan.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-[#EFEAE0]/15 items-stretch">
 
                 @foreach($paket as $i => $p)
                 <article
-                    class="relative bg-white rounded-3xl flex flex-col transition-all duration-300
-                       {{ $p['populer'] ? 'border-2 border-blue-600 shadow-2xl shadow-blue-100 lg:-translate-y-4' : 'border border-slate-200 shadow-sm hover:shadow-md' }}"
+                    class="relative bg-[#F6F2E8] flex flex-col transition-all duration-300
+                   {{ $i > 0 ? 'lg:border-l border-[#EFEAE0]/15' : '' }} 
+                   {{ $p['populer'] ? 'ring-2 ring-[#B8924A] lg:scale-[1.02] z-10 shadow-xl' : 'border-t lg:border-t-0 border-[#EFEAE0]/15' }}"
                     data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
 
                     @if($p['label'])
-                    <div
-                        class="absolute -top-3.5 left-1/2 -translate-x-1/2
-                                    {{ $p['populer'] ? 'bg-amber-400 text-amber-950' : 'bg-slate-700 text-white' }}
-                                    text-[10px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider shadow-sm whitespace-nowrap">
-                        {{ $p['label'] }}
+                    <div class="absolute -top-4 right-5 w-16 h-16 stempel-badge flex items-center justify-center bg-[#F6F2E8] z-10 border border-[#D8D0BD] rounded-full shadow-sm"
+                        aria-hidden="true">
+                        <span
+                            class="text-[8px] text-center leading-tight font-bold uppercase text-[#2B2620]">{{ $p['label'] }}</span>
                     </div>
                     @endif
 
-                    <div class="p-5 md:p-6 lg:p-8 {{ $p['label'] ? 'pt-8 md:pt-10' : '' }}">
+                    <div class="p-5 md:p-6 lg:p-8 flex-1 flex flex-col {{ $p['label'] ? 'pt-8 md:pt-10' : '' }}">
 
-                        <div class="mb-5 pb-5 border-b border-slate-100">
-                            <h3 class="text-base md:text-lg font-extrabold text-slate-900 mb-1">{{ $p['nama'] }}</h3>
-                            <p class="text-slate-500 text-xs mb-3 md:mb-4">{{ $p['tagline'] }}</p>
-                            @if($p['harga'] === 'Custom')
-                            <p class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900">Custom</p>
-                            <p class="text-xs text-slate-400 mt-1">Harga sesuai kebutuhan</p>
-                            @else
-                            <p class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900">{{ $p['harga'] }}
+                        <div class="mb-5 pb-5 ledger-rule">
+                            <p class="font-mono text-[10px] text-[#B23A2E] tracking-widest mb-2">
+                                PAKET-{{ str_pad($i+1,2,'0',STR_PAD_LEFT) }}
                             </p>
-                            <p class="text-xs text-slate-400 mt-1">Biaya setup awal — cicil per milestone</p>
+                            <h3 class="font-display text-base md:text-lg font-semibold text-[#2B2620] mb-1">
+                                {{ $p['nama'] }}</h3>
+                            <p class="text-[#6B6357] text-xs mb-3 md:mb-4 font-body">{{ $p['tagline'] }}</p>
+
+                            @if($p['harga'] === 'Custom')
+                            <p class="font-mono text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1F3A2E]">Custom
+                            </p>
+                            <p class="text-xs text-[#6B6357] mt-1 font-body">Harga sesuai kebutuhan</p>
+                            @else
+                            <p class="font-mono text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1F3A2E]">
+                                {{ $p['harga'] }}</p>
+                            <p class="text-xs text-[#6B6357] mt-1 font-body">Biaya setup awal — cicil per milestone</p>
                             @endif
                         </div>
 
-                        <div class="mb-4">
-                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2.5 md:mb-3">
-                                Modul & Fitur yang Didapat</p>
-                            <ul class="space-y-1.5 md:space-y-2">
+                        <div class="mb-4 flex-1">
+                            <p
+                                class="font-mono text-[10px] font-bold text-[#6B6357]/70 uppercase tracking-widest mb-2.5 md:mb-3">
+                                Modul & Fitur yang Didapat
+                            </p>
+                            <ul class="space-y-1.5 md:space-y-2 font-body">
                                 @foreach($p['fitur_ya'] as $f)
-                                <li class="flex items-start gap-2 md:gap-2.5 text-xs text-slate-700">
-                                    <i class="fa-solid fa-circle-check text-blue-600 mt-0.5 shrink-0 text-[11px]"
+                                <li class="flex items-start gap-2 md:gap-2.5 text-xs text-[#3A352C]">
+                                    <i class="fa-solid fa-check text-[#1F3A2E] mt-0.5 shrink-0 text-[10px]"
                                         aria-hidden="true"></i>
                                     {{ $f }}
                                 </li>
@@ -741,13 +584,15 @@
                         </div>
 
                         @if(count($p['fitur_tidak']) > 0)
-                        <div class="mb-5 pt-3 md:pt-4 border-t border-slate-50">
-                            <p class="text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-2.5 md:mb-3">
-                                Tidak Termasuk</p>
-                            <ul class="space-y-1.5 md:space-y-2">
+                        <div class="mb-5 pt-3 md:pt-4 border-t border-[#D8D0BD]">
+                            <p
+                                class="font-mono text-[10px] font-bold text-[#A39C8E] uppercase tracking-widest mb-2.5 md:mb-3">
+                                Tidak Termasuk
+                            </p>
+                            <ul class="space-y-1.5 md:space-y-2 font-body">
                                 @foreach($p['fitur_tidak'] as $f)
-                                <li class="flex items-start gap-2 md:gap-2.5 text-xs text-slate-400">
-                                    <i class="fa-solid fa-xmark text-slate-300 mt-0.5 shrink-0 text-[11px]"
+                                <li class="flex items-start gap-2 md:gap-2.5 text-xs text-[#A39C8E]">
+                                    <i class="fa-solid fa-xmark text-[#A39C8E] mt-0.5 shrink-0 text-[10px]"
                                         aria-hidden="true"></i>
                                     {{ $f }}
                                 </li>
@@ -755,9 +600,9 @@
                             </ul>
                         </div>
                         @else
-                        <div class="mb-5 pt-3 md:pt-4 border-t border-slate-50">
-                            <p class="text-xs text-slate-400 italic flex items-center gap-2">
-                                <i class="fa-solid fa-infinity text-blue-400"></i>
+                        <div class="mb-5 pt-3 md:pt-4 border-t border-[#D8D0BD]">
+                            <p class="text-xs text-[#6B6357] italic flex items-center gap-2 font-body">
+                                <i class="fa-solid fa-infinity text-[#1F3A2E]"></i>
                                 Semua modul tersedia — tidak ada batasan.
                             </p>
                         </div>
@@ -765,7 +610,7 @@
 
                         <a href="https://wa.me/6285865405330?text={{ $p['wa_text'] }}" target="_blank"
                             rel="noopener noreferrer"
-                            class="block w-full py-3 md:py-3.5 px-6 text-center rounded-2xl font-bold text-sm transition-all duration-200 {{ $p['btn_style'] }}">
+                            class="mt-auto block w-full py-3 md:py-3.5 px-6 text-center rounded-sm font-body font-bold text-sm transition-all duration-200 {{ $p['btn_style'] }}">
                             @if($p['populer']) Ambil Penawaran Ini
                             @elseif($p['harga'] === 'Custom') Diskusi dengan Tim Ahli
                             @else Pilih Paket Ini
@@ -778,9 +623,9 @@
 
             </div>
 
-            <div class="mt-8 md:mt-10 text-center" data-aos="fade-up">
+            <div class="mt-10 text-center" data-aos="fade-up">
                 <a href="{{ url('/fitur-web-erp') }}"
-                    class="inline-flex items-center gap-2 px-6 md:px-8 py-3 bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 text-slate-700 font-semibold rounded-full transition-all text-sm shadow-sm">
+                    class="inline-flex items-center gap-2 text-[#EFEAE0]/80 hover:text-[#EFEAE0] font-semibold text-sm font-body underline underline-offset-4 transition-all">
                     Lihat perbandingan modul &amp; harga lengkap
                     <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
                 </a>
@@ -793,7 +638,7 @@
     {{-- ================================================================
      SECTION 5: FAQ
 ================================================================ --}}
-    <section id="faq" class="py-14 md:py-24 bg-white" x-data="faqErp()">
+    <section id="faq" class="py-14 md:py-24 bg-[#FAF8F5]" x-data="faqErp()">
         <div class="max-w-3xl mx-auto px-5 md:px-6">
 
             <div class="text-center mb-10 md:mb-12" data-aos="fade-up">
@@ -1026,7 +871,24 @@
     @endpush
 
     @push('styles')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
     <style>
+    :root {
+        --ink: #1F3A2E;
+        --ink-deep: #16291F;
+        --paper: #EFEAE0;
+        --paper-soft: #F6F2E8;
+        --stempel: #B23A2E;
+        --brass: #B8924A;
+        --charcoal: #2B2620;
+        --muted: #6B6357;
+        --line: #D8D0BD;
+    }
+
     html,
     body {
         max-width: 100% !important;
@@ -1060,6 +922,88 @@
         .faq-erp-ripple {
             display: none;
         }
+    }
+
+    /* ring holes — the signature binder spine, reused as a section rail */
+    .ring-spine {
+        position: relative;
+        background-image: radial-gradient(circle at 50% 50%, var(--brass) 0 2px, transparent 2.4px);
+        background-size: 100% 64px;
+        background-position: 0 18px;
+    }
+
+    .ring-spine::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, .25) 0 2px, transparent 2.6px);
+        background-size: 100% 64px;
+        background-position: 1px 19px;
+        pointer-events: none;
+    }
+
+    /* stempel / official stamp badge — replaces generic pill */
+    .stempel-badge {
+        border: 2.5px solid var(--stempel);
+        color: var(--stempel);
+        border-radius: 999px;
+        transform: rotate(-6deg);
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: .08em;
+        box-shadow: inset 0 0 0 2px rgba(178, 58, 46, .15);
+    }
+
+    .stempel-badge::after {
+        content: '';
+        position: absolute;
+        inset: 3px;
+        border: 1px dashed var(--stempel);
+        border-radius: 999px;
+        opacity: .5;
+    }
+
+    .paper-texture {
+        background-color: var(--paper);
+        background-image:
+            radial-gradient(rgba(43, 38, 32, .035) 1px, transparent 1px);
+        background-size: 4px 4px;
+    }
+
+    .ledger-rule {
+        border-bottom: 1px dashed var(--line);
+    }
+
+    .tab-rail-item {
+        transition: padding-left .25s ease, color .25s ease;
+    }
+
+    .tab-rail-item[data-active="true"] {
+        padding-left: 1.1rem;
+    }
+
+    a,
+    button,
+    [tabindex] {
+        outline-offset: 3px;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible {
+        outline: 2.5px solid var(--stempel);
+        border-radius: 6px;
+    }
+
+    .font-display {
+        font-family: 'Fraunces', serif;
+    }
+
+    .font-body {
+        font-family: 'Inter', sans-serif;
+    }
+
+    .font-mono {
+        font-family: 'IBM Plex Mono', monospace;
     }
     </style>
     @endpush

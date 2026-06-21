@@ -75,8 +75,16 @@
     @endphp
 
     {{-- SECTION 1: HERO --}}
-    <section class="pt-28 md:pt-36 pb-16 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
+    <!-- Alternatif jika ingin background ikut mengecil secara proporsional -->
+    <section class="pt-20 md:pt-28 pb-12 bg-slate-50 overflow-hidden relative">
+        {{-- Background Wrapper dengan Kontrol Penuh untuk Tampilan Mobile & Desktop --}}
+        <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0 
+                bg-[length:240%_auto] bg-[position:center_15%] 
+                md:bg-[size:100%_auto] md:bg-center opacity-30 md:opacity-100"
+            style="background-image: url('{{ asset('images/hero-portofolio.webp') }}');">
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
             <x-breadcrumb :items="[]" current="Portofolio Kami" />
 
             <div class="mt-8 text-center max-w-3xl mx-auto" data-aos="fade-up">
