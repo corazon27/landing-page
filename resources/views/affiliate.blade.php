@@ -3,9 +3,24 @@
     {{-- Header & Breadcrumbs Section --}}
     <section class="relative pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
 
+        {{-- 🛠️ 1. LAYER BACKGROUND KHUSUS MOBILE (< md) --}}
+        {{-- Diubah menjadi auto_100% agar menutupi seluruh tinggi section, dan digeser ke kanan penuh agar teks di kiri tetap aman dibaca --}}
+        <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0
+            bg-[length:auto_100%] bg-[position:right_center]
+            md:hidden" style="background-image: url('{{ asset('images/hero-affiliate.webp') }}');">
+        </div>
+
+        {{-- 🛠️ 2. LAYER BACKGROUND KHUSUS DESKTOP (>= md) --}}
+        {{-- Mempertahankan kode bawaan desktop Anda yang sudah rapi --}}
         <div class="absolute inset-0 hidden md:block bg-cover bg-right bg-no-repeat pointer-events-none z-0"
             style="background-image: url('{{ asset('images/hero-affiliate.webp') }}');">
         </div>
+
+        {{-- 💡 3. GRADIENT OVERLAY (Penyelamat Kontras Teks Mobile) --}}
+        {{-- Memberikan efek blur tipis dan sedikit kelembutan warna di mobile agar teks deskripsi affiliate di kiri-atas dijamin tajam --}}
+        <div class="absolute inset-0 bg-white/75 md:bg-transparent backdrop-blur-[1px] md:backdrop-blur-none pointer-events-none z-1"
+            aria-hidden="true"></div>
+
 
         <div class="max-w-6xl mx-auto px-5 md:px-10 relative z-10">
             <div class="max-w-6xl mx-auto text-center mb-6 md:mb-10">
@@ -51,14 +66,14 @@
                 </div>
 
                 <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <div
+                    <!-- <div
                         class="block md:hidden w-full rounded-[24px] overflow-hidden bg-gradient-to-tr from-slate-50 to-blue-50/50 p-3 border border-slate-100">
                         <div class="w-full overflow-hidden rounded-[18px]">
                             <img src="{{ asset('images/hero-affiliate.webp') }}"
                                 class="w-full h-auto object-cover object-right scale-125 origin-right transform translate-x-[-5%]"
                                 alt="Program Affiliate Cakra Inovasi Digital">
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="hidden md:block h-[480px] lg:h-[580px] pointer-events-none"></div>
                 </div>

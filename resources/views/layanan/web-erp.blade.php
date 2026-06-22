@@ -184,14 +184,26 @@
     {{-- ================================================================
      SECTION 1: HERO
 ================================================================ --}}
-    <section class="relative pt-28 md:pt-36 pb-12 md:pb-24 bg-[#FAFCFA] overflow-hidden">
+    {{-- Mengubah bg-[#FAFCFA] menjadi bg-white --}}
+    <section class="relative pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
 
-        {{-- 🛠️ TRIK CSS: Div absolute khusus sebagai pembungkus gambar banner dari AI --}}
+        {{-- 🛠️ 1. LAYER BACKGROUND KHUSUS MOBILE (< lg) --}}
         <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0
-            bg-[length:100%_auto] bg-[position:center_bottom]
-            lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
+            bg-[length:auto_55%] bg-[position:right_center]
+            lg:hidden" style="background-image: url('{{ asset('images/hero-erp.webp') }}');">
+        </div>
+
+        {{-- 🛠️ 2. LAYER BACKGROUND KHUSUS DESKTOP (>= lg) --}}
+        {{-- Menggunakan spesifikasi desktop Anda yang sudah proporsional menepi ke kanan --}}
+        <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0 hidden
+            lg:block lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
             style="background-image: url('{{ asset('images/hero-erp.webp') }}');">
         </div>
+
+        {{-- 💡 3. GRADIENT OVERLAY --}}
+        {{-- Di mobile, kita buat overlay-nya tipis/hilang di bagian bawah agar gambar kasir tidak tertutup warna putih --}}
+        <div class="absolute inset-0 bg-white/80 md:bg-transparent backdrop-blur-[1px] md:backdrop-blur-none pointer-events-none"
+            aria-hidden="true"></div>
         <div class="max-w-7xl mx-auto px-5 md:px-6">
 
             <div class="max-w-6xl mx-auto text-center mb-10">

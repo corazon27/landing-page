@@ -76,17 +76,27 @@
 
     {{-- SECTION 1: HERO --}}
     <!-- Alternatif jika ingin background ikut mengecil secara proporsional -->
-    <section class="pt-20 md:pt-28 pb-12 bg-slate-50 overflow-hidden relative">
-        {{-- Background Wrapper dengan Kontrol Penuh untuk Tampilan Mobile & Desktop --}}
-        <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0 
-                bg-[length:240%_auto] bg-[position:center_15%] 
-                md:bg-[size:100%_auto] md:bg-center opacity-30 md:opacity-100"
-            style="background-image: url('{{ asset('images/hero-portofolio.webp') }}');">
+    <section class="pt-28 md:pt-28 pb-12 bg-white overflow-hidden relative">
+        {{-- 🛠️ 1. LAYER BACKGROUND KHUSUS MOBILE (< md) --}}
+        <div class="absolute inset-0 pointer-events-none z-0 md:hidden" style="background-image: url('{{ asset('images/hero-portofolio.webp') }}');
+                background-size: cover_auto;
+                opacity: 0.16;">
         </div>
 
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
-            <x-breadcrumb :items="[]" current="Portofolio Kami" />
+        {{-- 🛠️ 2. LAYER BACKGROUND KHUSUS DESKTOP (>= md) --}}
+        {{-- 🛠️ 2. LAYER BACKGROUND KHUSUS DESKTOP (>= md) --}}
+        <div class="absolute inset-0 pointer-events-none z-0 hidden md:block" style="background-image: url('{{ asset('images/hero-portofolio.webp') }}');
+            background-size: 100% auto;
+            background-position: center 80px;
+            background-repeat: no-repeat;
+            opacity: 1;">
+        </div>
 
+        <div class="max-w-6xl mx-auto px-5 md:px-10 relative z-10">
+
+            <div class="text-center mb-12">
+                <x-breadcrumb :items="[]" current="Portofolio Kami" />
+            </div>
             <div class="mt-8 text-center max-w-3xl mx-auto" data-aos="fade-up">
                 <span
                     class="inline-block bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-5">
@@ -118,7 +128,7 @@
     </section>
 
     {{-- SECTION 2: FILTER + GRID PORTOFOLIO --}}
-    <section class="py-16 md:py-24 bg-white" id="portfolio-section">
+    <section class="py-16 md:py-24 bg-slate-100" id="portfolio-section">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
 
             <div class="mb-10" data-aos="fade-up">
@@ -263,7 +273,7 @@
     </section>
 
     {{-- SECTION 3: GALERI DOKUMENTASI --}}
-    <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <section class="py-20 bg-white-50 border-t border-slate-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <div class="mb-12" data-aos="fade-up">
                 <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Aktivitas Kami</span>

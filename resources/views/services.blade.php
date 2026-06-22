@@ -106,11 +106,11 @@
              SECTION 1: HEADER & HERO - CSS Ecosystem Graphic
         ================================================================ --}}
         <header
-            class="relative pt-32 pb-20 md:pb-28 bg-cover bg-no-repeat bg-[position:75%_center] sm:bg-right lg:bg-center overflow-hidden"
+            class="relative pt-32 pb-20 md:pb-28 bg-cover bg-no-repeat bg-[position:75%_center] sm:bg-right lg:bg-center bg-white overflow-hidden"
             style="background-image: url('{{ asset('images/hero-layanan.webp') }}');">
 
             {{-- Overlay halus Opsional: Memastikan teks tetap terbaca tajam di layar ponsel kecil --}}
-            <div class="absolute inset-0 bg-white/20 md:bg-transparent backdrop-blur-[0.5px] md:backdrop-blur-none pointer-events-none"
+            <div class="absolute inset-0 bg-white/70 md:bg-white/10 backdrop-blur-[2px] md:backdrop-blur-none pointer-events-none"
                 aria-hidden="true"></div>
 
             <div class="max-w-7xl mx-auto px-5 lg:px-10 relative z-10">
@@ -171,7 +171,7 @@
         {{-- ================================================================
              SECTION 2: SERVICES GRID - Elevated Semantic Articles
         ================================================================ --}}
-        <section id="katalog-layanan" class="py-20 md:py-28 bg-white" aria-labelledby="layanan-heading">
+        <section id="katalog-layanan" class="py-20 md:py-28 bg-slate-100" aria-labelledby="layanan-heading">
             <div class="max-w-7xl mx-auto px-5 lg:px-10">
 
                 <div class="text-center mb-16 lg:mb-20" data-aos="fade-up">

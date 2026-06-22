@@ -200,17 +200,25 @@
     {{-- ================================================================
         SECTION 1: HERO (Updated with Full Background Banner)
 ================================================================ --}}
-    <section class="relative pt-28 md:pt-36 pb-12 md:pb-24 bg-[#FAFCFA] overflow-hidden">
+    {{-- Mengubah bg-[#FAFCFA] menjadi bg-white --}}
+    <section class="relative pt-28 md:pt-36 pb-12 md:pb-24 bg-white overflow-hidden">
 
-        {{-- 🛠️ TRIK CSS: Div absolute khusus sebagai pembungkus gambar banner dari AI --}}
+        {{-- 🛠️ 1. LAYER BACKGROUND KHUSUS MOBILE (< lg) --}}
         <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0
-            bg-[length:100%_auto] bg-[position:center_bottom]
-            lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
+            bg-[length:auto_55%] bg-[position:right_center]
+            lg:hidden" style="background-image: url('{{ asset('images/hero-katalog.webp') }}');">
+        </div>
+
+        {{-- 🛠️ 2. LAYER BACKGROUND KHUSUS DESKTOP (>= lg) --}}
+        {{-- Menggunakan spesifikasi desktop Anda yang sudah proporsional menepi ke kanan --}}
+        <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0 hidden
+            lg:block lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
             style="background-image: url('{{ asset('images/hero-katalog.webp') }}');">
         </div>
 
-        {{-- 💡 GRADIENT OVERLAY: Pelebur halus sisi kiri gambar agar menyatu sempurna dengan warna background dasar --}}
-        <div class="absolute inset-0 bg-gradient-to-r from-[#FAFCFA] via-[#FAFCFA]/90 to-transparent lg:w-1/2 z-0 pointer-events-none"
+        {{-- 💡 3. GRADIENT OVERLAY --}}
+        {{-- Di mobile, kita buat overlay-nya tipis/hilang di bagian bawah agar gambar kasir tidak tertutup warna putih --}}
+        <div class="absolute inset-0 bg-white/75 md:bg-transparent backdrop-blur-[1px] md:backdrop-blur-none pointer-events-none"
             aria-hidden="true"></div>
 
         <div class="max-w-7xl mx-auto px-5 md:px-6 relative z-10">

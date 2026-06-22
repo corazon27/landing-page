@@ -146,16 +146,17 @@
         {{-- ================================================================
              SECTION 1: HERO - Reworked with Generated Image
         ================================================================ --}}
-        <header class="relative pt-24 md:pt-32 pb-16 md:pb-24 bg-cover bg-center bg-no-repeat overflow-hidden"
-            aria-labelledby="hero-heading">
+        <header class="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden" aria-labelledby="hero-heading">
+
+            {{-- BANNER: Sekarang menggunakan bg-cover secara default untuk menutup penuh di mobile --}}
             <div class="absolute inset-0 bg-no-repeat pointer-events-none z-0
-            bg-[length:100%_auto] bg-[position:center_bottom]
-            lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
+                bg-cover bg-center
+                lg:bg-[length:auto_65%] lg:bg-[position:right_2rem_center]"
                 style="background-image: url('{{ asset('images/hero-beranda1.webp') }}');">
             </div>
 
-            {{-- Overlay Transparan untuk memastikan kontras teks di layar kecil --}}
-            <div class="absolute inset-0 bg-white/10 md:bg-transparent backdrop-blur-[1px] md:backdrop-blur-none pointer-events-none"
+            {{-- Overlay Transparan: Dipertegas sedikit di mobile (bg-white/20 atau bg-white/40) agar teks hitam Cakra tetap kontras --}}
+            <div class="absolute inset-0 bg-white/80 md:bg-white/10 backdrop-blur-[2px] md:backdrop-blur-none pointer-events-none"
                 aria-hidden="true"></div>
 
             <div class="max-w-7xl mx-auto px-5 lg:px-10 relative z-10">
@@ -220,8 +221,7 @@
                                 Support Purna Jual
                             </span>
                         </div>
-                    </div> {{-- PERBAIKAN: Tag penutup kontainer kiri dipindahkan ke sini --}}
-
+                    </div> {{-- Penutup Kolom Kiri --}}
 
                 </div> {{-- Penutup Grid Utama --}}
             </div>
